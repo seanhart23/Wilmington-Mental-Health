@@ -1,0 +1,71 @@
+/** {
+	outline: 1px solid red;
+}*/
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+button {
+	margin-bottom: 0; 
+	border: medium none #4eaac8; 
+	border-radius: 5px; 
+	background-color: #4eaac8; 
+	color: #ffffff;
+	font-size: 12px;
+	padding: 18px 45px;
+	float: right;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+.slide-in {
+  transform: translateX(250px);
+  animation: slide-in 1.8s ease forwards;
+}
+.slide-in:nth-child(odd) {
+  animation-duration: 1.6s; /* So they look staggered */
+}
+
+@keyframes slide-in {
+  to { transform: translateX(0); }
+}
+
+.bold {
+	font-weight: bolder;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+	justify-content: center;
+}
+
+.large {
+	color: #4eaac8;
+	font-size: 40px;
+}
+.right {
+	text-align: right !important;
+}
+
+.sub-title {
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-top: 30px;
+}
+/*.container {
+	margin: 0px 375px !important;
+}*/
