@@ -2,8 +2,7 @@ var express        = require('express'),
     request        = require("express"),
     router         = express.Router(),
     app            = express(),
-        middleware       = require('../middleware'),
-
+    middleware       = require('../middleware'),
     request        = require('request'),
     User       = require('../models/user'),
     passport   = require('passport')
@@ -11,6 +10,10 @@ var express        = require('express'),
 
 router.get('/', function(req, res){
     res.render('index');
+});
+
+router.get('/intake', function(req, res){
+    res.render('intake');
 });
 
 router.get('/login', function(req, res){

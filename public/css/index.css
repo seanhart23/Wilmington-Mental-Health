@@ -2,6 +2,10 @@
 	outline: 1px solid red;
 }*/
 
+.background-alt {
+	background-color: #f6f8f9;
+}
+
 body {
 	font-family: 'Lato', sans-serif;
 }
@@ -14,7 +18,6 @@ button {
 	color: #ffffff;
 	font-size: 12px;
 	padding: 18px 45px;
-	float: right;
 	text-transform: uppercase;
 	font-weight: 300;
 }
@@ -23,6 +26,7 @@ button {
   transform: translateY(150px);
   animation: come-in 0.8s ease forwards;
 }
+
 .come-in:nth-child(odd) {
   animation-duration: 0.6s; /* So they look staggered */
 }
@@ -53,18 +57,57 @@ button {
 	justify-content: center;
 }
 
+.float {
+	float: right;
+}
+
+.header{
+	font-size: 42px;
+    line-height: 53px;
+    font-weight: 300;
+    text-align: center;
+    margin: 40px;
+}
+
 .large {
 	color: #4eaac8;
 	font-size: 40px;
 }
+
 .right {
 	text-align: right !important;
+}
+
+.shorten-row {
+	width: 90%; 
+	margin: auto;
+}
+
+.section-text {
+	color: #5c656d;
+	font-size: 18px;
+	line-height: 167%;
+	font-weight: 300;
+}
+
+.section-title {
+	font-size: 36px;
+	line-height: 128%;
+	font-weight: 300;
+}
+
+.spacer-medium {
+	height: 100px;
 }
 
 .sub-title {
 	text-transform: uppercase;
 	font-size: 14px;
 	margin-top: 30px;
+}
+
+.thin {
+	font-weight: 300 !important;
 }
 /*.container {
 	margin: 0px 375px !important;
