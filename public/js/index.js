@@ -1,3 +1,5 @@
+/*** Scroll Transitons ***/
+
 (function($) {
   $.fn.visible = function(partial) {
     
@@ -36,4 +38,12 @@ $(window).scroll(function(event) {
     } 
   });
   
+});
+
+/*** Navbar Transition on Scroll ***/
+
+$(window).scroll(function(){
+  $('nav').toggleClass('fixed-top', $(this).scrollTop() > 100);
+  $('.navbar-brand').toggleClass('scrolled', $(this).scrollTop() > 100);
+  $('.nav-link').toggleClass('nav-link-scrolled', $(this).scrollTop() > 100);
 });
