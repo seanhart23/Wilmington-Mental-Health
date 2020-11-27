@@ -44,6 +44,8 @@ $(window).scroll(function(event) {
 
 $(window).scroll(function(){
   $('nav').toggleClass('fixed-top', $(this).scrollTop() > 100);
-  $('.navbar-brand').toggleClass('scrolled', $(this).scrollTop() > 100);
+  $('nav').toggleClass('', $(this).scrollTop() > 100);
+  $('.navbar').toggleClass('transparent', $(this).scrollTop() > 100);
   $('.nav-link').toggleClass('nav-link-scrolled', $(this).scrollTop() > 100);
 });
+

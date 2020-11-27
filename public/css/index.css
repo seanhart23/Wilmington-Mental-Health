@@ -57,6 +57,11 @@ button {
 	justify-content: center;
 }
 
+.transparent {
+	background-color: rgba(246, 248, 249, .8) !important;
+	/*background-color: black !important;*/
+}
+
 .float {
 	float: right;
 }

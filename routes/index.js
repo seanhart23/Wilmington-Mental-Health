@@ -16,6 +16,10 @@ router.get('/intake', function(req, res){
     res.render('intake');
 });
 
+router.get('/insurance', function(req, res){
+    res.render('insurance');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
