@@ -1,7 +1,7 @@
 /** {
 	outline: 1px solid red;
-}*/
-
+}
+*/
 .background-alt {
 	background-color: #f6f8f9;
 }
@@ -16,7 +16,7 @@ button {
 	border-radius: 5px; 
 	background-color: #4eaac8; 
 	color: #ffffff;
-	font-size: 12px;
+	font-size: 14px;
 	padding: 18px 45px;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -59,7 +59,6 @@ button {
 
 .transparent {
 	background-color: rgba(246, 248, 249, .8) !important;
-	/*background-color: black !important;*/
 }
 
 .float {
@@ -114,6 +113,3 @@ button {
 .thin {
 	font-weight: 300 !important;
 }
-/*.container {
-	margin: 0px 375px !important;
-}*/
