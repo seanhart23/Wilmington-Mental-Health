@@ -4,6 +4,7 @@
 */
 .background-alt {
 	background-color: #f6f8f9;
+	padding: 50px 0px 50px 0px !important;
 }
 
 body {
@@ -20,31 +21,6 @@ button {
 	padding: 18px 45px;
 	text-transform: uppercase;
 	font-weight: 300;
-}
-
-.come-in {
-  transform: translateY(150px);
-  animation: come-in 0.8s ease forwards;
-}
-
-.come-in:nth-child(odd) {
-  animation-duration: 0.6s; /* So they look staggered */
-}
-
-@keyframes come-in {
-  to { transform: translateY(0); }
-}
-
-.slide-in {
-  transform: translateX(250px);
-  animation: slide-in 1.8s ease forwards;
-}
-.slide-in:nth-child(odd) {
-  animation-duration: 1.6s; /* So they look staggered */
-}
-
-@keyframes slide-in {
-  to { transform: translateX(0); }
 }
 
 .bold {
@@ -71,6 +47,14 @@ button {
     font-weight: 300;
     text-align: center;
     margin: 40px;
+}
+
+.header-alt {
+	font-size: 42px;
+    line-height: 53px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px 0px 40px 0px;
 }
 
 .large {
@@ -112,4 +96,32 @@ button {
 
 .thin {
 	font-weight: 300 !important;
+}
+
+/*** Animations ***/
+
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+.slide-in {
+  transform: translateX(250px);
+  animation: slide-in 1.8s ease forwards;
+}
+.slide-in:nth-child(odd) {
+  animation-duration: 1.6s; /* So they look staggered */
+}
+
+@keyframes slide-in {
+  to { transform: translateX(0); }
 }
