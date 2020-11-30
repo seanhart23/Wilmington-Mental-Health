@@ -55,12 +55,11 @@ $(document).ready(function () {
     $('.slider').slick({
         dots: false,
         infinite: true,
-        speed: 10000,
         cssEase: 'linear',
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 5,
+        slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 0,
+        autoplaySpeed: 2000,
         variableWidth: true,
         responsive: [
           {
@@ -69,7 +68,7 @@ $(document).ready(function () {
               slidesToShow: 3,
               slidesToScroll: 1,
               infinite: true,
-              dots: true
+              dots: false
             }
           },
           {
