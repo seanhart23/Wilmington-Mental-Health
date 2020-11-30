@@ -20,6 +20,10 @@ router.get('/insurance', function(req, res){
     res.render('insurance');
 });
 
+router.get('/faq', function(req, res){
+    res.render('faq');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
