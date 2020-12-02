@@ -24,6 +24,10 @@ router.get('/faq', function(req, res){
     res.render('faq');
 });
 
+router.get('/services', function(req, res){
+    res.render('services');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });

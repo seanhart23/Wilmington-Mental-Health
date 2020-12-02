@@ -1,0 +1,63 @@
+<style>
+
+.nav-tabs {
+  width: 100%;
+}
+
+.nav-tabs .nav-link {
+  height: 50px;
+  padding: 10px;
+  color: rgba(0,0,0,.5);
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #4eaac8 !important;
+}
+
+#service-tabs {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+</style>
+
+
+<div id='service-tabs'>
+  <div class='container'>
+    <div class='row'>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Issues We Can Help With</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu2">Treatment Approach</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu3">Treatment Preferences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu4">Techniques</a>
+        </li>
+      </ul>
+
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active container" id="home"><%- include('./issues.ejs') -%></div>
+  <div class="tab-pane container" id="menu1"><%- include('./services.ejs') -%></div>
+  <div class="tab-pane container" id="menu2"><%- include('./approach.ejs') -%></div>
+  <div class="tab-pane container" id="menu3"><%- include('./preferences.ejs') -%></div>
+  <div class="tab-pane container" id="menu4"><%- include('./techniques.ejs') -%></div>
+</div>
+
+</div>
+</div>
+</div>

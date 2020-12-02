@@ -84,6 +84,11 @@ button {
 	font-weight: 300;
 }
 
+.short {
+	width: 10%;
+	margin-bottom: 50px;
+}
+
 .spacer-medium {
 	height: 100px;
 }
