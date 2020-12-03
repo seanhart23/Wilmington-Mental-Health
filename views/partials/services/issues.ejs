@@ -1,8 +1,25 @@
 <style>
 
+#issues {
+	background: #f6f8f9;
+	padding: 50px 0px;
+}
+
+#issues ul {
+  list-style: none; /* Remove default bullets */
+}
+
+#issues ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #4eaac8;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 
 </style> 
 
+<div id='issues'>
 <div class='container'>
 <!-- <div class='sub-title'></div> -->
 	<div class='header'>Issues We Can <span class='bold'>Help With</span></div>
@@ -86,6 +103,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 

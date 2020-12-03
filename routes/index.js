@@ -28,6 +28,10 @@ router.get('/services', function(req, res){
     res.render('services');
 });
 
+router.get('/teletherapy', function(req, res){
+    res.render('teletherapy');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
