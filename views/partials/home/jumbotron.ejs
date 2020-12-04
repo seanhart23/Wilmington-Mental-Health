@@ -2,12 +2,12 @@
 
 .alert {
 	position: absolute;
-	padding: 5px 20px;
+	padding: 5px 20px 5px 0px;
 	background: rgba(78, 170, 200, .6);
 	color: white;
 	top: 0px;
 	left: 0px;
-	text-align: center;
+	text-align: left;
 	width: 100%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .main-text {
-	font-size: 68px;
+	font-size: 45px;
 	color: white;
 	margin-top: 100px;
 	font-weight: 500;
@@ -30,14 +30,21 @@
 	width: auto;
 }
 
+.sub-text {
+	font-size: 20px;
+	font-style: italic;
+}
 </style>
 
 <div class='jumbotron'>
-		<div class='alert'>COVID-19 Update: To comply with COVID-19 guidelines, sessions are now available via video or phone.</div>
+		<div class='alert'>
+			<div class='container'>
+			COVID-19 Update: To comply with COVID-19 guidelines, sessions are now available via video or phone.</div></div>
 		<div class='container'>
 			<div class='main-text'>
-				Psychotherapy and<br>
-				Substance Abuse Treatment
+				Psychotherapy and Substance <br>
+				Abuse Treatment
+				<div class='sub-text'>Build a brighter future by starting within</div>
 			</div>
 		</div>
 </div>
