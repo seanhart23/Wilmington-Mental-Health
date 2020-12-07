@@ -32,6 +32,14 @@ router.get('/teletherapy', function(req, res){
     res.render('teletherapy');
 });
 
+router.get('/individual', function(req, res){
+    res.render('individual');
+});
+
+router.get('/whatwetreat', function(req, res){
+    res.render('whatwetreat');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
