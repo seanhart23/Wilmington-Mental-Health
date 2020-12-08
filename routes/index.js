@@ -40,6 +40,30 @@ router.get('/whatwetreat', function(req, res){
     res.render('whatwetreat');
 });
 
+router.get('/couples', function(req, res){
+    res.render('couples');
+});
+
+router.get('/family', function(req, res){
+    res.render('family');
+});
+
+router.get('/group', function(req, res){
+    res.render('group');
+});
+
+router.get('/anger', function(req, res){
+    res.render('anger');
+});
+
+router.get('/substance', function(req, res){
+    res.render('substance');
+});
+
+router.get('/specialties', function(req, res){
+    res.render('specialties');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
