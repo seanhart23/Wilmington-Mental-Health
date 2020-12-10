@@ -9,6 +9,7 @@ var express        = require('express'),
     mongoose       = require('mongoose'),
     methodOverride   = require('method-override'),
     app            = express(),
+    nodemailer       = require('nodemailer'),
     request        = require('request');
 
 
@@ -37,6 +38,36 @@ app.use(function(req, res, next){
 });
 // CREATE ROUTES
 var indexRoutes = require('./routes/index');
+
+/*** Mailer ***/
+app.post('/contact', (req, res) => {
+  const smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'wilmingtonmentalhealth@gmail.com',
+      pass: 'kwwcpuxcczmtofyw'
+    }
+  })
+  const mailOpts = {
+    from: 'Wilmington Mental Health Website', 
+    to: 'seanhart23@gmail.com',
+    subject: 'New message from Wilmington Mental Health Website',
+    text: `Name: ${req.body.Name}
+    Email Address: ${req.body.Email}
+    Message: ${req.body.Message}`
+  }
+
+  smtpTrans.sendMail(mailOpts, (error, response) => {
+    if (error) {
+      res.render('index') 
+    }
+    else {
+      res.render('index')
+    }
+  })
+})
 
 //REQUIRING ROUTE FILES USING EXPRESS ROUTER
 app.use('/', indexRoutes);
