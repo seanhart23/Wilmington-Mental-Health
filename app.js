@@ -52,10 +52,9 @@ app.post('/contact', (req, res) => {
   })
   const mailOpts = {
     from: 'Wilmington Mental Health Website', 
-    to: 'seanhart23@gmail.com',
+    to: 'info@wmhwc.com',
     subject: 'New message from Wilmington Mental Health Website',
-    text: `Name: ${req.body.Name}
-    Email Address: ${req.body.Email}
+    text: `Name: ${req.body.Name} (${req.body.Email}) has sent you the following message:
     Message: ${req.body.Message}`
   }
 
