@@ -3,9 +3,7 @@
 }
 */
 
-a {
-	color: #4eaac8 !important;
-}
+
 
 .background-alt {
 	background-color: #f6f8f9;
@@ -135,3 +133,5 @@ button {
 @keyframes slide-in {
   to { transform: translateX(0); }
 }
+
+
