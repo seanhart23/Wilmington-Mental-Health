@@ -1,6 +1,96 @@
+<style>
+	
+#contact hr {
+	width: 20%;
+	margin-left: 0px;
+}
+
+#contact i {
+	color: #4eaac8;
+	margin-right: 15px;
+}
+
+.contact-address {
+	font-weight: 400;
+	font-size: 22px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.contact-email {
+	font-weight: 400;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.contact-phone {
+	font-weight: 400;
+	font-size: 22px;
+}
+
+form {
+	margin-top: 25px;
+}
+
+iframe {
+	margin-top: 25px;
+}
+
+textarea {
+	height: 200px;
+	width: 75%;
+}
+
+</style>
 <%- include('./partials/global/header.ejs') -%>
 <%- include('./partials/global/topbar.ejs') -%>
 <%- include('./partials/global/navtop.ejs') -%>
 <%- include('./partials/global/navbar.ejs') -%>
-<%- include('./partials/contact/contact.ejs') -%>
+
+
+
+<div id='contact'>
+	<div class='header'>Contact <span class='bold'>Us</span></div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-lg-6'>
+				<div class='map-side'>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.2652113116624!2d-77.9006765847861!3d34.24177568055476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89a9f5fa7433afd9%3A0xef323e99178d1274!2sWilmington%20Mental%20Health%2C%20PLLC!5e0!3m2!1sen!2sus!4v1606354262906!5m2!1sen!2sus" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+			<div class='col-lg-6'>
+				<div class='contact-form'>
+					<div class='sub-title'>Get in Touch</div>
+						<div class='section-title'>Find us on the <span class='bold'>Map</span></div>
+						<div class='hr'><hr></div>
+						<div class='section-text'>We have worls-class, flexible support via live chat, email and hone. We guarantee that you’ll be able to have any issue resolved within 24 hours. You van contact support immediately here.</div>
+						<div class='contact-address'>
+							<i class="fas fa-map-marker-alt"></i> 
+							&nbsp;3825 Market St, Suite 4
+						</div>
+						<div class='contact-email'>
+							<i class="fas fa-envelope"></i> 
+							&nbsp;<a href='mailto:info@wmhwc.com'>info@wmhwc.com</a>
+						</div>
+						<div class='contact-phone'><i class="fas fa-phone"></i>910.777.5575</div>
+						<form class="" method="post" action="contact-form-process.php">
+							<div class="form-group">
+                                <input type="text" id="Name" name="Name" class="form-control" placeholder="Name*" required>
+                        	</div>							
+
+                        	<div class="form-group">
+                                <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+                        	</div>
+
+                        	<div class="form-group">
+                                <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message" rows='4'></textarea>
+                        	</div>
+
+                        	<button type="submit" id="" class="">Send</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <%- include('./partials/global/footer.ejs') -%>
