@@ -64,6 +64,10 @@ router.get('/specialties', function(req, res){
     res.render('specialties');
 });
 
+router.get('/whoweare', function(req, res){
+    res.render('whoweare');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
