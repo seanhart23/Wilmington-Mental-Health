@@ -2,6 +2,11 @@
 	outline: 1px solid red;
 }
 */
+
+a {
+	color: #4eaac8 !important;
+}
+
 .background-alt {
 	background-color: #f6f8f9;
 	padding: 50px 0px 50px 0px !important;

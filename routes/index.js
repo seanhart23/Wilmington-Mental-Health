@@ -68,6 +68,10 @@ router.get('/whoweare', function(req, res){
     res.render('whoweare');
 });
 
+router.get('/contact', function(req, res){
+    res.render('contact');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
