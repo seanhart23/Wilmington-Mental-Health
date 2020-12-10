@@ -84,7 +84,7 @@ nav i {
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
          <li class="dropdown-submenu">
           <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">What We Treat <span class="caret"></span></a>
-          <ul class="dropdown-menu" style='display: none'>
+          <ul class="sub dropdown-menu" style='display: none'>
             <li><a class="dropdown-item sub-item" href="/services">Methods We Use</a></li>
           </ul>
         </li>
@@ -101,7 +101,7 @@ nav i {
 
         <li class="dropdown-submenu">
           <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Psychotherapy <span class="caret"></span></a>
-          <ul class="dropdown-menu" style='display: none'>
+          <ul class="sub dropdown-menu" style='display: none'>
                 <!-- <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li> -->
                 <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
                 <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
@@ -127,7 +127,7 @@ nav i {
          
         <li class="dropdown-submenu">
           <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Substance Abuse Treatment <span class="caret"></span></a>
-          <ul class="dropdown-menu" style='display: none'>
+          <ul class="sub dropdown-menu" style='display: none'>
             <li><a class="dropdown-item sub-item" href="/substance">Aftercare</a></li>
             <li><a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a></li>  
           </ul>
@@ -135,7 +135,7 @@ nav i {
 
         <li class="dropdown-submenu">
           <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Specialties <span class="caret"></span></a>
-          <ul class="dropdown-menu" style='display: none'>
+          <ul class="sub dropdown-menu" style='display: none'>
             <li><a class="dropdown-item sub-item" href="/specialties#emdr">EMDR</a></li>
             <li><a class="dropdown-item sub-item" href="/specialties#biofeedback">Biofeedback</a> </li>
             <li><a class="dropdown-item sub-item" href="/specialties">TF-CBT</a> </li>
@@ -157,7 +157,7 @@ nav i {
 
         <li class="dropdown-submenu">
           <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Assessments <span class="caret"></span></a>
-          <ul class="dropdown-menu" style='display: none'>
+          <ul class="sub dropdown-menu" style='display: none'>
             <li><a class="dropdown-item sub-item" href="/specialties#clinical">Comprehensive Clinical Assessments</a></li>
             <li><a class="dropdown-item sub-item" href="/specialties">Immigration Evaluations</a></li>
             <li><a class="dropdown-item sub-item" href="/specialties#sexoffender">Sex Offender Risk Assessment</a> </li>
@@ -252,7 +252,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.dropdown-menu').hover(function(e){
+  $('.sub').hover(function(e){
     $(this).toggle();
     e.stopPropagation();
     e.preventDefault();
