@@ -12,8 +12,17 @@
 .dropdown-item:hover {
   color: #4eaac8 !important;
   padding-left: 30px;
+  -webkit-transition: all 200ms;
 }
 
+.dropdown-menu:after {
+      content: '';
+    width: 100%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 10px;
+}
 nav i {
   font-size: 20px;
   color: gray !important;
@@ -47,7 +56,8 @@ nav i {
 
 .sub-item:hover {
   color: #4eaac8 !important;
-  padding-left: 45px;
+  padding-left: 40px;
+  -webkit-transition: all 200ms;
 }
 @media all and (min-width: 992px) {
   .navbar .nav-item .dropdown-menu{ display: none; }
@@ -67,6 +77,19 @@ nav i {
   top: 0;
   left: 100%;
   margin-top: -1px;
+}
+
+.dropdown-menu > ul > li {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
+    transform: rotate(45deg);
+    background: inherit;
 }
 </style>
 
@@ -226,7 +249,7 @@ nav i {
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item nav-title" href="#">Forms</a>
             <a class="dropdown-item sub-item" href="https://pdf.ac/DQSWx" target='_blank'>Intake Packet</a>
-            <a class="dropdown-item sub-item" href="#">Handouts</a>
+            <a class="dropdown-item sub-item" href="/handouts">Handouts</a>
           <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Our Community</a>
             <a class="dropdown-item" href="#">Blog</a>
@@ -240,7 +263,9 @@ nav i {
           <a class="dropdown-item" href="/contact">Contact Form</a>
           <a class="dropdown-item" href="#">Book an Appointment</a>
             <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in">Existing Clients</a>
-            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/request/clinician">New Clients</a>
+            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>New Clients</a>
+            <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+
 
         </div>
       </li>

@@ -80,6 +80,10 @@ router.get('/rengifo2', function(req, res){
     res.render('rengifo2');
 });
 
+router.get('/handouts', function(req, res){
+    res.render('handouts');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
