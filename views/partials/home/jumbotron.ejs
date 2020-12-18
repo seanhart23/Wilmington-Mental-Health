@@ -11,14 +11,39 @@
 	width: 100%;
 }
 
+.book {
+	background-color: #C4956F !important;
+}
+
+.filter {
+	position: absolute;
+	background: rgba(0,0,0,.4);
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+
 .jumbotron {
 	background-image: url('https://livewp.site/wp/md/optima/wp-content/uploads/sites/15/2018/01/home_bg1-1.jpg?id=44');
+	background-image: url('./images/group.png');
 	background-repeat: no-repeat;
+	background-size: cover;
 	height: 70vh;
 	width: 100%;
 	margin-bottom: 0px;
 	position: relative;
 	text-align: center;
+	border-radius: 0px;
+	position: relative;
+	z-index: -1;
+}
+
+.jumbotron button {
+	height: 50px;
+	margin-right: 25px;
+	background-color: #4eaac8;
 }
 
 .main-text {
@@ -28,6 +53,7 @@
 	font-weight: 500;
 	text-align: left;
 	width: auto;
+	z-index: 2;
 }
 
 .sub-text {
@@ -37,14 +63,16 @@
 </style>
 
 <div class='jumbotron'>
+		<div class='filter'></div>
 		<div class='alert'>
 			<div class='container'>
 			COVID-19 Update: To comply with COVID-19 guidelines, sessions are now available via video or phone.</div></div>
 		<div class='container'>
 			<div class='main-text'>
-				Psychotherapy and Substance <br>
-				Abuse Treatment
 				<div class='sub-text'>Build a brighter future by starting within</div>
+				Psychotherapy and Substance <br>
+				Abuse Treatment<br>
+				<a href='#'><button>About Us</button></a> <a href='#'><button class='book'>Book Now</button></a>
 			</div>
 		</div>
 </div>
