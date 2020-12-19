@@ -15,6 +15,10 @@
   -webkit-transition: all 200ms;
 }
 
+.wide .dropdown-menu {
+  width: 1000px;
+}
+
 .dropdown-menu:after {
       content: '';
     width: 100%;
@@ -30,7 +34,7 @@ nav i {
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-  color: #4eaac8 !important;
+  color: rgba(0,0,0,.5);
 }
 
 .navbar {
@@ -68,7 +72,7 @@ nav i {
 
 </style>
 
-<style>
+<!-- <style>
 .dropdown-submenu {
   position: relative;
 }
@@ -91,7 +95,7 @@ nav i {
     transform: rotate(45deg);
     background: inherit;
 }
-</style>
+</style> -->
 
 <nav class="navbar navbar-expand-lg navbar-light w-100">
   <div class='container'>
@@ -118,114 +122,51 @@ nav i {
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
 
-<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">What We Treat <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-            <li><a class="dropdown-item sub-item" href="/services">Methods We Use</a></li>
-          </ul>
-        </li>
+    <div class='wide'>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+     
 
- <!--        
-          <li><a class="dropdown-item nav-title" href="/whatwetreat">What We Treat</a></li>
-            <li><a class="dropdown-item sub-item" href="/services">Methods We Use</a></li>
-          <div class="dropdown-divider"></div> -->
+        <div class='row'>
+          <div class='col-lg-4'>
+            <li><a class="dropdown-item nav-title" href="/whatwetreat">What We Treat</a></li>
+            <li><a class="dropdown-item nav-title" href="/services">Methods We Use</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li>
+            <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
+            <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
+            <li><a class="dropdown-item sub-item" href="/couples">Family</a></li>
+            <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
+            <li><a class="dropdown-item sub-item" href="/group">Anger Management</a> </li>
+          </div>
 
-
-
-
-          <li><a class="dropdown-item nav-title" href="/teletherapy">Teletherapy</a></li>
-
-        <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Psychotherapy <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-                <!-- <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li> -->
-                <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
-                <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
-                <li><a class="dropdown-item sub-item" href="/couples">Family</a></li>
-                <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
-                <li><a class="dropdown-item sub-item" href="/group">Anger Management</a> </li>
-          </ul>
-        </li>
-
-<!-- 
-          <li class="dropdown-submenu">
-            <a class="test" href="#">Psychotherapy <span class="caret"></span></a>
-            <ul class="dropdown-menu">  
-              <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li>
-              <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
-              <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
-              <li><a class="dropdown-item sub-item" href="/couples">Family</a></li>
-              <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
-              <li><a class="dropdown-item sub-item" href="/group">Anger Management</a> </li>
-            </ul>
-          </li>
- -->
          
-        <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Substance Abuse Treatment <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-            <li><a class="dropdown-item sub-item" href="/substance">Aftercare</a></li>
-            <li><a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a></li>  
-          </ul>
-        </li>
-
-        <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Specialties <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-            <li><a class="dropdown-item sub-item" href="/specialties#emdr">EMDR</a></li>
-            <li><a class="dropdown-item sub-item" href="/specialties#biofeedback">Biofeedback</a> </li>
-            <li><a class="dropdown-item sub-item" href="/specialties">TF-CBT</a> </li>
-            <li><a class="dropdown-item sub-item" href="/specialties">EAP</a> </li>
-          </ul>
-        </li>
-
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="/substance">Substance Abuse Treatment</a>
+          <div class='col-lg-4'>
+            <a class="dropdown-item nav-title" href="/substance">Substance Abuse Treatment</a>
             <a class="dropdown-item sub-item" href="/substance">Aftercare</a>
             <a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a>          
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="/specialties">Specialties</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-title" href="/specialties">Specialties</a>
             <a class="dropdown-item sub-item" href="/specialties#emdr">EMDR</a>
             <a class="dropdown-item sub-item" href="/specialties#biofeedback">Biofeedback</a> 
             <a class="dropdown-item sub-item" href="/specialties">TF-CBT</a> 
-            <a class="dropdown-item sub-item" href="/specialties">EAP</a>  -->
+            <a class="dropdown-item sub-item" href="/specialties">EAP</a> 
+          </div>
 
-
-        <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Assessments <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-            <li><a class="dropdown-item sub-item" href="/specialties#clinical">Comprehensive Clinical Assessments</a></li>
-            <li><a class="dropdown-item sub-item" href="/specialties">Immigration Evaluations</a></li>
-            <li><a class="dropdown-item sub-item" href="/specialties#sexoffender">Sex Offender Risk Assessment</a> </li>
-            <li><a class="dropdown-item sub-item" href="/specialties">Domestic Violence Risk Assessments</a></li>
-          </ul>
-        </li>
-
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="#">Assessments</a>
+          <div class='col-lg-4'>
+            <a class="dropdown-item nav-title" href="#">Assessments</a>
             <a class="dropdown-item sub-item" href="/specialties#clinical">Comprehensive Clinical Assessments</a>
             <a class="dropdown-item sub-item" href="/specialties">Immigration Evaluations</a>
             <a class="dropdown-item sub-item" href="/specialties#sexoffender">Sex Offender Risk Assessment</a> 
             <a class="dropdown-item sub-item" href="/specialties">Domestic Violence Risk Assessments</a>
- -->
 
-         <li class="dropdown-submenu">
-          <a class="test dropdown-toggle dropdown-item nav-title" tabindex="-1" href="#">Other Services <span class="caret"></span></a>
-          <ul class="sub dropdown-menu" style='display: none'>
-            <li><a class="dropdown-item sub-item" href="/specialties">Uranalysis</a></li>
-            <li><a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a></li>
-          </ul>
-        </li>
-
-<!-- 
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="#">Other Services</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-title" href="#">Other Services</a>
             <a class="dropdown-item sub-item" href="/specialties">Uranalysis</a>
             <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a>
- -->
+          </div>
+        </div>
         </ul>   
-     
+     </div>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Who We Are</a>

@@ -13,6 +13,7 @@
 	left: 0px;
 	text-align: left;
 	width: 100%;
+	z-index: 1;
 }
 
 .book {
@@ -24,7 +25,7 @@
 	background: rgba(0,0,0,.4);
 	height: 100%;
 	width: 100%;
-	z-index: -1;
+	z-index: 0;
 	top: 0;
 	left: 0;
 }
@@ -41,23 +42,25 @@
 	text-align: center;
 	border-radius: 0px;
 	position: relative;
-	z-index: -1;
+	/*z-index: 0;*/
 }
 
 .jumbotron button {
 	height: 50px;
 	margin-right: 25px;
 	background-color: #4eaac8;
+	z-index: 1;
+	line-height: 10px;
 }
 
 .main-text {
 	font-size: 45px;
 	color: white;
-	margin-top: 100px;
+	margin-top: 150px;
 	font-weight: 500;
 	text-align: left;
 	width: auto;
-	z-index: 2;
+	z-index: 1;
 }
 
 .sub-text {
@@ -67,16 +70,20 @@
 </style>
 
 <div class='jumbotron'>
-		<div class='filter'></div>
+		<div class='filter'>
 		<div class='alert'>
 			<div class='container'>
 			COVID-19 Update: During the pandemic, we are shifting to telehealth sessions to reduce the spread of COVID-19 and to protect the safety of our patients.</div></div>
 		<div class='container'>
 			<div class='main-text'>
-				<div class='sub-text'>Build a brighter future by starting within</div>
-				Psychotherapy and Substance <br>
-				Abuse Treatment<br>
-				<a href='/about'><button class='about'>About Us</button></a> <a href='#'><button class='book'>Book Now</button></a>
+				<div class='sub-text'>Build a brighter future by starting with today</div>
+				Psychotherapy and <br>
+				Substance Abuse Treatment<br>
+				<a href='/whoweare'><button class='about'>About Us</button></a> 
+				<a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind style='background: none'>
+					<button class='book'>Book Now</button>
+				</a>
 			</div>
+		</div>
 		</div>
 </div>
