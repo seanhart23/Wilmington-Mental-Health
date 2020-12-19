@@ -23,13 +23,26 @@
   -webkit-transition: all 200ms;
 }
 
+.hover-space {
+  background: transparent;
+  height: 130%;
+  width: 100px;
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+}
 .wide .dropdown-menu {
-  width: 1000px;
+  width: 1100px;
+  border-radius: 10px;
+  font-size: 17px;
+
 }
 
 .dropdown-menu {
   min-width: 250px;
   position: relative;
+  border-radius: 10px;
+  font-size: 17px;
 }
 
 nav i {
@@ -73,7 +86,7 @@ nav i {
   .navbar .nav-item .dropdown-menu{ display: none; }
   .navbar .nav-item:hover .nav-link{ color: #000;  }
   .navbar .nav-item:hover .dropdown-menu{ display: block; }
-  .navbar .nav-item .dropdown-menu{ margin-top: 5px; }
+  .navbar .nav-item .dropdown-menu{ margin-top: 22px; }
 }
 
 
@@ -119,17 +132,19 @@ nav i {
         <a class='nav-link dropdown-toggle' href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='margin-left: 0px; padding-left: 0px'>
         Home
         </a>
+        <div class='hover-space'></div>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <div class='caret'></div>
           <a class="dropdown-item nav-title" href="/intake">Intake Process</a>
             <a class="dropdown-item sub-item" href="/insurance">Fees & Insurance</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="/faq">FAQ</a>
+          <a class="dropdown-item nav-title" href="/faq">FAQs</a>
         </div>      
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class='hover-space'></div>
 
     <div class='wide'>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -139,38 +154,39 @@ nav i {
           <div class='col-lg-4'>
             <li><a class="dropdown-item nav-title" href="/whatwetreat">What We Treat</a></li>
             <li><a class="dropdown-item nav-title" href="/services">Methods We Use</a></li>
-            <div class="dropdown-divider"></div>
+            <!-- <div class="dropdown-divider"></div> -->
             <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li>
             <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
             <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
             <li><a class="dropdown-item sub-item" href="/couples">Family</a></li>
             <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
-            <li><a class="dropdown-item sub-item" href="/group">Anger Management</a> </li>
           </div>
 
          
           <div class='col-lg-4'>
             <a class="dropdown-item nav-title" href="/substance">Substance Abuse Treatment</a>
-            <a class="dropdown-item sub-item" href="/substance">Aftercare</a>
-            <a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a>          
-            <div class="dropdown-divider"></div>
+            <a class="dropdown-item sub-item" href="/substance">Outpatient Care</a>
+            <!-- <a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a>           -->
+            <!-- <div class="dropdown-divider"></div> -->
             <a class="dropdown-item nav-title" href="/specialties">Specialties</a>
+            <a class="dropdown-item sub-item" href="/group">Anger Management</a>
+                        <a class="dropdown-item sub-item" href="/specialties">Corporate Wellness</a> 
+
             <a class="dropdown-item sub-item" href="/specialties#emdr">EMDR</a>
             <a class="dropdown-item sub-item" href="/specialties#biofeedback">Biofeedback</a> 
             <a class="dropdown-item sub-item" href="/specialties">TF-CBT</a> 
-            <a class="dropdown-item sub-item" href="/specialties">EAP</a> 
           </div>
 
           <div class='col-lg-4'>
             <a class="dropdown-item nav-title" href="#">Assessments</a>
-            <a class="dropdown-item sub-item" href="/specialties#clinical">Comprehensive Clinical Assessments</a>
+            <a class="dropdown-item sub-item" href="/specialties#clinical">CCA</a>
             <a class="dropdown-item sub-item" href="/specialties">Immigration Evaluations</a>
             <a class="dropdown-item sub-item" href="/specialties#sexoffender">Sex Offender Risk Assessment</a> 
-            <a class="dropdown-item sub-item" href="/specialties">Domestic Violence Risk Assessments</a>
+            <!-- <a class="dropdown-item sub-item" href="/specialties">Domestic Violence Risk Assessments</a> -->
 
-            <div class="dropdown-divider"></div>
+            <!-- <div class="dropdown-divider"></div> -->
             <a class="dropdown-item nav-title" href="#">Other Services</a>
-            <a class="dropdown-item sub-item" href="/specialties">Uranalysis</a>
+            <a class="dropdown-item sub-item" href="/specialties">Urinalysis</a>
             <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a>
           </div>
         </div>
@@ -179,13 +195,15 @@ nav i {
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Who We Are</a>
+                <div class='hover-space'></div>
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class='caret'></div>
 
           <a class="dropdown-item nav-title" href="/whoweare">About Us</a>
           <!-- <a class="dropdown-item" href="#">Our Mission & Philosophy</a> -->
           <!-- <div class="dropdown-divider"></div> -->
-          <a class="dropdown-item nav-title" href="#">Our Team</a>
+          <a class="dropdown-item nav-title" href="#">Providers</a>
               <a class="dropdown-item sub-item" href="/rengifo">Joseph Rengifo Take 1</a>
               <a class="dropdown-item sub-item" href="/rengifo2">Joseph Rengifo Take 2</a>
               <!-- <a class="dropdown-item sub-item" href="#">Havah Henzler</a> -->
@@ -198,6 +216,8 @@ nav i {
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                <div class='hover-space'></div>
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class='caret'></div>
 
@@ -212,11 +232,13 @@ nav i {
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                <div class='hover-space'></div>
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class='caret'></div>
-          <a class="dropdown-item" href="/contact">Contact Form</a>
-          <a class="dropdown-item" href="#">Book an Appointment</a>
+          <a class="dropdown-item nav-title" href="/contact">Contact us</a>
+          <a class="dropdown-item nav-title" href="#">Book an Appointment</a>
             <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in">Existing Patients</a>
             <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>New Patients</a>
             <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
@@ -243,6 +265,14 @@ nav i {
 <script>
 $(document).ready(function(){
   $('.dropdown-submenu a.test').hover(function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+$(document).ready(function(){
+  $('.hover-space').hover(function(e){
     $(this).next('ul').toggle();
     e.stopPropagation();
     e.preventDefault();
