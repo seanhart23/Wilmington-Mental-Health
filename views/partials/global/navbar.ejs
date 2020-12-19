@@ -1,8 +1,16 @@
 <style>
 
-.caret.caret-up {
-  border-top-width: 0;
-  border-bottom: 4px solid #fff;
+.caret {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    transform: rotate(45deg);
+    background: inherit;
 }
 
 .dropdown-item {
@@ -19,14 +27,11 @@
   width: 1000px;
 }
 
-.dropdown-menu:after {
-      content: '';
-    width: 100%;
-    position: absolute;
-    top: -10px;
-    left: 0;
-    height: 10px;
+.dropdown-menu {
+  min-width: 250px;
+  position: relative;
 }
+
 nav i {
   font-size: 20px;
   color: gray !important;
@@ -63,12 +68,15 @@ nav i {
   padding-left: 40px;
   -webkit-transition: all 200ms;
 }
+
 @media all and (min-width: 992px) {
   .navbar .nav-item .dropdown-menu{ display: none; }
   .navbar .nav-item:hover .nav-link{ color: #000;  }
   .navbar .nav-item:hover .dropdown-menu{ display: block; }
-  .navbar .nav-item .dropdown-menu{ margin-top:0; }
+  .navbar .nav-item .dropdown-menu{ margin-top: 5px; }
 }
+
+
 
 </style>
 
@@ -112,10 +120,11 @@ nav i {
         Home
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class='caret'></div>
           <a class="dropdown-item nav-title" href="/intake">Intake Process</a>
             <a class="dropdown-item sub-item" href="/insurance">Fees & Insurance</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item nav-title" href="/faq">Frequently Asked Questions</a>
+          <a class="dropdown-item nav-title" href="/faq">FAQ</a>
         </div>      
       </li>
 
@@ -124,7 +133,7 @@ nav i {
 
     <div class='wide'>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-     
+               <div class='caret'></div>
 
         <div class='row'>
           <div class='col-lg-4'>
@@ -171,6 +180,8 @@ nav i {
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Who We Are</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
+
           <a class="dropdown-item nav-title" href="/whoweare">About Us</a>
           <!-- <a class="dropdown-item" href="#">Our Mission & Philosophy</a> -->
           <!-- <div class="dropdown-divider"></div> -->
@@ -188,6 +199,8 @@ nav i {
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
+
             <a class="dropdown-item nav-title" href="#">Forms</a>
             <a class="dropdown-item sub-item" href="https://pdf.ac/DQSWx" target='_blank'>Intake Packet</a>
             <a class="dropdown-item sub-item" href="/handouts">Handouts</a>
@@ -201,6 +214,7 @@ nav i {
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
           <a class="dropdown-item" href="/contact">Contact Form</a>
           <a class="dropdown-item" href="#">Book an Appointment</a>
             <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in">Existing Patients</a>
