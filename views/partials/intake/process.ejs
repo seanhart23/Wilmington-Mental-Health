@@ -1,11 +1,31 @@
 <style>
 	
-	.alert {
+	/*.alert {
 		margin-top: 50px !important;
 		margin-bottom: 25px;
-	}
+	}*/
 
+.alert {
+	position: absolute;
+	padding: 5px 20px 5px 0px;
+	background: rgba(250, 0, 0, .6);
+	color: white;
+	/*top: 0px;*/
+	left: 0px;
+	text-align: left;
+	width: 100%;
+	z-index: 1;
+}
 
+#process {
+	position: relative;
+	padding-bottom: 50px;
+}
+
+#process .header {
+	margin-top: 0px;
+	padding-top: 75px;
+}
 	.process-flow {
 		width: 100%;
 		position: relative;
@@ -59,7 +79,17 @@
 
 </style>
 
-<div id='process' class='header'>The Counseling <span class='bold'>Process</span></div>
+
+<div id='process'>
+
+<div class='alert'>
+	<div class='container'>
+		If you are experiencing a crisis or have an urgent need, please call 911 or visit your nearest emergency department.
+	</div>
+</div> 
+
+<div class='header'>The Counseling <span class='bold'>Process</span></div>
+
 <!-- <div class='container'> -->
 	<div class='process-flow'>
 	<div class='row shorten-row'>
@@ -96,7 +126,7 @@
 			</div>
 		</div>
 		<div class='col-lg-2'>
-			<div class='process-image'><i class="fas fa-brain" style='color: #806DAE !important; margin-left: -20px !important'></i></div>
+			<div class='process-image'><i class="fas fa-brain" style='color: #4EAAC8 !important; margin-left: -20px !important'></i></div>
 			<div class='process-step'>
 				<div class='process-title bold'>Empowering</div>
 				<div class='process-text'>
@@ -116,9 +146,9 @@
 		</div>
 		<div class='col-lg-1'></div>
 	</div>
-	<div class='container'>
+<!-- 	<div class='container'>
 		<div class="alert alert-danger main-box" role="alert">
 		If you are experiencing a crisis or have an urgent need, please call 911 or visit your nearest emergency department.		
-	</div>
+	</div> -->
 	</div>
 </div>
