@@ -1,40 +1,51 @@
 <style>
 
+.insurance-header {
+  font-size: 42px;
+    line-height: 53px;
+    font-weight: 300;
+    text-align: left;
+    margin: 40px 0px 20px 0px;
+}
 .insurance-accepted {
   padding: 0px 0px 50px 0px;
 }
 
-.slider {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  padding: 25px 0px 25px 0px;
-  width: 100%;
-}
-
-.slider img {
-  height: 50px;
+.insurance-accepted img {
+  height: 30px;
   line-height: 200px;
   margin: 0px 50px;
 }
 
+.insurance-level-1 {
+  margin: 25px auto;
+  text-align: center;
+}
+
+.insurance-level-2 {
+  margin: 25px auto;
+  text-align: center;
+}
 </style>
 
 <div class='container'>
+  <div class='insurance-header'>Most Insurance Plans Accepted</div>
+  <p class='insurance-accepted-text section-text'>Wilmington Mental Health (WMH) is committed to providing affordable psychotherapy services to all of our patients. We accept the following Behavioral Health insurances:</p>
   <div class='insurance-accepted'>
     <div class='header'>In <span class='bold'>Network</span></div>
-    <p class='insurance-accepted-text section-text'>Wilmington Mental Health (WMH) is committed to providing affordable psychotherapy services to all of our patients. We accept the following Behavioral Health insurances:</p>
       <div class='row' style='width: 100%; margin-left: 0px !important'>
-        <div class="slider">
-            <div><img src='./images/aetna.png'></div>
-            <div><img src='./images/bcbs.png'></div>
-            <div><img src='./images/humana.png'></div>
-            <div><img src='./images/cigna.png'></div>
-            <div><img src='./images/magellan.png'></div>
-            <div><img src='./images/medcost.png'></div>
-            <div><img src='./images/united.png'></div>
-            <div><img src='./images/Optum.png'></div>
+        <!-- <div class="slider"> -->
+          <div class='insurance-level-1'>
+            <span><img src='./images/aetna.png'></span>
+            <span><img src='./images/bcbs.png'></span>
+            <span><img src='./images/humana.png'></span>
+            <span><img src='./images/cigna.png'></span>
+            <span><img src='./images/magellan.png'></span><br>
+          </div>
+          <div class='insurance-level-2'>
+            <span><img src='./images/medcost.png'></span>
+            <span><img src='./images/united.png'></span>
+            <span><img src='./images/Optum.png'></span>
         </div>
       </div>
       <div class='insurance-accepted-text section-text'>
