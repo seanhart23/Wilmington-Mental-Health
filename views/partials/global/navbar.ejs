@@ -35,9 +35,10 @@
   z-index: 1000;
   position: absolute;
   left: 0;
+  /*border: 1px dotted red;*/
 }
 .wide .dropdown-menu {
-  width: 800px;
+  width: 550px;
   border-radius: 10px;
   font-size: 17px;
   padding: 15px;
@@ -149,6 +150,24 @@ nav i {
         </div>      
       </li>
 
+
+      <li class="nav-item dropdown">
+        <a class='nav-link dropdown-toggle' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        What We Treat
+        </a>
+        <div class='hover-space'></div>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class='caret'></div>
+            <a class="dropdown-item nav-title" href="#">Treatment Approach</a>
+            <a class="dropdown-item sub-item" href="/services">Methods We Use</a>
+        </div>      
+      </li>
+
+
+
+
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
               <div class='hover-space'></div>
@@ -158,43 +177,41 @@ nav i {
                <div class='caret'></div>
 
         <div class='row'>
-          <div class='col-lg-4'>
-            <li><a class="dropdown-item nav-title" href="/whatwetreat">What We Treat</a></li>
-            <li><a class="dropdown-item nav-title" href="/services">Methods We Use</a></li>
+          <div class='col-lg-6'>
+            <!-- <li><a class="dropdown-item nav-title" href="/whatwetreat"></a></li> -->
+           
             <!-- <div class="dropdown-divider"></div> -->
+            <li><a class="dropdown-item nav-title" href="/teletherapy">Teletherapy</a></li>
+            <div class='dropdown-divider'></div>
             <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li>
             <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
             <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
             <li><a class="dropdown-item sub-item" href="/couples">Family</a></li>
             <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
+            <div class='dropdown-divider'></div>
+            <a class="dropdown-item nav-title" href="#">Substance Abuse</a>
+            <a class="dropdown-item sub-item" href="#">Psychoeducation</a>
+            <a class="dropdown-item sub-item" href="/substance">Outpatient Care</a>
+            <a class="dropdown-item sub-item" href="#">Clinical Supervision</a>
           </div>
 
          
-          <div class='col-lg-4'>
-            <a class="dropdown-item nav-title" href="/substance">Substance Abuse Treatment</a>
-            <a class="dropdown-item sub-item" href="/substance">Outpatient Care</a>
-            <!-- <a class="dropdown-item sub-item" href="/substance#cbt">Relapse Prevention</a>           -->
-            <!-- <div class="dropdown-divider"></div> -->
-            <a class="dropdown-item nav-title" href="/specialties">Specialties</a>
-            <a class="dropdown-item sub-item" href="/group">Anger Management</a>
-                        <a class="dropdown-item sub-item" href="/specialties">Corporate Wellness</a> 
+          <div class='col-lg-6'>
 
+            <a class="dropdown-item nav-title" href="#">Specialties</a>
+            <a class="dropdown-item sub-item" href="/group">Anger Management</a>
+            <a class="dropdown-item sub-item" href="/specialties">Corporate Wellness</a> 
             <a class="dropdown-item sub-item" href="/specialties#emdr">EMDR</a>
             <a class="dropdown-item sub-item" href="/specialties#biofeedback">Biofeedback</a> 
-            <!-- <a class="dropdown-item sub-item" href="/specialties">TF-CBT</a>  -->
-          </div>
-
-          <div class='col-lg-4'>
-            <a class="dropdown-item nav-title" href="/specialties#clinical">Clinical Assessments (CCA)</a>
-            <!-- <a class="dropdown-item sub-item" href="/specialties#clinical">Clinical Assessments (CCA)</a> -->
+            <a class="dropdown-item sub-item" href="/specialties">Trauma-Focused CBT</a> 
+            <div class='dropdown-divider'></div>
+            <a class="dropdown-item nav-title" href="#">Assessments</a>
+            <a class="dropdown-item sub-item" href="/specialties#clinical">Clinical Assessments (CCA)</a>
             <a class="dropdown-item sub-item" href="/specialties">Immigration Evaluations</a>
             <a class="dropdown-item sub-item" href="/specialties#sexoffender">Sex Offender Risk Assessment</a> 
-            <!-- <a class="dropdown-item sub-item" href="/specialties">Domestic Violence Risk Assessments</a> -->
-
-            <!-- <div class="dropdown-divider"></div> -->
-            <a class="dropdown-item nav-title" href="#">Other Services</a>
+  <!--           <a class="dropdown-item nav-title" href="#">Other Services</a>
             <a class="dropdown-item sub-item" href="/specialties">Urinalysis</a>
-            <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a>
+            <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a> -->
           </div>
         </div>
         </ul>   
