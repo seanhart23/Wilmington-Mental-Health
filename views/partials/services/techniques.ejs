@@ -1,11 +1,16 @@
 <style>
 
+#techniques {
+	margin-bottom: 100px;
+	background: #f6f8f9;
+}
+
 #techniques i {
 	float: right;
 	color: #4eaac8 !important;
 }
 
-#techniques li {
+/*#techniques li {
 	background: #f6f8f9;
 	padding: 10px 10px;
 	margin: 5px 0px 0px 0px;
@@ -16,15 +21,26 @@
 	text-transform: uppercase;
 	font-size: 12px;
 	text-decoration: none;
-}
+}*/
 
 .technique-name {
 	font-size: 20px;
 }
 
+.technique-description {
+	font-size: 14px !important;
+	text-align: left;
+	margin-top: 15px;
+	  z-index: 2;
+	  padding: 0px 10px;
+
+}
 .technique-title {
-	font-size: 20px;
+	font-size: 16px;
+	font-weight: 600;
 	margin-top: 20px;
+	  z-index: 2;
+
 }
 
 .technique-title-first {
@@ -32,6 +48,65 @@
 	margin-top: 0px;
 }
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-bottom: 20px;
+    	z-index: -1;
+
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  z-index: 3;
+
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  padding: 0px 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 10px 10px 40px lightgray;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background: white;
+  	color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+	color: black;
+	transform: rotateY(180deg);
+	width: auto;
+	height: auto;
+	min-height: 100%;
+	background-color: white;
+	z-index: 2;
+}
 
 </style> 
 
@@ -43,9 +118,259 @@
 	<hr class='short'>
 </div>
 
+
 <div class='container'>
 	<div class='row'>
-		<div class='col-lg-5'>
+
+		<div class='col-lg-3' style='z-index: 10'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Cognitive Behavioral Therapy (CBT)</div>
+		
+			      <div class='technique-description'>Your thoughts, emotions, and behaviors are inextricably linked.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Cognitive Behavioral Therapy (CBT)</div>
+			      	<div class='technique-description'>
+			      	<p>CBT is a goal-oriented psychotherapy treatment approach posits that irrational patterns of thinking can adversely affect feelings and behaviors. Therefore, challenging (automatic and "negative") thought patterns can lead to logical and critical thinking. </p>
+
+			       	<ul>
+						<li>Common exercises:</li>
+						<li>Behavioral experiments</li>
+						<li>Thought records</li>
+						<li>Behavioral activation</li>
+					</ul>
+
+					<p>"Cognitive therapy seeks to alleviate psychological stresses by correcting faulty conceptions and self-signals. By correcting erroneous beliefs, we can lower excessive reactions". ― Aaron T. Beck</p>
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class='col-lg-3' style='z-index: 10'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Rational Emotive Behavior Therapy (REBT)</div>
+		
+			      <div class='technique-description'>Develop rational thinking to facilitate healthy emotional behavior and expression.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Rational Emotive Behavior Therapy (REBT)</div>
+			      	<div class='technique-description'>
+						<p>REBT teaches you to question the validity of distorted and irrational thoughts and consider alternative standpoints. You then learn to evaluate situations more accurately and develop perspectives and habits that enable you to act in helpful, effective ways.</p>
+
+						<p>Common exercises:
+							<ul>
+						<li>Disputing irrational beliefs</li>
+						<li>Imagine the worst</li>
+						<li>Blown out of all proportion</li>
+						</ul>
+						</p>
+
+						<p>“Too many people are unaware that it is not outer events or circumstances that will create happiness; rather, it is our perception of events and of ourselves that will create, or uncreate, positive emotions.” ― Albert Ellis</p>
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>	
+
+		<div class='col-lg-3' style='z-index: 10'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Motivational interviewing (MI)</div>
+		
+			      <div class='technique-description'>Deal with issues surrounding readiness to change behaviors.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Motivational interviewing (MI)</div>
+			      	<div class='technique-description'>
+						<p>MI is a directive, client-centered psychotherapy approach used to help you develop behavior change by exploring and resolving your ambivalences about changing.</p>
+
+						<p>Common activities and tools:
+							<ul>
+								<li>Open-ended questions</li>
+								<li>Forming affirmations and reflections</li>
+								<li>Directive reflecting</li>
+							</ul>
+						</p>
+
+						<p>“People are the undisputed experts on themselves. No one has been with them longer, or knows them better than they do themselves. In MI, the helper is a companion who typically does less than half of the talking.” ― William R. Miller</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 10'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
+			  
+			      <div class='technique-description'>Explore possibilities and new ways of thinking and behaving to resolve problems.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
+			      	<div class='technique-description'>
+			      	<p>SFBT may help you become aware of your preferred future and develop motivation to move toward that future. SFBT also helps you identify and work toward your goals, set specific and measurable outcome goals, and conceptualize and work through open problems instead of focusing on the presenting problem.</p>
+
+					<p>Common exercises:
+						<ul>
+						<li>Miracle question</li>
+						<li>Exception questions</li>
+						<li>Solution mind mapping</li>
+						<li>Experiment journal</li>
+					</ul>
+					</p>
+
+					<p>“That’s a way to see it and there is also another way to see it” ― Insoo Kim Berg</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+		<div class='row'>
+
+		<div class='col-lg-3' style='z-index: 9'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Dialectic Behavioral Therapy (DBT)</div>
+			
+			      <div class='technique-description'>Learn to better express your inner thoughts and feelings.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Dialectic Behavioral Therapy (DBT)</div>
+			      	<div class='technique-description'>
+			      	<p>DBT helps you accept and deal with the struggles you face in order to live life more fully and efficiently. This technique uses a problem solving and acceptance-based framework — among other strategies — to treat severe and chronic mental health conditions and issues, including borderline personality disorder, suicidal thoughts, self-harming, eating disorders and PTSD.</p>
+
+					<p>Common exercises:
+						<ul>
+							<li>Radical acceptance</li>
+							<li>Reality acceptance</li>
+							<li>Non-judgmental stance</li>
+							<li>DEAR MAN skill</li>
+						</ul>
+					</p>
+					<p>“It is hard to be happy without a life worth living… Of course, all lives are worth living in reality. No life is not worth living. But what is important is that you experience your life as worth living—one that is satisfying, and one that brings happiness.” ― Marsha M. Linehan</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class='col-lg-3' style='z-index: 9'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Eye Movement Desensitization and Reprocessing (EMDR)</div>
+			      <div class='technique-description'>Make new emotional connection with your memories for lasting changes in behavior.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Eye Movement Desensitization and Reprocessing (EMDR)</div>			      	
+				<div class='technique-description'>
+						<p>EMDR helps you reprocess traumatic memories in the brain through rapid, rhythmic eye movements and access those traumatic memories and other adverse life experiences to bring them to an adaptive resolution.</p>
+
+						<p>Common techniques:
+							<ul>
+								<li>Bilateral stimulation (BLS)</li>
+								<li>The flash</li>
+								<li>Processing</li>
+								<li>Paired titration</li>
+							</ul>
+						</p>
+
+						<p>“Changing the memories that form the way we see ourselves also changes the way we view others. Therefore, our relationships, job performance, what we are willing to do or are able to resist, all move in a positive direction.” ― Francine Shapiro</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>	
+
+		<div class='col-lg-3' style='z-index: 9'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Biofeedback</div>
+			  
+			      <div class='technique-description'>Measure your brain’s electrical and physiological activity processes.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Biofeedback</div>
+			      	<div class='technique-description'>
+						<p>Biofeedback helps you gain greater awareness of many physiological functions happening in your own body - by using electronic instruments - with the goal of being able to manipulate your body's systems at your own discretion.</p>
+
+						<p>Types of biofeedback
+							<ul>
+								<li>Electromyography (EMG)</li>
+								<li>Thermal or temperature</li>
+								<li>Electroencephalography</li>
+								<li>Galvanic skin response</li>
+								<li>Heart variability</li>
+							</ul>
+						</p>
+
+						<p>“The nervous system holds the key to the body’s incredible potential to heal itself.” ― Sir Jay Holder</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 9'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Trauma-Informed Therapy </div>
+			 
+			      <div class='technique-description'>Need Description</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
+			      	<div class='technique-description'>
+			      	Need Description
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+		<!-- <div class='col-lg-5'>
 			<ul class="nav nav-pills flex-column">
 			  	<div class='technique-title-first'>Commonly Used</div>
 			  	<li><a data-toggle="pill" href="#cbt">Cognitive Behavioral Therapy (CBT)</a><i class="fas fa-chevron-right"></i></li>
@@ -127,9 +452,9 @@
 				<div class="tab-pane container fade" id="exposure"><div class='technique-name'>Exposure Therapy</div></div>
 				<div class="tab-pane container fade" id="critical"><div class='technique-name'>Critical Incident Stress Management</div></div>
 				<div class="tab-pane container fade" id="mindfulness"><div class='technique-name'>Mindfulness-Based Cognitive Behavioral Therapy</div></div>
-			</div>
+			</div> -->
 
-		</div>
+<!-- 		</div>
 	</div>
 </div>
-</div>
+</div> -->
