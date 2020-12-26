@@ -84,6 +84,10 @@ router.get('/handouts', function(req, res){
     res.render('handouts');
 });
 
+router.get('/teletherapia', function(req, res){
+    res.render('teletherapia');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });
