@@ -3,6 +3,12 @@
 #techniques {
 	margin-bottom: 100px;
 	background: #f6f8f9;
+	padding-top: 75px;
+}
+
+#techniques hr {
+	margin-top: 0px;
+	margin-bottom: 20px;
 }
 
 #techniques i {
@@ -28,19 +34,27 @@
 }
 
 .technique-description {
-	font-size: 14px !important;
+	font-size: 16px !important;
 	text-align: left;
 	margin-top: 15px;
 	  z-index: 2;
-	  padding: 0px 10px;
+	  padding: 0px 10px 20px 10px;
 
 }
+
+.technique-header {
+	font-size: 30px;
+}
+
 .technique-title {
 	font-size: 16px;
 	font-weight: 600;
-	margin-top: 20px;
-	  z-index: 2;
-
+	padding: 5px 5px;
+	z-index: 2;
+	background: #4eaac8;
+	color: white;
+	height: 60px;
+	border-radius: 10px 10px 0px 0px;
 }
 
 .technique-title-first {
@@ -56,19 +70,18 @@
   /*border: 1px solid #f1f1f1;*/
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   margin-bottom: 20px;
-    	z-index: -1;
-
-
+  z-index: -1;
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 200px;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+    margin-bottom: 20px;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -85,16 +98,16 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  padding: 0px 10px;
+  /*padding: 0px 10px;*/
   border: 1px solid lightgray;
   border-radius: 10px;
-  box-shadow: 10px 10px 40px lightgray;
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background: white;
   	color: black;
+  	box-shadow: 10px 10px 40px lightgray;
 }
 
 /* Style the back side */
@@ -104,8 +117,10 @@
 	width: auto;
 	height: auto;
 	min-height: 100%;
+	min-width: 100%;
 	background-color: white;
 	z-index: 2;
+  	box-shadow: 10px 10px 40px lightgray;
 }
 
 </style> 
@@ -120,6 +135,7 @@
 
 
 <div class='container'>
+	<div class='technique-header'>Commonly Used</div><hr>
 	<div class='row'>
 
 		<div class='col-lg-3' style='z-index: 10'>
@@ -348,7 +364,7 @@
 			      <div class='technique-description'>Need Description</div>
 			    </div>
 			    <div class="flip-card-back">
-			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
+			      <div class='technique-title'>Trauma-Informed Therapy</div>
 			      	<div class='technique-description'>
 			      	Need Description
 
@@ -358,6 +374,864 @@
 			</div>
 		</div>
 	</div>
+
+	<div class='row'>
+
+		<div class='col-lg-3' style='z-index: 8'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Family Therapy</div>
+			
+			      <div class='technique-description'>Develop and maintain a healthy, functional family.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Family Therapy</div>
+			      	<div class='technique-description'>
+			      	<p>This form of psychotherapy includes your entire family and helps improve the communication patterns between family members creating changes that address the health and functioning of the family.</p>
+
+					<p>Common exercises:<ul>
+					<li>Genogram</li>
+					<li>Emotions ball</li>
+					<li>The family gift</li>
+					<li>Mirroring activity</li>
+					<li>Genogram</li>
+					<li>Color candy go around</li></ul></p>
+
+					<p>“A securely attached child will store an internal working model of a responsive, loving, reliable care-giver, and of a self that is worthy of love and attention and will bring these assumptions to bear on all other relationships.” ― John Bowlby</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class='col-lg-3' style='z-index: 8'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Interpersonal Therapy</div>
+			      <div class='technique-description'>Need Description</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Interpersonal Therapy</div>			      	
+				<div class='technique-description'>
+						Need Description
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>	
+
+		<div class='col-lg-3' style='z-index: 8'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Person-Centered Therapy</div>
+			  
+			      <div class='technique-description'>Change achieved by emphasizing concern, care and interest.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Person-Centered Therapy</div>
+			      	<div class='technique-description'>
+						<p>This non-directive therapy approach can help you reach self-awareness by enabling you to take full control of the “steering wheel” during your treatment while your therapist provides full support and acceptance.</p>
+
+						<p>Common techniques:<ul>
+								<li>You are the expert</li>
+								<li>You choose what to discuss</li>
+								<li>The focus is on you rather than your problems</li>
+								<li>Goal identification</li>
+							</ul>
+						</p>
+
+						<p>“When you are in psychological distress and someone really hears you without passing judgement on you, without trying to take responsibility for you, without trying to mold you, it feels damn good!.” – Carl Rogers<p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 8'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Integrative Internal Family Systems Therapy (IFS)</div>
+			 
+			      <div class='technique-description'>Insight, support, and wisdom to help families grow stronger and more cohesive</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Integrative Internal Family Systems Therapy (IFS)</div>
+			      	<div class='technique-description'>
+			      	<p>IFS encourages you to bring your family into treatment and helps improve communication and resolve conflict constructively, which in turns promotes an overall sense of well-being for all members of the family.</p>
+
+					<p>Common exercises:<ul>
+							<li>Journaling</li>
+							<li>Genogram</li>
+							<li>The room technique</li>
+							<li>Mountain or path</li>
+							<li>Feeling one’s heart</li>
+						</ul>
+					</p>
+
+					<p>“Imbalanced systems, whether internal or external, will tend to polarize.” ― Richard C. Schwartz</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+	<div class='row'>
+
+		<div class='col-lg-3' style='z-index: 7'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Emotionally Focused Therapy (EFT)</div>
+			
+			      <div class='technique-description'>Use your emotions as a source of healing and insight.</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Emotionally Focused Therapy (EFT)</div>
+			      	<div class='technique-description'>
+			      	<p>EFT helps you look at patterns in your relationship and how they impact your ability to create healthy and secure bonds so that you learn to develop more trust and move in a positive direction in your relationship. </p>
+
+					<p>Common exercises:<ul>
+					<li>De-escalation</li>
+					<li>Changing interaction patterns</li>
+					<li>Consolidation</li>
+					<li>Integration</li>
+				</ul>
+			</p>
+
+					<p>“Love has an immense ability to help heal the devastating wounds that life sometimes deals us. Love also enhances our sense of connection to the larger world. Loving responsiveness is the foundation of a truly compassionate, civilized society.” ― Sue Johnson</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class='col-lg-3' style='z-index: 7'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Anger Management</div>
+			      <div class='technique-description'>Identify stressors, remain calm, and handle tense situations in a positive and constructive manner.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Anger Management</div>			      	
+				<div class='technique-description'>
+						<p>Our program will help you control and change how you feel about and behave in life situations. You will learn learning ways of coping with negative emotions in a constructive way, how to examine your triggers, adjust how you look at situations, and express your anger and frustration more positively.<p>  
+
+						<p>Common Techniques:<ul>
+
+						<li>Breathing exercises</li>
+						<li>Impulse control</li>
+						<li>Meditation</li>
+						<li>Relaxation strategies</li>
+					</ul>
+				</p>
+
+						<p>“Anger can be extremely rewarding in the short term. It can distract you from pain and threatening feelings. You may use anger to provoke fear and anxiety in others… But regularly directing anger at someone is likely to make him or her even less supportive. Ultimately, that person will withdraw completely- leaving you feeling even more isolated.” ― Bernard Golden</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>	
+
+		<div class='col-lg-3' style='z-index: 7'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Gottman Method</div>
+			  
+			      <div class='technique-description'>Need Description</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Gottman Method</div>
+			      	<div class='technique-description'>
+						Need Description
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 7'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Guided Therapeutic Imagery</div>
+			 
+			      <div class='technique-description'>Need Description</div>
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Guided Therapeutic Imagery</div>
+			      	<div class='technique-description'>
+			      	Need Description
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+		<div class='row'>
+
+		<div class='col-lg-3' style='z-index: 6'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Exposure Therapy</div>
+			
+			      Need Description
+			    </div>
+			    <div class="flip-card-back">
+			      <div class='technique-title'>Exposure Therapy</div>
+			      	<div class='technique-description'>
+			      	Need Description
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class='col-lg-3' style='z-index: 6'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Critical Incident Stress Management</div>
+			      <div class='technique-description'>Immediate support after a traumatic event has occurred to reduce long-term consequences.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>	
+
+		<div class='col-lg-3' style='z-index: 6'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Psychotherapy</div>
+			      <div class='technique-description'>Address your mental, emotional, and behavioral problems.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Psychotherapy</div>			      	
+				<div class='technique-description'>
+					Psychotherapy can help you assess your coping skills and promote healthier lifestyles. Our therapists will guide you through the process of identifying and correcting unhelpful thoughts and behaviors.
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 6'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Conflict Resolution Therapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <!-- <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div> -->
+			  <!-- </div> -->
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class='row'>
+
+		<div class='col-lg-3' style='z-index: 5'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Whole-Patient Approach (Medication Assisted Treatment)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <!-- <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div> -->
+			  <!-- </div> -->
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 5'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Imago Relationship Therapy (IRT)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <!-- <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div> -->
+			  <!-- </div> -->
+			</div>
+		</div>
+
+		<div class='col-lg-3' style='z-index: 5'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Life Coaching</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div>
+			  <!-- </div> -->
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class='technique-header'>Service Coordination and Referrals</div><hr>
+
+	<div class='row'>
+				<div class='col-lg-3' style='z-index: 5'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Conflict Resolution Therapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <!-- <div class="flip-card-back">
+				<div class='technique-title'>Critical Incident Stress Management</div>			      	
+				<div class='technique-description'>
+						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+
+						<p>Examples of a Critical Incident include but are not limited to:
+							<ul>
+						<li>Serious workplace injuries or accidents</li>
+						<li>Death of a co-worker or family member</li>
+						<li>Assaults, violent acts, or threats in the workplace</li>
+						<li>Suicide of an employee</li>
+						<li>Traumatic family or work events</li>
+					</ul>
+				</p>
+
+					</div>
+			    </div> -->
+			  <!-- </div> -->
+			</div>
+		</div>
+	</div>
+
+	<div class='technique-header'>Complementary & Alternative Treatment</div><hr>
+
+	<div class='row'>
+		<div class='col-lg-3' style='z-index: 4'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Mindfulness-Based Cognitive Behavioral Therapy</div>
+			      <div class='technique-description'>Turn towards the present moment.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Mindfulness-Based Cognitive Behavioral Therapy</div>			      	
+				<div class='technique-description'>
+						<p>Learn to reach a state of focused awareness, live in the present moment, and respond more effectively to life's challenges. This technique can also help you accept, rather than change, your feelings, and thoughts about the life challenges you may be experiencing.</p>
+
+						<p>Common exercises:<ul>
+						<li>Three-minute breathing space</li>
+						<li>Body scan</li>
+						<li>Mindfulness stretching</li>
+						<li>Daily mindfulness</li></ul></p>
+
+						<p>“Mindfulness practice means that we commit fully in each moment to be present; inviting ourselves to interface with this moment in full awareness, with the intention to embody as best we can an orientation of calmness, mindfulness, and equanimity right here and right now.” ― Jon Kabat-Zinn</p>
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div class='technique-header'>Other Methods We May Use</div><hr>
+
+	<div class='row'>
+		<div class='col-lg-3' style='z-index: 3'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Reality Therapy</div>
+			      <div class='technique-description'>All humans have five basic needs: Survival, love and belonging, power, freedom, and fun.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Reality Therapy</div>			      	
+				<div class='technique-description'>
+						<p>Reality therapy helps you understand that almost all behaviors are chosen and focus on present issues and by changing the behaviors that prevent you from addressing those issues. Psychological distress is seen as the outcome of not meeting five basic psychological needs: power, love/belonging, freedom, fun and survival.</p>
+
+						<p>Common exercises:<ul>
+						<li>SAMIC3 plans</li>
+						<li>SMART goals</li>
+						<li>WDEP System</li>
+					</ul>
+				</p>
+
+						<p>“We almost always have choices, and the better the choice, the more we will be in control of our lives.” ― William Glasser.</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 3'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Psychodrama</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 3'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Gestalt Therapy</div>
+			      <div class='technique-description'>Become aware of the here and now and accept responsibility for yourself.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Gestalt Therapy</div>			      	
+				<div class='technique-description'>
+						<p>Gestalt therapy helps you and focus on the present and how you feel about it, paying close attention to your personal life, awareness, attitude, and perceptions rather than your interpretations.</p>
+
+						<p>Common exercises:<ul>
+						<li>Empty chair</li>
+						<li>Exaggeration</li>
+						<li>Here and now</li>
+					</ul></p>
+
+						<p>“I do my thing and you do your thing. I am not in this world to live up to your expectations, and you are not in this world to live up to mine. You are you, and I am I, and if by chance we find each other, it's beautiful. If not, it can't be helped.” ― Fritz Perls</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 3'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Existential Therapy</div>
+			      <div class='technique-description'>Free will, self-determination, and the search for meaning.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Existential Therapy</div>			      	
+				<div class='technique-description'>
+						<p>This therapy style helps you look at yourself from a philosophical standpoint and explore your condition as a human being, your existence in this planet, and your capacities to explore the meaning of life.</p>
+
+						<p>Main ideas:<ul>
+						<li>Freedom of choice</li>
+						<li>Meaning in life</li>
+						<li>Authenticity</li>
+					</ul>
+				</p>
+
+						<p>“It is perfectly true, as philosophers say, that life must be understood backwards. But they forget the other proposition, that it must be lived forwards.” ― Søren Kierkegaard</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+		<div class='row'>
+		<div class='col-lg-3' style='z-index: 2'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Narrative Therapy</div>
+			      <div class='technique-description'>Create meaning through the stories you share.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Narrative Therapy</div>			      	
+				<div class='technique-description'>
+						<p>Narrative therapy helps you identify your skills, values, and knowledge, and interpret your experiences as stories that give meaning to your life and guide it.</p>
+
+						<p>Common exercises:<ul>
+						<li>My life story</li>
+						<li>Externalization</li>
+						<li>Deconstruction</li>
+					</ul>
+				</p>
+
+						<p>“Every time we ask a question, we’re generating a possible version of a life.” – David Epston</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 2'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Christian Counseling</div>
+			      <div class='technique-description'>Combine your faith with the principles of psychology.</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Christian Counseling</div>			      	
+				<div class='technique-description'>
+						<p>Christian counseling is applied as a form of therapy that emphasizes spirituality to help you overcome life’s challenges and enhance your mental and emotional health.</p>
+
+						<p>Common principles:<ul>
+						<li>Accepting of God’s will</li>
+						<li>Use of scripture to guide how you should think and behave.</li>
+						<li>Identify behaviors that are inconsistent with God’s teachings</li>
+					</ul>
+				</p>
+
+						<p>“You can't teach a person to love something. But you can get him to feel the heat of your love for something.” ― James MacDonald</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 2'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Journal Therapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 2'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Logotherapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					<!-- </div> -->
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+		<div class='row'>
+		<div class='col-lg-3' style='z-index: 1'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Motivational Enhancement Therapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 1'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Compassion Focused Therapy</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 1'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Core Process Psychotherapy (CPP)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 1'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Client-Directed Outcome-Informed Therapy (CDOI)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    </div>
+			  <!-- </div> -->
+			</div>
+		</div>
+	</div>
+		<div class='row'>
+		<div class='col-lg-3' style='z-index: 0'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Discernment Counseling</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 0'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Dyadic Developmental Psychotherapy (DDP)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 0'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Emotional Freedom Technique</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					</div>
+			    <!-- </div> -->
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 0'>
+			<!-- <div class="flip-card"> -->
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Pragmatic-Existential Therapy for Couples (PET-C)</div>
+			      <div class='technique-description'></div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'></div>			      	
+				<div class='technique-description'>
+						
+
+					<!-- </div> -->
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class='col-lg-3' style='z-index: 0'>
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
+			      <div class='technique-title'>Schema Therapy</div>
+			      <div class='technique-description'>Develop a better sense of self-worth and adequacy</div>
+			    </div>
+			    <div class="flip-card-back">
+				<div class='technique-title'>Schema Therapy</div>			      	
+				<div class='technique-description'>
+						<p>Schema therapy can help you identify thoughts and actions that may be causing or exacerbating your mental health symptoms by integrating and expanding on CBT through exploration of emotions, maladaptive coping methods, and the origin of mental health concerns.</p>
+
+						<p>Common exercises:<ul>
+						<li>Maladaptive schemas</li>
+						<li>Schema modes</li>
+					</ul>
+				</p>
+
+						<p>“Once you can open yourself up to the idea that your defectiveness is not a fact, the healing process can begin to work.” ― Jeffrey E. Young</p>
+
+
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
 </div>
 </div>
 </div>
