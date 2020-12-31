@@ -60,6 +60,10 @@ router.get('/substance', function(req, res){
     res.render('substance');
 });
 
+router.get('/corporate', function(req, res){
+    res.render('corporate');
+});
+
 router.get('/specialties', function(req, res){
     res.render('specialties');
 });
