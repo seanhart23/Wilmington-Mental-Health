@@ -76,6 +76,10 @@ router.get('/contact', function(req, res){
     res.render('contact');
 });
 
+router.get('/emdr', function(req, res){
+    res.render('emdr');
+});
+
 router.get('/rengifo', function(req, res){
     res.render('rengifo');
 });
