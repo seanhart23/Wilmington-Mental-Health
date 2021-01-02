@@ -229,8 +229,7 @@ nav i {
           <!-- <a class="dropdown-item" href="#">Our Mission & Philosophy</a> -->
           <!-- <div class="dropdown-divider"></div> -->
           <a class="dropdown-item nav-title" href="#">Providers</a>
-              <a class="dropdown-item sub-item" href="/rengifo">Joseph Rengifo Take 1</a>
-              <a class="dropdown-item sub-item" href="/rengifo2">Joseph Rengifo Take 2</a>
+              <a class="dropdown-item sub-item" href="/rengifo">Joseph Rengifo</a>
               <!-- <a class="dropdown-item sub-item" href="#">Havah Henzler</a> -->
               <!-- <a class="dropdown-item sub-item" href="#">Sarah Mooring</a> -->
               <!-- <a class="dropdown-item sub-item" href="#">Melissa Kemlage</a> -->
@@ -283,9 +282,20 @@ nav i {
       <i class="fas fa-search"></i>
     </form>
 
+<!-- Begin siteLevel HTML Searchbox Code -->
+<!-- <form method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8" id='search'>
+  <div class="sl_search_box">
+    <input type="hidden" name="crid" value="drdh3od9"/>
+    <input type="text" name="query"/>
+    <button type="submit">Search</button>
   </div>
+</form> -->
+<!-- End siteLevel HTML Searchbox Code -->
+
+
 </div>
 </nav>
+
 
 <script>
 $(document).ready(function(){
@@ -312,5 +322,9 @@ $(document).ready(function(){
   });
 });
 
-
+var myForm = document.getElementById('search');
+myForm.onsubmit = function() {
+    var w = window.open('about:blank','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=700,height=600,left = 312,top = 234');
+    this.target = 'Popup_Window';
+};
 </script>
