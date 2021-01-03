@@ -55,7 +55,8 @@ app.post('/contact', (req, res) => {
     to: 'info@wmhwc.com',
     subject: 'New message from Wilmington Mental Health Website',
     text: `Name: ${req.body.Name} (${req.body.Email}) has sent you the following message:
-    Message: ${req.body.Message}`
+    Message: ${req.body.Message}
+    Phone: ${req.body.Number}`
   }
 
   smtpTrans.sendMail(mailOpts, (error, response) => {

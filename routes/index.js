@@ -56,6 +56,10 @@ router.get('/anger', function(req, res){
     res.render('anger');
 });
 
+router.get('/biofeedback', function(req, res){
+    res.render('biofeedback');
+});
+
 router.get('/substance', function(req, res){
     res.render('substance');
 });

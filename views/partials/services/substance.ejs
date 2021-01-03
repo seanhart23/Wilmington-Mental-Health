@@ -12,7 +12,7 @@
 }
 .navigation li {
 	border: 1px solid lightgray;
-	width: 325px;
+	width: 350px !important;
 	margin: 5px;
 	text-align: center;
 	padding: 5px;
@@ -22,7 +22,7 @@
 
 .navigation li:hover {
 	border: 1px solid #4eaac8;
-	width: 325px;
+	width: 350px !important;
 	margin: 5px;
 	text-align: center;
 	padding: 5px;
@@ -64,36 +64,53 @@
 }
 </style>
 
-<div id='individual'>
-<div class='header'>Substance Abuse <span class='bold'>Treatment</span></div>
+
 <div class='container'>
-	<div class='row' style='width: 99.99%; margin: auto'>
+	<div class='row' style='width: 99.99%; margin: 50px auto'>
 		<div class='navigation'>
 			<ul class="nav nav-pills flex-row center">
-			<li><a data-toggle="pill" class='active' href="#psychoeducation">Individual Alcohol & Alcohol Psychoeducation</a></li>
-			<li><a data-toggle="pill" href="#cbt">CBT: Relapse Prevention</a></li>
+			<li><a data-toggle="pill" class='active' href="#psychoeducation">Alcohol and Drug Psychoeducation</a></li>
+			<li><a data-toggle="pill" href="#outpatient">Outpatient Care</a></li>
+			<li><a data-toggle="pill" href="#supervision">Clinical Supervision</a></li>
 			</ul>
 		</div>
 	</div>
+</div>
 
-		<div class="tab-content">
+	<div class="tab-content">
+
 		<div class="tab-pane active" id="psychoeducation">
-			<div class='technique-name'>Individual Alcohol & Alcohol Psychoeducation</div><hr>
+			<div class='container'><div class='technique-name'>Alcohol and Drug Psychoeducation</div><hr></div>
 			<div class='technique-content'>
-			
-
+			<%- include('./sa-education.ejs') -%>
+			<%- include('./sa-how.ejs') -%>
+			<%- include('./sa-process.ejs') -%>
+			</div>
 		</div>
-	</div>
 
 
-		<div class="tab-pane fade" id="cbt">
-			<div class='technique-name'>CBT: Relapse Prevention</div><hr>
+		<div class="tab-pane fade" id="outpatient">
+			<div class='container'><div class='technique-name'>Outpatient Care</div><hr></div>
 			<div class='technique-content'>
-
-		</div>
+			<%- include('./sa-treatment.ejs') -%>
+			<%- include('./sa-boxes.ejs') -%>
+			<%- include('./sa-testing.ejs') -%>
+			<%- include('./sa-relapse.ejs') -%>
+			<%- include('./sa-plan.ejs') -%>
+			</div>
 		</div>
 		
+
+		<div class="tab-pane fade" id="supervision">
+			<div class='container'><div class='technique-name'>Clinical Supervision</div><hr></div>
+			<div class='technique-content'>
+			<%- include('./sa-supervision.ejs') -%>
+			<%- include('./sa-effective.ejs') -%>
+			<%- include('./sa-who.ejs') -%>
+			<%- include('./sa-life.ejs') -%>
+
+			</div>
+		</div>
+
 	</div>
-</div>
-</div>
 
