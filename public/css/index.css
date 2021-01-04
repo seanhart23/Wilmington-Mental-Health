@@ -66,6 +66,10 @@ button {
     margin: 0px 0px 40px 0px;
 }
 
+.hide-on-desktop {
+	display: none;
+}
+
 .large {
 	color: #4eaac8;
 	font-size: 40px;

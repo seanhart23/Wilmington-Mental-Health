@@ -100,6 +100,10 @@ router.get('/teletherapia', function(req, res){
     res.render('teletherapia');
 });
 
+router.get('/assessments', function(req, res){
+    res.render('assessments');
+});
+
 router.get('/login', function(req, res){
     res.render('login');
 });

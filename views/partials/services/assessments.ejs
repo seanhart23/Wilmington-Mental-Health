@@ -1,5 +1,8 @@
 <style>
 
+#clinical .section-title {
+	margin: 25px 0px;
+}
 .treatment-box {
 	text-align: center;
 }
@@ -9,7 +12,7 @@
 }
 .navigation li {
 	border: 1px solid lightgray;
-	width: 210px;
+	width: 300px;
 	margin: 5px;
 	text-align: center;
 	padding: 5px;
@@ -19,7 +22,7 @@
 
 .navigation li:hover {
 	border: 1px solid #4eaac8;
-	width: 210px;
+	width: 300px;
 	margin: 5px;
 	text-align: center;
 	padding: 5px;
@@ -58,10 +61,70 @@
 </style>
 
 <div id='individual'>
-<div class='header'>Comprehensive Clinical <span class='bold'>Assessments</span></div>
+<div class='header'>Clinical <span class='bold'>Assessments</span></div>
 <div class='container'>
-	<div class='row' style='width: 99.99%; margin: auto'>
+		<div class='navigation'>
+			<ul class="nav nav-pills flex-row center">
+			<li><a data-toggle="pill" class='active' href="#CCA">Comprehensive Clinical Assessment (CCA)</a></li>
+			<li><a data-toggle="pill" href="#anger">Anger Management Evaluation</a></li>
+			<li><a data-toggle="pill" href="#immigration">Immigration Evaluation</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<br>
+<div id='clinical'>
+<div class='container'>
+	<div class='section-text'><p>
+	WMH therapists use clinical assessments to know the type of treatment that must be used to effectively treat you. They collect information and draw conclusions about the symptoms you are presenting from these assessments, including your demographic information, sociocultural background, personal characteristics, cognitive and functional functioning, cultural factors, history of mental health and substance abuse treatment, as well as your skills, struggles, and treatment expectations.</p>
+
+	<p>Basically, your clinical assessment is an ongoing process that helps your therapist determine if treatment is needed, the extent to which your psychological condition is affecting you, whether the treatment method that has been selected is working, and if your symptoms are likely to return after treatment has ended. </p>
+
+	<p class='section-title center'>Assessment Process</p>
+	<p class='center' style='margin-left: -200px'> 1 Identifying the reasons for assessment</p>
+		<p class='center' style='margin-left: 50px'> 2	Choosing and implementing instruments for data collections</p>
+			<p class='center' style='margin-left: 0px'> 3	Evaluating assessment information</p>
+				<p class='center' style='margin-left: 300px'> 4	Reporting results of assessment and making recommendations</p>
+
+
+</div>
+</div>
+</div>
+
+<br>
+	<div class="tab-content">
+
+		<div class="tab-pane active" id="CCA">
+		<!-- 	<div class='container'><div class='technique-name'>Comprehensive Clinical Assessment (CCA)</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./cca.ejs') -%>
+
+			</div>
+		</div>
+
+
+		<div class="tab-pane fade" id="anger">
+			<!-- <div class='container'><div class='technique-name'>Anger Management Evaluation</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./anger-management.ejs') -%>
+
+			</div>
+		</div>
 		
+
+		<div class="tab-pane fade" id="immigration">
+			<!-- <div class='container'><div class='technique-name'>Immigration Evaluation</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./immigration.ejs') -%>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
 </div>
 </div>
 </div>
