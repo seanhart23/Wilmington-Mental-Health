@@ -1,7 +1,7 @@
 <style>
 
 .about {
-	background-color: #00314A !important;
+	background-color: #344A53 !important;
 }
 
 .about button:hover {
@@ -22,7 +22,7 @@
 }
 
 .book {
-	background-color: #907159 !important;
+	background-color: #F69333 !important;
 	margin-left: 5px;
 }
 
@@ -36,71 +36,74 @@
 	background: rgba(0,0,0,.4);
 	height: 100%;
 	width: 100%;
-	z-index: 0;
+	z-index: 1;
 	top: 0;
 	left: 0;
 }
 
 .jumbotron {
-	/*background-image: url('https://livewp.site/wp/md/optima/wp-content/uploads/sites/15/2018/01/home_bg1-1.jpg?id=44');*/
 	background-image: url('./images/group.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 70vh;
 	width: 100%;
 	margin-bottom: 0px;
 	position: relative;
 	text-align: center;
 	border-radius: 0px;
-	position: relative;
-	/*z-index: 0;*/
+	z-index: 0;
+	padding: 100px 0px;
 }
 
 .jumbotron button {
 	height: 50px;
 	margin-right: 25px;
 	background-color: #4eaac8;
-	z-index: 1;
+	z-index: 2;
 	line-height: 10px;
 }
 
 .jumbotron button:hover {
 	background: #4EAAC8 !important; 
 	transition: background .5s ease;
-
+	z-index: 2;
+	position: relative;
 }
 
 .main-text {
-	font-size: 45px;
+	font-size: 50px;
 	color: white;
-	margin-top: 150px;
 	font-weight: 500;
-	text-align: left;
+	text-align: center;
 	width: auto;
 	z-index: 1;
+	position: relative;
 }
 
 .sub-text {
 	font-size: 20px;
+	z-index: 1;
+	position: relative;
+	text-transform: uppercase;
 	/*font-style: italic;*/
 }
 </style>
 
 <div class='jumbotron'>
-		<div class='filter'>
-		<div class='alert'>
-			<div class='container'>
-			COVID-19 Update: During the pandemic, we are shifting to telehealth sessions to reduce the spread of COVID-19 and to protect the safety of our patients.</div></div>
+	<div class='filter'></div>
+
+	<div class='alert'>
 		<div class='container'>
-			<div class='main-text'>
-				<div class='sub-text'>Build a brighter future by starting with today</div>
-				Psychotherapy and <br>
-				Substance Abuse Treatment<br>
-				<a href='/whoweare'><button class='about'>About Us</button></a> 
-				<a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind style='background: none'>
-					<button class='book'>Book Now</button>
-				</a>
-			</div>
+		COVID-19 Update: During the pandemic, we are shifting to telehealth sessions to reduce the spread of COVID-19 and to protect the safety of our patients.</div></div>
+
+	<div class='container'>
+		<div class='main-text'>
+			<div class='sub-text'>Build a brighter future by starting with today</div>
+			Psychotherapy and <br>
+			Substance Abuse Treatment<br>
+			<a href='/whoweare'><button class='about'>About Us</button></a> 
+			<a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind style='background: none'>
+			<button class='book'>Book Now</button>
+			</a>
 		</div>
-		</div>
+	</div>
 </div>

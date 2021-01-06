@@ -7,7 +7,7 @@
 
 .background-alt {
 	background-color: #f6f8f9;
-	padding: 50px 0px 50px 0px !important;
+	/*padding: 50px 0px 50px 0px !important;*/
 	height: 100%;
 }
 
@@ -81,19 +81,19 @@ button {
 
 .shorten-row {
 	width: 90%; 
-	margin: auto;
+	margin: 0px auto;
 }
 
 .section-text {
 	color: #5c656d;
 	font-size: 18px;
-	line-height: 167%;
+	/*line-height: 167%;*/
 	font-weight: 300;
 }
 
 .section-title {
 	font-size: 36px;
-	line-height: 128%;
+	/*line-height: 128%;*/
 	font-weight: 300;
 }
 
@@ -102,6 +102,7 @@ button {
 	margin-bottom: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
 }
 
 .spacer-medium {
@@ -111,7 +112,6 @@ button {
 .sub-title {
 	text-transform: uppercase;
 	font-size: 14px;
-	margin-top: 30px;
 }
 
 .thin {
@@ -134,16 +134,16 @@ button {
   to { transform: translateY(0); }
 }
 
-.slide-in {
+/*.slide-in {
   transform: translateX(250px);
   animation: slide-in 1.8s ease forwards;
 }
 .slide-in:nth-child(odd) {
   animation-duration: 1.6s; /* So they look staggered */
-}
+}*/
 
-@keyframes slide-in {
+/*@keyframes slide-in {
   to { transform: translateX(0); }
 }
 
-
+*/

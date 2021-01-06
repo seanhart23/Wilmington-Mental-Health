@@ -1,9 +1,43 @@
-<style>
+<script>
+	    function technique(n) {
+                var change = document.getElementById(n);
+                if (change.innerHTML == "<i class="fas fa-plus"></i>")
+                {
+                    change.innerHTML = "<i class="fas fa-minus"></i>";
+                }
+                else {
+                    change.innerHTML = "<i class="fas fa-plus"></i>";
+                }
+            }
+
+        </script>
+
+        <style>
 
 #techniques {
-	margin-bottom: 100px;
-	background: #f6f8f9;
-	padding-top: 75px;
+	background: #00314A;
+	/*color: white;*/
+	padding-top: 55px;
+	padding-bottom: 55px;
+}
+
+#techniques .card {
+	/*background: none;*/
+	margin-bottom: 5px;
+}
+#myUL button {
+	padding-left: 0px !important;
+}
+#techniques .section-text {
+	color: black;
+}
+
+#techniques .section-title {
+	color: white;
+}
+
+#technique-header {
+
 }
 
 #techniques hr {
@@ -43,6 +77,8 @@
 
 .technique-header {
 	font-size: 30px;
+	color: white;
+	margin-top: 30px;
 }
 
 .technique-title {
@@ -61,66 +97,57 @@
 	margin-top: 0px;
 }
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 200px;
-  /*border: 1px solid #f1f1f1;*/
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  margin-bottom: 20px;
-  z-index: -1;
+
+#search {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 80%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
 }
 
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  margin-bottom: 20px;
+.search-title {
+	text-align: left;
+	font-size: 20px;
+	/*text-decoration: underline;*/
+	font-weight: 600;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-  z-index: 3;
-  position: relative;
-
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-  /*padding: 0px 10px;*/
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    background: white;
-  	color: black;
-  	box-shadow: 10px 10px 40px lightgray;
-}
-
-/* Style the back side */
-.flip-card-back {
+.sub-description {
+	text-transform: none !important;
 	color: black;
-	transform: rotateY(180deg);
-	width: auto;
-	height: auto;
-	min-height: 100%;
-	min-width: 100%;
-	background-color: white;
-	z-index: 2;
-  	box-shadow: 10px 10px 40px lightgray;
+}
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li button {
+  /*background-color: #eee;*/
+  text-decoration: none; /* Add a hover effect to all links, except for headers */
+  width: 100%;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+#techniques i {
+	float: right;
+	font-size: 40px;
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	z-index: 0;
+	color: #1F4E79 !important;
+}
+
+#techniques .card-header {
+	height: 93px;
 }
 
 </style> 
@@ -129,115 +156,128 @@
 
 <div class='container'>
 <!-- <div class='sub-title'></div> -->
-	<div class='header'>Our <span class='bold'>Techniques</span></div>
+	<div class='section-title center' style='font-size: 42px'>Our <span class='bold'>Techniques</span></div>
 	<hr class='short'>
 </div>
 
+<div class='container'><div class='center'><input type="text" id="search" onkeyup="search()" placeholder="Search..."></div>
 
-<div class='container'>
-	<div class='technique-header'>Commonly Used</div><hr>
-	<div class='row'>
+<div class='technique-header'>Commonly Used</div><hr>
 
-		<div class='col-lg-3' style='z-index: 41'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Cognitive Behavioral Therapy (CBT)</div>
-		
-			      <div class='technique-description'>Your thoughts, emotions, and behaviors are inextricably linked.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Cognitive Behavioral Therapy (CBT)</div>
-			      	<div class='technique-description'>
-			      	<p>CBT is a goal-oriented psychotherapy treatment approach posits that irrational patterns of thinking can adversely affect feelings and behaviors. Therefore, challenging (automatic and "negative") thought patterns can lead to logical and critical thinking. </p>
+<div id="accordion">
 
-			       	<ul>
-						<li>Common exercises:</li>
-						<li>Behavioral experiments</li>
-						<li>Thought records</li>
-						<li>Behavioral activation</li>
+<ul id="myUL">
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header" >
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" onclick="tech('change1')" >
+	          <div class='section-text search-title'>Cognitive Behavioral Therapy (CBT)</div>
+	          	<div class='sub-description'>Your thoughts, emotions, and behaviors are inextricably linked.</div>
+	        </button>
+	        <div id='change1'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse1" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+		      	<p>CBT is a goal-oriented psychotherapy treatment approach posits that irrational patterns of thinking can adversely affect feelings and behaviors. Therefore, challenging (automatic and "negative") thought patterns can lead to logical and critical thinking. </p>
+
+		       	<ul>
+					<li>Common exercises:</li>
+					<li>Behavioral experiments</li>
+					<li>Thought records</li>
+					<li>Behavioral activation</li>
+				</ul>
+
+				<p>"Cognitive therapy seeks to alleviate psychological stresses by correcting faulty conceptions and self-signals. By correcting erroneous beliefs, we can lower excessive reactions". ― Aaron T. Beck</p>
+	      </div>
+	    </div>
+	  </div>
+  </li>
+
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" onclick="tech('change2')">
+	          <div class='section-text search-title'>Rational Emotive Behavior Therapy (REBT)</div>
+	          	<div class='sub-description'>Develop rational thinking to facilitate healthy emotional behavior and expression.</div>
+	        </button>
+	        <div id='change2'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse2" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
+					<p>REBT teaches you to question the validity of distorted and irrational thoughts and consider alternative standpoints. You then learn to evaluate situations more accurately and develop perspectives and habits that enable you to act in helpful, effective ways.</p>
+
+					<p>Common exercises:
+						<ul>
+					<li>Disputing irrational beliefs</li>
+					<li>Imagine the worst</li>
+					<li>Blown out of all proportion</li>
 					</ul>
+					</p>
 
-					<p>"Cognitive therapy seeks to alleviate psychological stresses by correcting faulty conceptions and self-signals. By correcting erroneous beliefs, we can lower excessive reactions". ― Aaron T. Beck</p>
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+					<p>“Too many people are unaware that it is not outer events or circumstances that will create happiness; rather, it is our perception of events and of ourselves that will create, or uncreate, positive emotions.” ― Albert Ellis</p>
+				</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		
-		<div class='col-lg-3' style='z-index: 40'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Rational Emotive Behavior Therapy (REBT)</div>
-		
-			      <div class='technique-description'>Develop rational thinking to facilitate healthy emotional behavior and expression.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Rational Emotive Behavior Therapy (REBT)</div>
-			      	<div class='technique-description'>
-						<p>REBT teaches you to question the validity of distorted and irrational thoughts and consider alternative standpoints. You then learn to evaluate situations more accurately and develop perspectives and habits that enable you to act in helpful, effective ways.</p>
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" onclick="tech('change3')">
+	          <div class='section-text search-title'>Motivational interviewing (MI)</div>
+	          	<div class='sub-description'>Deal with issues surrounding readiness to change behaviors.</div>
+	        </button>
+	        <div id='change3'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-						<p>Common exercises:
-							<ul>
-						<li>Disputing irrational beliefs</li>
-						<li>Imagine the worst</li>
-						<li>Blown out of all proportion</li>
+	    <div id="collapse3" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
+					<p>MI is a directive, client-centered psychotherapy approach used to help you develop behavior change by exploring and resolving your ambivalences about changing.</p>
+
+					<p>Common activities and tools:
+						<ul>
+							<li>Open-ended questions</li>
+							<li>Forming affirmations and reflections</li>
+							<li>Directive reflecting</li>
 						</ul>
-						</p>
+					</p>
 
-						<p>“Too many people are unaware that it is not outer events or circumstances that will create happiness; rather, it is our perception of events and of ourselves that will create, or uncreate, positive emotions.” ― Albert Ellis</p>
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>	
+					<p>“People are the undisputed experts on themselves. No one has been with them longer, or knows them better than they do themselves. In MI, the helper is a companion who typically does less than half of the talking.” ― William R. Miller</p>
+				</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 39'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Motivational interviewing (MI)</div>
-		
-			      <div class='technique-description'>Deal with issues surrounding readiness to change behaviors.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Motivational interviewing (MI)</div>
-			      	<div class='technique-description'>
-						<p>MI is a directive, client-centered psychotherapy approach used to help you develop behavior change by exploring and resolving your ambivalences about changing.</p>
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse4" onclick="tech('change4')">
+	          <div class='section-text search-title'>Solution-Focused Brief Therapy (SFBT) </div>
+	          	<div class='sub-description'>Explore possibilities and new ways of thinking and behaving to resolve problems.</div>
+	        </button>
+	        <div id='change4'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-						<p>Common activities and tools:
-							<ul>
-								<li>Open-ended questions</li>
-								<li>Forming affirmations and reflections</li>
-								<li>Directive reflecting</li>
-							</ul>
-						</p>
-
-						<p>“People are the undisputed experts on themselves. No one has been with them longer, or knows them better than they do themselves. In MI, the helper is a companion who typically does less than half of the talking.” ― William R. Miller</p>
-
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-
-		<div class='col-lg-3' style='z-index: 38'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
-			  
-			      <div class='technique-description'>Explore possibilities and new ways of thinking and behaving to resolve problems.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Solution-Focused Brief Therapy (SFBT)</div>
-			      	<div class='technique-description'>
+	    <div id="collapse4" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 			      	<p>SFBT may help you become aware of your preferred future and develop motivation to move toward that future. SFBT also helps you identify and work toward your goals, set specific and measurable outcome goals, and conceptualize and work through open problems instead of focusing on the presenting problem.</p>
 
 					<p>Common exercises:
@@ -252,26 +292,27 @@
 					<p>“That’s a way to see it and there is also another way to see it” ― Insoo Kim Berg</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='row'>
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse5" onclick="tech('change5')">
+	          <div class='section-text search-title'>Dialectic Behavioral Therapy (DBT) </div>
+	          	<div class='sub-description'>Learn to better express your inner thoughts and feelings.</div>
+	        </button>
+	        <div id='change5'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-		<div class='col-lg-3' style='z-index: 37'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Dialectic Behavioral Therapy (DBT)</div>
-			
-			      <div class='technique-description'>Learn to better express your inner thoughts and feelings.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Dialectic Behavioral Therapy (DBT)</div>
-			      	<div class='technique-description'>
+	    <div id="collapse5" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 			      	<p>DBT helps you accept and deal with the struggles you face in order to live life more fully and efficiently. This technique uses a problem solving and acceptance-based framework — among other strategies — to treat severe and chronic mental health conditions and issues, including borderline personality disorder, suicidal thoughts, self-harming, eating disorders and PTSD.</p>
 
 					<p>Common exercises:
@@ -285,23 +326,27 @@
 					<p>“It is hard to be happy without a life worth living… Of course, all lives are worth living in reality. No life is not worth living. But what is important is that you experience your life as worth living—one that is satisfying, and one that brings happiness.” ― Marsha M. Linehan</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		
-		<div class='col-lg-3' style='z-index: 36'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Eye Movement Desensitization and Reprocessing (EMDR)</div>
-			      <div class='technique-description'>Make new emotional connection with your memories for lasting changes in behavior.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Eye Movement Desensitization and Reprocessing (EMDR)</div>			      	
-				<div class='technique-description'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse6" onclick="tech('change6')">
+	          <div class='section-text search-title'>Eye Movement Desensitization and Reprocessing (EMDR) </div>
+	          	<div class='sub-description'> Make new emotional connection with your memories for lasting changes in behavior.</div>
+	        </button>
+	        <div id='change6'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse6" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>EMDR helps you reprocess traumatic memories in the brain through rapid, rhythmic eye movements and access those traumatic memories and other adverse life experiences to bring them to an adaptive resolution.</p>
 
 						<p>Common techniques:
@@ -316,23 +361,27 @@
 						<p>“Changing the memories that form the way we see ourselves also changes the way we view others. Therefore, our relationships, job performance, what we are willing to do or are able to resist, all move in a positive direction.” ― Francine Shapiro</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>	
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 35'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Biofeedback</div>
-			  
-			      <div class='technique-description'>Measure your brain’s electrical and physiological activity processes.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Biofeedback</div>
-			      	<div class='technique-description'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse7" onclick="tech('change7')">
+	          <div class='section-text search-title'>Biofeedback</div>
+	          	<div class='sub-description'>Measure your brain’s electrical and physiological activity processes.</div>
+	        </button>
+	        <div id='change7'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse7" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        				      	<div class='technique-description'>
 						<p>Biofeedback helps you gain greater awareness of many physiological functions happening in your own body - by using electronic instruments - with the goal of being able to manipulate your body's systems at your own discretion.</p>
 
 						<p>Types of biofeedback
@@ -349,45 +398,41 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 34'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Trauma-Informed Therapy </div>
-			 
-			      <div class='technique-description'>Need Description</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Trauma-Informed Therapy</div>
-			      	<div class='technique-description'>
-			      	Need Description
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse8" onclick="tech('change8')">
+	          <div class='section-text search-title'>Trauma-Informed Therapy </div>
+	        </button>
+	        <!-- <div id='change8'><i class="fas fa-plus"></i></div> -->
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+	    
+	  </div>
+  </li>
 
-	<div class='row'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse9" onclick="tech('change9')">
+	          <div class='section-text search-title'>Family Therapy </div>
+	          	<div class='sub-description'>Develop and maintain a healthy, functional family.</div>
+	        </button>
+	        <div id='change9'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-		<div class='col-lg-3' style='z-index:33'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Family Therapy</div>
-			
-			      <div class='technique-description'>Develop and maintain a healthy, functional family.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Family Therapy</div>
+	    <div id="collapse9" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
 			      	<div class='technique-description'>
 			      	<p>This form of psychotherapy includes your entire family and helps improve the communication patterns between family members creating changes that address the health and functioning of the family.</p>
 
@@ -402,43 +447,42 @@
 					<p>“A securely attached child will store an internal working model of a responsive, loving, reliable care-giver, and of a self that is worthy of love and attention and will bring these assumptions to bear on all other relationships.” ― John Bowlby</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li class='searchli'>
 
-		
-		<div class='col-lg-3' style='z-index: 32'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Interpersonal Therapy</div>
-			      <div class='technique-description'>Need Description</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Interpersonal Therapy</div>			      	
-				<div class='technique-description'>
-						Need Description
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse10" onclick="tech('change10')">
+	          <div class='section-text search-title'>Interpersonal Therapy</div>
+	        </button>
+	        <!-- <div id='change10'><i class="fas fa-plus"></i></div> -->
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>	
+	   
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 31'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Person-Centered Therapy</div>
-			  
-			      <div class='technique-description'>Change achieved by emphasizing concern, care and interest.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Person-Centered Therapy</div>
-			      	<div class='technique-description'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse11" onclick="tech('change11')">
+	          <div class='section-text search-title'>Person-Centered Therapy </div>
+	          	<div class='sub-description'>Change achieved by emphasizing concern, care and interest.</div>
+	        </button>
+	        <div id='change11'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse11" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>This non-directive therapy approach can help you reach self-awareness by enabling you to take full control of the “steering wheel” during your treatment while your therapist provides full support and acceptance.</p>
 
 						<p>Common techniques:<ul>
@@ -452,22 +496,26 @@
 						<p>“When you are in psychological distress and someone really hears you without passing judgement on you, without trying to take responsibility for you, without trying to mold you, it feels damn good!.” – Carl Rogers<p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 30'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Integrative Internal Family Systems Therapy (IFS)</div>
-			 
-			      <div class='technique-description'>Insight, support, and wisdom to help families grow stronger and more cohesive</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Integrative Internal Family Systems Therapy (IFS)</div>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse13" onclick="tech('change12')">
+	          <div class='section-text search-title'>Integrative Internal Family Systems Therapy (IFS)</div>
+	          	<div class='sub-description'> Insight, support, and wisdom to help families grow stronger and more cohesive</div>
+	        </button>
+	        <div id='change12'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse13" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
 			      	<div class='technique-description'>
 			      	<p>IFS encourages you to bring your family into treatment and helps improve communication and resolve conflict constructively, which in turns promotes an overall sense of well-being for all members of the family.</p>
 
@@ -484,25 +532,28 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-	<div class='row'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse14" onclick="tech('change13')">
+	          <div class='section-text search-title'>Emotionally Focused Therapy (EFT) </div>
+	          	<div class='sub-description'>Use your emotions as a source of healing and insight.</div>
+	        </button>
+	        <div id='change13'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-		<div class='col-lg-3' style='z-index: 29'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Emotionally Focused Therapy (EFT)</div>
-			
-			      <div class='technique-description'>Use your emotions as a source of healing and insight.</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Emotionally Focused Therapy (EFT)</div>
+	    <div id="collapse14" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        			
+			 
 			      	<div class='technique-description'>
 			      	<p>EFT helps you look at patterns in your relationship and how they impact your ability to create healthy and secure bonds so that you learn to develop more trust and move in a positive direction in your relationship. </p>
 
@@ -518,23 +569,27 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		
-		<div class='col-lg-3' style='z-index: 28'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Anger Management</div>
-			      <div class='technique-description'>Identify stressors, remain calm, and handle tense situations in a positive and constructive manner.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Anger Management</div>			      	
-				<div class='technique-description'>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse15" onclick="tech('change14')">
+	          <div class='section-text search-title'>Anger Management </div>
+	          	<div class='sub-description'>Identify stressors, remain calm, and handle tense situations in a positive and constructive manner.</div>
+	        </button>
+	        <div id='change14'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse15" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        					<div class='technique-description'>
 						<p>Our program will help you control and change how you feel about and behave in life situations. You will learn learning ways of coping with negative emotions in a constructive way, how to examine your triggers, adjust how you look at situations, and express your anger and frustration more positively.<p>  
 
 						<p>Common Techniques:<ul>
@@ -550,87 +605,69 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>	
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 27'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Gottman Method</div>
-			  
-			      <div class='technique-description'>Need Description</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Gottman Method</div>
-			      	<div class='technique-description'>
-						Need Description
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse16">
+	          <div class='section-text search-title'>Gottman Method</div>
+	        </button>
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	    
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 26'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Guided Therapeutic Imagery</div>
-			 
-			      <div class='technique-description'>Need Description</div>
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Guided Therapeutic Imagery</div>
-			      	<div class='technique-description'>
-			      	Need Description
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse17">
+	          <div class='section-text search-title'>Guided Therapeutic Imagery</div>
+	        </button>
+	      </h5>
+	    </div>
 
+	    
+	  </div>
+  </li>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse18">
+	          <div class='section-text search-title'>Exposure Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
 
-		<div class='row'>
+	    
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 25'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Exposure Therapy</div>
-			
-			      Need Description
-			    </div>
-			    <div class="flip-card-back">
-			      <div class='technique-title'>Exposure Therapy</div>
-			      	<div class='technique-description'>
-			      	Need Description
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse19" onclick="tech('change15')">
+	          <div class='section-text search-title'>Critical Incident Stress Management </div>
+	          	<div class='sub-description'>Immediate support after a traumatic event has occurred to reduce long-term consequences.</div>
+	        </button>
+	        <div id='change15'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-
-		
-		<div class='col-lg-3' style='z-index: 24'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Critical Incident Stress Management</div>
-			      <div class='technique-description'>Immediate support after a traumatic event has occurred to reduce long-term consequences.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
+	    <div id="collapse19" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
 
 						<p>Examples of a Critical Incident include but are not limited to:
@@ -644,41 +681,92 @@
 				</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>	
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='col-lg-3' style='z-index: 23'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Psychotherapy</div>
-			      <div class='technique-description'>Address your mental, emotional, and behavioral problems.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Psychotherapy</div>			      	
-				<div class='technique-description'>
-					Psychotherapy can help you assess your coping skills and promote healthier lifestyles. Our therapists will guide you through the process of identifying and correcting unhelpful thoughts and behaviors.
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse20" onclick="tech('change16')">
+	          <div class='section-text search-title'>Psychotherapy </div>
+	          	<div class='sub-description'>Address your mental, emotional, and behavioral problems.</div>
+	        </button>
+	        <div id='change16'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	    <div id="collapse20" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        		        	<div class='technique-description'>
 
-		<div class='col-lg-3' style='z-index: 22'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Conflict Resolution Therapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <!-- <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
+	        	Psychotherapy can help you assess your coping skills and promote healthier lifestyles. Our therapists will guide you through the process of identifying and correcting unhelpful thoughts and behaviors.
+	        </div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse21">
+	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse22">
+	          <div class='section-text search-title'>Whole-Patient Approach (Medication Assisted Treatment)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse23">
+	          <div class='section-text search-title'>Imago Relationship Therapy (IRT)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse24" onclick="tech('change17')">
+	          <div class='section-text search-title'>Life Coaching</div>
+	        </button>
+	        <div id='change17'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse24" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        					<div class='technique-description'>
 						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
 
 						<p>Examples of a Critical Incident include but are not limited to:
@@ -692,154 +780,46 @@
 				</p>
 
 					</div>
-			    </div> -->
-			  <!-- </div> -->
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-
-	</div>
-
-	<div class='row'>
-
-		<div class='col-lg-3' style='z-index: 21'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Whole-Patient Approach (Medication Assisted Treatment)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <!-- <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
-						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
-
-						<p>Examples of a Critical Incident include but are not limited to:
-							<ul>
-						<li>Serious workplace injuries or accidents</li>
-						<li>Death of a co-worker or family member</li>
-						<li>Assaults, violent acts, or threats in the workplace</li>
-						<li>Suicide of an employee</li>
-						<li>Traumatic family or work events</li>
-					</ul>
-				</p>
-
-					</div>
-			    </div> -->
-			  <!-- </div> -->
-			</div>
-		</div>
-
-		<div class='col-lg-3' style='z-index: 20'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Imago Relationship Therapy (IRT)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <!-- <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
-						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
-
-						<p>Examples of a Critical Incident include but are not limited to:
-							<ul>
-						<li>Serious workplace injuries or accidents</li>
-						<li>Death of a co-worker or family member</li>
-						<li>Assaults, violent acts, or threats in the workplace</li>
-						<li>Suicide of an employee</li>
-						<li>Traumatic family or work events</li>
-					</ul>
-				</p>
-
-					</div>
-			    </div> -->
-			  <!-- </div> -->
-			</div>
-		</div>
-
-		<div class='col-lg-3' style='z-index: 19'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Life Coaching</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
-						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
-
-						<p>Examples of a Critical Incident include but are not limited to:
-							<ul>
-						<li>Serious workplace injuries or accidents</li>
-						<li>Death of a co-worker or family member</li>
-						<li>Assaults, violent acts, or threats in the workplace</li>
-						<li>Suicide of an employee</li>
-						<li>Traumatic family or work events</li>
-					</ul>
-				</p>
-
-					</div>
-			    </div>
-			  <!-- </div> -->
-			</div>
-		</div>
-
-
-
-	</div>
 
 	<div class='technique-header'>Service Coordination and Referrals</div><hr>
 
-	<div class='row'>
-				<div class='col-lg-3' style='z-index: 18'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Conflict Resolution Therapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <!-- <div class="flip-card-back">
-				<div class='technique-title'>Critical Incident Stress Management</div>			      	
-				<div class='technique-description'>
-						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse25">
+	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
 
-						<p>Examples of a Critical Incident include but are not limited to:
-							<ul>
-						<li>Serious workplace injuries or accidents</li>
-						<li>Death of a co-worker or family member</li>
-						<li>Assaults, violent acts, or threats in the workplace</li>
-						<li>Suicide of an employee</li>
-						<li>Traumatic family or work events</li>
-					</ul>
-				</p>
-
-					</div>
-			    </div> -->
-			  <!-- </div> -->
-			</div>
-		</div>
-	</div>
+	    
+	  </div>
+  </li>
 
 	<div class='technique-header'>Complementary & Alternative Treatment</div><hr>
 
-	<div class='row'>
-		<div class='col-lg-3' style='z-index: 17'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Mindfulness-Based Cognitive Behavioral Therapy</div>
-			      <div class='technique-description'>Turn towards the present moment.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Mindfulness-Based Cognitive Behavioral Therapy</div>			      	
-				<div class='technique-description'>
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse26" onclick="tech('change18')">
+	          <div class='section-text search-title'>Mindfulness-Based Cognitive Behavioral Therapy </div>
+	          	<div class='sub-description' style='text-align: left'>Turn towards the present moment.</div>
+	        </button>
+	        <div id='change18'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse26" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        					<div class='technique-description'>
 						<p>Learn to reach a state of focused awareness, live in the present moment, and respond more effectively to life's challenges. This technique can also help you accept, rather than change, your feelings, and thoughts about the life challenges you may be experiencing.</p>
 
 						<p>Common exercises:<ul>
@@ -851,25 +831,31 @@
 						<p>“Mindfulness practice means that we commit fully in each moment to be present; inviting ourselves to interface with this moment in full awareness, with the intention to embody as best we can an orientation of calmness, mindfulness, and equanimity right here and right now.” ― Jon Kabat-Zinn</p>
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
+
+
 	<div class='technique-header'>Other Methods We May Use</div><hr>
 
-	<div class='row'>
-		<div class='col-lg-3' style='z-index: 16'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Reality Therapy</div>
-			      <div class='technique-description'>All humans have five basic needs: Survival, love and belonging, power, freedom, and fun.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Reality Therapy</div>			      	
-				<div class='technique-description'>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse27" onclick="tech('change19')">
+	          <div class='section-text search-title'>Reality Therapy</div>
+	          	<div class='sub-description'>All humans have five basic needs: Survival, love and belonging, power, freedom, and fun.</div>
+	        </button>
+	        <div id='change19'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse27" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>Reality therapy helps you understand that almost all behaviors are chosen and focus on present issues and by changing the behaviors that prevent you from addressing those issues. Psychological distress is seen as the outcome of not meeting five basic psychological needs: power, love/belonging, freedom, fun and survival.</p>
 
 						<p>Common exercises:<ul>
@@ -883,39 +869,29 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 15'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Psychodrama</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 14'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Gestalt Therapy</div>
-			      <div class='technique-description'>Become aware of the here and now and accept responsibility for yourself.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Gestalt Therapy</div>			      	
-				<div class='technique-description'>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse28" onclick="tech('change20')">
+	          <div class='section-text search-title'>Gestalt Therapy </div>
+	          	<div class='sub-description'>Become aware of the here and now and accept responsibility for yourself.</div>
+	        </button>
+	        	        <div id='change20'><i class="fas fa-plus"></i></div>
+
+	      </h5>
+	    </div>
+
+	    <div id="collapse28" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<!-- <div class='technique-description'> -->
 						<p>Gestalt therapy helps you and focus on the present and how you feel about it, paying close attention to your personal life, awareness, attitude, and perceptions rather than your interpretations.</p>
 
 						<p>Common exercises:<ul>
@@ -927,22 +903,29 @@
 						<p>“I do my thing and you do your thing. I am not in this world to live up to your expectations, and you are not in this world to live up to mine. You are you, and I am I, and if by chance we find each other, it's beautiful. If not, it can't be helped.” ― Fritz Perls</p>
 
 
-					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 13'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Existential Therapy</div>
-			      <div class='technique-description'>Free will, self-determination, and the search for meaning.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Existential Therapy</div>			      	
-				<div class='technique-description'>
+					<!-- </div> -->
+	      	</div>
+	    </div>
+	  </div>
+  </li>
+
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse29" onclick="tech('change21')">
+	          <div class='section-text search-title'>Existential Therapy </div>
+	          	<div class='sub-description'>Free will, self-determination, and the search for meaning.</div>
+	        </button>
+	        <div id='change21'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse29" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>This therapy style helps you look at yourself from a philosophical standpoint and explore your condition as a human being, your existence in this planet, and your capacities to explore the meaning of life.</p>
 
 						<p>Main ideas:<ul>
@@ -956,24 +939,28 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-		<div class='row'>
-		<div class='col-lg-3' style='z-index: 12'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Narrative Therapy</div>
-			      <div class='technique-description'>Create meaning through the stories you share.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Narrative Therapy</div>			      	
-				<div class='technique-description'>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse30" onclick="tech('change22')">
+	          <div class='section-text search-title'>Narrative Therapy </div>
+	          	<div class='sub-description'>Create meaning through the stories you share.</div>
+	        </button>
+	        <div id='change22'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse30" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>Narrative therapy helps you identify your skills, values, and knowledge, and interpret your experiences as stories that give meaning to your life and guide it.</p>
 
 						<p>Common exercises:<ul>
@@ -987,21 +974,28 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 11'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Christian Counseling</div>
-			      <div class='technique-description'>Combine your faith with the principles of psychology.</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Christian Counseling</div>			      	
-				<div class='technique-description'>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
+
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse31" onclick="tech('change23')">
+	          <div class='section-text search-title'>Christian Counseling </div>
+	          	<div class='sub-description'> Combine your faith with the principles of psychology.</div>
+	        </button>
+	        <div id='change23'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse31" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>Christian counseling is applied as a form of therapy that emphasizes spirituality to help you overcome life’s challenges and enhance your mental and emotional health.</p>
 
 						<p>Common principles:<ul>
@@ -1015,205 +1009,173 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 10'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Journal Therapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 9'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Logotherapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
 
-					<!-- </div> -->
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
-		<div class='row'>
-		<div class='col-lg-3' style='z-index: 8'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Motivational Enhancement Therapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Journal Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 7'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Compassion Focused Therapy</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+	    
+	  </div>
+  </li>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 6'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Core Process Psychotherapy (CPP)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 5'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Client-Directed Outcome-Informed Therapy (CDOI)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Logotherapy</div>
+	        </button>
+	      </h5>
+	    </div>
 
-					</div>
-			    </div>
-			  <!-- </div> -->
-			</div>
-		</div>
-	</div>
-		<div class='row'>
-		<div class='col-lg-3' style='z-index: 4'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Discernment Counseling</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+	    
+	  </div>
+  </li>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 3'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Dyadic Developmental Psychotherapy (DDP)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 2'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Emotional Freedom Technique</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Motivational Enhancement Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
 
-					</div>
-			    <!-- </div> -->
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 1'>
-			<!-- <div class="flip-card"> -->
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Pragmatic-Existential Therapy for Couples (PET-C)</div>
-			      <div class='technique-description'></div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'></div>			      	
-				<div class='technique-description'>
-						
+	    
+	  </div>
+  </li>
 
-					<!-- </div> -->
-			    </div>
-			  </div>
-			</div>
-		</div>
-		<div class='col-lg-3' style='z-index: 0'>
-			<div class="flip-card">
-			  <div class="flip-card-inner">
-			    <div class="flip-card-front">
-			      <!-- <img src="img_avatar.png" alt="Avatar"> -->
-			      <div class='technique-title'>Schema Therapy</div>
-			      <div class='technique-description'>Develop a better sense of self-worth and adequacy</div>
-			    </div>
-			    <div class="flip-card-back">
-				<div class='technique-title'>Schema Therapy</div>			      	
-				<div class='technique-description'>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Compassion Focused Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Core Process Psychotherapy (CPP)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Client-Directed Outcome-Informed Therapy (CDOI)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Discernment Counseling</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Dyadic Developmental Psychotherapy (DDP)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Emotional Freedom Technique</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	   
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Pragmatic-Existential Therapy for Couples (PET-C)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse36" onclick="tech('change24')">
+	          <div class='section-text search-title'>Schema Therapy </div>
+	          	<div class='sub-description'>Develop a better sense of self-worth and adequacy</div>
+	        </button>
+	        <div id='change24'><i class="fas fa-plus"></i></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse36" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
 						<p>Schema therapy can help you identify thoughts and actions that may be causing or exacerbating your mental health symptoms by integrating and expanding on CBT through exploration of emotions, maladaptive coping methods, and the origin of mental health concerns.</p>
 
 						<p>Common exercises:<ul>
@@ -1226,11 +1188,29 @@
 
 
 					</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
 	</div>
+</ul>
+
+
+
+		
+
+
+
+<!----------------------------------------->
+
+
+
+
+
+
+
+
+
 
 </div>
 </div>
@@ -1244,91 +1224,5 @@
 
 
 
-		<!-- <div class='col-lg-5'>
-			<ul class="nav nav-pills flex-column">
-			  	<div class='technique-title-first'>Commonly Used</div>
-			  	<li><a data-toggle="pill" href="#cbt">Cognitive Behavioral Therapy (CBT)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#rebt">Rational Emotive Behavior Therapy (REBT)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#mi">Motivational interviewing (MI)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#sfbt">Solution-Focused Brief Therapy (SFBT)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#dbt">Dialectic Behavioral Therapy (DBT)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#emdr">Eye Movement Desensitization and Reprocessing (EMDR)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#bio">Biofeedback</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#trauma">Trauma-Informed Therapy </a><i class="fas fa-chevron-right"></i></li>
-				<li><div href="#family">Family Therapy</div></li>
-				<li><div href="#interpersonal">Interpersonal Therapy</div></li>
-				<li><div href="#conflict">Conflict Resolution Therapy</div></li>
-				<li><div href="#person">Person-Centered Therapy</div></li>
-				<li><a data-toggle="pill" href="#ifs">Integrative Internal Family Systems Therapy (IFS)<i class="fas fa-chevron-right"></i></a></li>
-				<li><a data-toggle="pill" href="#eft">Emotionally Focused Therapy (EFT)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#anger">Anger Management</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#matrix">The Matrix Model</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#medication">Medication Assisted Treatment (Whole-Patient Approach)</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#gottman">Gottman Method</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#guided">Guided Therapeutic Imagery</a><i class="fas fa-chevron-right"></i></li>
-				<li><div href="#irt">Imago Relationship Therapy (IRT)</div></li>
-				<li><a data-toggle="pill" href="#exposure">Exposure Therapy</a><i class="fas fa-chevron-right"></i></li>
-				<li><a data-toggle="pill" href="#critical">Critical Incident Stress Management</a><i class="fas fa-chevron-right"></i></li>
-				
-				<div class='technique-title'>Other Techniques We May Use</div>
-				<li><div href="#coach">Life Coaching</div></li>
 
-				<div class='technique-title'>Case Management</div>
-				<li><div href="#service">Service Coordination and Referrals</div></li>
-
-				<div class='technique-title'>Complementary & Alternative Treatment</div>
-				<li><a data-toggle="pill" href="#mindfulness">Mindfulness-Based Cognitive Behavioral Therapy</a><i class="fas fa-chevron-right"></i></li>
-
-				<div class='technique-title'>Other Methods We May Use</div>
-				<li><div href="#reality">Reality Therapy</div></li>
-				<li><div href="#psychodrama">Psychodrama</div></li>
-				<li><div href="#gestalt">Gestalt Therapy</div></li>
-				<li><div href="#existential">Existential Therapy</div></li>
-				<li><div href="#positive">Positive Psychology</div></li>
-				<li><div href="#narrative">Narrative Therapy</div></li>
-				<li><div href="#christian">Christian Counseling</div></li>
-				<li><div href="#journal">Journal Therapy</div></li>
-				<li><div href="#logotherapy">Logotherapy</div></li>
-				<li><div href="#motivational">Motivational Enhancement Therapy</div></li>
-				<li><div href="#compassion">Compassion Focused Therapy</div></li>
-				<li><div href="#cpp">Core Process Psychotherapy (CPP)</div></li>
-				<li><div href="#discernment">Discernment Counseling</div></li>
-				<li><div href="#dyadic">Dyadic Developmental Psychotherapy (DDP)</div></li>
-				<li><div href="#emotional">Emotional Freedom Technique</div></li>
-				<li><div href="#pragmatic">Pragmatic-Existential Therapy for Couples (PET-C)</div></li>
-				<li><div href="#cdoi">Client-Directed Outcome-Informed Therapy (CDOI)</div></li>
-				<li><div href="#attachment">Attachment-Based Life Coaching</div></li>
-				<li><div href="#schema">Schema Therapy</div></li>
-
-			</ul>
-		</div>
-
-
-		<div class='col-lg-7'>
-
-			<div class="tab-content">
-				<div class="tab-pane container active" id="cbt"><div class='technique-name'>Cognitive Behavioral Therapy (CBT)</div></div>
-				<div class="tab-pane container fade" id="rebt"><div class='technique-name'>Rational Emotive Behavior Therapy (REBT)</div></div>
-				<div class="tab-pane container fade" id="mi"><div class='technique-name'>Motivational interviewing (MI)</div></div>
-				<div class="tab-pane container fade" id="sfbt"><div class='technique-name'>Solution-Focused Brief Therapy (SFBT)</div></div>
-				<div class="tab-pane container fade" id="dbt"><div class='technique-name'>Dialectic Behavioral Therapy (DBT)</div></div>
-				<div class="tab-pane container fade" id="emdr"><div class='technique-name'>Eye Movement Desensitization and Reprocessing (EMDR)</div></div>
-				<div class="tab-pane container fade" id="bio"><div class='technique-name'>Biofeedback</div></div>
-				<div class="tab-pane container fade" id="trauma"><div class='technique-name'>Trauma-Informed Therapy</div></div>
-				
-				<div class="tab-pane container fade" id="ifs"><div class='technique-name'>Integrative Internal Family Systems Therapy (IFS)</div></div>
-				<div class="tab-pane container fade" id="eft"><div class='technique-name'>Emotionally Focused Therapy (EFT)</div></div>
-				<div class="tab-pane container fade" id="anger"><div class='technique-name'>Anger Management</div></div>
-				<div class="tab-pane container fade" id="matrix"><div class='technique-name'>The Matrix Model</div></div>
-				<div class="tab-pane container fade" id="medication"><div class='technique-name'>Medication Assisted Treatment (Whole-Patient Approach)</div></div>
-				<div class="tab-pane container fade" id="gottman"><div class='technique-name'>Gottman Method</div></div>
-				<div class="tab-pane container fade" id="guided"><div class='technique-name'>Guided Therapeutic Imagery</div></div>
-				<div class="tab-pane container fade" id="exposure"><div class='technique-name'>Exposure Therapy</div></div>
-				<div class="tab-pane container fade" id="critical"><div class='technique-name'>Critical Incident Stress Management</div></div>
-				<div class="tab-pane container fade" id="mindfulness"><div class='technique-name'>Mindfulness-Based Cognitive Behavioral Therapy</div></div>
-			</div> -->
-
-<!-- 		</div>
-	</div>
-</div>
-</div> -->
+		

@@ -1,5 +1,9 @@
 <style>
 
+.big {
+	font-size: 20px;
+	padding-right: 15px;
+}
 .fa-sort-down {
 	position: absolute;
 	right: 20px;
@@ -26,6 +30,7 @@
 	padding-top: 3px;
 	padding-bottom: 3px;
 	border: none !important;
+	text-align: left !important;
 }
 
 .faq-questions .btn-link {
@@ -34,7 +39,7 @@
 }
 
 .faq-questions {
-	padding: 75px 0px;
+	padding: 55px 0px;
 	background: #f6f8f9;
 }
 
@@ -65,12 +70,12 @@
 				    <div class="card-header" id="headingOne">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						What can I expect in the first session?
-						<i class="fas fa-sort-down"></i>
+						<span id='change1' class='big'>+</span> <span onclick="question('change1')">What can I expect in the first session?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
-				    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+				    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 				      <div class="card-body">
 				        The first step in your session will be to come to terms with the fact that you are worthy in receiving treatment. We will spend time fundamentally learning about each other and whether we are a right fit. We will share information about our professional background, experience, your rights as a patient, fees/insurance claims, and what to expect from therapy. We will also ask you why you have elected to seek treatment at this time and will begin the intake evaluation if we decide to continue.
 				      </div>
@@ -80,8 +85,8 @@
 				    <div class="card-header" id="headingTwo">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				          Do I need a referral before I can see a psychotherapist?
-				          <i class="fas fa-sort-down"></i>
+				          <span id='change2' class='big'>+</span> <span onclick="question('change2')">Do I need a referral before I can see a psychotherapist?</span>
+				          <!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -95,8 +100,8 @@
 				    <div class="card-header" id="headingThree">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						What is the difference between counseling and psychotherapy?
-						<i class="fas fa-sort-down"></i>
+						<span id='change3' class='big'>+</span> <span onclick="question('change3')">What is the difference between counseling and psychotherapy?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -109,8 +114,8 @@
 				    <div class="card-header" id="headingFour">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-						What is the difference between a counselor, psychologist, and psychiatrist?
-						<i class="fas fa-sort-down"></i>
+						<span id='change4' class='big'>+</span> <span onclick="question('change4')">What is the difference between a counselor, psychologist, and psychiatrist?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -123,8 +128,8 @@
 				    <div class="card-header" id="headingFive">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-						Do you accept insurance?
-						<i class="fas fa-sort-down"></i>
+						<span id='change5' class='big'>+</span> <span onclick="question('change5')">Do you accept insurance?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -137,8 +142,8 @@
 				    <div class="card-header" id="headingSix">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-						Is Wilmington Mental Health Contracted with my insurance/behavioral health plan?
-						<i class="fas fa-sort-down"></i>
+						<span id='change6' class='big'>+</span> <span onclick="question('change6')">Is Wilmington Mental Health Contracted with my insurance/behavioral health plan?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -151,8 +156,8 @@
 				    <div class="card-header" id="headingSeven">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style='text-align: left'>
-						Is there a specific list of diagnoses for which services are covered? If so, is my diagnosis one of those covered by my policy?
-						<i class="fas fa-sort-down"></i>
+						<span id='change7' class='big'>+</span> <span onclick="question('change7')">Is there a specific list of diagnoses for which services are covered? If so, is my diagnosis one of those covered by my policy?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -165,8 +170,8 @@
 				    <div class="card-header" id="headingEight">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-						Are there dollar limits, visit limits or other coverage limits for my mental health benefits? 
-						<i class="fas fa-sort-down"></i>
+						<span id='change8' class='big'>+</span> <span onclick="question('change8')">Are there dollar limits, visit limits or other coverage limits for my mental health benefits? </span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -179,8 +184,8 @@
 				    <div class="card-header" id="headingNine">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-						What is the difference in the amount paid or percent reimbursement for "in network" vs. "out of network" providers?
-						<i class="fas fa-sort-down"></i>
+						<span id='change9' class='big'>+</span> <span onclick="question('change9')" >What is the difference in the amount paid/percent reimbursement for in network vs. out of network providers?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -193,7 +198,8 @@
 				    <div class="card-header" id="headingfifteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefifteen" aria-expanded="false" aria-controls="collapsefifteen">
-						What if my insurance/behavioral health benefit plan is not contracted with Wilmington Mental Health?<i class="fas fa-sort-down"></i>
+						<span id='change10' class='big'>+</span> <span onclick="question('change10')">What if my insurance/behavioral health benefit plan is not contracted with Wilmington Mental Health?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -206,7 +212,8 @@
 				    <div class="card-header" id="headingsixteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsesixteen" aria-expanded="false" aria-controls="collapsesixteen">
-						What if I still wish to receive treatment?<i class="fas fa-sort-down"></i>
+						<span id='change11' class='big'>+</span> <span onclick="question('change11')">What if I still wish to receive treatment?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -219,8 +226,8 @@
 				    <div class="card-header" id="headingseventeen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseseventeen" aria-expanded="false" aria-controls="collapseseventeen">
-						What do I need to give to my insurance company to prove that I received treatment at WMH?
-						<i class="fas fa-sort-down"></i>
+						<span id='change12' class='big'>+</span> <span onclick="question('change12')">What do I need to give to my insurance company to prove that I received treatment at WMH?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -233,8 +240,8 @@
 				    <div class="card-header" id="headingTen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-						Is psychotherapy confidential?
-						<i class="fas fa-sort-down"></i>
+						<span id='change13' class='big'>+</span> <span onclick="question('change13')">Is psychotherapy confidential?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -247,8 +254,8 @@
 				    <div class="card-header" id="headingEleven">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-						Does psychotherapy work?
-						<i class="fas fa-sort-down"></i>
+						<span id='change14' class='big'>+</span> <span onclick="question('change14')">Does psychotherapy work?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -261,8 +268,8 @@
 				    <div class="card-header" id="headingTwelve">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-						How does psychotherapy work?
-						<i class="fas fa-sort-down"></i>
+						<span id='change15' class='big'>+</span> <span onclick="question('change15')">How does psychotherapy work?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -275,8 +282,8 @@
 				    <div class="card-header" id="headingTirteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseTirteen">
-						How long does psychotherapy take?
-						<i class="fas fa-sort-down"></i>
+						<span id='change16' class='big'>+</span> <span onclick="question('change16')">How long does psychotherapy take?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -289,7 +296,8 @@
 				    <div class="card-header" id="headineighteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseeighteen" aria-expanded="false" aria-controls="collapseighteen">
-						What if treatment doesn’t seem to be working for me?						<i class="fas fa-sort-down"></i>
+						<span id='change17' class='big'>+</span> <span onclick="question('change17')">What if treatment doesn’t seem to be working for me?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -302,8 +310,8 @@
 				    <div class="card-header" id="headingFourteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
-						What happens when treatment is completed?
-						<i class="fas fa-sort-down"></i>
+						<span id='change18' class='big'>+</span> <span onclick="question('change18')">What happens when treatment is completed?</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -316,7 +324,8 @@
 				    <div class="card-header" id="headingNineteen">
 				      <h2 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
-						How am I able to talk to my loved ones about seeking treatment?						<i class="fas fa-sort-down"></i>
+						<span id='change19' class='big'>+</span> <span onclick="question('change19')">How am I able to talk to my loved ones about seeking treatment?</span>						
+						<!-- <i class="fas fa-sort-down"></i> -->
 				        </button>
 				      </h2>
 				    </div>
@@ -335,4 +344,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

@@ -1,5 +1,7 @@
 <style>
 
+
+
 .button-container {
 	text-align: center;
 	margin-top: 50px;
@@ -41,6 +43,9 @@
 	padding: 10px;
 }
 
+#pricing-section {
+	padding: 55px 0px;
+}
 .price-button {
 	margin-bottom: 50px;
 }
@@ -50,10 +55,15 @@
 }
 </style>
 
+
+<div id='pricing-section'>
 <div class='container'>
+	<div class='section-title center'>Standard Fees and Length of Sessions</div>
 	<div class='button-container main-box'>
-		<button class='price-button' data-toggle="collapse" data-target="#prices">Private Pay Rates and Length of Sessions</button>
+		<button class='price-button' id='toggle' data-toggle="collapse" data-target="#prices" onclick="change()"><span class='big'>+</span> EXPAND FOR MORE DETAILS</button>
 	</div>
+
+
 	<div id="prices" class="collapse in">
 		<div id='standard'>
 
@@ -225,3 +235,5 @@
 	</div>
 </div>
 </div>
+</div>
+

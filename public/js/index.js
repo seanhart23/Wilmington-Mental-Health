@@ -29,16 +29,16 @@ $(window).scroll(function(event) {
   
 });
 
-$(window).scroll(function(event) {
+// $(window).scroll(function(event) {
   
-  $(".slide").each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("slide-in"); 
-    } 
-  });
+//   $(".slide").each(function(i, el) {
+//     var el = $(el);
+//     if (el.visible(true)) {
+//       el.addClass("slide-in"); 
+//     } 
+//   });
   
-});
+// });
 
 /*** Navbar Transition on Scroll ***/
 
@@ -90,4 +90,61 @@ $(document).ready(function () {
 });
 
 
+    
+    function change() {
+                var change = document.getElementById("toggle");
+                if (change.innerHTML == "+ EXPAND FOR MORE DETAILS")
+                {
+                    change.innerHTML = "- EXPAND FOR MORE DETAILS";
+                }
+                else {
+                    change.innerHTML = "+ EXPAND FOR MORE DETAILS";
+                }
+            }
 
+    function question(n) {
+                var change = document.getElementById(n);
+                if (change.innerHTML == "+")
+                {
+                    change.innerHTML = "-";
+                }
+                else {
+                    change.innerHTML = "+";
+                }
+            }
+
+    function tech(p) {
+                var change = document.getElementById(p);
+                if (change.innerHTML == '<i class="fas fa-plus"></i>')
+                {
+                    change.innerHTML = '<i class="fas fa-minus"></i>';
+                }
+                else {
+                    change.innerHTML = '<i class="fas fa-plus"></i>';
+                }
+                console.log('working')
+            }
+
+tech();
+change();
+
+
+function search() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByClassName('searchli');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByClassName("search-title")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
