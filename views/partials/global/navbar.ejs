@@ -195,9 +195,9 @@ nav i {
             <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
             <div class='dropdown-divider'></div>
             <a class="dropdown-item nav-title" href="#">Substance Abuse</a>
-            <a class="dropdown-item sub-item" href="/substance#psychoeducation">Psychoeducation</a>
-            <a class="dropdown-item sub-item" href="/substance#outpatient">Outpatient Care</a>
-            <a class="dropdown-item sub-item" href="/substance#supervision">Clinical Supervision</a>
+            <a class="dropdown-item sub-item" id='psycho' href="/substance#psychoeducation">Psychoeducation</a>
+            <a class="dropdown-item sub-item" id='out' data-id='outpatient' href="/substance#outpatient">Outpatient Care</a>
+            <a class="dropdown-item sub-item" id='super' href="/substance#supervision">Clinical Supervision</a>
           </div>
 
          
@@ -327,6 +327,42 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
+
+$('#out').on('click', function(){
+  $('#outpatient').addClass('active');
+  $('#outpatient').removeClass('fade');
+
+  $('#psychoeducation').removeClass('active');
+  $('#psychoeducation').addClass('fade');
+
+  $('#supervision').removeClass('active');
+  $('#supervision').addClass('fade');
+
+})
+
+$('#psycho').on('click', function(){
+  $('#outpatient').addClass('fade');
+  $('#outpatient').removeClass('active');
+
+  $('#psychoeducation').removeClass('fade');
+  $('#psychoeducation').addClass('active');
+
+  $('#supervision').removeClass('active');
+  $('#supervision').addClass('fade');
+
+})
+
+$('#super').on('click', function(){
+  $('#outpatient').addClass('fade');
+  $('#outpatient').removeClass('active');
+
+  $('#psychoeducation').removeClass('active');
+  $('#psychoeducation').addClass('fade');
+
+  $('#supervision').removeClass('fade');
+  $('#supervision').addClass('active');
+
+})
 
 var myForm = document.getElementById('search');
 myForm.onsubmit = function() {

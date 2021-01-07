@@ -12,7 +12,7 @@
 }
 .navigation li {
 	border: 1px solid lightgray;
-	width: 350px !important;
+	width: 250px !important;
 	margin: 5px;
 	text-align: center;
 	padding: 5px;
@@ -22,29 +22,26 @@
 
 .navigation li:hover {
 	border: 1px solid #4eaac8;
-	width: 350px !important;
-	margin: 5px;
-	text-align: center;
-	padding: 5px;
-	font-size: 15px;
-	transition: font-size 100ms ease-in-out;
+	transition: color 100ms ease-in-out;
 	color: lightgray;
-	text-decoration: none !important;
-	font-weight: 400;
 }
-
 
 .navigation a {
 	color: #4eaac8;
+
 }
 .navigation a:hover {
 	text-decoration: none;
 	color: black;
+	width: 100%;
 }
 
-.navigation ul {
-	margin: auto;
+.expand {
+	width: 100%;
 }
+/*.navigation ul {
+	margin: auto;
+}*/
 
 #individual {
 	color: #5c656d;
@@ -66,12 +63,12 @@
 
 
 <div class='container'>
-	<div class='row' style='margin: 50px auto'>
+	<div class='row' style='margin: 0px auto 55px auto'>
 		<div class='navigation'>
 			<ul class="nav nav-pills flex-row center">
-			<li><a data-toggle="pill" class='active' href="#psychoeducation">Alcohol and Drug Psychoeducation</a></li>
-			<li><a data-toggle="pill" href="#outpatient">Outpatient Care</a></li>
-			<li><a data-toggle="pill" href="#supervision">Clinical Supervision</a></li>
+			<li><a data-toggle="pill" class='active' href="#psychoeducation"><div class='expand'>Alcohol and Drug Psychoeducation</div></a></li>
+			<li><a data-toggle="pill" href="#outpatient"><div class='expand'>Outpatient Care</div></a></li>
+			<li><a data-toggle="pill" href="#supervision"><div class='expand'>Clinical Supervision</div></a></li>
 			</ul>
 		</div>
 	</div>
@@ -80,7 +77,7 @@
 	<div class="tab-content">
 
 		<div class="tab-pane active" id="psychoeducation">
-			<div class='container'><div class='technique-name'>Alcohol and Drug Psychoeducation</div><hr></div>
+			<div class='container'><hr></div>
 			<div class='technique-content'>
 			<%- include('./sa-education.ejs') -%>
 			<%- include('./sa-how.ejs') -%>
@@ -90,7 +87,7 @@
 
 
 		<div class="tab-pane fade" id="outpatient">
-			<div class='container'><div class='technique-name'>Outpatient Care</div><hr></div>
+			<div class='container'><hr></div>
 			<div class='technique-content'>
 			<%- include('./sa-treatment.ejs') -%>
 			<%- include('./sa-boxes.ejs') -%>
@@ -102,7 +99,7 @@
 		
 
 		<div class="tab-pane fade" id="supervision">
-			<div class='container'><div class='technique-name'>Clinical Supervision</div><hr></div>
+			<div class='container'><hr></div>
 			<div class='technique-content'>
 			<%- include('./sa-supervision.ejs') -%>
 			<%- include('./sa-effective.ejs') -%>
@@ -114,3 +111,6 @@
 
 	</div>
 
+<script>
+
+</script>
