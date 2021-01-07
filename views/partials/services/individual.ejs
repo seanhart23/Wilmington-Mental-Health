@@ -1,5 +1,7 @@
 <style>
 
+#individual {
+}
 #individual .section-text {
 	padding: 0px 25px;
 }
@@ -9,8 +11,9 @@
 }
 
 #individual img {
-	margin-top: 15px;
-	width: 100%;
+	margin-top: 0px;
+	width: 95%;
+	box-shadow: 10px 10px 50px gray;
 }
 .treatment-box {
 	text-align: center;
@@ -27,6 +30,8 @@
 	padding: 5px;
 	font-size: 14px;
 	text-decoration: none;
+	background: white;
+	z-index: 100;
 }
 
 .navigation li:hover {
@@ -60,10 +65,16 @@
 	font-size: 18px;
 	line-height: 167%;
 	font-weight: 300;
+	padding: 55px 0px 0px 0px;
+	position: relative;
+}
+
+#individual .section-title {
+	margin-bottom: 55px;
 }
 
 #individual .tab-content {
-	margin: 50px 1em;
+	margin-top: 39px;
 }
 
 .technique-name {
@@ -71,13 +82,39 @@
 	font-weight: 400;
 	color: #4eaac8;
 }
+
+.technique-content {
+	padding: 55px 0px;
+}
+
+#tich {
+	background: white;
+	padding: 55px 55px;
+	background-image: url('./images/plant.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: 55px;
+}
+
+
+#tich .quote {
+	color: white;
+	font-size: 28px;
+	text-align: left;
+}
+
+.hold {
+	position: fixed;
+	top: 70px;
+	z-index: 100;
+}
 </style>
 
 <div id='individual'>
-<div class='header'>Individual <span class='bold'>Therapy</span></div>
+<div class='section-title center'>Individual <span class='bold'>Therapy</span></div>
 <div class='container'>
 	<div class='row' style='width: 99.99%; margin: auto'>
-		<div class='navigation'>
+		<div class='navigation sec-nav'>
 		<ul class="nav nav-pills flex-row">
 		<li><a data-toggle="pill" class='active' href="#trauma">Trauma/PTSD Therapy</a></li>
 		<li><a data-toggle="pill" href="#depression">Depression Therapy</a></li>
@@ -104,8 +141,8 @@
 
 
 				<div class='row'>
-					<dov class='col-lg-6'><img src='./images/trauma.png'>
-					</dov>
+					<div class='col-lg-6'><img src='./images/trauma.png'>
+					</div>
 					<div class='col-lg-6'>
 						<p>Learn to overcome psychological trauma.</p>
 						<p> Trauma exists when a person perceives threat and his/her ability to handle the event has been impaired.</p>
@@ -160,8 +197,8 @@
 			<div class='technique-name'>Depression Therapy</div><hr>
 			<div class='technique-content'>
 				<div class='row'>
-					<dov class='col-lg-6'><img src='./images/depression.png'>
-					</dov>
+					<div class='col-lg-6'><img src='./images/depression.png'>
+					</div>
 					<div class='col-lg-6'>
 						<p>Learn to address persistent feeling of sadness and loss of interest.</p>
 						<p>Depression exist when you experience persistent low mood or loss of interest in activities, which may have a significant impairment in your daily life.</p>
@@ -372,5 +409,21 @@
 		</div>
 	</div>
 	</div>
+
+
+	<div id='tich'>
+		<div class='container'>
+			<div class='quote'>
+			“To think in terms of either pessimism<br>
+			 or optimism oversimplifies the truth.<br>
+			The problem is to see reality as it is.”<br><br>
+			<div style='margin-left: 200px'>Thích Nhất Hạnh</div>
+		</div>
+		</div>
+	</div>
+
+	</div>
+</div>
+
 </div>
 </div>

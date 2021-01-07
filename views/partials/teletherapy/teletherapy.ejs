@@ -2,8 +2,8 @@
 	
 .banner-section {
 	background: #f6f8f9;
-	padding: 25px;
-	margin: 50px 0px;
+	padding: 55px 0px;
+	margin: 0px 0px;
 }
 
 .banner-section-text {
@@ -28,8 +28,11 @@
 	margin-bottom: 10px;
 }
 
+.faq-questions .card-header {
+	background: #f6f8f9!important;
+}
 .faq-questions .card-body {
-	background: #f6f8f9;
+	background: white;
 	border: none;
 	color: #5c656d;
 	font-weight: 300;
@@ -70,13 +73,16 @@
 }
 
 #teletherapy img {
-	width: 100%;
-	margin-top: 25px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	box-shadow: 10px 10px 50px gray;
 }
 
 .teletherapy-faq {
-	background-color: #f6f8f9;
-	padding: 50px 0px;
+	background-color: white;
+	padding: 55px 0px;
 
 }
 
@@ -86,17 +92,32 @@
 	margin-bottom: 20px;
 }
 
+#tips {
+	background: #323E4F;
+	padding: 55px 25px;
+	color: white;
+}
+
+#tips .section-text {
+	color: white;
+}
+
+#title {
+	padding: 35px 0px 55px 0px;
+}
+
 #title .header {
 	margin-bottom: 0px !important;
 }	
 
 #title .sub-title {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 .language {
 	position: absolute;
 	right: 10px;
+	background: #6E59A1;
 }
 #teletherapy .card {
 	margin-bottom: 10px;
@@ -108,14 +129,17 @@
     line-height: 167%;
     font-weight: 300;
 }
+
+
 </style>
+
 
 <div id='teletherapy'>
 	<div class='header'></div>
 	<a href='/teletherapia'><button class='language'>En Espa<span>&#241;</span>ol</button></a>
 	<div id='title'>
 		<div class='sub-title center'>VIRTUAL APPOINTMENTS</div>
-		<div class='header'>Getting Started with <span class='bold'>Teletherapy</span></div>
+		<div class='section-title center'>Getting Started with <span class='bold'>Teletherapy</span></div>
 		<hr>
 	</div>
 
@@ -124,43 +148,57 @@
 		<div class='banner-section-text'>Secure and Convenient - With a patient portal account, you can schedule and change appointments using your laptop or mobile device, attend sessions online and meeting with one of our therapists from anywhere. Therapy has never been easier!</div>
 	</div>
 
-	<div class='container'>
-		<br>
+	<div class='container' style='padding: 55px 0px'>
 
 		<div class='teletherapy-title'>Patient Handout</div>
 		<div class='section-text'>This guide includes basic tips and instructions on how to join a video appointment. There are also answers to Common Questions to make your first video call a success. Please review all sections before your first video appointment and contact us should you have any questions.</div>
 
 		<br>
+		<br>
+		<br>
+		<br>
 
 		<div class='teletherapy-title'>What is Teletherapy/Telehealth?</div>
 		<div class='section-text'>Teletherapy allows us to connect anywhere with secure and convenient appointments that save you time and hassle. There is no need to deal with traffic when you can schedule and attend your appointments directly from a laptop or mobile device. Through audio and video over the internet, you can meet with your clinician on-the-go from your desktop, laptop, tablet, or mobile device (iOS or Android) - it's your choice!</div>
 
+				<br>
+		<br>
+		<br>
 		<br>
 
 		<div class='row'>
+						<div class='col-lg-5'><img src='./images/desk.png'></div>
+
 			<div class='col-lg-7'>
 				<div class='teletherapy-title'>What equipment do I need?</div>
 				<div class='section-text'>How to join on a desktop or laptop computer To participate in Teletherapy appointments from your home, you will need one of the following devices: Desktop computer with a webcam, speakers, a 2.5 GHz processor, and 4 GB of RAM OR Laptop computer with built-in webcam and speakers, a 2.5 GHz processor, and 4 GB of RAM OR Tablet device with built-in webcam and speakers, OR Smartphone with at least iOS 10 or Android 6.0 You must first download Teletherapy by SimplePractice. You will also need an internet connection that is at least 10mbps. For optimal results, a reliable, high-speed internet connection with a bandwidth of at least 10 mbps will minimize connection issues and provide the best quality.</div>
 			</div>
-			<div class='col-lg-5'><img src='./images/desk.png'></div>
 
 		</div>
 
+				<br>
+		<br>
+		<br>
 		<br>
 
 		<div class='row'>
-			<div class='col-lg-5'>
-				<img src='./images/collaborate.png'>
-			</div>
+
 			<div class='col-lg-7'>
 				<div class='teletherapy-title'>How to join on a desktop or laptop computer</div>
 				<div class='section-text'>If you plan to use a desktop or laptop, there is nothing to download prior to your appointment. Here are the steps to join: Approximately 10 minutes before your appointment, you should receive a reminder. For new patients, make sure you have provided your email and or mobile phone number so that we can enable email or text reminders. Click the unique link embedded in the reminder. You may have to copy and paste the link into your web browser. Your video call screen will now open in a new tab. If I have already joined the call, you will see your therapist on the screen. If I have not, you will see yourself. You will also see the Welcome prompt. Click Play Test Sound to test your camera and microphone settings. When you are ready, click Join Video Call. This will take you straight into the video call.</div>
 			</div>
+						<div class='col-lg-5'>
+				<img src='./images/collaborate.png'>
+			</div>
 		</div>
 
+				<br>
 		<br>
-
+		<br>
+		<br>
 		<div class='row'>
+						<div class='col-lg-6'><img src='./images/dog.png'></div>
+
 			<div class='col-lg-6'>
 				<div class='teletherapy-title'>How to join on a smartphone?</div>
 				<div class='section-text'>If you plan to use a mobile device, here are the steps to join:
@@ -173,12 +211,13 @@
 				<li>Please be patient. Your therapist will join momentarily</li>
 			</div>
 			</div>
-			<div class='col-lg-6'><img src='./images/dog.png'></div>
 
 		</div>
 
-		<br>
+	</div>
 
+		<div id='tips'>
+			<div class='container'>
 		<div class='teletherapy-title'>Tips for success</div>
 		<div class='section-text'>
 			<ul>
@@ -187,9 +226,10 @@
 			<li>To use a smartphone to join a video chat, you must first download the Telehealth by SimplePractice app available in the app store for iOS or Android.</li>
 			<li>If you need to cancel or have questions about the appointment, please contact us.</li>
 			</ul>
-		</div>
+		</div></div>
+	</div>
 
-<br>
+
 </div>
 		<div class='teletherapy-faq'>
 		<div class='container'>

@@ -1,16 +1,3 @@
-<script>
-	    function technique(n) {
-                var change = document.getElementById(n);
-                if (change.innerHTML == "<i class="fas fa-plus"></i>")
-                {
-                    change.innerHTML = "<i class="fas fa-minus"></i>";
-                }
-                else {
-                    change.innerHTML = "<i class="fas fa-plus"></i>";
-                }
-            }
-
-        </script>
 
         <style>
 
@@ -25,6 +12,14 @@
 	/*background: none;*/
 	margin-bottom: 5px;
 }
+
+#techniques .card-body {
+		color: #5c656d;
+	font-size: 18px;
+	/*line-height: 167%;*/
+	font-weight: 300;
+}
+
 #myUL button {
 	padding-left: 0px !important;
 }
@@ -34,6 +29,7 @@
 
 #techniques .section-title {
 	color: white;
+	padding-top: 50px;
 }
 
 #technique-header {
@@ -113,12 +109,15 @@
 	text-align: left;
 	font-size: 20px;
 	/*text-decoration: underline;*/
-	font-weight: 600;
+	font-weight: 400;
 }
 
 .sub-description {
 	text-transform: none !important;
-	color: black;
+		color: #5c656d;
+	font-size: 18px;
+	/*line-height: 167%;*/
+	font-weight: 300;
 }
 #myUL {
   /* Remove default list styling */
@@ -150,6 +149,17 @@
 	height: 93px;
 }
 
+#techniques hr {
+	background: white;
+}
+
+.plus {
+	position: absolute;
+	font-size: 50px;
+	right: 20px;
+	top: 15px;
+	font-weight: 300;
+}
 </style> 
 
 <div id='techniques'>
@@ -162,7 +172,7 @@
 
 <div class='container'><div class='center'><input type="text" id="search" onkeyup="search()" placeholder="Search..."></div>
 
-<div class='technique-header'>Commonly Used</div><hr>
+<div class='section-title'>Commonly Used</div><hr>
 
 <div id="accordion">
 
@@ -175,7 +185,7 @@
 	          <div class='section-text search-title'>Cognitive Behavioral Therapy (CBT)</div>
 	          	<div class='sub-description'>Your thoughts, emotions, and behaviors are inextricably linked.</div>
 	        </button>
-	        <div id='change1'><i class="fas fa-plus"></i></div>
+	        <div id='change1'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -204,7 +214,7 @@
 	          <div class='section-text search-title'>Rational Emotive Behavior Therapy (REBT)</div>
 	          	<div class='sub-description'>Develop rational thinking to facilitate healthy emotional behavior and expression.</div>
 	        </button>
-	        <div id='change2'><i class="fas fa-plus"></i></div>
+	        <div id='change2'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -237,7 +247,7 @@
 	          <div class='section-text search-title'>Motivational interviewing (MI)</div>
 	          	<div class='sub-description'>Deal with issues surrounding readiness to change behaviors.</div>
 	        </button>
-	        <div id='change3'><i class="fas fa-plus"></i></div>
+	        <div id='change3'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -270,7 +280,7 @@
 	          <div class='section-text search-title'>Solution-Focused Brief Therapy (SFBT) </div>
 	          	<div class='sub-description'>Explore possibilities and new ways of thinking and behaving to resolve problems.</div>
 	        </button>
-	        <div id='change4'><i class="fas fa-plus"></i></div>
+	        <div id='change4'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -305,7 +315,7 @@
 	          <div class='section-text search-title'>Dialectic Behavioral Therapy (DBT) </div>
 	          	<div class='sub-description'>Learn to better express your inner thoughts and feelings.</div>
 	        </button>
-	        <div id='change5'><i class="fas fa-plus"></i></div>
+	        <div id='change5'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -339,7 +349,7 @@
 	          <div class='section-text search-title'>Eye Movement Desensitization and Reprocessing (EMDR) </div>
 	          	<div class='sub-description'> Make new emotional connection with your memories for lasting changes in behavior.</div>
 	        </button>
-	        <div id='change6'><i class="fas fa-plus"></i></div>
+	        <div id='change6'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -374,7 +384,7 @@
 	          <div class='section-text search-title'>Biofeedback</div>
 	          	<div class='sub-description'>Measure your brain’s electrical and physiological activity processes.</div>
 	        </button>
-	        <div id='change7'><i class="fas fa-plus"></i></div>
+	        <div id='change7'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -403,20 +413,7 @@
 	  </div>
   </li>
 
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse8" onclick="tech('change8')">
-	          <div class='section-text search-title'>Trauma-Informed Therapy </div>
-	        </button>
-	        <!-- <div id='change8'><i class="fas fa-plus"></i></div> -->
-	      </h5>
-	    </div>
 
-	    
-	  </div>
-  </li>
 
     <li class='searchli'>
 	  <div class="card">
@@ -426,7 +423,7 @@
 	          <div class='section-text search-title'>Family Therapy </div>
 	          	<div class='sub-description'>Develop and maintain a healthy, functional family.</div>
 	        </button>
-	        <div id='change9'><i class="fas fa-plus"></i></div>
+	        <div id='change9'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -452,20 +449,7 @@
 	  </div>
   </li class='searchli'>
 
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse10" onclick="tech('change10')">
-	          <div class='section-text search-title'>Interpersonal Therapy</div>
-	        </button>
-	        <!-- <div id='change10'><i class="fas fa-plus"></i></div> -->
-	      </h5>
-	    </div>
 
-	   
-	  </div>
-  </li>
 
     <li class='searchli'>
 	  <div class="card">
@@ -475,7 +459,7 @@
 	          <div class='section-text search-title'>Person-Centered Therapy </div>
 	          	<div class='sub-description'>Change achieved by emphasizing concern, care and interest.</div>
 	        </button>
-	        <div id='change11'><i class="fas fa-plus"></i></div>
+	        <div id='change11'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -501,6 +485,39 @@
 	  </div>
   </li>
 
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse36" onclick="tech('change24')">
+	          <div class='section-text search-title'>Schema Therapy </div>
+	          	<div class='sub-description'>Develop a better sense of self-worth and adequacy</div>
+	        </button>
+	        <div id='change24'><div class='plus'>+</div></div>
+	      </h5>
+	    </div>
+
+	    <div id="collapse36" class="collapse" data-parent="#accordion">
+	      <div class="card-body">
+	        <p class='section-text'>
+	        	<div class='technique-description'>
+						<p>Schema therapy can help you identify thoughts and actions that may be causing or exacerbating your mental health symptoms by integrating and expanding on CBT through exploration of emotions, maladaptive coping methods, and the origin of mental health concerns.</p>
+
+						<p>Common exercises:<ul>
+						<li>Maladaptive schemas</li>
+						<li>Schema modes</li>
+					</ul>
+				</p>
+
+						<p>“Once you can open yourself up to the idea that your defectiveness is not a fact, the healing process can begin to work.” ― Jeffrey E. Young</p>
+
+
+					</div>
+	      	</div>
+	    </div>
+	  </div>
+  </li>
+
     <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
@@ -509,7 +526,7 @@
 	          <div class='section-text search-title'>Integrative Internal Family Systems Therapy (IFS)</div>
 	          	<div class='sub-description'> Insight, support, and wisdom to help families grow stronger and more cohesive</div>
 	        </button>
-	        <div id='change12'><i class="fas fa-plus"></i></div>
+	        <div id='change12'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -545,7 +562,7 @@
 	          <div class='section-text search-title'>Emotionally Focused Therapy (EFT) </div>
 	          	<div class='sub-description'>Use your emotions as a source of healing and insight.</div>
 	        </button>
-	        <div id='change13'><i class="fas fa-plus"></i></div>
+	        <div id='change13'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -582,7 +599,7 @@
 	          <div class='section-text search-title'>Anger Management </div>
 	          	<div class='sub-description'>Identify stressors, remain calm, and handle tense situations in a positive and constructive manner.</div>
 	        </button>
-	        <div id='change14'><i class="fas fa-plus"></i></div>
+	        <div id='change14'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -610,48 +627,7 @@
 	  </div>
   </li>
 
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse16">
-	          <div class='section-text search-title'>Gottman Method</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse17">
-	          <div class='section-text search-title'>Guided Therapeutic Imagery</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse18">
-	          <div class='section-text search-title'>Exposure Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
+    
     <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
@@ -660,7 +636,7 @@
 	          <div class='section-text search-title'>Critical Incident Stress Management </div>
 	          	<div class='sub-description'>Immediate support after a traumatic event has occurred to reduce long-term consequences.</div>
 	        </button>
-	        <div id='change15'><i class="fas fa-plus"></i></div>
+	        <div id='change15'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -694,7 +670,7 @@
 	          <div class='section-text search-title'>Psychotherapy </div>
 	          	<div class='sub-description'>Address your mental, emotional, and behavioral problems.</div>
 	        </button>
-	        <div id='change16'><i class="fas fa-plus"></i></div>
+	        <div id='change16'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -710,12 +686,15 @@
 	  </div>
   </li>
 
+    
+   <div class='section-title'>Case Management</div><hr>
+
     <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
 	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse21">
-	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Service Coordination</div>
 	        </button>
 	      </h5>
 	    </div>
@@ -724,12 +703,12 @@
 	  </div>
   </li>
 
-    <li class='searchli'>
+      <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
 	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse22">
-	          <div class='section-text search-title'>Whole-Patient Approach (Medication Assisted Treatment)</div>
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Referrals</div>
 	        </button>
 	      </h5>
 	    </div>
@@ -738,71 +717,11 @@
 	  </div>
   </li>
 
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse23">
-	          <div class='section-text search-title'>Imago Relationship Therapy (IRT)</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse24" onclick="tech('change17')">
-	          <div class='section-text search-title'>Life Coaching</div>
-	        </button>
-	        <div id='change17'><i class="fas fa-plus"></i></div>
-	      </h5>
-	    </div>
-
-	    <div id="collapse24" class="collapse" data-parent="#accordion">
-	      <div class="card-body">
-	        <p class='section-text'>
-	        					<div class='technique-description'>
-						<p>We can provide short-term psychological assistance by focusing exclusively on an immediate and identifiable problem. This will enable you to return to your daily activities sooner and decrease the change that you develop post-traumatic stress disorder (PTSD)</p>
-
-						<p>Examples of a Critical Incident include but are not limited to:
-							<ul>
-						<li>Serious workplace injuries or accidents</li>
-						<li>Death of a co-worker or family member</li>
-						<li>Assaults, violent acts, or threats in the workplace</li>
-						<li>Suicide of an employee</li>
-						<li>Traumatic family or work events</li>
-					</ul>
-				</p>
-
-					</div>
-	      	</div>
-	    </div>
-	  </div>
-  </li>
 
 
-	<div class='technique-header'>Service Coordination and Referrals</div><hr>
 
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse25">
-	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
 
-	    
-	  </div>
-  </li>
-
-	<div class='technique-header'>Complementary & Alternative Treatment</div><hr>
+	<div class='section-title'>Complementary & Alternative Treatment</div><hr>
 
 <li class='searchli'>
 	  <div class="card">
@@ -812,7 +731,7 @@
 	          <div class='section-text search-title'>Mindfulness-Based Cognitive Behavioral Therapy </div>
 	          	<div class='sub-description' style='text-align: left'>Turn towards the present moment.</div>
 	        </button>
-	        <div id='change18'><i class="fas fa-plus"></i></div>
+	        <div id='change18'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -836,10 +755,6 @@
 	  </div>
   </li>
 
-
-	<div class='technique-header'>Other Methods We May Use</div><hr>
-
-
 <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
@@ -848,7 +763,7 @@
 	          <div class='section-text search-title'>Reality Therapy</div>
 	          	<div class='sub-description'>All humans have five basic needs: Survival, love and belonging, power, freedom, and fun.</div>
 	        </button>
-	        <div id='change19'><i class="fas fa-plus"></i></div>
+	        <div id='change19'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -883,7 +798,7 @@
 	          <div class='section-text search-title'>Gestalt Therapy </div>
 	          	<div class='sub-description'>Become aware of the here and now and accept responsibility for yourself.</div>
 	        </button>
-	        	        <div id='change20'><i class="fas fa-plus"></i></div>
+	        	        <div id='change20'><div class='plus'>+</div></div>
 
 	      </h5>
 	    </div>
@@ -918,7 +833,7 @@
 	          <div class='section-text search-title'>Existential Therapy </div>
 	          	<div class='sub-description'>Free will, self-determination, and the search for meaning.</div>
 	        </button>
-	        <div id='change21'><i class="fas fa-plus"></i></div>
+	        <div id='change21'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -953,7 +868,7 @@
 	          <div class='section-text search-title'>Narrative Therapy </div>
 	          	<div class='sub-description'>Create meaning through the stories you share.</div>
 	        </button>
-	        <div id='change22'><i class="fas fa-plus"></i></div>
+	        <div id='change22'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -988,7 +903,7 @@
 	          <div class='section-text search-title'>Christian Counseling </div>
 	          	<div class='sub-description'> Combine your faith with the principles of psychology.</div>
 	        </button>
-	        <div id='change23'><i class="fas fa-plus"></i></div>
+	        <div id='change23'><div class='plus'>+</div></div>
 	      </h5>
 	    </div>
 
@@ -1014,6 +929,108 @@
 	  </div>
   </li>
 
+
+	<div class='section-title'>Other Methods We May Use</div><hr>
+
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse16">
+	          <div class='section-text search-title'>The Gottman Method</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse23">
+	          <div class='section-text search-title'>Imago Relationship Therapy (IRT)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse18">
+	          <div class='section-text search-title'>Exposure Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+  <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse21">
+	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Compassion Focused Therapy</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+<li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Emotional Freedom Technique</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	   
+	  </div>
+  </li>
+
+
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse17">
+	          <div class='section-text search-title'>Guided Therapeutic Imagery</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
 
 <li class='searchli'>
 	  <div class="card">
@@ -1044,8 +1061,86 @@
 	  </div>
   </li>
 
+    <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse22">
+	          <div class='section-text search-title'>Whole-Patient Approach (Medication Assisted Treatment)</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
+
+ <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Life Coaching</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    <div id="collapse24" class="collapse" data-parent="#accordion">
+	      
+	    </div>
+	  </div>
+  </li>
+
+ <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Positive Psychology</div>
+	        </button>
+	      </h5>
+	    </div>
+
+	    <div id="collapse24" class="collapse" data-parent="#accordion">
+	      
+	    </div>
+	  </div>
+  </li>
+
+   <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse8" onclick="tech('change8')">
+	          <div class='section-text search-title'>Trauma-Informed Therapy </div>
+	        </button>
+	        <!-- <div id='change8'><i class="fas fa-plus"></i></div> -->
+	      </h5>
+	    </div>
+
+	    
+	  </div>
+  </li>
+
 
 <li class='searchli'>
+	  <div class="card">
+	    <div class="card-header">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
+	          <div class='section-text search-title'>Psychodrama</div>
+	        </button>
+	      </h5>
+	    </div>
+
+
+	  </div>
+  </li>
+
+
+
+<!-- <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
 	      <h5 class="mb-0">
@@ -1058,22 +1153,10 @@
 	    
 	  </div>
   </li>
+ -->
 
 
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Compassion Focused Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
+<!-- 
 
 <li class='searchli'>
 	  <div class="card">
@@ -1104,6 +1187,8 @@
 	  </div>
   </li>
 
+
+
 <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
@@ -1132,12 +1217,20 @@
 	  </div>
   </li>
 
-<li class='searchli'>
+
+
+
+
+
+
+
+
+    <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
 	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Emotional Freedom Technique</div>
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse10" onclick="tech('change10')">
+	          <div class='section-text search-title'>Interpersonal Therapy</div>
 	        </button>
 	      </h5>
 	    </div>
@@ -1146,52 +1239,27 @@
 	  </div>
   </li>
 
-<li class='searchli'>
+
+
+
+
+
+
+    <li class='searchli'>
 	  <div class="card">
 	    <div class="card-header">
 	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Pragmatic-Existential Therapy for Couples (PET-C)</div>
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse25">
+	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
 	        </button>
 	      </h5>
 	    </div>
 
-
+	    
 	  </div>
-  </li>
+  </li> -->
 
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse36" onclick="tech('change24')">
-	          <div class='section-text search-title'>Schema Therapy </div>
-	          	<div class='sub-description'>Develop a better sense of self-worth and adequacy</div>
-	        </button>
-	        <div id='change24'><i class="fas fa-plus"></i></div>
-	      </h5>
-	    </div>
-
-	    <div id="collapse36" class="collapse" data-parent="#accordion">
-	      <div class="card-body">
-	        <p class='section-text'>
-	        	<div class='technique-description'>
-						<p>Schema therapy can help you identify thoughts and actions that may be causing or exacerbating your mental health symptoms by integrating and expanding on CBT through exploration of emotions, maladaptive coping methods, and the origin of mental health concerns.</p>
-
-						<p>Common exercises:<ul>
-						<li>Maladaptive schemas</li>
-						<li>Schema modes</li>
-					</ul>
-				</p>
-
-						<p>“Once you can open yourself up to the idea that your defectiveness is not a fact, the healing process can begin to work.” ― Jeffrey E. Young</p>
-
-
-					</div>
-	      	</div>
-	    </div>
-	  </div>
-  </li>
+	
 	</div>
 </ul>
 

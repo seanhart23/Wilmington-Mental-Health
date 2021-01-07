@@ -47,6 +47,8 @@ $(window).scroll(function(){
   $('nav').toggleClass('', $(this).scrollTop() > 100);
   $('.navbar').toggleClass('transparent', $(this).scrollTop() > 100);
   $('.nav-link').toggleClass('nav-link-scrolled', $(this).scrollTop() > 100);
+  $('.scroll-up').toggleClass('scrolled', $(this).scrollTop() > 100);
+  $('.sec-nav').toggleClass('hold', $(this).scrollTop() > 200);
 });
 
 /*** Carousel ***/
@@ -115,12 +117,12 @@ $(document).ready(function () {
 
     function tech(p) {
                 var change = document.getElementById(p);
-                if (change.innerHTML == '<i class="fas fa-plus"></i>')
+                if (change.innerHTML == '<div class="plus">+</div>')
                 {
-                    change.innerHTML = '<i class="fas fa-minus"></i>';
+                    change.innerHTML = '<div class="plus">-</div>';
                 }
                 else {
-                    change.innerHTML = '<i class="fas fa-plus"></i>';
+                    change.innerHTML = '<div class="plus">+</div>';
                 }
                 console.log('working')
             }

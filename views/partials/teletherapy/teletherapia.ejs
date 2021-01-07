@@ -2,7 +2,7 @@
 	
 .banner-section {
 	background: #f6f8f9;
-	padding: 25px;
+	padding: 55px 25px;
 	margin-top: 0px !important;
 }
 
@@ -28,8 +28,11 @@
 	margin-bottom: 10px;
 }
 
+.faq-questions .card-header {
+	background: #f6f8f9!important;
+}
 .faq-questions .card-body {
-	background: #f6f8f9;
+	background: white;
 	border: none;
 	color: #5c656d;
 	font-weight: 300;
@@ -49,6 +52,7 @@
 	text-decoration: none;
 	color: #4eaac8;
 }
+
 
 #teletherapy hr {
 	width: 10%;
@@ -70,13 +74,13 @@
 }
 
 #teletherapy img {
-	width: 100%;
+	width: 90%;
 	margin-top: 25px;
 }
 
 .teletherapy-faq {
-	background-color: #f6f8f9;
-	padding: 50px 0px;
+	background-color: white;
+	padding: 55px 0px;
 
 }
 
@@ -90,13 +94,17 @@
 	margin-bottom: 0px !important;
 }	
 
+#title {
+	padding: 55px 0px;
+}
 #title .sub-title {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 .language {
 	position: absolute;
 	right: 10px;
+	background: #6E59A1;
 }
 
 #teletherapy .card {
@@ -109,10 +117,21 @@
     line-height: 167%;
     font-weight: 300;
 }
+
+#tips {
+	background: #323E4F;
+	padding: 55px 25px;
+	color: white;
+}
+
+#tips .section-text {
+	color: white;
+}
 </style>
 
 <div id='teletherapy'>
-	<div class='header'></div>
+		<div class='header'></div>
+
 		<a href='/teletherapy'><button class='language'>In English</button></a>
 	<div id='title'>
 		<div class='sub-title center'>CITAS VIRTUALES</div>
@@ -120,12 +139,14 @@
 		<hr>
 	</div>
 
+
+
 	<div class='banner-section'>
 		<div class='banner-section-title'>El Método Perfecto Para Nuestro Estilo de Vida Moderno</div>
 		<div class='banner-section-text'>Seguro y conveniente – Con una cuenta para acceder el portal de pacientes puede hacer una cita usando su computadora portátil o dispositivo telefónico, entrar a su cita virtual y comenzar su terapia con unos de nuestros terapistas donde quiera que se encuentre. ¡Recibir terapia nunca había sido tan fácil!</div>
 	</div>
 
-	<div class='container'>
+	<div class='container' style='padding: 55px 0px'>
 		<br>
 
 		<div class='teletherapy-title'>Información</div>
@@ -134,7 +155,10 @@
 		<p>Para prepararse, por favor revise la siguiente información antes de su primera cita de video. Si tiene preguntas después de leer la guía, no dude en comunicarse con nosotros.</p>
 </div>
 
-		<br>
+			<br>
+	<br>
+	<br>
+
 
 		<div class='teletherapy-title'>¿Qué es Telehealth o Teleterapia?</div>
 		<div class='section-text'><p>A través de audio y video puede reunirse con su terapeuta por internet usando su computadora, tableta o móvil (iOS o Android)—¡usted escoge!</p>
@@ -142,7 +166,10 @@
 		<p>Telehealth nos permite conectarnos desde cualquier lugar con citas seguras y convenientes que ahorran tiempo y molestias. No hay necesidad de luchar con el tráfico cuando puede programar y asistir a citas directamente desde su computadora o móvil.</p>
 </div>
 
-		<br>
+			<br>
+	<br>
+	<br>
+
 
 		<div class='row'>
 			<div class='col-lg-7'>
@@ -154,9 +181,6 @@
 				<li>Tableta con cámara web y altavoces</li>
 				<li>Smartphone “teléfono inteligente” (Nota: Para usar un Smartphone, primero debe descargar Telehealth by SimplePractice disponible para iOS o Android en la tienda de aplicaciones)</li>
 				</ol>
-				<p>También necesitará una conexión a internet de al menos 0.35 mbps. Para obtener resultados óptimos, una conexión a internet confiable y de alta velocidad con un ancho de banda de al menos 10-15 mbps minimizará los problemas de conexión y proporcionará la mejor calidad.</p>
-
-				<p>Nota: Recomendamos que utilice esta herramienta para verificar su conexión al internet antes de su cita: <a href='https://video.simplepractice.com/connection-test'>SimplePractice Internet Connection Test</a>.</p>
 				</div>
 			</div>
 			<div class='col-lg-5'><img src='./images/tablet.png'></div>
@@ -164,6 +188,18 @@
 		</div>
 
 		<br>
+	<br>
+	<br>
+		<div class='section-text'>
+		<p>También necesitará una conexión a internet de al menos 0.35 mbps. Para obtener resultados óptimos, una conexión a internet confiable y de alta velocidad con un ancho de banda de al menos 10-15 mbps minimizará los problemas de conexión y proporcionará la mejor calidad.</p>
+
+		<p>Nota: Recomendamos que utilice esta herramienta para verificar su conexión al internet antes de su cita: <a href='https://video.simplepractice.com/connection-test'>SimplePractice Internet Connection Test</a>.</p>
+	</div>
+
+			<br>
+	<br>
+	<br>
+
 
 		<div class='row'>
 
@@ -183,13 +219,19 @@
 
 </div>
 			</div>
-						<div class='col-lg-12'>
+			<div class='row'>
+			<div class='col-lg-2'></div>
+			<div class='col-lg-8'>
 				<img src='./images/video.png'>
 			</div>
+			<div class='col-lg-2'></div>
 		</div>
 
-		<br>
+		</div>
 
+	<br>
+	<br>
+	<br>
 		<div class='row'>
 			<div class='col-lg-6'>
 				<div class='teletherapy-title'>El día de la llamada - ¿Cómo unirse usando un teléfono móvil?</div>
@@ -209,12 +251,13 @@
 				</ol>
 			</div>
 			</div>
-			<div class='col-lg-6'><img src='./images/phone.png'></div>
+			<div class='col-lg-6'><img src='./images/phone.png' style='height: auto !important; width: 75% !important'></div>
 
 		</div>
+</div>
 
-		<br>
-
+		<div id='tips'>
+			<div class='container'>
 		<div class='teletherapy-title'>Consejos Para Una Conexión Exitosa</div>
 		<div class='section-text'>
 			<ul>
@@ -225,13 +268,13 @@
 			<li>Si necesita cancelar su cita o si tiene preguntas sobre su cita, favor de comunicarse conmigo.</li>
 
 			</ul>
-		</div>
+		</div></div>
+	</div>
 
-<br>
 </div>
 		<div class='teletherapy-faq'>
 		<div class='container'>
-		<div class='teletherapy-faq-title'>Common Teletherapy Questions</div>
+		<div class='teletherapy-faq-title'>Preguntas Frecuentes </div>
 		<div class='teletherapy-text'>
 		<div class='faq-questions'>
 		<div class="accordion" id="accordionExample">
@@ -327,13 +370,15 @@
 		      <div class="card-body">
 				<p>Igual como una cita cara-a-cara, su cita de Telehealth es privada y confidencial.</p>
 
-				<p>¡Felicidades! </p>
-				<p>Ahora puede usar Telehealth by SimplePractice.</p>
 
 				</div>
 		    </div>
 		  </div>
-		  
+		  <div class='section-text center'>
+		  	<br>
+				<p>¡Felicidades! </p>
+				<p>Ahora puede usar Telehealth by SimplePractice.</p>
+			</div>
 		</div>
 	</div>
 </div>
