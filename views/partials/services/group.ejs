@@ -1,12 +1,14 @@
 <style>
 
+
 .group-image img {
 	width: 100%;
+	box-shadow: 5px 5px 40px gray;
 }
 
 #individual button {
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 45px;
 }
 
 #individual hr {
@@ -17,6 +19,13 @@
 	padding: 0px 0px;
 }
 
+#individual .section-title {
+	padding: 55px 0px;
+}
+
+#anger .section-title, #worry .section-title, #grief .section-title {
+	padding: 0px;
+}
 .treatment-box {
 	text-align: center;
 }
@@ -26,7 +35,9 @@
 	margin: auto;
 	text-align: center;
 	justify-content: center;
+	margin-bottom: 45px;
 }
+
 .navigation li {
 	border: 1px solid lightgray;
 	width: 250px;
@@ -72,7 +83,7 @@
 }
 
 #individual .tab-content {
-	margin: 50px 1em;
+	margin: 0px 1em;
 }
 
 .technique-name {
@@ -83,7 +94,7 @@
 </style>
 
 <div id='individual'>
-<div class='header'>Group <span class='bold'>Therapy</span></div>
+<div class='section-title center'>Group <span class='bold'>Therapy</span></div>
 <div class='container'>
 	<div class='row' style='width: 99.99%; margin: auto'>
 		<div class='navigation'>
@@ -98,9 +109,9 @@
 		</div>	
 	</div>
 
-<br>
+
 	<div class='row'>
-	<div class='section-text' style='margin: 0px 50px'>
+	<div class='section-text' style='margin: 0px 50px 20px 50px'>
 		<p>Group therapy encourages members of the group to talk about their issues and discuss them as a group. We observe the group dynamic closely and how the group interacts to give participants appropriate feedback regarding their reactions (e.g., behaviors, words). Members of our groups learn skills to address their issues and concerns while evaluating their own worldviews.</p> 
 	</div>
 	</div>
@@ -108,7 +119,7 @@
 	<div class="tab-content">
 		<div class="tab-pane active" id="anger">
 			<!-- <div class='technique-name'>Anger, Violence and Aggression</div> -->
-			<hr>
+			<hr style='padding-bottom: 45px'>
 			<div class='technique-content'>
 				<div class='row'>
 					<div class='col-lg-5'>
@@ -141,10 +152,7 @@
 							</ul>
 						</p>
 						<br>
-						<p style='margin: auto; text-align: center; width: 100%'>
-							<a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global="" data-spwidget-autobind="" style="background: none">
-							<button>Certified Anger Management Class</button>
-						</a></p>
+						
 						<br><br>
 						<p>Common Skills:
 							<ul style='width: 100%'>
@@ -159,6 +167,10 @@
 								<li>Using humor</li>
 							</ul>
 						</p>
+						<p style='margin: auto; text-align: center; width: 100%'>
+							<a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global="" data-spwidget-autobind="" style="background: none">
+							<button>Certified Anger Management Class</button>
+						</a></p>
 					</div>
 				</div>
 	</div>
@@ -180,14 +192,14 @@
 
 		<div class="tab-pane fade" id="worry">
 			<!-- <div class='technique-name'>Why Do I Worry So Much?</div> -->
-			<hr>
+			<hr style='padding-bottom: 45px'>
 			<div class='technique-content'>
 				<div class='row'>
 					<div class='col-lg-5'>
 						<div class='group-image'><img src='./images/tiger.png'></div></div>
 						<div class='col-lg-7'>
 							<div class='group-info'>
-								<div class='sub-title'>IS ANXIETY NOW THE THING</div>
+								<div class='sub-title'>ANXIETY IS AN EMOTION</div>
 								<div class='section-title'>Why do I worry so <span class='bold'>Much?</span></div>
 								<hr class='short'>
 								<div class='section-text'>
@@ -223,7 +235,7 @@
 
 		<div class="tab-pane fade" id="grief">
 			<!-- <div class='technique-name'>Grief, Loss and Trauma</div> -->
-			<hr>
+			<hr style='padding-bottom: 45px'>
 			<div class='technique-content'>
 				<div class='row'>
 					<div class='col-lg-5'>
@@ -270,11 +282,5 @@
 			</div>
 		</div>
 
-		<div class="tab-pane fade" id="relapse">
-			<div class='technique-name'>Relapse Prevention Group</div><hr>
-			<div class='technique-content'>
-				
-			</div>
-		</div>
 </div>
 </div>
