@@ -2,21 +2,22 @@
 
 #basic {
 	background: #E6F4F1 !important;
-	padding: 25px 20px;
+	padding: 55px 15px;
+	height: 100%;
 }
 
 .bigger {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 #certificate {
 	padding: 50px 25px;
-	background-color: #5c656d;
-	color: white;
+	/*background-color: #5c656d;*/
+	/*color: white;*/
 }
 
 #certificate .section-text {
-	color: white;
+	/*color: white;*/
 }
 
 #certificate .image {
@@ -30,7 +31,16 @@
 }
 
 #consider {
-	padding: 0px 0px;
+	padding: 55px 0px;
+}
+
+#destructive {
+	background: #97AFB9;
+	padding: 55px 0px;
+}
+
+#destructive .section-text, #destructive .section-title {
+	color: white;
 }
 
 #anger-tabs img {
@@ -44,16 +54,23 @@
 
 #anger-tabs .nav-link {
 	text-align: center;
-	color: #4EAAC8;
+	color: white;
+	margin-left: 0px;
+	margin-right: 0px;
+	background:  #00314A;
+}
+
+#anger-tabs .nav-tabs .nav-item.show .nav-link, #anger-tabs .nav-tabs .nav-link.active {
+	border: none;
 }
 
 #if {
 	background: #97AFB9 !important;
-	padding: 25px 20px;
+	padding: 55px 15px;
 }
 
 #instructor {
-	padding-bottom: 50px;
+	padding-bottom: 0px;
 }
 
 .instructor-image {
@@ -68,12 +85,9 @@
 	margin: auto;
 }
 .tab-pane {
-	padding: 25px 0px;
+	padding: 0px 0px;
 }
 
-#consider {
-	padding-bottom: 50px;
-}
 #consider .section-text {
 	margin-top: 20px;
 }
@@ -84,18 +98,20 @@
 
 #when td {
 	vertical-align: top;
+	border: 5px solid white;
 }
 
 th {
 	background: #97AFB9;
 	color: white;
 	padding-left: 10px;
+	border: 5px solid white;
 }
 
 #why {
-	background: #00314A !important;
+	background: #806DAE!important;
 	color: white !important;
-	padding: 25px 0px;
+	padding: 55px 0px;
 }
 
 #why .section-text {
@@ -109,54 +125,60 @@ th {
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 
 		  <li class="nav-item">
-		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Why We Have Anger?</a>
+		    <a class="nav-link active" id="home-tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Why We Have Anger?</a>
 		  </li>
 
 		  <li class="nav-item">
-		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Anger Management Certificate</a>
+		    <a class="nav-link active" id="profile-tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style='margin: 0px 10px'>Anger Management Certificate</a>
 		  </li>
 
 		  <li class="nav-item">
-		    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">About the Instructor</a>
+		    <a class="nav-link active" id="contact-tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">About the Instructor</a>
 		  </li>
 
 		</ul>
 
+	</div>
 		<div class="tab-content" id="myTabContent">
 		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-		  	<div id='why'>
-		  		<div class='row'>
-		  		<div class='col-lg-6'><img src='./images/fist.png'></div>
-		  		<div class='col-lg-6'>
-		  			<div class='section-title'>Why we have <span class='bold'>Anger?</span></div>
-		  			<div class='section-text'>
-		  				<p>There are many reasons why anger manifest within us, including:
-		  					<ul>
-								<li>Stress in our lives</li>
-								<li>Sleep deprivation</li>
-								<li>Demands of our jobs</li>
-								<li>Our important needs are not being met</li>
-								<li>Feeling that we are not treated fairly</li>
-								<li>Learning that anger can help us release tension</li>
-								<li>Things are not going the way we want them to</li>
-								<li>Feeling disrespected or not understood by others</li>
-								<li>To manipulate people or situation</li>
-								<li>Not getting our important needs met in situations</li>
-							</ul>
-						</p>
+		  	
+		  		<div id='why'>
+		  			<div class='container'>
+		  				<div class='row'>
+		  					<div class='col-lg-6'><img src='./images/fist.png' style='box-shadow: 5px 5px 40px black'></div>
+					  		<div class='col-lg-6'>
+					  			<div class='section-title'>Why we have <span class='bold'>Anger?</span></div>
+					  			<div class='section-text'>
+					  				<p>There are many reasons why anger manifest within us, including:
+					  					<ul>
+											<li>Stress in our lives</li>
+											<li>Sleep deprivation</li>
+											<li>Demands of our jobs</li>
+											<li>Our important needs are not being met</li>
+											<li>Feeling that we are not treated fairly</li>
+											<li>Learning that anger can help us release tension</li>
+											<li>Things are not going the way we want them to</li>
+											<li>Feeling disrespected or not understood by others</li>
+											<li>To manipulate people or situation</li>
+											<li>Not getting our important needs met in situations</li>
+										</ul>
+									</p>
+					  			</div>
+					  		</div>
+		  				</div>
 		  			</div>
-		  		</div>
-		  	</div>
-  			<div class='row'>
-  				<div class='section-text center bigger' id='mobile-size' style='width: 70%; padding: 25px 50px'>Maintaining serenity during difficult times and preventing inappropriate <br>expressions of anger is a crucial skill to living a healthy, happy, and balanced life.</div>
-  			</div>
-  		</div>
+		  			<div class='section-text center bigger' id='mobile-size' style='width: 70%; padding: 25px 50px'>Maintaining serenity during difficult times and preventing inappropriate <br>expressions of anger is a crucial skill to living a healthy, happy, and balanced life.</div>
+  					</div>
+				</div>
+
+  				
   
 
-  			<div id='consider'>
+  <div id='consider'>
 	<div class='container'>
 	<div class='row'>
-		<div class='col-lg-6' id='if'>
+		<div class='col-lg-6'>
+			<div id='if'>
 			<div class='section-title'>Consider Anger Management if…</div>
 			<ul class='section-text'>
 				<li>You get very annoyed or angry more than once a day</li>
@@ -176,7 +198,9 @@ th {
 				<li>Your anger has affected your personal integrity and/or spirituality</li>
 			</ul>
 		</div>
-		<div class='col-lg-6' id='basic'>
+	</div>
+		<div class='col-lg-6'>
+			<div id='basic'>
 			<div class='section-title'>Practice these basic techniques</div>
 			<ul class='section-text'>
 				<li>Distance yourself from the trigger</li>
@@ -194,17 +218,19 @@ th {
 				<li>Hold something soft on your hands</li>
 				<li>Scream into your pillow</li>
 				<li>Take a cold shower</li>
-
 			</ul>
 		</div>
 	</div>
+</div>
 	  		
 	  		<div class='row' style='width: 100%'>
-  				<div class='section-text center bigger' style='width: 100%; padding-top: 25px'>We understand you may be thinking you do not need anger management;<br>people just need to stop making you angry</div>
+  				<div class='section-text center bigger' style='width: 100%; padding-top: 25px; padding-bottom: 55px'>We understand you may be thinking you do not need anger management;<br>people just need to stop making you angry, right?</div>
   			</div>
-  			<hr>
 
-  			<div class='row'>
+  		</div>
+  			<div id='destructive'>
+  				<div class='container'>
+  					<div class='row'>
   				<div class='section-title center'>Destructive anger/rage is unjustifiable</div>
   				<div class='section-text'>
   					<p>Learning to manage our anger can be a challenging. However, taking responsibility for our behaviors and how they affect others is our duty. When anger leads to complicated situations, becomes unmanageable or destructive, it affects the overall quality of our life.</p>
@@ -248,6 +274,8 @@ th {
   				</div>
   			</div>
   			<br>
+
+
   			<div class='section-title center'>Rational Emotive Behavioral Therapy</div>
 
   			<div class='row'>
@@ -273,11 +301,10 @@ th {
   					</div>
   				</div>
   			</div>
+		</div>
 	</div>
-</div>
-		  </div>
 
-		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		  <div class="tab-pane show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 		  	<div id='certificate'>
 			  	<div class='container'>
 			  		<div class='section-title center'>
@@ -350,7 +377,8 @@ th {
 
 		  </div>
 
-		  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		  <div class="tab-pane show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		  	<div class='container'>
 		  	<div id='instructor'>
 		  		<div class='section-title center'>About the Instructor</div>
 		  		<div class='instructor-image'><img src='./images/instructor.png'></div>
@@ -378,6 +406,7 @@ th {
 		  	</div>
 		  </div>
 		</div>
+		</div>
 	</div>
 </div>
 
@@ -385,7 +414,7 @@ th {
 	<style>
 
 #eapfaq {
-	padding: 50px 0px;
+	padding: 55px 0px;
 }
 
 #eapfaq .section-title {
@@ -394,7 +423,7 @@ th {
 
 .eap-faq-title {
 		font-size: 20px;
-	color: #4eaac8;
+	color: white;
 	margin-bottom: 20px;
 }
 
@@ -432,8 +461,8 @@ th {
 }
 
 .faq-questions {
-	padding: 75px 0px;
-	background: #f6f8f9;
+	padding: 55px 0px;
+	background-color: #344A53 !important;
 }
 
 .faq-questions hr {
@@ -449,6 +478,8 @@ th {
 	margin-bottom: 25px;
 }
 </style>
+
+
 <div id='eapfaq' class='faq-questions'>
 
 <div class='container'>	
@@ -482,7 +513,7 @@ th {
 				    </div>
 				    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 				      <div class="card-body">
-				        Our Anger Management sessions are facilitated by a Master’s Degree level clinician skilled at ensuring information is communicated simply and effectively.
+				        Our Anger Management sessions are facilitated by a master’s degree level clinician skilled at ensuring information is communicated simply and effectively.
 				      </div>
 				    </div>
 				  </div>
@@ -511,7 +542,7 @@ th {
 				    </div>
 				    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 				      <div class="card-body">
-						Session two and forward will cover a variety of topics, including definitions of anger and aggression, myths about anger, anger as a habitual response, the anger meter, mindfulness, and emotion regulation skills to control anger, aggression and violence. </div>
+						Session two and forward will cover a variety of topics, including definitions of anger and aggression, myths about anger, anger as a habitual response, the anger meter, mindfulness, and emotion regulation skills to control anger, aggression and violence. Minor homework assignments are given to reinforce concepts.</div>
 				    </div>
 				  </div>
 				  <div class="card">
