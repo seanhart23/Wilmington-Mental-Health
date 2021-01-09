@@ -68,6 +68,10 @@ router.get('/intimidad', function(req, res){
     res.render('intimidad');
 });
 
+router.get('/accessibility', function(req, res){
+    res.render('accessibility');
+});
+
 router.get('/substance', function(req, res){
     res.render('substance');
 });
