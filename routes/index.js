@@ -60,6 +60,14 @@ router.get('/biofeedback', function(req, res){
     res.render('biofeedback');
 });
 
+router.get('/privacy', function(req, res){
+    res.render('privacy');
+});
+
+router.get('/intimidad', function(req, res){
+    res.render('intimidad');
+});
+
 router.get('/substance', function(req, res){
     res.render('substance');
 });
