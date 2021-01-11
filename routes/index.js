@@ -5,7 +5,11 @@ var express        = require('express'),
     middleware       = require('../middleware'),
     request        = require('request'),
     User       = require('../models/user'),
-    passport   = require('passport')
+    passport   = require('passport'),
+        bodyParser     = require('body-parser'),
+    Stripe         = require('stripe');
+    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
+
 
 
 router.get('/', function(req, res){
@@ -84,6 +88,10 @@ router.get('/specialties', function(req, res){
     res.render('specialties');
 });
 
+router.get('/paymentportal', function(req, res){
+    res.render('paymentportal');
+});
+
 router.get('/whoweare', function(req, res){
     res.render('whoweare');
 });
@@ -124,6 +132,9 @@ router.get('/register', function(req, res){
     res.render('register');
 });
 
+
+
+
 router.post('/register', function(req, res){
     var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
@@ -148,4 +159,34 @@ router.get('/logout', function(req, res){
     req.logout();
     res.redirect('/');
 });
+
+ 
+
+router.post('/create-checkout-session', async (req, res) => {
+  var data = req.body
+  console.log(data)
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Wilmington Mental Health',
+          },
+          unit_amount: data['amount'],
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://example.com/success',
+    cancel_url: 'https://example.com/cancel',
+  });
+
+  res.json({ id: session.id });
+});
+
+
 module.exports = router;

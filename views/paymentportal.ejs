@@ -1,0 +1,368 @@
+<style>
+	
+#payment {
+	padding: 55px 0px;
+}
+
+.payment-box {
+	border: 1px solid #4eaac8;
+	padding: 15px;
+}
+
+.payment-type {
+	font-size: 30px;
+	color: #4eaac8;
+}
+</style>
+
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/scroll.ejs') -%>
+<%- include('./partials/global/navbar.ejs') -%>
+
+
+<div id='payment'>
+	<div class='container'>
+		<div class='sub-title center'>WE VALUE YOUR BUSINESS</div>
+		<div class='section-title center'>Make a quick payment <span class='bold'>Online</span></div>
+		<hr class='short center'>
+		<div class='section-text'>
+			<p><span class='bold'>Instructions:</span> For your convenience, Wilmington Mental Health can process payments via cash, check, credit card, or Stripe. If you with to pay prior to your scheduled appointment use the payment form below or log into the Patient Portal to process your payment directly using our Electronic Health Record System.</p>
+
+			<p>Credit Card Processing - Please follow these simple steps:</p>
+			<ol>
+			<li>Enter your name and credit card information.</li>
+			<li>Click <span class='bold'>Pay Now</span>.</li>
+			<li>Close the screen and return to our website.</li>
+			</ol>
+
+			<p>Your payment will appear on your debit or credit card statement as “WILMIGTON MENTAL HEALTH”.
+			Gift Certificates - If you want to help someone you know be able to access counseling services, we invite you to purchase a gift certificate for them.  Simply enter the desired amount and choose the Gift Certificate button  below.  They will  be emailed a gift certificate directing them back to this website to purchase counseling services. </p>
+
+			<p>Donations - You can now donate to Wilmington Mental Health.  Donations can be labeled for specific purpose.  There are many people who need counseling but cannot afford the services.  If you wish to donate, enter your desired amount and then click DONATE NOW.  Thank you for your generous support. </p>
+			
+			<p><span class='bold'>Online Payment Policy:</span> All appointments are subject to a 24-hour cancellation policy. If you pay for a counseling session and then cancel with 24-hour notice, the online payment will be applied to your next session.  If you pay for a counseling session online and do not attend and do not give 24 hours notice, your payment will not be refunded.  If you pay for a counseling session and then cancel with 24-hour notice but do not wish to re-schedule your canceled appointment, your online payment will be returned to you minus the applicable credit card processing fees.  This process can take up to 2 weeks.</p>
+
+			<div class='section-title'>Pay now via credit card using our secure online form</div>
+			<br>
+			<fieldset>
+				<label>Enter Payment Amount </label>
+				<input type='number' data-type="currency" id='amount' name='amount' style='margin-left: 10px' oninput="limitDecimalPlaces(event, 2)">
+			</fieldset>
+			<button id="checkout-button" style='margin-left: 190px'>Submit Payment</button><br>
+
+			<br>
+			<p>If you have any questions about payments or your balance please call us at 385-324-5982 before making a payment through this portal.***</p>
+
+			<p>If you have additional billing questions, concerns about your balance or would prefer to pay by phone please call our main office at 910-777-5575. Please do not make payments in advance of your appointment. Please limit your payments to past due balances.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class='container' style='padding: 50px 0px'>
+	<div class='row'>
+		<div class='col-lg-6'>
+			<div class='payment-header section-title center'>One-Time Payment</div>
+				<hr class='short'>
+				<div class='payment-box'>
+				<div class='payment-type'>Therapy Session</div>
+				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
+				<br>
+				<div class='payment-image center'><img src='./images/chair.png'></div><br>
+				<div class='payment-button center'><button>Pay Now</button></div><br>
+				<div class='section-text'>Please use this option to select the amount you wish to pay toward current, or future balances.</div>
+			</div>
+		</div>
+		<div class='col-lg-6'>
+			<div class='payment-header section-title center'>Recurrent Payments</div>
+				<hr class='short'>
+				<div class='payment-box'>
+				<div class='payment-type'>Balances and Deductibles</div>
+				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
+				<br>
+				<div class='payment-image center'><img src='./images/calendar.png'></div><br>
+				<div class='payment-button center'><button>Scehdule Payments</button></div><br>
+				<div class='section-text'>Please use this option to schedule recurrent payments toward past balances or accrued deductibles.</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='container'>
+	<div class='section-text' style='font-weight: 400'>Fill out the information below to process a payment transaction</div>
+	<p class='section-text'>Payment is due in full at the time of service. If you will be using your insurance, we will bill your debit or credit card if there is a copay due. Do you acknowledge this information</p>
+	<div class="radio">
+		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>Yes</span></label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I need more information</span></label>
+	</div>
+
+	<p class='section-text'>If you are experiencing financial hardship and wish to apply please find the Financial Hardship Application listed under services so we can assess your financial need and what options we available.</p>
+	<div class="radio">
+		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I don't need financial assistance.</span></label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I am experiencing financial hardship and understand the next step is to fill out the Financial Hardship Application.</span></label>
+	</div>
+
+	<br>
+	<div class='section-text' style='font-weight: 400'>Online Payments</div>
+	<p class='section-text' style='padding-bottom: 50px'>Save money on monthly postage costs and save time by having payment records available online to manage your bills. WebView accepts payments from your checking account, and all major credit cards.</p>
+</div>
+
+
+<style>
+
+#biofeedbackfaq {
+	padding: 50px 0px;
+}
+
+#biofeedbackfaq .section-title {
+	margin-bottom: 25px;
+}
+
+.biofeedback-faq-title {
+		font-size: 20px;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.fa-sort-down {
+	position: absolute;
+	right: 20px;
+	margin-top: -5px;
+}
+
+.faq-questions .card {
+	border: none !important;
+	margin-bottom: 10px;
+}
+
+.faq-questions .card-body {
+	background: #f6f8f9;
+	border: none;
+	color: #5c656d;
+	font-weight: 300;
+	line-height: 24px;
+	padding: 25px 9px;
+	padding-left: 32px;
+}
+
+.faq-questions .card-header {
+	background: white;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border: none !important;
+}
+
+.faq-questions .btn-link {
+	text-decoration: none;
+	color: #4eaac8;
+}
+
+.faq-questions {
+	padding: 75px 0px;
+	background: #344A53;
+}
+
+.faq-questions hr {
+	width: 10%;
+	margin-left: 0px;
+	margin-bottom: 50px;
+}
+
+.faq-questions .header {
+	text-align: left;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+</style>
+<div id='biofeedbackfaq' class='faq-questions'>
+
+<div class='container'>	
+<div class='biofeedback-faq-title'>FAQs </div>
+<div class='row'>
+			<div class='col-lg-12'>
+				<div class="accordion" id="accordionExample">
+				  <div class="card">
+				    <div class="card-header" id="headingOne">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						What is Stripe?
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+				      <div class="card-body">
+				        Stripe is an online bill payment processor that allows us to receive secure payments and manage your account online. You can make payments anytime, anywhere from almost any computer with internet access.
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingTwo">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						How does Payment work?
+				          <i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+				      <div class="card-body">
+						<div class='bold'>- Step 1: Enroll</div>
+						To enroll with WebView you will need your latest statement. On your statement there is an enrollment number that you will use to create an online profile.
+						<br>
+						<div class='bold'>- Step 2: Making an Online Payment</div>
+						Select the statement you wish to pay, the amount you are paying, and submit your credit card information. You will receive an instant response noting if your payment has been approved or rejected. A confirmation email will also be sent to your email address with your payment approval code.
+						<br>
+						<div class='bold'>- Step 3: Reviewing Your Payment History</div>
+						On the payment history page, you can view all the previous payments that you have made on WebView. You will see detailed information about the payment, including the date, amount, statement, and approval code.
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingThree">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						What Payment Methods are Accepted?
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+				      <div class="card-body">
+						We accept many kinds of payments. You can pay using your checking account, VISA, Mastercard, Discover or American Express card, if applicable. </div>
+				    </div>
+				  </div>
+
+					<div class='biofeedback-faq-title'>Security </div>
+
+				  <div class="card">
+				    <div class="card-header" id="headingFour">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						Online Security Information
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body">
+						All communication with Stripe is done through a 256 bit High Grade SSL encryption, ensuring all data transmission is secure.</div>
+				    </div>
+				  </div>
+				  				  <div class="card">
+				    <div class="card-header" id="headingFive">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						Is My Account Information Safe ?
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseFive" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body">
+						WMH works with Stripe to verify that all security measures are taken and all security standards are met. We are committed to keeping your personal information safe and protected.</div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingSix">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+						Privacy Policy
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseSix" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body">
+						<p>Our number one priority is protecting your information. WMH is dedicated to providing our customers with superior and reliable presentment and payment solutions. Whether we print and mail your critical documents or present them over the Internet, we are committed to protecting and safeguarding your critical business information and have employed layers of certified security.</p>
+
+						<p>Our commitment to security and continuity: We safeguard your information according to stringent security and confidentiality standards and comply with federal legislation, such as HIPAA. We maintain control over the confidentiality of our customers’ information for the time we have access to it. We do not sell, share, release or reveal any customer data--period. We routinely destroy your data after a short-time period.</p>
+
+						<p>Our commitment to security includes independent, industry continuity specialists who work with us to review and strengthen our security infrastructure, systems, and processes. If you have questions, please feel free to contact us. We keep your valuable information secret, but not our security procedures.</p>
+						</div>
+				    </div>
+				  </div>
+				  				  <div class="card">
+				    <div class="card-header" id="headingSeven">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+						Fraud Protection
+						<i class="fas fa-sort-down"></i>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseSeven" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body">
+						Chargeback Protection Defend your business from the unpredictability of disputes. With Chargeback Protection, Stripe will cover both the disputed amount and any dispute fees—no evidence submission required.
+
+</div>
+				    </div>
+				  </div>
+				  
+		
+				   
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+// Create an instance of the Stripe object with your publishable API key
+      var stripe = Stripe('pk_test_51HJTkuEu13t8IjdAk09Mk0NuuILO7Jx8Pw5vpntXIAYSBfY9y9Ca94Tv6e2dHyo0tmbSigVuhqkouXsBGaHwiMf0000nZLHrL1');
+      var checkoutButton = document.getElementById('checkout-button');
+      var amount = document.getElementById('amount');
+
+      checkoutButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: {
+		    'Content-Type': 'application/json'
+		  },
+
+		  //make sure to serialize your JSON body
+		  body: JSON.stringify({
+		    amount: amount.value * 100,
+		  })
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+
+$(document).ready(function(){
+  $('input#amount').blur(function(){
+    var num = parseFloat($(this).val());
+    var cleanNum = num.toFixed(2);
+    $(this).val(cleanNum);
+  });
+});
+</script>
+<%- include('./partials/global/footer.ejs') -%>

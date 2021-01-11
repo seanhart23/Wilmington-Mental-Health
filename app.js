@@ -4,22 +4,24 @@ var express        = require('express'),
     User           = require('./models/user'),
     middleware     = require('./middleware'),
     passport       = require('passport'),
-    bodyParser       = require('body-parser'),
+    bodyParser     = require('body-parser'),
     LocalStrategy  = require('passport-local'),
     mongoose       = require('mongoose'),
-    methodOverride   = require('method-override'),
+    methodOverride = require('method-override'),
     app            = express(),
-    nodemailer       = require('nodemailer'),
+    nodemailer     = require('nodemailer'),
     request        = require('request');
-
+    Stripe         = require('stripe');
+    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
 
 // mongoose.connect('mongodb://seanhart:password1@ds127802.mlab.com:27802/absideon');
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
+app.use(express.json());
 app.use(require("express-session")({
     secret: 'I am cool',
     resave: false,
