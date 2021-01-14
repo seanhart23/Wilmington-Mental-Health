@@ -6,7 +6,9 @@
 	color: gray;
 }
 #docs {
-	margin-top: 100px;
+	margin-top: 0px;
+	padding-bottom: 55px;
+	padding-top: 55px;
 }
 
 .flip-card {
@@ -30,6 +32,10 @@
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-card-inner-x {
+  transform: rotateX(180deg);
 }
 
 /* Position the front and back side */
@@ -57,7 +63,7 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: #f6f8f9;
+  background-color: white;
   color: gray;
   font-size: 14px;
   transform: rotateY(180deg);
@@ -75,22 +81,20 @@
 }
 </style>
 
-<div id='docs'>
+<div id='docs' class='background-alt'>
 <div class='container'>
 	<div class='row'>
 		<div class='col-lg-4'>
 			<div class="flip-card">
 			  	<div class="flip-card-inner">
 			    	<div class="flip-card-front">
-			      		<div class='card-head'>Notice of Privacy Practice</div>
+			      		<div class='card-head'>Email/Texting Consent</div>
 			      		<i class="fas fa-file-alt"></i>
 			    	</div>
 			  		<div class="flip-card-back">
-	      				This notice describes how personal information about you may be used and disclosed, and how you can get access to this information. This information will include the Protected Health Information (PHI), as that term is defined in privacy regulations issued by the United States Department of Health and Human Services pursuant to the Health Insurance Portability and Accountability Act of 1996 (“HIPAA”).
-	      				Please review it carefully.
- 						Effective date 4/1/2017.
+	      				We keep your Protected Health Information private and secure. This consent form is to gain permission  to share administrative information like appointment reminders, scheduling, or payment receipts with you. Please understand that some potential risks associated with email/text interaction include: misdelivery, unauthorized access to thirdpartes, information may remain in the cloud. Please indicate your preferences about emails and texts and sign this form.
  						<br>
- 						<a href='#'>Download Form</a>
+ 						<a href='./images/Email-Text.pdf' target='_blank'>Download Form</a>
     				</div>
   				</div>
 			</div>
@@ -103,25 +107,26 @@
 			      		<i class="fas fa-file-alt"></i>
 			    	</div>
 			  		<div class="flip-card-back">
-	      				This form allows us to communicate with third parties with your permission. The content and information to be released is protected under State and Federal law (45 CFR Part 164 and 164; 42 CFR Part 2) and cannot be re-disclosed without my further written consent as authorized by G.S. 122C-53 through G.S. 122C-56. A general authorization for the release of other medical information is not sufficient for this purpose. The circumstances under which disclosure is permitted or required by state or federal confidentiality rules are described in our Notice of Privacy Practices.
+	      				This form is to give us permission to communicate with third parties. The content and information to be released is protected under State and Federal law (45 CFR Part 164 and 164; 42 CFR Part 2) and cannot be re-disclosed without  further written consent as authorized by G.S. 122C-53 through G.S. 122C-56. A general authorization for the release of other medical information is not sufficient for this purpose. More details can be found in our Privacy Practice form.
 	      				<br>
-	      				<a href='#'>Download Form</a>
+	      				<a href='./images/ReleaseOfInformation.pdf' target='_blank'>Download Form</a>
     				</div>
-  				</div>
+    			</div>
 			</div>
 		</div>
 		<div class='col-lg-4'>
 			<div class="flip-card">
 			  	<div class="flip-card-inner">
 			    	<div class="flip-card-front">
-			      		<div class='card-head'>Financial Agreement</div>
+			      		<div class='card-head'>Payment Authorization</div>
 			      		<i class="fas fa-file-alt"></i>
 			    	</div>
 			  		<div class="flip-card-back">
-	      				<p>We ask you to  provide formal authorization to process credit card payments. Please verify and complete this form to give Wilmington Mental Health to do so. Do not omit any fields and include your signature and today’s date at the end.</p>
-						<p>A picture ID (school ID, military ID, etc.) is required for all patients 18-year-old and older to protect you and our practice against insurance fraud.
+	      				<p>We ask you to provide formal authorization to process credit card payments. Please verify and complete this form to give Wilmington Mental Health to do so. Do not omit any fields and include your signature and today’s date at the end.</p>
+						<p>A picture ID (school ID, military ID, etc.) is required for all patients 18-year-old and older to protect you and our practice against insurance fraud.</p>
+
 							<br>
- 						<a href='#'>Download Form</a>
+ 						<a href='./images/PaymentAuthorization.pdf' target='_blank'>Download Form</a>
 
     				</div>
   				</div>
