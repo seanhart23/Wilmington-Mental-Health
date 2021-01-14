@@ -132,6 +132,10 @@ router.get('/register', function(req, res){
     res.render('register');
 });
 
+router.get('/community', function(req, res){
+    res.render('community');
+});
+
 
 
 

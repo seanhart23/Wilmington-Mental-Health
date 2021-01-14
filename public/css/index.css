@@ -50,6 +50,11 @@ button {
 	background-color: rgba(246, 248, 249, .8) !important;
 }
 
+.fixed-top {
+	position: fixed!important;
+	margin-bottom: 5px;
+}
+
 .float {
 	float: right;
 }
