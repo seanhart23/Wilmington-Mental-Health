@@ -22,10 +22,10 @@ var express        = require('express'),
 //   database: 'blog_post'
 // });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Database Connected!");
-});
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Database Connected!");
+// });
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
