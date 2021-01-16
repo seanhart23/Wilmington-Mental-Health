@@ -136,6 +136,10 @@ router.get('/community', function(req, res){
     res.render('community');
 });
 
+router.get('/meetourteam', function(req, res){
+    res.render('meetourteam');
+});
+
 
 
 

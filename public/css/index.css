@@ -86,6 +86,7 @@ button {
 
 .right {
 	text-align: right !important;
+	float: right;
 }
 
 .shorten-row {
