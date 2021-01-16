@@ -2,14 +2,21 @@ var express        = require('express'),
     request        = require("express"),
     router         = express.Router(),
     app            = express(),
-    middleware       = require('../middleware'),
+    middleware     = require('../middleware'),
     request        = require('request'),
-    User       = require('../models/user'),
-    passport   = require('passport'),
-        bodyParser     = require('body-parser'),
+    User           = require('../models/user'),
+    passport       = require('passport'),
+    bodyParser     = require('body-parser'),
+    mysql          = require('mysql');
     Stripe         = require('stripe');
     stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
 
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Maem250123!",
+  database: 'blog_post'
+});
 
 
 router.get('/', function(req, res){
@@ -108,6 +115,14 @@ router.get('/rengifo', function(req, res){
     res.render('rengifo');
 });
 
+router.get('/kemlage', function(req, res){
+    res.render('kemlage');
+});
+
+router.get('/blackmon', function(req, res){
+    res.render('blackmon');
+});
+
 router.get('/rengifo2', function(req, res){
     res.render('rengifo2');
 });
@@ -140,8 +155,19 @@ router.get('/meetourteam', function(req, res){
     res.render('meetourteam');
 });
 
+// router.get('/blog/new') 
 
 
+
+
+router.get('/blog' , (req, res) => {
+con.query('SELECT * FROM post', (err, rows, fields) => {
+if (!err)
+res.send(rows);
+else
+console.log(err);
+})
+} );
 
 router.post('/register', function(req, res){
     var newUser = new User({username: req.body.username});

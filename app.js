@@ -10,11 +10,23 @@ var express        = require('express'),
     methodOverride = require('method-override'),
     app            = express(),
     nodemailer     = require('nodemailer'),
+    mysql          = require('mysql');
     request        = require('request');
     Stripe         = require('stripe');
     stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
 
 // mongoose.connect('mongodb://seanhart:password1@ds127802.mlab.com:27802/absideon');
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Maem250123!",
+  database: 'blog_post'
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Database Connected!");
+});
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

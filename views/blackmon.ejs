@@ -1,0 +1,167 @@
+<style>
+
+.photo img {
+	height: 220px;
+}
+
+
+.price {
+	font-size: 30px;
+	color: #4EAAC8;
+	margin: 55px 0px;
+}
+
+#office {
+	width: 100%;
+	margin-top: 25px;
+}
+.message {
+	border: 1px solid navy;
+	padding: 20px;
+}
+#blackmon {
+	padding: 55px 0px;
+}
+
+.section {
+	font-size: 26px;
+	font-weight: 300;
+	color: #4EAAC8;
+	margin-top: 55px;
+}
+
+</style>
+
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+
+
+<div id='blackmon'>
+	<div class='container'>
+		<div class='center'><img src='./images/dust.png'>
+			<div class='section-title'>Lisa Blackmon</div>
+			<div class='section-text'>MEd, LCMHCA</div>
+			<div class='section-text'>Therapist at Wilmington Mental Health</div>
+		</div>
+		<div class='top'>
+			<div class='row' style='margin-top: 55px'>
+				<div class='col-lg-3'>
+					<span class='photo'><img src='./images/blackmon.png'></span>
+				</div>
+				<div class='col-lg-9'>
+					<span class='section-text'>
+					<p>We are products of both our environment and our genetics (Nature vs. Nurture). If we take time to discover how we are being affected by both, we can heal more efficiently and have less frequent behaviors that do not serve us. This will give us renewed quality time to enjoy our lives and our loved ones.  I enjoy using Biofeedback, Narrative Therapy and Solution Focused Brief Therapy to guide my sessions and to treat mental health symptoms in an evidenced based manner.</p>
+					</span>
+					<span><img src='./images/graywave.png'></span>
+				</div>
+			</div>
+		</div>
+		<div class='section'>About Me</div>
+		<div class='section-text'>
+			<p>I have experience serving persons from all walks of life and am always interested in learning more about the unique experiences of others. I have experience in crisis counseling, vocational/workplace issues, mood and anxiety disorders and substance use disorders. I also have experience with parents of children with special needs. I have experience with death and grief and other general life issues.</p>
+
+			<p>Training: Motivational Interviewing • Crisis Counseling • Vocational Counseling • Substance Use Disorders • Mood Disorders</p>
+
+
+		</div>
+		<div class='section'>My Process</div>
+		<div class='section-text'>
+			<p>In practice, I use cognitive behavioral therapy tools as a framework for my practice. I find narrative therapy principles helpful as well as supportive counseling and DBT skills. I offer brief solution focused therapy and often find it helpful to use narrative therapy principles. I work using motivational interviewing to get to the heart of what my clients need and want. I believe that mindfulness is helpful in a variety of situations. </p>
+
+		</div>
+		<br>
+		<div class='section-text'>
+			<div class='row'>
+				<div class='col-lg-7'>
+							<div class='section'>Education and Credentials</div>
+
+					<table class='section-text' style='width: 100%'>
+						<tr>
+							<td>Master’s Degree in Counseling/Education<br>The Citadel – 1995<br> </td>
+						</tr>
+						<tr>
+							<td style='padding-top: 25px'>Licensed Clinical Mental Health Counselor<br>License # A14678b (<a href='https://portal.ncblcmhc.org/verification/search.aspx'>See License Status</a>)</td>
+						</tr>
+						<tr>
+							<td style='padding-top: 25px'>Clinical Supervisor<br>Sarah Mooring, LCMHC. Contact # 910-541-3066</td>
+						</tr>
+					</table>
+					<div class='section-text' style='padding-top: 20px'>&check; Verified by <span class='bold' style='color: navy'>Psychology Today</span></div>
+
+					<div class='section'>What I love to do during my free time…</div>
+					<div class='section-text'>Spending time with my family. </div>
+				</div>
+				<div class='col-lg-5'>
+					<img src='./images/office2.png' id='office'>
+				</div>
+			</div>
+		</div>
+
+
+		<br><br>
+
+			<div class='row section-text'>
+				<div class='col-lg-3'>
+					<div class='center' style='margin-top: 45px'>If you feel we may be a good fit, schedule a free phone consultation today.</div>
+					<div class='buttons' style='text-align: center; margin-top: 25px'>
+
+					<a href="https://wmh1.clientsecure.me" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind><button class='new' style='width: 80%'>New Patient</button>
+					</a>
+					<br><br>
+					<a href='https://wmh1.clientsecure.me/sign-in'><button class='existing' style='width: 80%; background: #00314A !important'>Existing Patient</button></a>
+					<br><br><br>
+					Phone: 910.777.5575 ext. 104
+			</div>
+				</div>
+				<div class='col-lg-6'>
+					<div class='message center' style='margin-bottom: 50px'>
+			<div class='center' style='font-size: 40px'><i class="far fa-envelope"></i></div>
+
+
+			<div class='section-title center' style='padding-bottom: 25px'>Message Me</div>
+				<div class="form-group">
+                    <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+            	</div>							
+
+				<div class="form-group">
+                    <input type="text" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+            	</div>		
+
+            	<div class="form-group">
+                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+            	</div>
+
+            	<div class="form-group">
+                    <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message" rows='4'></textarea>
+            	</div>
+
+            	<button type="submit" id="" class="" style='height: 50px; width: 200px; margin-bottom: 0px'>Send</button>
+            </form>
+
+        </div>
+				</div>
+				<div class='col-lg-3'>
+					<p style='padding-top: 45px'>My availability<br>
+					M - F 11:00am – 6:00pm<br>
+					</p>
+					<br>
+					<p>My patients are<br>
+					18 years old and older</p>
+					<br>
+				
+					<br>
+					<p>My specialties<br>
+					Mental and behavioral health<br>
+					</p>
+
+				</div>
+			</div>
+	</div>
+</div>
+</div>
+
+<%- include('./partials/global/footer.ejs') -%>

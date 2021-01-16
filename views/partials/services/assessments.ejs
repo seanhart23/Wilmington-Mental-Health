@@ -3,6 +3,9 @@
 #clinical .section-title {
 	margin: 25px 0px;
 }
+#individual {
+	padding: 55px 0px;
+}
 .treatment-box {
 	text-align: center;
 }
@@ -61,13 +64,16 @@
 </style>
 
 <div id='individual'>
-<div class='header'>Clinical <span class='bold'>Assessments</span></div>
+<div class='section-title center' style='padding-bottom: 25px'>Clinical <span class='bold'>Assessments</span></div>
 <div class='container'>
 		<div class='navigation'>
 			<ul class="nav nav-pills flex-row center">
 			<li><a data-toggle="pill" class='active' href="#CCA">Comprehensive Clinical Assessment (CCA)</a></li>
 			<li><a data-toggle="pill" href="#anger">Anger Management Evaluation</a></li>
 			<li><a data-toggle="pill" href="#immigration">Immigration Evaluation</a></li>
+			<li><a data-toggle="pill" href="#sexoffenderassessment">Sex Offender Risk Assessment</a></li>
+			<li><a data-toggle="pill" href="#domestic">Domestic Violence Risk Assessment</a></li>
+			<li><a data-toggle="pill" href="#drugandalcohol">Drug and Alcohol Evaluation</a></li>
 			</ul>
 		</div>
 	</div>
@@ -85,7 +91,7 @@
 	<p class='center' style='margin-left: -200px'> 1 Identifying the reasons for assessment</p>
 		<p class='center' style='margin-left: 50px'> 2	Choosing and implementing instruments for data collections</p>
 			<p class='center' style='margin-left: 0px'> 3	Evaluating assessment information</p>
-				<p class='center' style='margin-left: 300px'> 4	Reporting results of assessment and making recommendations</p>
+				<p class='center' style='margin-left: 300px; margin-bottom: 25px'> 4	Reporting results of assessment and making recommendations</p>
 
 
 </div>
@@ -117,6 +123,33 @@
 			<!-- <div class='container'><div class='technique-name'>Immigration Evaluation</div><hr></div> -->
 			<div class='technique-content'>
 			<%- include('./immigration.ejs') -%>
+
+
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="sexoffenderassessment">
+			<!-- <div class='container'><div class='technique-name'>Immigration Evaluation</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./sexoffender.ejs') -%>
+
+
+			</div>
+		</div>
+				
+		<div class="tab-pane fade" id="domestic">
+			<!-- <div class='container'><div class='technique-name'>Immigration Evaluation</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./domestic.ejs') -%>
+
+
+			</div>
+		</div>
+				
+		<div class="tab-pane fade" id="drugandalcohol">
+			<!-- <div class='container'><div class='technique-name'>Immigration Evaluation</div><hr></div> -->
+			<div class='technique-content'>
+			<%- include('./drugandalcohol.ejs') -%>
 
 
 			</div>
