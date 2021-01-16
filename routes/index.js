@@ -11,12 +11,12 @@ var express        = require('express'),
     Stripe         = require('stripe');
     stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Maem250123!",
-  database: 'blog_post'
-});
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Maem250123!",
+//   database: 'blog_post'
+// });
 
 
 router.get('/', function(req, res){
@@ -160,14 +160,14 @@ router.get('/meetourteam', function(req, res){
 
 
 
-router.get('/blog' , (req, res) => {
-con.query('SELECT * FROM post', (err, rows, fields) => {
-if (!err)
-res.send(rows);
-else
-console.log(err);
-})
-} );
+// router.get('/blog' , (req, res) => {
+// con.query('SELECT * FROM post', (err, rows, fields) => {
+// if (!err)
+// res.send(rows);
+// else
+// console.log(err);
+// })
+// } );
 
 router.post('/register', function(req, res){
     var newUser = new User({username: req.body.username});
