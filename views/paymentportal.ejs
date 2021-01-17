@@ -1,5 +1,9 @@
 <style>
-	
+
+.big {
+	font-size: 26px !important;
+	color: #4EAAC8 !important;
+}
 #payment {
 	padding: 55px 0px;
 }
@@ -13,110 +17,6 @@
 	font-size: 30px;
 	color: #4eaac8;
 }
-</style>
-
-<%- include('./partials/global/header.ejs') -%>
-<div class='hide-on-mobile'>
-	<%- include('./partials/global/topbar.ejs') -%>
-	<%- include('./partials/global/navtop.ejs') -%>
-</div>
-<%- include('./partials/scroll.ejs') -%>
-<%- include('./partials/global/navbar.ejs') -%>
-
-
-<div id='payment'>
-	<div class='container'>
-		<div class='sub-title center'>WE VALUE YOUR BUSINESS</div>
-		<div class='section-title center'>Make a quick payment <span class='bold'>Online</span></div>
-		<hr class='short center'>
-		<div class='section-text'>
-			<p><span class='bold'>Instructions:</span> For your convenience, Wilmington Mental Health can process payments via cash, check, credit card, or Stripe. If you with to pay prior to your scheduled appointment use the payment form below or log into the Patient Portal to process your payment directly using our Electronic Health Record System.</p>
-
-			<p>Credit Card Processing - Please follow these simple steps:</p>
-			<ol>
-			<li>Enter your name and credit card information.</li>
-			<li>Click <span class='bold'>Pay Now</span>.</li>
-			<li>Close the screen and return to our website.</li>
-			</ol>
-
-			<p>Your payment will appear on your debit or credit card statement as “WILMIGTON MENTAL HEALTH”.
-			Gift Certificates - If you want to help someone you know be able to access counseling services, we invite you to purchase a gift certificate for them.  Simply enter the desired amount and choose the Gift Certificate button  below.  They will  be emailed a gift certificate directing them back to this website to purchase counseling services. </p>
-
-			<p>Donations - You can now donate to Wilmington Mental Health.  Donations can be labeled for specific purpose.  There are many people who need counseling but cannot afford the services.  If you wish to donate, enter your desired amount and then click DONATE NOW.  Thank you for your generous support. </p>
-			
-			<p><span class='bold'>Online Payment Policy:</span> All appointments are subject to a 24-hour cancellation policy. If you pay for a counseling session and then cancel with 24-hour notice, the online payment will be applied to your next session.  If you pay for a counseling session online and do not attend and do not give 24 hours notice, your payment will not be refunded.  If you pay for a counseling session and then cancel with 24-hour notice but do not wish to re-schedule your canceled appointment, your online payment will be returned to you minus the applicable credit card processing fees.  This process can take up to 2 weeks.</p>
-
-			<div class='section-title'>Pay now via credit card using our secure online form</div>
-			<br>
-			<fieldset>
-				<label>Enter Payment Amount </label>
-				<input type='number' data-type="currency" id='amount' name='amount' style='margin-left: 10px' oninput="limitDecimalPlaces(event, 2)">
-			</fieldset>
-			<button id="checkout-button" style='margin-left: 190px'>Submit Payment</button><br>
-
-			<br>
-			<p>If you have any questions about payments or your balance please call us at 385-324-5982 before making a payment through this portal.***</p>
-
-			<p>If you have additional billing questions, concerns about your balance or would prefer to pay by phone please call our main office at 910-777-5575. Please do not make payments in advance of your appointment. Please limit your payments to past due balances.</p>
-
-		</div>
-	</div>
-</div>
-
-<div class='container' style='padding: 50px 0px'>
-	<div class='row'>
-		<div class='col-lg-6'>
-			<div class='payment-header section-title center'>One-Time Payment</div>
-				<hr class='short'>
-				<div class='payment-box'>
-				<div class='payment-type'>Therapy Session</div>
-				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
-				<br>
-				<div class='payment-image center'><img src='./images/chair.png'></div><br>
-				<div class='payment-button center'><button>Pay Now</button></div><br>
-				<div class='section-text'>Please use this option to select the amount you wish to pay toward current, or future balances.</div>
-			</div>
-		</div>
-		<div class='col-lg-6'>
-			<div class='payment-header section-title center'>Recurrent Payments</div>
-				<hr class='short'>
-				<div class='payment-box'>
-				<div class='payment-type'>Balances and Deductibles</div>
-				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
-				<br>
-				<div class='payment-image center'><img src='./images/calendar.png'></div><br>
-				<div class='payment-button center'><button>Scehdule Payments</button></div><br>
-				<div class='section-text'>Please use this option to schedule recurrent payments toward past balances or accrued deductibles.</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class='container'>
-	<div class='section-text' style='font-weight: 400'>Fill out the information below to process a payment transaction</div>
-	<p class='section-text'>Payment is due in full at the time of service. If you will be using your insurance, we will bill your debit or credit card if there is a copay due. Do you acknowledge this information</p>
-	<div class="radio">
-		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>Yes</span></label>
-	</div>
-	<div class="radio">
-		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I need more information</span></label>
-	</div>
-
-	<p class='section-text'>If you are experiencing financial hardship and wish to apply please find the Financial Hardship Application listed under services so we can assess your financial need and what options we available.</p>
-	<div class="radio">
-		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I don't need financial assistance.</span></label>
-	</div>
-	<div class="radio">
-		<label><input type="radio" name="optradio" style='margin-right: 10px'> <span class='section-text'>I am experiencing financial hardship and understand the next step is to fill out the Financial Hardship Application.</span></label>
-	</div>
-
-	<br>
-	<div class='section-text' style='font-weight: 400'>Online Payments</div>
-	<p class='section-text' style='padding-bottom: 50px'>Save money on monthly postage costs and save time by having payment records available online to manage your bills. WebView accepts payments from your checking account, and all major credit cards.</p>
-</div>
-
-
-<style>
 
 #biofeedbackfaq {
 	padding: 50px 0px;
@@ -183,6 +83,119 @@
 	margin-bottom: 25px;
 }
 </style>
+
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/scroll.ejs') -%>
+<%- include('./partials/global/navbar.ejs') -%>
+
+
+<div id='payment'>
+	<div class='container'>
+		<div class='sub-title center'>WE VALUE YOUR BUSINESS</div>
+		<div class='section-title center'>Make a quick payment <span class='bold'>Online</span></div>
+		<hr class='short center'>
+		<div class='section-text'>
+			<p><span class='bold'>Instructions:</span> For your convenience, Wilmington Mental Health can process payments via cash, check, credit card, or Stripe. If you with to pay prior to your scheduled appointment use the payment form below or log into the Patient Portal to process your payment directly using our Electronic Health Record System.</p>
+
+			<p>Credit Card Processing - Please follow these simple steps:</p>
+			<ol>
+			<li>Enter your name and credit card information.</li>
+			<li>Click <span class='bold'>Pay Now</span>.</li>
+			<li>Close the screen and return to our website.</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div class='container' style='padding: 50px 0px'>
+	<div class='row'>
+
+<!-- ONE TIME PAYMENT -->
+
+		<div class='col-lg-6'>
+			<div class='payment-header section-title center'>One-Time Payment</div>
+				<hr class='short'>
+				<div class='payment-box'>
+				<div class='payment-type'>Therapy Session</div>
+				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
+				<br>
+				<div class='payment-image center'><img src='./images/chair.png'></div><br>
+				<fieldset>
+					<label class='section-text center w-100'>Enter Payment Amount</label><br><br>
+					<div class='w-100 center'><input type='number' data-type="currency" id='amount' name='amount' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'></div>
+			</fieldset>
+			<br>
+			<div class='w-100 center'>
+				<button id="checkout-button" style='margin: auto'>Submit Payment</button></div><br>
+			<hr>
+				<div class='section-text center'>Intake Assessment $200 • Couples Therapy $150 • Individual Therapy $110 • Group Therapy $40</div>
+			<hr>
+				<div class='section-text center'>Pay now via credit card using our secure online form.</div>
+			</div>
+		</div>
+
+<!-- RECURRING PAYMENTS -->
+
+		<div class='col-lg-6'>
+			<div class='payment-header section-title center'>Recurrent Payments</div>
+				<hr class='short'>
+				<div class='payment-box'>
+				<div class='payment-type'>Balances and Deductibles</div>
+				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
+				<br>
+				<div class='payment-image center'><img src='./images/calendar.png'></div><br>
+				<fieldset>
+					<label class='section-text center w-100'>Enter Payment Amount</label><br><br>
+					<div class='w-100 center'><input type='number' data-type="currency" id='amountSub' name='amountSub' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'></div>
+			</fieldset>
+			<br>
+			<div class='w-100 center'>
+				<button id="checkout-button-sub" style='margin: auto'>Submit Payment</button></div><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class='container' style='margin-bottom: 55px'>
+	<div class='section-title'>Gift Certificates & Donations</div>
+	<hr class='short' style='margin-left: 0px; margin-bottom: 10px'>
+	<div class='section-text big'>Support Mental Health</div>
+	<div class='sub-title'>Funds for the less fortunate</div>
+	<div class='section-text' style='margin-top: 15px'>
+		<p>Help us continue our mission of providing support and awareness on behalf of individuals living with mental illness and their families. You can either donate to Wilmington Mental Health and the funds will be used to help many people who need counseling but cannot afford the services, or donate a desired amount to support someone you know who needs therapy - an email will be sent directly to the recipient.</p>
+	</div>
+	<div class='row'>
+		<div class='col-lg-4'><img src='./images/gift.png' style='width: 100%'></div>
+		<div class='col-lg-8'>
+			<p class='section-text'>Enter Amount Below</p>
+			<input type='number' data-type="currency" id='amountGift' name='amountGift' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'><br><br>
+			<button id="checkout-button-gift" style='margin: auto'>Buy Gift Certificate</button>
+			<p class='section-text' style='margin-top: 20px'>If you have any questions about payments or your current balance, please call us at 910-777-5575 before making a payment through this portal. Also call our main office if you have additional billing questions, concerns about your balance, or would prefer to pay by phone. If you are experiencing financial hardship, ask your therapist to assess your financial need and explain what options we have available.</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FAQ -->
+
 <div id='biofeedbackfaq' class='faq-questions'>
 
 <div class='container'>	
@@ -322,7 +335,12 @@
 // Create an instance of the Stripe object with your publishable API key
       var stripe = Stripe('pk_test_51HJTkuEu13t8IjdAk09Mk0NuuILO7Jx8Pw5vpntXIAYSBfY9y9Ca94Tv6e2dHyo0tmbSigVuhqkouXsBGaHwiMf0000nZLHrL1');
       var checkoutButton = document.getElementById('checkout-button');
+      var checkoutButtonGift = document.getElementById('checkout-button-gift');
+      var checkoutButtonSub = document.getElementById('checkout-button-sub');
       var amount = document.getElementById('amount');
+      var amountGift = document.getElementById('amountGift');
+      var amountSub = document.getElementById('amountSub');
+
 
       checkoutButton.addEventListener('click', function() {
         // Create a new Checkout Session using the server-side endpoint you
@@ -357,8 +375,62 @@
         });
       });
 
+      checkoutButtonGift.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session-gift', {
+          method: 'POST',
+          headers: {
+		    'Content-Type': 'application/json'
+		  },
+
+		  //make sure to serialize your JSON body
+		  body: JSON.stringify({
+		    amountGift: amountGift.value * 100,
+		  })
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+
+
+
+
+
+
 $(document).ready(function(){
   $('input#amount').blur(function(){
+    var num = parseFloat($(this).val());
+    var cleanNum = num.toFixed(2);
+    $(this).val(cleanNum);
+  });
+});
+
+$(document).ready(function(){
+  $('input#amountSub').blur(function(){
+    var num = parseFloat($(this).val());
+    var cleanNum = num.toFixed(2);
+    $(this).val(cleanNum);
+  });
+});
+
+$(document).ready(function(){
+  $('input#amountGift').blur(function(){
     var num = parseFloat($(this).val());
     var cleanNum = num.toFixed(2);
     $(this).val(cleanNum);

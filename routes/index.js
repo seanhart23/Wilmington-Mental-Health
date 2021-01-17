@@ -155,6 +155,10 @@ router.get('/meetourteam', function(req, res){
     res.render('meetourteam');
 });
 
+router.get('/tos', function(req, res){
+    res.render('tos');
+});
+
 // router.get('/blog/new') 
 
 
@@ -207,7 +211,7 @@ router.post('/create-checkout-session', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Wilmington Mental Health',
+            name: 'Wilmington Mental Health - One Time Payment',
           },
           unit_amount: data['amount'],
         },
@@ -221,6 +225,34 @@ router.post('/create-checkout-session', async (req, res) => {
 
   res.json({ id: session.id });
 });
+
+router.post('/create-checkout-session-gift', async (req, res) => {
+  var data = req.body
+  console.log(data)
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Wilmington Mental Health - Gift Certificate',
+          },
+          unit_amount: data['amountGift'],
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://example.com/success',
+    cancel_url: 'https://example.com/cancel',
+  });
+
+  res.json({ id: session.id });
+});
+
+
 
 
 module.exports = router;
