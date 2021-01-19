@@ -1,0 +1,41 @@
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+
+<style>
+    
+#login {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#login button {
+    margin-top: 20px;
+}
+</style>
+
+<div id='login'>
+    <h2 style="text-align: center">Register</h2>
+        <div style="width: 30%; margin: 10px auto;">
+            <form action='/register' method='POST'>
+                <div class='field'>
+                <div class="form-group">
+                    <input class='form-control' type='text' name='username' placeholder='username'>
+                </div></div>
+                <div class='field'>
+                <div class='form-group'>
+                    <input class='form-control' type='password' name='password' placeholder='password'>
+                </div>        </div>
+                <div class='field'>
+                <div class='form-group'>
+                    <button type='submit' class='ui button'>Register</button>
+                </div></div>
+            </form>
+        </div></div>
+    </div>
+</div>
+
+<%- include('./partials/global/footer.ejs') -%>

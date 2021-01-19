@@ -7,16 +7,145 @@ var express        = require('express'),
     User           = require('../models/user'),
     passport       = require('passport'),
     bodyParser     = require('body-parser'),
+    dotenv         = require('dotenv'),
+    cookieParser   = require('cookie-parser'),
+    authController = require('../controllers/auth')
     mysql          = require('mysql');
     Stripe         = require('stripe');
     stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
 
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "Maem250123!",
-//   database: 'blog_post'
+
+/***** DATABASE CONNECTION *****/
+
+dotenv.config({ path: '.env'})
+
+const db = mysql.createConnection({
+    host: 'localhost', //IP address of server //
+    user: 'root',
+    password: 'Maem250123!',
+    database: 'login'
+})
+
+db.connect((error) => {
+    if(error){
+        console.log(error)
+    } else {
+        console.log('MYSQL Login Connected!')
+    }
+})
+
+const db_post = mysql.createConnection({
+    host: 'localhost', //IP address of server //
+    user: 'root',
+    password: 'Maem250123!',
+    database: 'blog_post'
+})
+
+db_post.connect((error) => {
+    if(error){
+        console.log(error)
+    } else {
+        console.log('MYSQL Blog Connected!')
+    }
+})
+
+app.use(cookieParser());
+
+/************/
+
+
+router.get("/new", authController.isLoggedIn, function(req, res){
+    res.render("new"); 
+ }); 
+ 
+router.post('/new', authController.isLoggedIn, async (req, res) => {
+    // var post = req.body
+    const { title, content, preview_image, preview_content } = req.body;
+
+    console.log(title)
+
+    db_post.query('INSERT INTO post SET ?', {post_title: title, post_content: content, post_preview_image: preview_image, post_preview_content: preview_content}, (error, results) => {
+		if(error) {
+			console.log(error)
+		} else {
+			console.log('Post Submitted' + results)
+		}
+	})
+    res.redirect ('/dashboard')
+ });
+
+ router.get('/edit/(:id)', authController.isLoggedIn, function(req, res){
+    const id = req.params.id;
+    let sql = "SELECT * FROM post WHERE post_id = " + req.params.id;
+    db_post.query(sql, (err,result) => {
+        if(err){
+            console.log(err);
+        }
+        // console.log(result[0]);
+        res.render('edit', {post: result[0]});
+    }); 
+}); 
+ 
+router.post('/edit/(:id)', authController.isLoggedIn, function(req, res){
+        // var post = req.body
+        const { id, title, content, preview_image, preview_content } = req.body;
+
+        // console.log(req.params.id)
+    
+        db_post.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_preview_image = "' + preview_image + '", post_preview_content = "' + preview_content + '"  WHERE post_id = ' + id, {post_id: id, post_title: title, post_content: content, post_preview_image: preview_image, post_preview_content: preview_content}, (error, results) => {
+            if(error) {
+                console.log(error)
+            } else {
+                console.log('Post Updated' + results)
+            }
+        })
+        res.redirect ('/dashboard')
+});
+
+// router.delete('/delete/(:id)', function(req, res) {
+//     db_post.query('DELETE FROM post WHERE post_id = ' req.params.id,
+//         function(err, result, fields) {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 console.log("deleted Record: " + result.affectedRows);
+//                 res.redirect('/dashboard')
+//             }
+//         });
 // });
+
+router.get('/blog', function (req, res) {
+    
+    let sql = "Select * from post";
+    let query = db_post.query(sql, (err,result) => {
+        if(err){
+            console.log(err);
+        }
+        // console.log(result);
+        res.render('blog', {post: result});
+    }); 
+});
+
+ router.get('/dashboard', authController.isLoggedIn, function (req, res) {
+    
+    let sql = "Select * from post";
+    let query = db_post.query(sql, (err,result) => {
+        if(err){
+            console.log(err);
+        }
+        // console.log(result);
+        res.render('dashboard', {post: result});
+    }); 
+});
+
+
+
+
+
+
+
+
+
 
 
 router.get('/', function(req, res){
@@ -119,6 +248,10 @@ router.get('/kemlage', function(req, res){
     res.render('kemlage');
 });
 
+router.get('/mooring', function(req, res){
+    res.render('mooring');
+});
+
 router.get('/blackmon', function(req, res){
     res.render('blackmon');
 });
@@ -159,44 +292,18 @@ router.get('/tos', function(req, res){
     res.render('tos');
 });
 
-// router.get('/blog/new') 
 
 
+router.post('/register', authController.register)
 
 
-// router.get('/blog' , (req, res) => {
-// con.query('SELECT * FROM post', (err, rows, fields) => {
-// if (!err)
-// res.send(rows);
-// else
-// console.log(err);
-// })
-// } );
+// for action
+router.post('/login',  authController.login)
 
-router.post('/register', function(req, res){
-    var newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, user){
-        if(err){
-            console.log(err);
-            return res.render('register');
-        }
-        passport.authenticate('local')(req, res, function(){
-            res.redirect('/');
-        });
-    });
-});
 
-router.post('/login', passport.authenticate('local', 
-    {
-        successRedirect: 'dashboard', 
-        failureRedirect: 'login'
-    }), function(req, res){
-});
+router.get('/logout', authController.logout)
 
-router.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/');
-});
+
 
  
 

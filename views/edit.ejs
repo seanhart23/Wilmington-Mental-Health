@@ -1,0 +1,47 @@
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+
+    <style>
+        #new-post {
+            padding: 55px 0px;
+        }
+
+        input, textarea {
+            margin: 25px 0px;
+        }
+
+    </style>
+    <div id='new-post'>
+        <div class='container'>
+		<div class='section-title'>Edit Blog Post</div>
+            <form class="form" action='/edit/(:id)' method='POST'>
+                <div class='form-group'>
+                    <div class="field">
+                        <input type='hidden' class='form-control' id='id' name='id' value='<%= post.post_id %>'>
+                    </div>
+                    <div class="field">
+                        <input type='text' class='form-control' id='title' name='title' value='<%= post.post_title %>'>
+                    </div>
+                    <div class="field">
+                        <input type='text' class='form-control' id='preview_image' name='preview_image' value='<%= post.post_preview_image %>'>
+                    </div>  
+                    <div class="field">
+                        <input type='text' class='form-control' id='preview_content' name='preview_content' value='<%= post.post_preview_content %>'>
+                    </div>
+                    <div class="field">
+                        <textarea type='text' rows='10' class='form-control' id='content' name='content' placeholder=''><%= post.post_content %></textarea>
+                    </div>
+                </div>
+                <button type="submit">Submit Post</button>
+           
+            </form>
+        </div>
+    </div>
+
+
+
+<%- include('./partials/global/footer.ejs') -%>

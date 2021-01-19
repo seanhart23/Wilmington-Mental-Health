@@ -1,0 +1,51 @@
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/scroll.ejs') -%>
+<%- include('./partials/global/navbar.ejs') -%>
+
+<style>
+#dashboard {
+	padding: 55px 0px;
+}
+
+#new {
+	float: right;
+}
+
+table {
+	width: 100%;
+}
+
+thead {
+	text-decoration: underline;
+}
+</style>
+
+<div id='dashboard'>
+	<div class='container'>
+		<div class='section-title'>Dashboard<a href='./new'><button id='new'>New Post</button></a></div>
+			<hr>
+			<table>
+				<thead>
+					<th>Blog Title</th>
+					<th>Date</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</thead>
+				<% post.forEach(function(post){ %>
+				<tr>
+						<td><%= post.post_title %></td>
+						<td></td>
+						<td><a href='/edit/<%= post.post_id %>'>Edit</a></td>
+						<td></td>
+				</tr>
+				<% }) %>
+			</table>
+	</div>
+</div>
+
+
+<%- include('./partials/global/footer.ejs') -%>

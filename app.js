@@ -10,6 +10,7 @@ var express        = require('express'),
     methodOverride = require('method-override'),
     app            = express(),
     nodemailer     = require('nodemailer'),
+    cookieParser   = require('cookie-parser'),
     mysql          = require('mysql');
     request        = require('request');
     Stripe         = require('stripe');
@@ -33,11 +34,13 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 app.use(express.json());
+
 app.use(require("express-session")({
     secret: 'I am cool',
     resave: false,
     saveUninitialized: false
 }));
+app.use(cookieParser());
 
 app.use(passport.initialize());
 app.use(passport.session());
