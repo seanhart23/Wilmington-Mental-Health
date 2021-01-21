@@ -40,10 +40,10 @@ db.connect((error) => {
 })
 
 const db_post = mysql.createConnection({
-    host: 'localhost', //IP address of server //
-    user: 'root',
-    password: 'Maem250123!',
-    database: 'blog_post'
+    host: '162.241.224.14',
+    user: 'wmhwccom_wmh',
+    password: 'n0T{BhXTUJf0',
+    database: 'wmhwccom_WMH'
 })
 
 db_post.connect((error) => {
