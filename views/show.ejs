@@ -1,0 +1,109 @@
+<style>
+    #show {
+        padding: 55px 0px;
+    }
+    
+    .blog-preview {
+        margin-top: 20px
+    }
+    
+    .blog-title {
+        font-size: 32px;
+        margin: 20px 0px 10px 0px;
+        font-weight: 300;
+    }
+    
+    .preview-image img {
+        width: 100%;
+    }
+    
+    .tag {
+        padding: 5px 10px;
+        /* border: 1px solid gray; */
+        margin-right: 5px;
+        background: #4eaac8;
+        color: white;
+        font-size: 14px;
+        border-radius: 3px;
+        margin-bottom: 20px !important;
+    }
+    </style>
+    
+    <%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+        <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+    
+    <div id='show'>
+        <div class='container'>
+            <% post.forEach(function(post){ %>
+               
+            <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
+            <div class='blog-title'><%= post.post_title %></div><hr>
+            <% if(post.post_depression != "Depression") { %>
+                <% } else { %>
+                    <span class='tag'><%= post.post_depression %></span>
+                <% } %>
+        
+                <% if(post.post_anxiety != "Anxiety") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_anxiety %></span>
+                <% } %>
+        
+                <% if(post.post_covid != "COVID-19") { %>
+                <% } else { %>
+                    <span class='tag'><%= post.post_covid %></span>
+                <% } %>
+        
+                <% if(post.post_mental != "Mental Health") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_mental %></span>
+                <% } %>
+        
+                <% if(post.post_eap != "EAP") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_eap %></span>
+                <% } %>
+        
+                <% if(post.post_emdr != "EMDR") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_emdr %></span>
+                <% } %>
+        
+                <% if(post.post_anger != "Anger Management") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_anger %></span>
+                <% } %>
+        
+                <% if(post.post_biofeedback != "Biofeedback") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_biofeedback %></span>
+                <% } %>
+        
+                <% if(post.post_substance != "Substance Abuse") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_substance %></span>
+                <% } %>
+        
+                <% if(post.post_treatments != "Treatments") { %>
+                <% } else { %>
+                <span class='tag'><%= post.post_treatments %></span>
+                <% } %>
+        
+             
+            <div class='blog-preview section-text'><%= post.post_content %></div>
+            
+         
+            <% }) %>
+        </div>
+    </div>
+    
+    
+    <%- include('./partials/global/footer.ejs') -%>
+    
+    
+    
+    
+    

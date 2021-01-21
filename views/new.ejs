@@ -5,8 +5,14 @@
 </div>
 	<%- include('./partials/global/navbar.ejs') -%>
 	<%- include('./partials/scroll.ejs') -%>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js" integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg==" crossorigin="anonymous"></script>
+    
     <style>
+        .left {
+            margin-left: 8px!important;
+        }
+
         #new-post {
             padding: 55px 0px;
         }
@@ -25,6 +31,12 @@
                         <input type='text' class='form-control' id='title' name='title' placeholder='Post Title'>
                     </div>
                     <div class="field">
+                        <input type='text' class='form-control' id='author' name='author' placeholder='Author'>
+                    </div>
+                    <div class="field">
+                        <input type='date' class='form-control' id='date' name='date'>
+                    </div>
+                    <div class="field">
                         <input type='text' class='form-control' id='preview_image' name='preview_image' placeholder='Preview Image URL'>
                     </div>
                     <div class="field">
@@ -33,6 +45,22 @@
                     <div class="field">
                         <textarea type='text' rows='10' class='form-control' id='content' name='content' placeholder='Content'></textarea>
                     </div>
+                    <div class='form-group'>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">Tags:<br><br>
+                              <input type="checkbox" name='depression' class="form-check-input" value="Depression">Depression
+                              <input type="checkbox" name='anxiety' class="form-check-input left" value="Anxiety">Anxiety
+                              <input type="checkbox" name='covid' class="form-check-input left" value="COVID-19" >COVID-19
+                              <input type="checkbox" name='mental' class="form-check-input left" value="Mental Health" >Mental Health
+                              <input type="checkbox" name='eap' class="form-check-input left" value="EAP" >EAP
+                              <input type="checkbox" name='emdr' class="form-check-input left" value="EMDR" >EMDR
+                              <input type="checkbox" name='anger' class="form-check-input left" value="Anger Management" >Anger Management
+                              <input type="checkbox" name='biofeedback' class="form-check-input left" value="Biofeedback" >Biofeedback
+                              <input type="checkbox" name='substance' class="form-check-input left" value="Substance Abuse" >Substance Abuse
+                              <input type="checkbox" name='treatments' class="form-check-input left" value="Treatments" >Treatments
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit">Submit Post</button>
             </form>
@@ -40,5 +68,7 @@
     </div>
 
 
+<script>
 
+</script>
 <%- include('./partials/global/footer.ejs') -%>

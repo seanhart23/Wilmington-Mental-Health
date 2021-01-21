@@ -21,10 +21,16 @@
             <form class="form" action='/edit/(:id)' method='POST'>
                 <div class='form-group'>
                     <div class="field">
-                        <input type='hidden' class='form-control' id='id' name='id' value='<%= post.post_id %>'>
+                        <input type='text' class='form-control' id='id' name='id' value='<%= post.post_id %>'>
                     </div>
                     <div class="field">
                         <input type='text' class='form-control' id='title' name='title' value='<%= post.post_title %>'>
+                    </div>
+                    <div class="field">
+                    <input type='text' class='form-control' id='author' name='author' value='<%= post.post_author %>'>
+                    </div>
+                    <div class="field">
+                        <input type='date' class='form-control' id='date' name='date' value='<%= post.post_date %>'>
                     </div>
                     <div class="field">
                         <input type='text' class='form-control' id='preview_image' name='preview_image' value='<%= post.post_preview_image %>'>

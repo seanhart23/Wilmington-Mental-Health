@@ -1,16 +1,24 @@
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+cookieParser   = require('cookie-parser');
 const { promisify } = require('util')
 
-
+var user = 'a'
 
 const db = mysql.createConnection({
-    host: 'localhost', //IP address of server //
-    user: 'root',
-    password: 'Maem250123!',
-    database: 'login'
+    host: '162.241.224.14',
+    user: 'wmhwccom_wmh',
+    password: 'n0T{BhXTUJf0',
+    database: 'wmhwccom_WMH'
 })
+
+// const db = mysql.createConnection({
+//     host: 'localhost', //IP address of server //
+//     user: 'root',
+//     password: 'Maem250123!',
+//     database: 'login'
+// })
 
 exports.login = async (req, res) => {
 	try {
@@ -24,7 +32,6 @@ exports.login = async (req, res) => {
 		}
 
 		db.query('SELECT * FROM users WHERE username = ?',  [username], async (error, results) => {
-			// console.log(results);
 			if(!results || !(await bcrypt.compare(password, results[0].password) ) ) {
 				res.status(401).render('login', {
 					message: 'Email or password is incorrect'
@@ -42,9 +49,8 @@ exports.login = async (req, res) => {
 					expires: new Date(
 						Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
 						),
-					httpOnly: true
+					httpOnly: true,
 				}
-
 				res.cookie('jwt', token, cookieOptions);
 				res.status(200).redirect('/dashboard');
 				console.log("Username is " + req.body.username)
@@ -129,5 +135,3 @@ exports.logout = async (req, res) => {
 
 	res.status(200).redirect('/');
 }
-
-
