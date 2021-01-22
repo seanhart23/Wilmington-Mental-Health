@@ -96,12 +96,14 @@ nav i {
   .navbar .nav-item .dropdown-menu{ margin-top: 22px; }
 }
 
-#search {
+#search-form #search {
   height: 100%;
   width: auto;
   padding: 4px 10px;
   vertical-align: top;
   background: transparent;
+  border: none;
+  margin-bottom: 0px;
 }
 
 #search-box {
@@ -110,6 +112,9 @@ nav i {
   border: 1px solid lightgray;
 }
 
+#search-form {
+  margin-bottom: 0px;
+}
 </style>
 
 <!-- <style>
@@ -298,7 +303,7 @@ nav i {
 
 
 <!-- Begin siteLevel HTML Searchbox Code -->
-<form method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8">
+<form id='search-form' method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8">
   <div class="sl_search_box">
     <input type="hidden" name="crid" value="drdh3od9"/>
     <input type="text" id='search-box' name="query"/>
