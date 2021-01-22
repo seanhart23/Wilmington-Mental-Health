@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
 			} else {
 				const id = results[0].id;
 
-				const token = jwt.sign({ id: id }, mysupersecretpassword, {
+				const token = jwt.sign({ id: id }, process.env.JWT_SECRET, {
 					expiresIn: process.env.JWT_EXPIRES_IN
 				});
 
@@ -50,7 +50,7 @@ exports.login = async (req, res) => {
 					expires: new Date(
 						Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
 						),
-					httpOnly: true,
+					httpOnly: false,
 				}
 				res.cookie('jwt', token, cookieOptions);
 				res.status(200).redirect('/dashboard');
@@ -131,7 +131,7 @@ exports.isLoggedIn = async (req, res, next) => {
 exports.logout = async (req, res) => {
 	res.cookie('jwt', 'logout', {
 		expires: new Date(Date.now() * 2 * 1000),
-		httpOnly: true
+		httpOnly: false
 	});
 
 	res.status(200).redirect('/');

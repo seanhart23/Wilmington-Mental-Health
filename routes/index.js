@@ -356,7 +356,7 @@ router.get('/blog', function (req, res) {
     let sql = "Select * from post";
     let query = db_post.query(sql, (err,result) => {
         if(err){
-            console.log(err);
+            console.log('Error is: ' + err);
         }
         // console.log(result);
         res.render('blog', {post: result});
