@@ -17,13 +17,6 @@ var express        = require('express'),
 /***** DATABASE CONNECTION *****/
 dotenv.config({ path: '.env'})
 
-// const db = mysql.createConnection({
-//     host: 'localhost', //IP address of server //
-//     user: 'root',
-//     password: 'Maem250123!',
-//     database: 'login'
-// })
-
 const db = mysql.createConnection({
     host: '162.241.224.14',
     user: 'wmhwccom_wmh',
@@ -38,6 +31,14 @@ db.connect((error) => {
         console.log('MYSQL Login Connected!')
     }
 })
+
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
+
+setInterval(function () {
+    db_post.query('SELECT 1');
+}, 5000);
 
 const db_post = mysql.createConnection({
     host: '162.241.224.14',
@@ -54,6 +55,7 @@ db_post.connect((error) => {
     }
 })
 
+
 app.use(cookieParser());
 
 /************/
@@ -64,6 +66,10 @@ router.get('/', function(req, res){
 
 router.get('/intake', function(req, res){
     res.render('intake');
+});
+
+router.get('/search', function(req, res){
+    res.render('search');
 });
 
 router.get('/intakepacket', function(req, res){

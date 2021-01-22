@@ -21,7 +21,9 @@
             margin: 25px 0px;
         }
 
+
     </style>
+ <script src="../ckeditor/ckeditor.js"></script>
     <div id='new-post'>
         <div class='container'>
             <div class='section-title'>New Blog Post</div>
@@ -43,7 +45,7 @@
                         <input type='text' class='form-control' id='preview_content' name='preview_content' placeholder='Preview Content'>
                     </div>
                     <div class="field">
-                        <textarea type='text' rows='10' class='form-control' id='content' name='content' placeholder='Content'></textarea>
+                        <textarea type='text' rows='10' class='form-control' id='editor' name='content' placeholder='Content'></textarea>
                     </div>
                     <div class='form-group'>
                         <div class="form-check-inline">
@@ -69,6 +71,7 @@
 
 
 <script>
+        var editor = CKEDITOR.replace('editor');
 
 </script>
 <%- include('./partials/global/footer.ejs') -%>

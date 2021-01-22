@@ -12,6 +12,10 @@ const db = mysql.createConnection({
     password: 'n0T{BhXTUJf0',
     database: 'wmhwccom_WMH'
 })
+				
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
 
 // const db = mysql.createConnection({
 //     host: 'localhost', //IP address of server //

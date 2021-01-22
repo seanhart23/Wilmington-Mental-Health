@@ -3,6 +3,10 @@
         padding: 55px 0px;
     }
     
+    #blog-content {
+        visibility: hidden;
+    }
+
     .blog-preview {
         margin-top: 20px
     }
@@ -93,14 +97,23 @@
                 <% } %>
         
              
-            <div class='blog-preview section-text'><%= post.post_content %></div>
-            
+            <div class='blog-preview section-text'>
+                <div id='blog-content'><%= post.post_content %></div>
+                <div id='output'></div>
+
          
             <% }) %>
         </div>
     </div>
     
-    
+    <script> 
+
+        var a = $("#blog-content").text();
+        
+        document.getElementById('output').innerHTML = a;
+        
+    </script>
+
     <%- include('./partials/global/footer.ejs') -%>
     
     

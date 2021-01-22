@@ -14,7 +14,14 @@
             margin: 25px 0px;
         }
 
+        .ck-editor__editable {
+            min-height: 500px;
+        }
     </style>
+
+<script src="../ckeditor/ckeditor.js"></script>
+
+
     <div id='new-post'>
         <div class='container'>
 		<div class='section-title'>Edit Blog Post</div>
@@ -39,7 +46,7 @@
                         <input type='text' class='form-control' id='preview_content' name='preview_content' value='<%= post.post_preview_content %>'>
                     </div>
                     <div class="field">
-                        <textarea type='text' rows='10' class='form-control' id='content' name='content' placeholder=''><%= post.post_content %></textarea>
+                        <textarea type='text' rows='10' class='form-control' id='editor1' name='content' placeholder=''><%= post.post_content %></textarea>
                     </div>
                 </div>
                 <button type="submit">Submit Post</button>
@@ -49,5 +56,8 @@
     </div>
 
 
+    <script>
+        var editor = CKEDITOR.replace('editor1');
 
+        </script>
 <%- include('./partials/global/footer.ejs') -%>

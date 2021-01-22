@@ -56,7 +56,6 @@
 nav i {
   font-size: 20px;
   color: gray !important;
-  padding-left: 20px;
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
@@ -97,7 +96,19 @@ nav i {
   .navbar .nav-item .dropdown-menu{ margin-top: 22px; }
 }
 
+#search {
+  height: 100%;
+  width: auto;
+  padding: 4px 10px;
+  vertical-align: top;
+  background: transparent;
+}
 
+#search-box {
+  height: 90%;
+  margin-top: 3px;
+  border: 1px solid lightgray;
+}
 
 </style>
 
@@ -285,20 +296,18 @@ nav i {
 
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <a href='/'><i class="fas fa-home"></i> </a>
-      <i class="fas fa-search"></i>
-    </form>
 
 <!-- Begin siteLevel HTML Searchbox Code -->
-<!-- <form method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8" id='search'>
+<form method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8">
   <div class="sl_search_box">
     <input type="hidden" name="crid" value="drdh3od9"/>
-    <input type="text" name="query"/>
-    <button type="submit">Search</button>
+    <input type="text" id='search-box' name="query"/>
+    <button type="submit" formtarget="search.ejs" id='search'><i class="fas fa-search"></i> </button>
   </div>
-</form> -->
+</form>
 <!-- End siteLevel HTML Searchbox Code -->
+
+      <a href='/'><i class="fas fa-home"></i> </a>
 
 
 </div>
