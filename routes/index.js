@@ -66,6 +66,11 @@ router.get('/intake', function(req, res){
     res.render('intake');
 });
 
+router.get('/intakepacket', function(req, res){
+    res.render('intakepacket');
+});
+
+
 router.get('/insurance', function(req, res){
     res.render('insurance');
 });
