@@ -12,8 +12,11 @@ var express        = require('express'),
     authController = require('../controllers/auth')
     mysql          = require('mysql');
     Stripe         = require('stripe');
-    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK'),
+    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
+    role           = 'null';
 
+
+ 
 /***** DATABASE CONNECTION *****/
 dotenv.config({ path: '.env'})
 
@@ -24,6 +27,7 @@ const db = mysql.createConnection({
     database: 'wmhwccom_WMH'
 })
 
+
 db.connect((error) => {
     if(error){
         console.log(error)
@@ -32,28 +36,24 @@ db.connect((error) => {
     }
 })
 
-var del = db._protocol._delegateError;
-db._protocol._delegateError = function(err, sequence){
-  if (err.fatal) {
-    console.trace('fatal error: ' + err.message);
-  }
-  return del.call(this, err, sequence);
-};
 
-// setInterval(function () {
-//     db.query('SELECT 1');
-// }, 5000);
 
-// setInterval(function () {
-//     db_post.query('SELECT 1');
-// }, 5000);
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
+
+setInterval(function () {
+    db_post.query('SELECT 1');
+}, 5000);
 
 const db_post = mysql.createConnection({
     host: '162.241.224.14',
     user: 'wmhwccom_wmh',
     password: 'n0T{BhXTUJf0',
-    database: 'wmhwccom_WMH'
+    database: 'wmhwccom_WMH',
+    multipleStatements: true
 })
+
 
 db_post.connect((error) => {
     if(error){
@@ -230,8 +230,7 @@ router.post('/register', authController.register)
 router.post('/login',  authController.login)
 
 
-router.get('/logout', authController.logout)
-
+router.get('/logout', authController.logout);
 
 
  
@@ -294,6 +293,37 @@ router.get("/new", authController.isLoggedIn, function(req, res){
     res.render("new", user)
  }); 
  
+ router.get("/comment", function(req, res){
+    res.render("dashboard")
+ }); 
+
+ router.post('/comment', async (req, res) => {
+
+    const { 
+        author, 
+        comment,
+        post_id
+    } = req.body;
+
+
+    db_post.query('INSERT INTO comment SET ?', {
+        author: author, 
+        comment: comment, 
+        post_id: post_id }, (error, results) => {
+		if(error) {
+			console.log(error)
+		} else {
+            console.log(results)
+            // console.log('Post Submitted' + results)
+		}
+	})
+    res.redirect('back');
+
+ });
+    
+
+
+
 router.post('/new', authController.isLoggedIn, async (req, res) => {
     // var post = req.body
     const { 
@@ -389,6 +419,7 @@ router.get('/blog', function (req, res) {
 
 
  router.get('/dashboard', authController.isLoggedIn, function (req, res) { 
+    role = role;
     let sql = "Select * from post";
     let query = db_post.query(sql, (err,result) => {
         if(err){
@@ -400,15 +431,15 @@ router.get('/blog', function (req, res) {
 
 
 router.get("/:id", function(req, res){
-    let sql = "Select * from post WHERE post_id = " + req.params.id;
-    let query = db_post.query(sql, (err,result) => {
-        if(err){
-            // console.log(err);
-        }
-        // console.log(result);
-        res.render('show', {post: result});
+
+    var db = "Select * from post WHERE post_id = " + req.params.id+ "; Select * from comment WHERE post_id = " + req.params.id;
+    console.log(db);
+    let query = db_post.query(db, [0, 1], function(error, results) {
+        res.render('show', {post: results[0], comment: results[1]});
+        });
     }); 
-});
+
+
 
 router.delete('/:id', function(req, res) {
     db_post.query('DELETE FROM post WHERE post.post_id = ' + req.params.id,
@@ -420,6 +451,19 @@ router.delete('/:id', function(req, res) {
                 res.redirect('/dashboard')
             }
         });
+});
+
+
+router.delete('/comment/:id', function(req, res) {
+    db_post.query('DELETE FROM comment where comment.id = ' + req.params.id),
+        function(err, result, fields) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("deleted Record: " + result.affectedRows);
+            }
+        };
+        res.redirect('back')
 });
 
 module.exports = router;

@@ -12,16 +12,10 @@ const db = mysql.createConnection({
     database: 'wmhwccom_WMH'
 })
 				
-// setInterval(function () {
-//     db.query('SELECT 1');
-// }, 5000);
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
 
-// const db = mysql.createConnection({
-//     host: 'localhost', //IP address of server //
-//     user: 'root',
-//     password: 'Maem250123!',
-//     database: 'login'
-// })
 
 exports.login = async (req, res) => {
 	try {
@@ -120,7 +114,6 @@ exports.isLoggedIn = async (req, res, next) => {
 					req.user = result[0];
 					username = req.user.username;
 					role = req.user.role;
-					console.log('Username is ' + username + ' and role is ' + role)
 					return next();
 				});
 
@@ -136,9 +129,9 @@ exports.isLoggedIn = async (req, res, next) => {
 
 exports.logout = async (req, res) => {
 	res.cookie('jwt', 'logout', {
-		expires: new Date(Date.now() * 2 * 1000),
+		expires: new Date(Date.now()),
 		httpOnly: false
 	});
-
+	role = 'null'
 	res.status(200).redirect('/');
 }

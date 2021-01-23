@@ -1,10 +1,15 @@
 <style>
+
+    .comment_title {
+        margin-top: 50px;
+    }
     #show {
         padding: 55px 0px;
     }
     
     #blog-content {
         visibility: hidden;
+        display: none;
     }
 
     .blog-preview {
@@ -31,6 +36,14 @@
         border-radius: 3px;
         margin-bottom: 20px !important;
     }
+
+    #submit-button {
+        float: right !important;
+    }
+
+    #timestamp {
+        font-size: 14px !important;
+    }
     </style>
     
     <%- include('./partials/global/header.ejs') -%>
@@ -43,7 +56,7 @@
     <div id='show'>
         <div class='container'>
             <% post.forEach(function(post){ %>
-               
+                <% if (post.draft === 'No'){ %>
             <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
             <div class='blog-title'><%= post.post_title %></div><hr>
             <% if(post.post_depression != "Depression") { %>
@@ -101,9 +114,54 @@
                 <div id='blog-content'><%= post.post_content %></div>
                 <div id='output'></div>
 
-         
+
+                <div id='comments'>
+                    <div class='comment_title section-title'>Comments</div>
+                    
+                    <div><button style='float: right' data-toggle="collapse" data-target="#demo">Add Comment</button></div>
+                   
+                    <div id="demo" class="collapse" style='width: 80%'>
+                        
+                        
+                        <form action='/comment' method='POST'>
+                            <div class="field">
+                                <input type='text' class='form-control' id='post_id' name='post_id' value='<%= post.post_id %>' hidden>
+                            </div><br>
+                            <div class="field">
+                                <input type='text' class='form-control' id='name' name='author' placeholder='name'>
+                            </div><br>
+                            <div class="field">
+                                <textarea type='text' rows='5' class='form-control' id='comment-field' name='comment' placeholder='Comment'></textarea>
+                            </div><br>
+                            <button type='submit'>Submit</button>
+                        </form>
+                        <br>    
+                    </div>
+                    <div class='comments'>
+                        <br>
+                        <% comment.forEach(function(comment){ %>
+                            <% if(post.post_id = comment.post_id) { %>
+                            <div class='bold'><%= comment.author %></div>
+                            <%  var date = comment.timestamp.toLocaleString() %>
+                            <div id='timestamp'><%= date %></div>
+                            <div class='section-text' style='padding: 20px'><%= comment.comment %></div>
+                            <% if( role === 'admin'){ %>
+                                <div style='text-align: right'><form method="POST" action="comment/<%= comment.id %>?_method=DELETE" id="delete"><button class='btn-sm btn-danger'>Delete</button></form></div>
+                            <% } else { %>
+                            <% } %>
+                            <hr>
+                            <% } %>
+                            <% }) %>
+
+                    </div>
+                    <% } %>
             <% }) %>
         </div>
+
+
+
+        </div>
+    </div>
     </div>
     
     <script> 
