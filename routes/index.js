@@ -32,6 +32,14 @@ db.connect((error) => {
     }
 })
 
+var del = db._protocol._delegateError;
+db._protocol._delegateError = function(err, sequence){
+  if (err.fatal) {
+    console.trace('fatal error: ' + err.message);
+  }
+  return del.call(this, err, sequence);
+};
+
 // setInterval(function () {
 //     db.query('SELECT 1');
 // }, 5000);
