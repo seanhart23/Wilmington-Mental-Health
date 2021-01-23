@@ -4,7 +4,9 @@
 	<%- include('./partials/global/navtop.ejs') -%>
 </div>
 	<%- include('./partials/global/navbar.ejs') -%>
-	<%- include('./partials/scroll.ejs') -%>
+    <%- include('./partials/scroll.ejs') -%>
+    <%- include('./partials/global/user-dashboard.ejs') -%>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js" integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg==" crossorigin="anonymous"></script>
     
@@ -26,6 +28,8 @@
  <script src="../ckeditor/ckeditor.js"></script>
     <div id='new-post'>
         <div class='container'>
+            <%= role %>
+
             <div class='section-title'>New Blog Post</div>
             <form class="form" action='/new' method='POST'>
                 <div class='form-group'>
@@ -63,6 +67,22 @@
                             </label>
                         </div>
                     </div>
+                    <% if (role === 'admin'){ %>
+                    <div class="field">
+                        <label>Draft</label>
+                        <select type='text' class='form-control' id='draft' name='draft'>
+                            <option value='Yes'>Yes</option>
+                            <option value='No'>No</option>
+                        </select>
+                    </div>
+                    <% } else { %>
+                        <div class="field">
+                            <label>Draft</label>
+                            <select type='text' class='form-control' id='draft' name='draft'>
+                                <option value='Yes'>Yes</option>
+                            </select>
+                        </div>
+                        <% } %>
                 </div>
                 <button type="submit">Submit Post</button>
             </form>

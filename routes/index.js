@@ -282,7 +282,8 @@ router.post('/create-checkout-session-gift', async (req, res) => {
 
 
 router.get("/new", authController.isLoggedIn, function(req, res){
-    res.render("new"); 
+    var user = {role: req.user.role}
+    res.render("new", user)
  }); 
  
 router.post('/new', authController.isLoggedIn, async (req, res) => {
@@ -304,8 +305,10 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
         biofeedback,
         substance,
         treatments,
+        draft,
     } = req.body;
 
+    
 
     db_post.query('INSERT INTO post SET ?', {
         post_title: title, 
@@ -323,6 +326,7 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
         post_anger: anger,
         post_biofeedback: biofeedback,
         post_substance: substance,
+        draft: draft,
         post_treatments: treatments }, (error, results) => {
 		if(error) {
 			console.log(error)
@@ -348,9 +352,9 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
  
 router.post('/edit/(:id)', authController.isLoggedIn, function(req, res){
         // var post = req.body
-        const { id, title, content, preview_image, preview_content, author, date } = req.body;
+        const { id, title, content, preview_image, preview_content, author, date, draft } = req.body;
     
-        db_post.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_preview_image = "' + preview_image + '", post_author= "' + author + '", post_date = "' + date + '", post_preview_content = "' + preview_content + '"  WHERE post_id = ' + id, {post_id: id, post_title: title, post_content: content, post_preview_image: preview_image, post_preview_content: preview_content}, (error, results) => {
+        db_post.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_preview_image = "' + preview_image + '", post_author= "' + author + '", post_date = "' + date + '", post_preview_content = "' + preview_content + '", draft = "' + draft + '" WHERE post_id = ' + id, {post_id: id, post_title: title, post_content: content, post_preview_image: preview_image, post_preview_content: preview_content}, (error, results) => {
             if(error) {
                 console.log(error)
             } else {

@@ -4,6 +4,7 @@
 	<%- include('./partials/global/navtop.ejs') -%>
 </div>
 <%- include('./partials/global/navbar.ejs') -%>
+<%- include('./partials/global/user-dashboard.ejs') -%>
 
     <style>
         #new-post {
@@ -49,6 +50,22 @@
                         <textarea type='text' rows='10' class='form-control' id='editor1' name='content' placeholder=''><%= post.post_content %></textarea>
                     </div>
                 </div>
+                <% if (role === 'admin'){ %>
+                    <div class="field">
+                        <label>Draft</label>
+                        <select type='text' class='form-control' id='draft' name='draft'>
+                            <option value='Yes'>Yes</option>
+                            <option value='No'>No</option>
+                        </select>
+                    </div>
+                    <% } else { %>
+                        <div class="field">
+                            <label>Draft</label>
+                            <select type='text' class='form-control' id='draft' name='draft'>
+                                <option value='Yes'>Yes</option>
+                            </select>
+                        </div>
+                        <% } %><br>
                 <button type="submit">Submit Post</button>
            
             </form>

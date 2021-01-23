@@ -2,9 +2,8 @@ const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 cookieParser   = require('cookie-parser');
-const { promisify } = require('util')
+const { promisify } = require('util');
 
-var user = 'a'
 
 const db = mysql.createConnection({
     host: '162.241.224.14',
@@ -27,7 +26,8 @@ const db = mysql.createConnection({
 exports.login = async (req, res) => {
 	try {
 
-		const { username, password } = req.body;
+		const { username, password, role} = req.body;
+		console.log(req.body)
 
 		if(!username || !password) {
 			console.log('Error is here')
@@ -58,7 +58,6 @@ exports.login = async (req, res) => {
 				}
 				res.cookie('jwt', token, cookieOptions);
 				res.status(200).redirect('/dashboard');
-				console.log("Username is " + req.body.username)
 		}
 	
 
@@ -74,7 +73,7 @@ exports.login = async (req, res) => {
 
 exports.register = (req, res) => {
 	// console.log(req.body);
-	const { username, password } = req.body;
+	const { username, password, role } = req.body;
 
 	db.query('SELECT username FROM users WHERE username = ?', [username], async (error, results) => {
 		if(error) {
@@ -90,21 +89,21 @@ exports.register = (req, res) => {
 	let hashedPassword = await bcrypt.hash(password, 0);
 	console.log(hashedPassword);
 
-	db.query('INSERT INTO users SET ?', {username: username, password: hashedPassword }, (error, results) => {
+	db.query('INSERT INTO users SET ?', {username: username, password: hashedPassword, role: role }, (error, results) => {
 		if(error) {
 			console.log(error)
 		} else {
 			console.log('User Registered' + results)
 		}
 	})
-	res.send ('Form Submitted')
+	res.redirect('/')
 
 	})
 }
 
 exports.isLoggedIn = async (req, res, next) => {
 	console.log(req.cookies);
-	if(req.cookies.jwt){
+	if(req.cookies.jwt && req.cookies.jwt != 'logout'){
 		try {
 			const decoded = await promisify(jwt.verify)(req.cookies.jwt, 
 				process.env.JWT_SECRET
@@ -119,6 +118,9 @@ exports.isLoggedIn = async (req, res, next) => {
 					}
 
 					req.user = result[0];
+					username = req.user.username;
+					role = req.user.role;
+					console.log('Username is ' + username + ' and role is ' + role)
 					return next();
 				});
 
@@ -126,8 +128,8 @@ exports.isLoggedIn = async (req, res, next) => {
 			return next();
 		}
 	} else{
-		next ();
-
+		// next ();
+		res.redirect('/')
 	}
 
 }

@@ -49,6 +49,10 @@ $(window).scroll(function(){
   $('.navbar').toggleClass('transparent', $(this).scrollTop() > 100);
   $('.nav-link').toggleClass('nav-link-scrolled', $(this).scrollTop() > 100);
   $('.scroll-up').toggleClass('scrolled', $(this).scrollTop() > 100);
+  $('.side-list').toggleClass('display', $(this).scrollTop() > 100);
+  $('.list').toggleClass('display', $(this).scrollTop() > 100);
+
+
   // $('.sec-nav').toggleClass('hold', $(this).scrollTop() > 200);
 });
 

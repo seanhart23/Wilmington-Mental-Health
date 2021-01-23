@@ -33,6 +33,17 @@
     display: inline-block;
 }
 
+.contact-form-box {
+    padding: 10px;
+    color: black!important;
+    margin-top: 50px;
+    background: whitesmoke;
+}
+
+.contact-form-box .section-title {
+    color: black !important;
+}
+
 .dot {
     color: #4eaac8;
     font-size: 26px;
@@ -147,11 +158,60 @@ hr {
                             </li>
                         </div>
                     </ul>
+                  
+
+
+                    <div class='contact-form-box'>
+                        <form action='/contact' method='POST'>
+                            <div class='section-title center'>Contact <span class='bold'>Us</span></div>
+                        <div class="form-group">
+                            <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+                        </div>							
+                
+                        <div class="form-group">
+                            <input type="number" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+                        </div>
+                
+                
+                        <label class='section-text'>Preferences:</label>
+                        <div class='form-group'>
+                            <select class="form-control form-select-lg mb-3" name='Time'>
+                                <option>Choose a Time</option>
+                                <option name='earlymorning' id='earlymorning'>Early Morning Appointment</option>
+                                <option name='latemorning' id='latemorning'>Late Morning Appointment</option>
+                                <option name='earlyafternoon' id='earlyafternoon'>Early Afternoon Appointment</option>
+                                <option name='lateafternoon' id='lateafternoon'>Late Afternoon Appointment</option>
+                                <option name='earlyevening' id='earlyevening'>Early Evening Appointment</option>
+                            </select>
+                        </div>
+                        <div class='form-group'>
+                            <select class="form-control form-select-lg mb-3" name='Provider'>
+                                <option>Choose a Provider</option>
+                                <option name='henzler' id='henzler'>Havah Henzler</option>
+                                <option name='mooring' id='mooring'>Sarah Mooring</option>
+                                <option name='rengifo' id='rengifo'>Joseph Rengifo</option>
+                                <option name='blackmon' id='blackmon'>Lisa Blackmon</option>
+                                <option name='ford' id='ford'>Sara Scott Ford</option>
+                            </select>
+                        </div>
+                
+                        <div class="form-group">
+                            <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message" rows='4'></textarea>
+                        </div>		
+                
+                        <div class="form-group">
+                            <textarea type="message" id="Hear" name="Hear" class="form-control" placeholder="How did you hear about us?" rows='2'></textarea>
+                        </div>
+                
+                        <button type="submit" id="" class="">Send</button>
+                    </form>
                     </div>
 
-
-
-       
+                </div>
 
             <div class='col-lg-9'>
                 <div class="tab-content">
@@ -159,11 +219,13 @@ hr {
                 <div class="tab-pane active" id="all">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                        <% } %>
                     <% }) %>
                     </div>
                 </div>
@@ -171,12 +233,14 @@ hr {
                 <div class="tab-pane fade" id="depression">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_depression === 'Depression') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -185,12 +249,14 @@ hr {
                 <div class="tab-pane fade" id="anxiety">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_anxiety === 'Anxiety') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -199,12 +265,14 @@ hr {
                 <div class="tab-pane fade" id="covid">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_covid === 'COVID-19') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -213,12 +281,14 @@ hr {
                 <div class="tab-pane fade" id="mental">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_mental === 'Mental Health') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -227,12 +297,14 @@ hr {
                 <div class="tab-pane fade" id="eap">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_eap === 'EAP') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -241,12 +313,14 @@ hr {
                 <div class="tab-pane fade" id="emdr">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_emdr === 'EMDR') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -255,12 +329,14 @@ hr {
                 <div class="tab-pane fade" id="anger">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_anger === 'Anger Management') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -269,12 +345,14 @@ hr {
                 <div class="tab-pane fade" id="biofeedback">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_biofeedback === 'Biofeedback') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -283,12 +361,14 @@ hr {
                 <div class="tab-pane fade" id="substance">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_substance === 'Substance Abuse') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>
@@ -297,12 +377,14 @@ hr {
                 <div class="tab-pane fade" id="treatments">
                     <div id='posts'>
                     <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
                         <% if(post.post_treatments === 'Treatments') { %>
                         <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
                         <div class='blog-title'><%= post.post_title %></div>
                         <span class='byline'>By <%= post.post_author %></span><span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
                         <div class='blog-preview section-text'><%= post.post_preview_content %></div>
                         <div class='read-more'><a href='/<%= post.post_id %>'>Read More</a></div>
+                    <% } %>
                     <% } %>
                     <% }) %>
                     </div>

@@ -5,6 +5,7 @@
 </div>
 <%- include('./partials/scroll.ejs') -%>
 <%- include('./partials/global/navbar.ejs') -%>
+<%- include('./partials/global/user-dashboard.ejs') -%>
 
 <style>
 
@@ -42,6 +43,7 @@ thead {
 					<th>Blog Title</th>
 					<th>Author</th>
 					<th>Date</th>
+					<th>Draft</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</thead>
@@ -51,6 +53,7 @@ thead {
 						<td><%= post.post_title %></td>
 						<td><%= post.post_author %></td>
 						<td><%= post.post_date %></td>
+						<td><%= post.draft %></td>
 						<td><a href='/edit/<%= post.post_id %>'>Edit</a></td>
 						<td><form method="POST" action="/<%= post.post_id %>?_method=DELETE" id="delete"><button type='submit'>Delete</button></form></td>
 						<td></td>
