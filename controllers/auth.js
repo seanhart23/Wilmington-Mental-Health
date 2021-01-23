@@ -12,9 +12,9 @@ const db = mysql.createConnection({
     database: 'wmhwccom_WMH'
 })
 				
-setInterval(function () {
-    db.query('SELECT 1');
-}, 5000);
+// setInterval(function () {
+//     db.query('SELECT 1');
+// }, 5000);
 
 
 exports.login = async (req, res) => {
