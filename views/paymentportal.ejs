@@ -11,6 +11,7 @@
 .payment-box {
 	border: 1px solid #4eaac8;
 	padding: 15px;
+	height: 1000px;
 }
 
 .payment-type {
@@ -124,9 +125,23 @@
 				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
 				<br>
 				<div class='payment-image center'><img src='./images/chair.png'></div><br>
-				<fieldset>
-					<label class='section-text center w-100'>Enter Payment Amount</label><br><br>
-					<div class='w-100 center'><input type='number' data-type="currency" id='amount' name='amount' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'></div>
+				<div class='row'>
+						<div class='col-lg-6'>
+							<label class='section-text center w-100'>Payment Amount</label><br><br>
+							<div class='w-100 center'><input type='number'  class='form-control' data-type="currency" id='amount' name='amount' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'></div>		
+						</div>
+						<div class='col-lg-6'>
+							<label class='section-text center w-100'>Patient Name</label><br><br>
+							<div class='w-100 center'><input type='text' class='form-control' id='patient' name='patient' style='margin: auto'></div>
+						</div>
+				</div>
+					<label class='section-text center w-100' style='margin-top: 25px'>Type of Payment</label><br><br>
+					<div class='w-50 center'>
+						<select class='form-control' id='type' name='type' style='margin: auto'>
+							<option value='copay'>Copay</option>
+							<option value='deductible'>Deductible</option>
+						</select>
+					</div>
 			</fieldset>
 			<br>
 			<div class='w-100 center'>
@@ -141,43 +156,32 @@
 <!-- RECURRING PAYMENTS -->
 
 		<div class='col-lg-6'>
-			<div class='payment-header section-title center'>Recurrent Payments</div>
+			<div class='payment-header section-title center'>Gift Certificates & Donations</div>
 				<hr class='short'>
 				<div class='payment-box'>
-				<div class='payment-type'>Balances and Deductibles</div>
-				<div class='payment-sub-type section-text'>Pay for your therapy session</div>
+				<div class='payment-type'>Support Mental Health</div>
+				<div class='payment-sub-type section-text'>Funds for the less fortunate</div>
 				<br>
-				<div class='payment-image center'><img src='./images/calendar.png'></div><br>
+				<div class='payment-image center'><img src='./images/gift.png' style='height: 322px'></div><br>
 				<fieldset>
-					<label class='section-text center w-100'>Enter Payment Amount</label><br><br>
-					<div class='w-100 center'><input type='number' data-type="currency" id='amountSub' name='amountSub' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'></div>
+					<label class='section-text center w-100' style='margin-top: 50px'>Gift/Donation Amount</label><br><br>
+					<div class='w-100 center'><input type='number' class='form-control' data-type="currency" id='amountGift' name='amountGift' style='margin: auto; width: 50%' oninput="limitDecimalPlaces(event, 2)" class='center'></div>
 			</fieldset>
 			<br>
 			<div class='w-100 center'>
-				<button id="checkout-button-sub" style='margin: auto'>Submit Payment</button></div><br>
+				<button id="checkout-button-gift" style='margin: auto'>Buy Gift Certificate</button><br><br><br><br><br>
+				<hr>
+				<div class='section-text center'>Help us continue our mission of providing support and awareness on behalf of individuals living with mental illness and their families. You can either donate to Wilmington Mental Health and the funds will be used to help many people who need counseling but cannot afford the services, or donate a desired amount to support someone you know who needs therapy - an email will be sent directly to the recipient.</div>
 			</div>
 		</div>
 	</div>
 </div>
 
 
-<div class='container' style='margin-bottom: 55px'>
-	<div class='section-title'>Gift Certificates & Donations</div>
-	<hr class='short' style='margin-left: 0px; margin-bottom: 10px'>
-	<div class='section-text big'>Support Mental Health</div>
-	<div class='sub-title'>Funds for the less fortunate</div>
+
 	<div class='section-text' style='margin-top: 15px'>
-		<p>Help us continue our mission of providing support and awareness on behalf of individuals living with mental illness and their families. You can either donate to Wilmington Mental Health and the funds will be used to help many people who need counseling but cannot afford the services, or donate a desired amount to support someone you know who needs therapy - an email will be sent directly to the recipient.</p>
-	</div>
-	<div class='row'>
-		<div class='col-lg-4'><img src='./images/gift.png' style='width: 100%'></div>
-		<div class='col-lg-8'>
-			<p class='section-text'>Enter Amount Below</p>
-			<input type='number' data-type="currency" id='amountGift' name='amountGift' style='margin: auto' oninput="limitDecimalPlaces(event, 2)" class='center'><br><br>
-			<button id="checkout-button-gift" style='margin: auto'>Buy Gift Certificate</button>
-			<p class='section-text' style='margin-top: 20px'>If you have any questions about payments or your current balance, please call us at 910-777-5575 before making a payment through this portal. Also call our main office if you have additional billing questions, concerns about your balance, or would prefer to pay by phone. If you are experiencing financial hardship, ask your therapist to assess your financial need and explain what options we have available.</p>
-		</div>
-	</div>
+	<p class='section-text' style='margin-top: 20px'>If you have any questions about payments or your current balance, please call us at 910-777-5575 before making a payment through this portal. Also call our main office if you have additional billing questions, concerns about your balance, or would prefer to pay by phone. If you are experiencing financial hardship, ask your therapist to assess your financial need and explain what options we have available.</p>
+</div>
 </div>
 
 
@@ -337,7 +341,9 @@
       var checkoutButton = document.getElementById('checkout-button');
       var checkoutButtonGift = document.getElementById('checkout-button-gift');
       var checkoutButtonSub = document.getElementById('checkout-button-sub');
-      var amount = document.getElementById('amount');
+	  var amount = document.getElementById('amount');
+	  var patient = document.getElementById('patient');
+	  var type = document.getElementById('type');
       var amountGift = document.getElementById('amountGift');
       var amountSub = document.getElementById('amountSub');
 
@@ -353,7 +359,9 @@
 
 		  //make sure to serialize your JSON body
 		  body: JSON.stringify({
-		    amount: amount.value * 100,
+			amount: amount.value * 100,
+			patient: patient.value,
+			type: type.value,
 		  })
         })
         .then(function(response) {

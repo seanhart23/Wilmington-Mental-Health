@@ -9,7 +9,7 @@ var express        = require('express'),
     bodyParser     = require('body-parser'),
     dotenv         = require('dotenv'),
     cookieParser   = require('cookie-parser'),
-    authController = require('../controllers/auth')
+    authController = require('../controllers/auth');
     mysql          = require('mysql');
     Stripe         = require('stripe');
     stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
@@ -38,13 +38,13 @@ db.connect((error) => {
 
 
 
-// setInterval(function () {
-//     db.query('SELECT 1');
-// }, 5000);
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
 
-// setInterval(function () {
-//     db_post.query('SELECT 1');
-// }, 5000);
+setInterval(function () {
+    db_post.query('SELECT 1');
+}, 5000);
 
 const db_post = mysql.createConnection({
     host: '162.241.224.14',
@@ -217,6 +217,8 @@ router.get('/meetourteam', function(req, res){
     res.render('meetourteam');
 });
 
+
+
 router.get('/tos', function(req, res){
     res.render('tos');
 });
@@ -246,7 +248,7 @@ router.post('/create-checkout-session', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Wilmington Mental Health - One Time Payment',
+            name: 'Wilmington Mental Health - One Time Payment for ' + data['patient'] + ' for a ' + data['type'],
           },
           unit_amount: data['amount'],
         },
@@ -466,4 +468,7 @@ router.delete('/comment/:id', function(req, res) {
         res.redirect('back')
 });
 
+router.get('/thankyou', function(req, res){
+    res.render('thankyou');
+});
 module.exports = router;
