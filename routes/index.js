@@ -12,8 +12,10 @@ var express        = require('express'),
     authController = require('../controllers/auth');
     mysql          = require('mysql');
     Stripe         = require('stripe');
-    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
+    stripe         = Stripe('sk_live_ZPkYqgjglvANPBbH7KB0xq6Y');
     role           = 'null';
+    nodemailer     = require('nodemailer');
+
 
 
  
@@ -38,13 +40,13 @@ db.connect((error) => {
 
 
 
-setInterval(function () {
-    db.query('SELECT 1');
-}, 5000);
+// setInterval(function () {
+//     db.query('SELECT 1');
+// }, 5000);
 
-setInterval(function () {
-    db_post.query('SELECT 1');
-}, 5000);
+// setInterval(function () {
+//     db_post.query('SELECT 1');
+// }, 5000);
 
 const db_post = mysql.createConnection({
     host: '162.241.224.14',
@@ -235,7 +237,9 @@ router.post('/login',  authController.login)
 router.get('/logout', authController.logout);
 
 
- 
+router.get('/thankyou', function(req, res){
+    res.render('thanks');
+});
 
 router.post('/create-checkout-session', async (req, res) => {
   var data = req.body
@@ -256,8 +260,8 @@ router.post('/create-checkout-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: 'https://example.com/success',
-    cancel_url: 'https://example.com/cancel',
+    success_url: 'https://wilmingtonmentalhealth.com/thankyou',
+    cancel_url: 'https://wilmingtonmentalhealth.com',
   });
 
   res.json({ id: session.id });
@@ -282,8 +286,8 @@ router.post('/create-checkout-session-gift', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: 'https://example.com/success',
-    cancel_url: 'https://example.com/cancel',
+    success_url: 'https://wilmingtonmentalhealth.com/thankyou',
+    cancel_url: 'https://wilmingtonmentalhealth.com',
   });
 
   res.json({ id: session.id });
@@ -318,7 +322,31 @@ router.get("/new", authController.isLoggedIn, function(req, res){
             console.log(results)
             // console.log('Post Submitted' + results)
 		}
-	})
+    })
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'wilmingtonmentalhealth@gmail.com',
+          pass: 'kwwcpuxcczmtofyw'
+        }
+      })
+      const mailOpts = {
+        from: 'Wilmington Mental Health Website', 
+        to: `jrengifo@wmhwc.com`,
+        subject: 'A new comment has been submitted on your website',
+        text: `${req.body.comment}`
+      }
+    
+      smtpTrans.sendMail(mailOpts, (error, response) => {
+        if (error) {
+          res.render('index') 
+        }
+        else {
+          res.render('index')
+        }
+      })
     res.redirect('back');
 
  });
@@ -374,7 +402,31 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
             console.log(results)
             // console.log('Post Submitted' + results)
 		}
-	})
+    })
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'wilmingtonmentalhealth@gmail.com',
+          pass: 'kwwcpuxcczmtofyw'
+        }
+      })
+      const mailOpts = {
+        from: 'Wilmington Mental Health Website', 
+        to: `jrengifo@wmhwc.com`,
+        subject: 'A new post has been submitted on your website',
+        text: `${req.body.title} by ${req.body.author}`
+      }
+    
+      smtpTrans.sendMail(mailOpts, (error, response) => {
+        if (error) {
+          res.render('index') 
+        }
+        else {
+          res.render('index')
+        }
+      })
     res.redirect ('/dashboard')
  });
 
@@ -468,7 +520,5 @@ router.delete('/comment/:id', function(req, res) {
         res.redirect('back')
 });
 
-router.get('/thankyou', function(req, res){
-    res.render('thankyou');
-});
+
 module.exports = router;

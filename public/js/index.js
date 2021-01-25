@@ -1,3 +1,8 @@
+function search() {
+  var searchText = $("#word").val();
+  $(".searchText:contains('" + searchText + "')").css("background","#FF0");
+}
+
 
 /*** Scroll Transitons ***/
 

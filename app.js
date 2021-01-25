@@ -14,7 +14,7 @@ var express        = require('express'),
     mysql          = require('mysql');
     request        = require('request');
     Stripe         = require('stripe');
-    stripe         = Stripe('sk_test_51HJTkuEu13t8IjdAxry9AszPenQzzctiEHgiCBZzohftSbZkA42CnUHON1U5ztaffAQ5HmgA0eMb9uS1YWNS2xt300KGi4cZpK');
+    stripe         = Stripe('sk_live_ZPkYqgjglvANPBbH7KB0xq6Y');
 
 // var con = mysql.createConnection({
 //   host: "localhost",
@@ -68,7 +68,7 @@ app.post('/contact', (req, res) => {
   })
   const mailOpts = {
     from: 'Wilmington Mental Health Website', 
-    to: 'info@wmhwc.com',
+    to: `${req.body.to}`,
     // to: 'seanhart23@gmail.com',
     subject: 'New message from Wilmington Mental Health Website',
     text: `${req.body.Name} (${req.body.Email}) has sent you the following message:
