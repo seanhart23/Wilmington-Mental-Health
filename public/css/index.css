@@ -36,6 +36,9 @@ button {
 	z-index: 3;
 }
 
+button:hover {
+	background-color:#5c656d;
+}
 .bold {
 	font-weight: bolder;
 }
