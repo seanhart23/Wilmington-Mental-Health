@@ -40,13 +40,13 @@ const db = mysql.createConnection({
 
 
 
-setInterval(function () {
-    db.query('SELECT 1');
-}, 5000);
+// setInterval(function () {
+//     db.query('SELECT 1');
+// }, 5000);
 
-setInterval(function () {
-    db_post.query('SELECT 1');
-}, 5000);
+// setInterval(function () {
+//     db_post.query('SELECT 1');
+// }, 5000);
 
 const db_post = mysql.createConnection({
     host: '162.241.224.14',
