@@ -4,17 +4,67 @@ a {
 	overflow-wrap: anywhere;
 }
 
+#about img {
+	width: 100% !important;
+}
+
 #anger-tabs .nav-link {
-    font-size: 10px;
+	font-size: 10px;
+	height: 94.98%;
+}
+
+#appointment .section-title {
+	text-align: center!important;
+	width: 100%;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.benefits li {
+	width: 100%;
 }
 
 #biofeedback .sub-title {
 	margin-top: 0px !important;
 }
 
+
 #box img {
 	width: 40% !important;
 	margin-left: 27%;
+}
+
+.call {
+	padding: 40px;
+}
+.contact-box {
+	width: 100%!important;
+}
+#contact form {
+	width: 100%!important;
+}
+
+#contact .row {
+	width: 100% !important;
+	margin-right: 0px !important;
+	margin-left: 0px!important;
+}
+
+#contact .col-lg-4 {
+	padding: 0px!important;
+	width: 100%!important;
+}
+
+#community .section-subtitle {
+	font-size: 16px!important;
+}
+
+#community .section-text {
+	font-size: 14px!important;
+}
+
+#community .title {
+	font-size: 18px!important;
 }
 
 div.section-text .center .bigger  {
@@ -30,6 +80,13 @@ div.section-text .center .bigger  {
 	height: auto !important;
 }
 
+.circle {
+	margin: auto;
+}
+
+#cca img {
+	width: 100%;
+}
 .display-on-mobile {
 	display: inline-block;
 	z-index: 2;
@@ -45,9 +102,27 @@ div.section-text .center .bigger  {
 #events img {
 	width: 100% !important;
 }
+
+#facts {
+	padding: 30px !important;
+}
 #facts .section-text {
 	border: none !important;
 	height: auto !important;
+}
+
+#why-us .fa-file-download {
+	font-size: 200px;
+	margin-bottom: 20px;
+	margin-top: 0px !important;
+}
+
+.faq-questions .btn-link {
+	text-align: left;
+}
+
+.faq-questions button:hover {
+	background: transparent;
 }
 #footer {
 	height: auto !important;
@@ -59,8 +134,29 @@ div.section-text .center .bigger  {
 .footer-header {
 	margin-top: 20px;
 }
+
+#holistic img {
+	height: auto !important;
+	width: 100% !important;
+}
+
 .home {
 	margin-left: 10px !important;
+}
+
+#knowledge {
+	padding: 50px 20px !important;
+}
+
+#knowledge img {
+	margin-left: 0px !important;
+}
+
+.language {
+	top: 60px !important;
+}
+.when img {
+	margin-left: 0px !important;
 }
 
 #individual .navigation li {
@@ -69,6 +165,10 @@ div.section-text .center .bigger  {
 
 #individual img {
 	width: 100%;
+}
+
+#intake-process {
+	padding: 10px 10px !important;
 }
 
 .jumbotron {
@@ -91,6 +191,12 @@ div.section-text .center .bigger  {
 	text-align: center !important;
 }
 
+.nav-tabs .nav-item {
+	margin-bottom: -3px;
+}
+.navbar {
+	background: white!important;
+}
 .navbar-brand img{
 	height: 35px;
 	margin: auto;
@@ -101,6 +207,7 @@ div.section-text .center .bigger  {
 	text-align: center;
 }
 
+
 #out-of-network img {
   width: 100% !important;
 }
@@ -109,6 +216,10 @@ div.section-text .center .bigger  {
 	display: none;
 }
 
+#book-logo {
+	width: 100% !important;
+	border: red;
+}
 .message {
 	width: 100%;
 }
@@ -116,9 +227,27 @@ div.section-text .center .bigger  {
 	width: 100%;
 }
 
+.mobile-left {
+	text-align: left!important;
+	margin-bottom: 20px;
+}
 #mobile-size {
 	width: 100% !important;
 	padding: 0px ;
+}
+
+.payment-box {
+	height: auto!important;
+	margin-bottom: 50px;
+}
+.perspective-card {
+	margin-top: 70px !important;
+	height: 500px !important;
+	padding: 10px !important;
+}
+
+#population {
+	padding-bottom: 55px !important;
 }
 
 #population img {
@@ -131,6 +260,7 @@ div.section-text .center .bigger  {
 
 #preference {
 	height: auto !important;
+	padding: 55px 20px !important;
 }
 #process .header {
 	padding-top: 100px !important;
@@ -143,6 +273,28 @@ div.section-text .center .bigger  {
 
 .process-image {
 	padding-top: 25px !important;
+}
+
+.photo {
+	width: 100%;
+	text-align: center!important;
+	margin: auto;
+}
+
+.photo img {
+	margin: auto!important;
+}
+
+#rengifo .col-lg-3, #mooring .col-lg-3, #kemlage .col-lg-3, #blackmon .col-lg-3   {
+	text-align: center;
+}
+
+#sa-education .sub-title, #sa-supervision .sub-title {
+	margin-top: 0px!important;
+}
+
+#sa-life img {
+	width: 100%;
 }
 
 .service-box {
@@ -160,9 +312,53 @@ div.section-text .center .bigger  {
 	width: 100% !important;
 	height: auto !important;
 }
+
+.sub-description {
+	display: none;
+}
+
+#support {
+	padding: 55px 10px !important;
+}
+.phone-image {
+	width: 75%!important;
+	margin: auto;
+}
+
+.table-width {
+	width: 100%!important;
+}
+
+#tbox {
+	margin-top: 25px;
+}
+
+#teletherapy {
+	
+}
+
+#teletherapy img, #teletherapia img, {
+	margin-top: 30px !important;
+	margin-bottom: 30px;
+	width: 100% !important;
+}
+
+#teletherapy .col-lg-6, #teletherapia .col-lg-6, #teletherapy .col-lg-12 {
+	padding: 0px !important;
+	width: 100% !important;
+	margin: 0px 20px !important;
+}
+
+#tich {
+	padding: 20px !important;
+}
 #title .header {
 	margin-right: 0px;
 	padding: 0px 20px;
+}
+
+.wave {
+	width: 100% !important;
 }
 
 #why {
@@ -173,6 +369,10 @@ div.section-text .center .bigger  {
 	height: auto !important;
 }
 
+#why-us .col-lg-3, #why-us .col-lg-1{
+	text-align: center;
+	padding-left: 15px!important;
+}
 
 }
 
