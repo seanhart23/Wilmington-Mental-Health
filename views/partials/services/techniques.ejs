@@ -95,7 +95,7 @@
 
 
 #search {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  /* background-image: url('/css/searchicon.png'); */
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
   width: 80%; /* Full-width */
@@ -1115,7 +1115,6 @@
 	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse8" onclick="tech('change8')">
 	          <div class='section-text search-title'>Trauma-Informed Therapy </div>
 	        </button>
-	        <!-- <div id='change8'><i class="fas fa-plus"></i></div> -->
 	      </h5>
 	    </div>
 
@@ -1137,160 +1136,28 @@
 
 	  </div>
   </li>
-
-
-
-<!-- <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Motivational Enhancement Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
- -->
-
-
-<!-- 
-
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Core Process Psychotherapy (CPP)</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Client-Directed Outcome-Informed Therapy (CDOI)</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-
-
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Discernment Counseling</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-<li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse">
-	          <div class='section-text search-title'>Dyadic Developmental Psychotherapy (DDP)</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li>
-
-
-
-
-
-
-
-
-
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse10" onclick="tech('change10')">
-	          <div class='section-text search-title'>Interpersonal Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	   
-	  </div>
-  </li>
-
-
-
-
-
-
-
-    <li class='searchli'>
-	  <div class="card">
-	    <div class="card-header">
-	      <h5 class="mb-0">
-	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse25">
-	          <div class='section-text search-title'>Conflict Resolution Therapy</div>
-	        </button>
-	      </h5>
-	    </div>
-
-	    
-	  </div>
-  </li> -->
-
-	
-	</div>
-</ul>
-
-
-
-		
-
-
-
-<!----------------------------------------->
-
-
-
-
-
-
-
-
-
-
 </div>
 </div>
 </div>
 </div>
+<script>
+	function search() {
+			// Declare variables
+			var input, filter, ul, li, a, i, txtValue;
+			input = document.getElementById('search');
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("myUL");
+			li = ul.getElementsByClassName('searchli');
 
-
-
-
-
-
-
-
-
-		
+			// Loop through all list items, and hide those who don't match the search query
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByClassName("search-title")[0];
+				txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		}
+</script>

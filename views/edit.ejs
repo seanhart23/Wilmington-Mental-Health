@@ -26,10 +26,12 @@
     <div id='new-post'>
         <div class='container'>
 		<div class='section-title'>Edit Blog Post</div>
-            <form class="form" action='/edit/(:id)' method='POST'>
+            <form class="form" action='/edit/(:id)' enctype="multipart/form-data"  method='POST'>
+				<% post.forEach(function(post){ %>
+
                 <div class='form-group'>
                     <div class="field">
-                        <input type='text' class='form-control' id='id' name='id' value='<%= post.post_id %>'>
+                        <input type='text' class='form-control' id='id' name='id' value='<%= post.post_id %>' hidden>
                     </div>
                     <div class="field">
                         <input type='text' class='form-control' id='title' name='title' value='<%= post.post_title %>'>
@@ -40,15 +42,28 @@
                     <div class="field">
                         <input type='date' class='form-control' id='date' name='date' value='<%= post.post_date %>'>
                     </div>
+					<div class="field">
+						
                     <div class="field">
-                        <input type='text' class='form-control' id='preview_image' name='preview_image' value='<%= post.post_preview_image %>'>
-                    </div>  
-                    <div class="field">
-                        <input type='text' class='form-control' id='preview_content' name='preview_content' value='<%= post.post_preview_content %>'>
+                            Update Main Image<br>
+                            <input type="file" name="preview_image" accept="image/*" />
+                        </div>
                     </div>
-                    <div class="field">
-                        <textarea type='text' rows='10' class='form-control' id='editor1' name='content' placeholder=''><%= post.post_content %></textarea>
+					
+                    <div class="field"><br>
+						<label>Post Content</label>
+						<div id='blog-content'></div>
+                        <textarea type='text' rows='20' class='form-control' id='editor1' name='content' placeholder=''><%= post.post_content %></textarea>
                     </div>
+					<br><br>
+								<label>Category</label><br>
+			<select class='form-control' name='category' style='width: 30%'>
+				<option value='<%=post.post_category %>' selected><%=post.post_category %></option>
+				<% category.forEach(function(category){ %>
+				<option value='<%= category.category_name %>'><%= category.category_name %></option>
+				<% }) %>
+			</select>
+					
                 </div>
                 <% if (role === 'admin'){ %>
                     <div class="field">
@@ -67,14 +82,16 @@
                         </div>
                         <% } %><br>
                 <button type="submit">Submit Post</button>
-           
             </form>
         </div>
     </div>
-
+<% }) %>
 
     <script>
         var editor = CKEDITOR.replace('editor1');
+		var editor3 = CKEDITOR.replace('editor3');
+
+        
 
         </script>
 <%- include('./partials/global/footer.ejs') -%>

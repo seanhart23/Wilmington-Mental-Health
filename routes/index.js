@@ -2,76 +2,68 @@ var express        = require('express'),
     request        = require("express"),
     router         = express.Router(),
     app            = express(),
-    middleware     = require('../middleware'),
     request        = require('request'),
-    User           = require('../models/user'),
     passport       = require('passport'),
     bodyParser     = require('body-parser'),
     dotenv         = require('dotenv'),
     cookieParser   = require('cookie-parser'),
-    authController = require('../controllers/auth');
-    mysql          = require('mysql');
-    Stripe         = require('stripe');
-    stripe         = Stripe('sk_live_ZPkYqgjglvANPBbH7KB0xq6Y');
-    role           = 'null';
-    nodemailer     = require('nodemailer');
+    authController = require('../controllers/auth'),
+    mysql          = require('mysql'),
+	multer         = require('multer'),
+    Stripe         = require('stripe'),
+    stripe         = Stripe('sk_live_ZPkYqgjglvANPBbH7KB0xq6Y'),
+    role           = 'null',
+    nodemailer      = require('nodemailer');
 
-
-
- 
 /***** DATABASE CONNECTION *****/
 dotenv.config({ path: '.env'})
 
 const db = mysql.createConnection({
-    host: '162.241.224.14',
-    user: 'wmhwccom_wmh',
-    password: 'n0T{BhXTUJf0',
-    database: 'wmhwccom_WMH'
-})
-
-
-// db.connect((error) => {
-//     if(error){
-//         console.log(error)
-//     } else {
-//         console.log('MYSQL Login Connected!')
-//     }
-// })
-
-
-
-// setInterval(function () {
-//     db.query('SELECT 1');
-// }, 5000);
-
-// setInterval(function () {
-//     db_post.query('SELECT 1');
-// }, 5000);
-
-const db_post = mysql.createConnection({
-    host: '162.241.224.14',
-    user: 'wmhwccom_wmh',
-    password: 'n0T{BhXTUJf0',
-    database: 'wmhwccom_WMH',
+    host: 'localhost',
+    user: 'root', //Switch to Sean when go live //
+    password: 'Maem250123!',
+    database: 'blog',
     multipleStatements: true
 })
 
-
-db_post.connect((error) => {
+db.connect((error) => {
     if(error){
         console.log(error)
     } else {
-        console.log('MYSQL Blog Connected!')
+        console.log('MYSQL Connected!')
     }
 })
+
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
+
 
 
 app.use(cookieParser());
 
+const storage = multer.diskStorage({
+destination: (req, file, cb) => {
+    cb(null, "public/images/uploads")
+},
+filename: (req, file, cb) => {
+    cb(null, file.originalname)
+},
+})
+
+const uploadStorage = multer({ storage: storage })
 /************/
 
 router.get('/', function(req, res){
-    res.render('index');
+    res.set('Cache-Control', 'max-age=31536000');
+    let sql = "Select * from Alert";
+    db.query(sql, function (error, results) {
+        res.render('index', { Alert: results });
+    });
+});
+
+router.get('/careers', function (req, res) {
+    res.render('careers');
 });
 
 router.get('/intake', function(req, res){
@@ -164,7 +156,10 @@ router.get('/whoweare', function(req, res){
 });
 
 router.get('/contact', function(req, res){
-    res.render('contact');
+    let sql = "Select * from Alert";
+    db.query(sql, function (error, results) {
+        res.render('contact', { Alert: results });
+    });
 });
 
 router.get('/emdr', function(req, res){
@@ -175,6 +170,14 @@ router.get('/rengifo', function(req, res){
     res.render('rengifo');
 });
 
+router.get('/stanfield', function(req, res){
+    res.render('stanfield');
+});
+
+router.get('/seigel', function(req, res){
+    res.render('seigel');
+});
+
 router.get('/kemlage', function(req, res){
     res.render('kemlage');
 });
@@ -183,19 +186,27 @@ router.get('/mooring', function(req, res){
     res.render('mooring');
 });
 
-router.get('/blackmon', function(req, res){
-    res.render('blackmon');
+router.get('/scott', function(req, res){
+    res.render('scott');
 });
 
-router.get('/rengifo2', function(req, res){
-    res.render('rengifo2');
+router.get('/henzler', function(req, res){
+    res.render('henzler');
 });
 
-router.get('/handouts', function(req, res){
+router.get('/hollowell', function(req, res){
+    res.render('hollowell');
+});
+
+router.get('/patient-intake', function(req, res){
     res.render('handouts');
 });
 
 router.get('/teletherapia', function(req, res){
+    res.render('teletherapia');
+});
+
+router.get('/favicon.ico', function(req, res){
     res.render('teletherapia');
 });
 
@@ -207,7 +218,7 @@ router.get('/login', function(req, res){
     res.render('login');
 });
 
-router.get('/register', function(req, res){
+router.get('/register', authController.isLoggedIn, function(req, res){
     res.render('register');
 });
 
@@ -219,19 +230,23 @@ router.get('/meetourteam', function(req, res){
     res.render('meetourteam');
 });
 
-
+router.get('/patientintake', function (req, res) {
+    res.render('patientintake');
+});
 
 router.get('/tos', function(req, res){
     res.render('tos');
 });
 
+router.get('/careers', function (req, res) {
+    res.render('careers');
+});
 
-
-router.post('/register', authController.register)
+router.post('/register', authController.register);
 
 
 // for action
-router.post('/login',  authController.login)
+router.post('/login',  authController.login);
 
 
 router.get('/logout', authController.logout);
@@ -241,6 +256,38 @@ router.get('/thankyou', function(req, res){
     res.render('thanks');
 });
 
+
+router.get('/dashboard', (authController.isLoggedIn), function (req, res) { 
+    role = req.user.role;
+    if (role === 'admin'){
+        var dbs = "Select * from post; Select * from category; Select * from events; Select * from Alert";
+        db.query(dbs, [0, 1, 2, 3], function(error, results) {
+            res.render('dashboard', { post: results[0], category: results[1], event: results[2], Alert: results[3]});
+        });
+    } else {
+            res.redirect('blog');
+    }
+
+}); 
+
+router.get('/employee-dashboard', authController.isLoggedIn, function (req, res) { 
+   	res.render("employee-dashboard", {role: req.user.role})
+}); 
+
+router.post('/dashboard', authController.isLoggedIn, function (req, res) { 
+	     const {category_name} = req.body;
+
+     db.query('INSERT INTO category SET ?', {category_name: category_name}, (error, results) => {
+         if (error) {
+             console.log(error)
+         } else {
+             console.log(results)
+         }
+		 res.redirect('/dashboard')
+     })
+})
+
+			
 router.post('/create-checkout-session', async (req, res) => {
   var data = req.body
   console.log(data)
@@ -296,12 +343,40 @@ router.post('/create-checkout-session-gift', async (req, res) => {
 
 router.get("/new", authController.isLoggedIn, function(req, res){
     var user = {role: req.user.role}
-    res.render("new", user)
+	let sql = "Select * from category";
+    db.query(sql, (err,result) => {
+        if(err){
+            console.log('Error is: ' + err);
+        }
+        // console.log(result);
+   		 res.render("new", {user, category: result})
+		
+    }); 
  }); 
  
  router.get("/comment", function(req, res){
     res.render("dashboard")
  }); 
+
+ router.post('/', function(req, res){
+     const {
+         name,
+         email,
+     } = req.body;
+
+     db.query('INSERT INTO newsletter SET ?', {
+         name: name,
+         email: email,
+     }, (error, results) => {
+         if (error) {
+             console.log(error)
+         } else {
+             console.log(results)
+             res.render('index')
+             // console.log('Post Submitted' + results)
+         }
+     })
+ })
 
  router.post('/comment', async (req, res) => {
 
@@ -312,7 +387,7 @@ router.get("/new", authController.isLoggedIn, function(req, res){
     } = req.body;
 
 
-    db_post.query('INSERT INTO comment SET ?', {
+    db.query('INSERT INTO comment SET ?', {
         author: author, 
         comment: comment, 
         post_id: post_id }, (error, results) => {
@@ -354,48 +429,28 @@ router.get("/new", authController.isLoggedIn, function(req, res){
 
 
 
-router.post('/new', authController.isLoggedIn, async (req, res) => {
+router.post('/new', uploadStorage.single("preview_image"), authController.isLoggedIn, async (req, res) => {
     // var post = req.body
+	if (req.file != undefined) {
+
     const { 
         title, 
         content, 
         preview_image, 
-        preview_content, 
         date, 
         author, 
-        depression,
-        anxiety,
-        covid,
-        mental,
-        eap,
-        emdr,
-        anger,
-        biofeedback,
-        substance,
-        treatments,
         draft,
+		category,
     } = req.body;
 
-    
-
-    db_post.query('INSERT INTO post SET ?', {
+    db.query('INSERT INTO post SET ?', {
         post_title: title, 
         post_content: content, 
-        post_preview_image: preview_image, 
-        post_preview_content: preview_content, 
+        post_preview_image: req.file.originalname, 
         post_date: date, 
         post_author: author, 
-        post_depression: depression,
-        post_anxiety: anxiety,
-        post_covid: covid,
-        post_mental: mental,
-        post_eap: eap,
-        post_emdr: emdr,
-        post_anger: anger,
-        post_biofeedback: biofeedback,
-        post_substance: substance,
         draft: draft,
-        post_treatments: treatments }, (error, results) => {
+		post_category: category }, (error, results) => {
 		if(error) {
 			console.log(error)
 		} else {
@@ -403,6 +458,31 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
             // console.log('Post Submitted' + results)
 		}
     })
+	} else {
+		    const { 
+        title, 
+        content, 
+        date, 
+        author, 
+        draft,
+		category,
+    } = req.body;
+
+    db.query('INSERT INTO post SET ?', {
+        post_title: title, 
+        post_content: content, 
+        post_date: date, 
+        post_author: author, 
+        draft: draft,
+		post_category: category }, (error, results) => {
+		if(error) {
+			console.log(error)
+		} else {
+            console.log(results)
+            // console.log('Post Submitted' + results)
+		}
+    })
+	}
     const smtpTrans = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -431,28 +511,48 @@ router.post('/new', authController.isLoggedIn, async (req, res) => {
  });
 
  router.get('/edit/(:id)', authController.isLoggedIn, function(req, res){
-    const id = req.params.id;
-    let sql = "SELECT * FROM post WHERE post_id = " + req.params.id;
-    db_post.query(sql, (err,result) => {
-        if(err){
-            console.log(err);
-        }
-        // console.log(result[0]);
-        res.render('edit', {post: result[0]});
+	     const id = req.params.id;
+		var sql = "Select * from post WHERE post_id = " + req.params.id + "; Select * from category";
+    db.query(sql, [0, 1], function(error, results) {
+        res.render('edit', {post: results[0], category: results[1]});
+
+        });
     }); 
-}); 
  
-router.post('/edit/(:id)', authController.isLoggedIn, function(req, res){
+router.post('/edit/(:id)', uploadStorage.single("preview_image"), authController.isLoggedIn, function(req, res){
         // var post = req.body
-        const { id, title, content, preview_image, preview_content, author, date, draft } = req.body;
-    
-        db_post.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_preview_image = "' + preview_image + '", post_author= "' + author + '", post_date = "' + date + '", post_preview_content = "' + preview_content + '", draft = "' + draft + '" WHERE post_id = ' + id, {post_id: id, post_title: title, post_content: content, post_preview_image: preview_image, post_preview_content: preview_content}, (error, results) => {
+        const { id, title, content, preview_image, category, author, date, draft } = req.body;
+    	
+	    if (req.file != undefined) {
+
+        db.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_preview_image = "' + req.file.originalname + '", post_author= "' + author + '", post_date = "' + date + '", draft = "' + draft + '", post_category = "' + category + '" WHERE post_id = ' + id, {
+			post_id: id, 
+			post_title: title, 
+			post_content: content, 
+			post_preview_image: req.file.originalname, 
+			post_category: category}, 
+			(error, results) => {
             if(error) {
                 console.log(error)
             } else {
                 console.log('Post Updated' + results)
             }
         })
+		} else {
+		db.query('UPDATE post SET post_title = "' + title + '", post_content = "' + content + '", post_author= "' + author + '", 			post_date = "' + date + '", draft = "' + draft + '", post_category = "' + 		category + '" WHERE post_id = ' + id, {
+			post_id: id, 
+			post_title: title, 
+			post_content: content, 
+			post_category: category}, 
+			(error, results) => {
+            if(error) {
+                console.log(error)
+            } else {
+                console.log('Post Updated' + results)
+            }
+					
+        })
+		}
         res.redirect ('/dashboard')
 });
 
@@ -460,43 +560,26 @@ router.post('/edit/(:id)', authController.isLoggedIn, function(req, res){
 
 router.get('/blog', function (req, res) {
     
-    let sql = "Select * from post";
-    let query = db_post.query(sql, (err,result) => {
+    let sql = "Select * from post; Select * from category";
+    db.query(sql, [0,1], (err,results) => {
         if(err){
             console.log('Error is: ' + err);
         }
         // console.log(result);
-        res.render('blog', {post: result});
+        res.render('blog', {post: results[0], category: results[1]});
     }); 
 });
 
 
 
- router.get('/dashboard', authController.isLoggedIn, function (req, res) { 
-    role = role;
-    let sql = "Select * from post";
-    let query = db_post.query(sql, (err,result) => {
-        if(err){
-            // console.log(err);
-        }
-        res.render('dashboard', {post: result});
-    }); 
-});
-
-
-router.get("/:id", function(req, res){
-
-    var db = "Select * from post WHERE post_id = " + req.params.id+ "; Select * from comment WHERE post_id = " + req.params.id;
-    console.log(db);
-    let query = db_post.query(db, [0, 1], function(error, results) {
-        res.render('show', {post: results[0], comment: results[1]});
-        });
-    }); 
 
 
 
-router.delete('/:id', function(req, res) {
-    db_post.query('DELETE FROM post WHERE post.post_id = ' + req.params.id,
+
+
+
+router.delete('/show/:id', function(req, res) {
+    db.query('DELETE FROM post WHERE post.post_id = ' + req.params.id,
         function(err, result, fields) {
             if (err) {
                 console.log(err);
@@ -508,8 +591,8 @@ router.delete('/:id', function(req, res) {
 });
 
 
-router.delete('/comment/:id', function(req, res) {
-    db_post.query('DELETE FROM comment where comment.id = ' + req.params.id),
+router.delete('/show/comment/:id', function(req, res) {
+    db.query('DELETE FROM comment where comment.id = ' + req.params.id),
         function(err, result, fields) {
             if (err) {
                 console.log(err);
@@ -520,5 +603,321 @@ router.delete('/comment/:id', function(req, res) {
         res.redirect('back')
 });
 
+router.get("/show/:id", function(req, res){
+    var dbs = "Select * from post WHERE post_id = " + req.params.id + "; Select * from comment WHERE post_id = " + req.params.id;
+    console.log(db);
+    db.query(dbs, [0, 1], function(error, results) {
+        res.render('show', {post: results[0], comment: results[1]});
+
+        });
+    }); 
+    
+
+//// EVENTS ////
+
+router.get("/newevent", authController.isLoggedIn, function (req, res) {
+    var user = { role: req.user.role }
+    let sql = "Select * from category";
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.log('Error is: ' + err);
+        }
+        // console.log(result);
+        res.render("newevent", { user, category: result })
+
+    });
+});
+
+
+router.post('/newevent', uploadStorage.single("preview_image"), authController.isLoggedIn, async (req, res) => {
+    // var post = req.body
+    if (req.file != undefined) {
+
+        const {
+            title,
+            content,
+            preview_image,
+            start,
+            end,
+            date,
+            author,
+            draft,
+        } = req.body;
+
+        db.query('INSERT INTO events SET ?', {
+            name: title,
+            description: content,
+            preview_image: req.file.originalname,
+            date: date,
+            start_time: start,
+            end_time: end,
+            author: author,
+            draft: draft,
+        }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+                // console.log('Post Submitted' + results)
+            }
+        })
+    } else {
+        const {
+            title,
+            content,
+            date,
+            start,
+            end,
+            author,
+            draft,
+        } = req.body;
+
+        db.query('INSERT INTO events SET ?', {
+            name: title,
+            description: content,
+            preview_image: req.file.originalname,
+            date: date,
+            start_time: start,
+            end_time: end,
+            author: author,
+            draft: draft,
+        }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+            }
+        })
+    }
+    res.redirect('/dashboard')
+});
+
+router.get('/editevent/:id', authController.isLoggedIn, function (req, res) {
+    const id = req.params.id;
+    var sql = "Select * from events WHERE events.id = " + req.params.id;
+    db.query(sql, function (error, results) {
+        res.render('editevent', { event: results });
+
+    });
+});
+
+router.post('/editevent/(:id)', uploadStorage.single("preview_image"), authController.isLoggedIn, function (req, res) {
+    // var post = req.body
+
+    const { 
+        id,
+        title,
+        content,
+        preview_image,
+        start,
+        end,
+        date,
+        author,
+        draft,
+    } = req.body;
+
+    if (req.file != undefined) {
+
+        db.query('UPDATE events SET name = "' + title + '", description = "' + content + '", preview_image = "' + req.file.originalname + '", author= "' + author + '", date = "' + date + '", draft = "' + draft + '", start_time = "' + start + '", end_time = "' + end + '" WHERE id = ' + id, {
+            id: id,
+            name: title,
+            description: content,
+            date: date,
+            start_time: start,
+            end_time: end,
+            preview_image: req.file.originalname
+        },
+            (error, results) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log('Event Updated' + results)
+                }
+            })
+    } else {
+        db.query('UPDATE events SET name = "' + title + '", description = "' + content + '", author= "' + author + '", date = "' + date + '", draft = "' + draft + '", start_time = "' + start + '", end_time = "' + end + '" WHERE id = ' + id, {
+            id: id,
+            name: title,
+            description: content,
+            date: date,
+            start_time: start,
+            end_time: end
+        },
+            (error, results) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log('Event Updated' + results)
+                }
+
+            })
+    }
+    res.redirect('/dashboard')
+});
+
+
+router.delete('/showevent/:id', function (req, res) {
+    db.query('DELETE FROM events WHERE events.id = ' + req.params.id + "'",
+        function (err, result, fields) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("deleted Record: " + result.affectedRows);
+                res.redirect('/dashboard')
+            }
+        });
+});
+
+router.get('/events', function (req, res) {
+
+    let sql = "Select * from events";
+    db.query(sql, function (error, results) {
+        res.render('events', { event: results });
+    });
+});
+
+router.get("/showevent/:id", function (req, res) {
+    var dbs = "Select * from events WHERE id = " + req.params.id;
+    db.query(dbs, function (error, results) {
+        res.render('showevent', { event: results });
+    });
+});
+
+//// Anouncements ////
+
+router.get("/newAnouncement", authController.isLoggedIn, function (req, res) {
+    var user = { role: req.user.role }
+    let sql = "Select * from Alert";
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.log('Error is: ' + err);
+        }
+        // console.log(result);
+        res.render("newAnouncement", { user, alert: result })
+
+    });
+});
+
+router.post('/newAnouncement', uploadStorage.single("preview_image"), authController.isLoggedIn, async (req, res) => {
+    // var post = req.body
+    if (req.file != undefined) {
+
+        const {
+            Message,
+            headline,
+            preview_image,
+        } = req.body;
+
+        db.query('INSERT INTO Alert SET ?', {
+            Message: Message,
+            headline: headline,
+            preview_image: req.file.originalname
+        }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+                // console.log('Post Submitted' + results)
+            }
+        })
+    } else {
+        const {
+            Message,
+            headline
+        } = req.body;
+
+        db.query('INSERT INTO Alert SET ?', {
+            Message: Message,
+            headline: headline,
+        }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+            }
+        })
+    }
+    res.redirect('/dashboard')
+});
+
+router.post('/editAnouncement/(:id)', uploadStorage.single("preview_image"), authController.isLoggedIn, function (req, res) {
+    const {
+        id,
+        Message,
+        headline,
+    } = req.body;
+
+    if (req.file != undefined) {
+
+        db.query('UPDATE Alert SET Message = "' + Message + '", headline = "' + headline + '", preview_image = "' + req.file.originalname + '" WHERE id = ' + id, {
+            id: id,
+            Message: Message,
+            headline: headline,
+            preview_image: req.file.originalname,
+        },
+            (error, results) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log('Event Updated' + results)
+                }
+            })
+    } else {
+        db.query('UPDATE Alert SET Message = "' + Message + '", headline = "' + headline + '" WHERE id = ' + id, {
+            id: id,
+            Message: Message,
+            headline: headline,
+        },
+            (error, results) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log('Alert Updated' + results)
+                }
+            })
+    }
+    res.redirect('/dashboard')
+});
+
+router.delete('/showAnouncement/:id', function (req, res) {
+    db.query('DELETE FROM Alert WHERE Alert.id = ' + req.params.id,
+        function (err, result, fields) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("deleted Record: " + result.affectedRows);
+                res.redirect('/dashboard')
+            }
+        });
+});
+
+
+router.get("/showAnouncement/:id", function (req, res) {
+    var dbs = "Select * from Alert WHERE id = " + req.params.id;
+    db.query(dbs, function (error, results) {
+        res.render('showAnouncement', { Alert: results });
+    });
+});
+
+router.get('/news', function (req, res) {
+
+    let sql = "Select * from Alert";
+    db.query(sql, function (error, results) {
+        res.render('news', { Alert: results });
+    });
+});
+
+router.get('/editAnouncement/:id', authController.isLoggedIn, function (req, res) {
+    const id = req.params.id;
+    var sql = "Select * from Alert WHERE Alert.id = " + req.params.id;
+    db.query(sql, function (error, results) {
+        res.render('editAnouncement', { Alert: results });
+
+    });
+});
+
+router.get('*', function(req, res){
+  res.status(404).render("404");
+});
 
 module.exports = router;

@@ -40,6 +40,7 @@ a {
 .contact-box {
 	width: 100%!important;
 }
+
 #contact form {
 	width: 100%!important;
 }
@@ -87,9 +88,19 @@ div.section-text .center .bigger  {
 #cca img {
 	width: 100%;
 }
+
+.clipboard {
+	width: 100%!important;
+	height: 500px!important;
+}
+
 .display-on-mobile {
 	display: inline-block;
 	z-index: 2;
+}
+
+.dropdown-item {
+	font-size: 18px !important;
 }
 
 #emdr .sub-title {
@@ -103,12 +114,24 @@ div.section-text .center .bigger  {
 	width: 100% !important;
 }
 
+.fa-home {
+	display: none;
+}
+
 #facts {
 	padding: 30px !important;
 }
 #facts .section-text {
 	border: none !important;
 	height: auto !important;
+}
+
+#forms {
+	padding-top: 110px!important;
+}
+
+.half {
+    width: 100% !important;
 }
 
 #why-us .fa-file-download {
@@ -142,6 +165,18 @@ div.section-text .center .bigger  {
 
 .home {
 	margin-left: 10px !important;
+}
+
+#intake-forms a {
+	font-size: 14px;
+}
+
+#intake-forms h5 {
+	font-size: 14px;
+}
+
+#intake-forms ul {
+	width: 90%;
 }
 
 #knowledge {
@@ -196,15 +231,22 @@ div.section-text .center .bigger  {
 }
 .navbar {
 	background: white!important;
+	position: relative;
 }
 .navbar-brand img{
-	height: 35px;
+	height: 40px;
 	margin: auto;
-	padding-left: 10px;
+}
+
+.navbar-light .navbar-toggler {
+	margin-left: 5px !important;
 }
 
 .navbar-brand {
 	text-align: center;
+	position: absolute;
+	top: 5;
+	width: 100%;
 }
 
 
@@ -235,6 +277,15 @@ div.section-text .center .bigger  {
 	width: 100% !important;
 	padding: 0px ;
 }
+
+.navbar-light .navbar-nav .nav-link {
+	text-align: center !important;
+	font-size: 22px !important;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	line-height: 30px;
+	vertical-align: middle;
+}	
 
 .payment-box {
 	height: auto!important;
@@ -289,6 +340,16 @@ div.section-text .center .bigger  {
 	text-align: center;
 }
 
+.sl_search_box {
+	height: 40px;
+	width: 100% !important;
+	margin: 15px 15px;
+}
+
+#search-box {
+	width: 85%;
+}
+
 #sa-education .sub-title, #sa-supervision .sub-title {
 	margin-top: 0px!important;
 }
@@ -306,6 +367,10 @@ div.section-text .center .bigger  {
 
 #solutions table {
 	width: 100%;
+}
+
+.start-over {
+	margin-top: 15px!important;
 }
 
 .book-ad .logo {
@@ -337,7 +402,7 @@ div.section-text .center .bigger  {
 	
 }
 
-#teletherapy img, #teletherapia img, {
+#teletherapy img, #teletherapia img {
 	margin-top: 30px !important;
 	margin-bottom: 30px;
 	width: 100% !important;
@@ -352,15 +417,23 @@ div.section-text .center .bigger  {
 #tich {
 	padding: 20px !important;
 }
+
 #title .header {
 	margin-right: 0px;
 	padding: 0px 20px;
+}
+
+#type-of-service, #type-of-registration, #name-of-provider {
+	width: 90%!important;
 }
 
 .wave {
 	width: 100% !important;
 }
 
+.wide .dropdown-menu {
+	width: auto !important;
+}
 #why {
 	padding-left: 20px !important;
 	padding-right: 20px !important;

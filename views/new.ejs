@@ -1,3 +1,4 @@
+
 <%- include('./partials/global/header.ejs') -%>
 <div class='hide-on-mobile'>
 	<%- include('./partials/global/topbar.ejs') -%>
@@ -28,10 +29,9 @@
  <script src="../ckeditor/ckeditor.js"></script>
     <div id='new-post'>
         <div class='container'>
-            <%= role %>
 
             <div class='section-title'>New Blog Post</div>
-            <form class="form" action='/new' method='POST'>
+            <form class="form" action='/new' enctype="multipart/form-data" method='POST'>
                 <div class='form-group'>
                     <div class="field">
                         <input type='text' class='form-control' id='title' name='title' placeholder='Post Title'>
@@ -42,30 +42,24 @@
                     <div class="field">
                         <input type='date' class='form-control' id='date' name='date'>
                     </div>
+	    			<div class="field">
+                            <p>Upload Main Image</p>
+                            <input type="file" name="preview_image" accept="image/*" />
+                        </div>
+            
+					<br>
+					
                     <div class="field">
-                        <input type='text' class='form-control' id='preview_image' name='preview_image' placeholder='Preview Image URL'>
-                    </div>
-                    <div class="field">
-                        <input type='text' class='form-control' id='preview_content' name='preview_content' placeholder='Preview Content'>
-                    </div>
-                    <div class="field">
-                        <textarea type='text' rows='10' class='form-control' id='editor' name='content' placeholder='Content'></textarea>
+						<label>Blog Content</label>
+                        <textarea type='text' rows='20' class='form-control' id='editor' name='content' placeholder='Content'></textarea>
                     </div>
                     <div class='form-group'>
-                        <div class="form-check-inline">
-                            <label class="form-check-label">Tags:<br><br>
-                              <input type="checkbox" name='depression' class="form-check-input" value="Depression">Depression
-                              <input type="checkbox" name='anxiety' class="form-check-input left" value="Anxiety">Anxiety
-                              <input type="checkbox" name='covid' class="form-check-input left" value="COVID-19" >COVID-19
-                              <input type="checkbox" name='mental' class="form-check-input left" value="Mental Health" >Mental Health
-                              <input type="checkbox" name='eap' class="form-check-input left" value="EAP" >EAP
-                              <input type="checkbox" name='emdr' class="form-check-input left" value="EMDR" >EMDR
-                              <input type="checkbox" name='anger' class="form-check-input left" value="Anger Management" >Anger Management
-                              <input type="checkbox" name='biofeedback' class="form-check-input left" value="Biofeedback" >Biofeedback
-                              <input type="checkbox" name='substance' class="form-check-input left" value="Substance Abuse" >Substance Abuse
-                              <input type="checkbox" name='treatments' class="form-check-input left" value="Treatments" >Treatments
-                            </label>
-                        </div>
+			<label>Category</label><br>
+			<select class='form-control' name='category' style='width: 30%'>
+				<% category.forEach(function(category){ %>
+				<option value='<%= category.category_name %>'><%= category.category_name %></option>
+				<% }) %>
+			</select>
                     </div>
                     <% if (role === 'admin'){ %>
                     <div class="field">
@@ -92,6 +86,10 @@
 
 <script>
         var editor = CKEDITOR.replace('editor');
+		var editor2 = CKEDITOR.replace('editor2');
+	
 
 </script>
 <%- include('./partials/global/footer.ejs') -%>
+
+    

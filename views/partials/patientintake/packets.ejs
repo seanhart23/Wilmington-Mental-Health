@@ -1,0 +1,43 @@
+<style>
+    #admission {
+        padding: 55px 0px;
+    }
+
+    #admission .sub-title {
+        text-align: center;
+    }
+
+    #intake-forms {
+        display: none;
+    }
+    
+    .intake-placeholder {
+        min-height: 200px;
+    }
+
+    #prof-disc {
+        display: none;
+    }
+
+    #tor {
+        display: none;
+    }
+
+</style>
+
+<div id='admission'>
+    <div class='container'>
+        <hr>
+        <br>
+        <div class='intake-placeholder'>
+            <%- include('./typeofservice.ejs') -%>
+            <%- include('./professional-disclosure.ejs') -%>
+            <%- include('./intake-forms.ejs') -%>
+        </div>
+        <div class='row'>
+            <div class='col-lg-12'>
+
+            </div>
+        </div>
+    </div>
+</div>

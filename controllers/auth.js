@@ -5,21 +5,22 @@ cookieParser   = require('cookie-parser');
 const { promisify } = require('util');
 
 
+
 const db = mysql.createConnection({
-    host: '162.241.224.14',
-    user: 'wmhwccom_wmh',
-    password: 'n0T{BhXTUJf0',
-    database: 'wmhwccom_WMH'
+    host: 'localhost',
+    user: 'root', //Switch to Sean when go live //
+    password: 'Maem250123!',
+    database: 'blog'
 })
-				
-// setInterval(function () {
-//     db.query('SELECT 1');
-// }, 5000);
+
+setInterval(function () {
+     db.query('SELECT 1');
+ }, 5000);
 
 
 exports.login = async (req, res) => {
 	try {
-
+		
 		const { username, password, role} = req.body;
 		console.log(req.body)
 
@@ -29,6 +30,7 @@ exports.login = async (req, res) => {
 				message: 'Please provide username and password'
 			})
 		}
+		
 
 		db.query('SELECT * FROM users WHERE username = ?',  [username], async (error, results) => {
 			if(!results || !(await bcrypt.compare(password, results[0].password) ) ) {
@@ -51,7 +53,7 @@ exports.login = async (req, res) => {
 					httpOnly: false,
 				}
 				res.cookie('jwt', token, cookieOptions);
-				res.status(200).redirect('/dashboard');
+				res.status(200).redirect('/employee-dashboard');
 		}
 	
 

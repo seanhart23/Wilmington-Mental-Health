@@ -1,0 +1,17 @@
+<%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+            <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/scroll.ejs') -%>
+    <%- include('./partials/scroll.ejs') -%>
+    <%- include('./partials/global/navbar.ejs') -%>
+    
+    <% if(role === 'employee'){ %>
+        <%- include('./partials/employee-dashboard/employee.ejs') -%>
+    <% } else if (role === 'admin') { %>
+        <%- include('./partials/employee-dashboard/admin.ejs') -%>
+    <% } else { %>
+        <h1 class='section-title'>Sorry...You Don't have access.</h1>
+    <% } %>
+<%- include('./partials/global/footer.ejs') -%>

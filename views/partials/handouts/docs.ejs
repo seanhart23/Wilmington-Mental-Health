@@ -11,7 +11,7 @@
 	padding-top: 55px;
 }
 
-.flip-card {
+.flip-card, .flip-card-x {
   background-color: transparent;
   width: 100%;
   height: 300px;
@@ -20,7 +20,7 @@
 }
 
 /* This container is needed to position the front and back side */
-.flip-card-inner {
+.flip-card-inner, .flip-card-inner-x {
   position: relative;
   width: 100%;
   height: 100%;
@@ -34,12 +34,12 @@
   transform: rotateY(180deg);
 }
 
-.flip-card:hover .flip-card-inner-x {
+.flip-card-x:hover .flip-card-inner-x {
   transform: rotateX(180deg);
 }
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front, .flip-card-back, .flip-card-back-x {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -72,7 +72,17 @@
   position: relative;
 }
 
-.flip-card-back a {
+.flip-card-back-x {
+  background-color: white;
+  color: gray;
+  font-size: 14px;
+  transform: rotateX(180deg);
+  padding: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.flip-card-back a, .flip-card-back-x a {
 	font-size: 20px;
 	text-align: center !important;
 	position: absolute;
@@ -100,13 +110,13 @@
 			</div>
 		</div>
 		<div class='col-lg-4'>
-			<div class="flip-card">
-			  	<div class="flip-card-inner">
+			<div class="flip-card-x">
+			  	<div class="flip-card-inner-x">
 			    	<div class="flip-card-front">
 			      		<div class='card-head'>Release of Information</div>
 			      		<i class="fas fa-file-alt"></i>
 			    	</div>
-			  		<div class="flip-card-back">
+			  		<div class="flip-card-back-x">
 	      				This form is to give us permission to communicate with third parties. The content and information to be released is protected under State and Federal law (45 CFR Part 164 and 164; 42 CFR Part 2) and cannot be re-disclosed without  further written consent as authorized by G.S. 122C-53 through G.S. 122C-56. A general authorization for the release of other medical information is not sufficient for this purpose. More details can be found in our Privacy Practice form.
 	      				<br>
 	      				<a href='./images/ReleaseOfInformation.pdf' target='_blank'>Download Form</a>

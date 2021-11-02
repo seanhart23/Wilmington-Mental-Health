@@ -1,0 +1,127 @@
+<style>
+
+.apply {
+    border: 1px solid lightgray;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+.half {
+    width: 50%;
+}
+
+#mental {
+    padding-top: 50px;
+}
+
+</style>
+
+<div class='container'>
+    <div id='mental'>
+        <div class='section-title center'>Mental Health Providers</div><br>
+
+        <div class='apply'>
+        <form action='/apply' enctype="multipart/form-data" method='POST'>
+            <div class="form-group">
+                <!-- <input type="text" id="to" name="to" class="form-control" value="jrengifo@wmhwc.com" hidden> -->
+                <input type="text" id="to" name="Title" class="form-control" value="You have recieved a new Mental Health Provider application!" hidden>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="to" name="to" class="form-control" value="jrengifo@wmhwc.com" hidden>
+                <!-- <input type="text" id="to" name="to" class="form-control" value="seanhart23@gmail.com" hidden> -->
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+            </div>
+
+            <div class='form-group'>
+                <select id='license' name='License' class='form-control' required>
+                    <option selected disabled>Licenses</option>
+                    <option value='Clinical Social Worker (LCSW)'>Clinical Social Worker (LCSW)</option>
+                    <option value='Marriage & Family Therapist (LFMT)'>Marriage & Family Therapist (LFMT)</option>
+                    <option value='Mental Health Counselor (LCMHC)'>Mental Health Counselor (LCMHC)</option>
+                    <option value='Psychologist (PhD, LPA)'>Psychologist (PhD, LPA)</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <input type="text" id="Name" name="Specialties" class="form-control" placeholder="Specialties">
+            </div>
+
+            <div class="form-group">
+                <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message"
+                    rows='4'></textarea>
+            </div>
+
+            <div class="form-group" style='text-align: left'>
+                <label>Will you be bringing any patients with you to WMH?</label>
+                <select name='Patients' class='form-control half'>
+                    <option selected disabled>Select</option>
+                    <option value='Yes'>Yes</option>
+                    <option value='No'>No</option>
+                </select>
+            </div>
+        
+            <div class="form-group" style='text-align: left'>
+                <label>Are you currently paneled with any insurance company?</label>
+                    <select name='Insurance' class='form-control half'>
+                        <option selected disabled>Select</option>
+                        <option value='Yes'>Yes</option>
+                        <option value='No'>No</option>
+                    </select>
+            </div>
+
+            <div class="form-group" style='text-align: left'>
+                <label>Are you opposed to working with any specific group?</label>
+                <select name='Opposed' class='form-control half'>
+                    <option selected disabled>Select</option>
+                    <option value='Yes'>Yes</option>
+                    <option value='No'>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Name" name="Specify" class="form-control half" placeholder="If yes, specify">
+            </div>
+
+            <div class="form-group" style='text-align: left'>
+                Please Attach Your Resume<br><br>
+                <input type="file" name="cv">
+            </div>
+
+            <div class='center'>
+                <button type="submit" id="" class="center"
+                    style='height: 50px; width: 200px; margin-bottom: 0px; margin-left: auto; margin-right: auto;'>Send</button>
+            </div>
+        </form>
+
+        </div>
+
+        <div class='section-title center'>Requirements</div>
+        <br>
+        <div class='section-text'>
+            <ul>
+                <li>Fully licensed by a North Carolina State Board to provide therapy as a LCMHC, LCSW, LMFT, PsyD or similar
+                    credentials.</li>
+                <li>Clinical experience with the following populations: adults, couples, families and/or groups.</li>
+                <li>North Carolina resident.</li>
+                <li>Reliable, self-driven, independent.</li>
+            </ul>
+            <div class='note'>
+                NOTE: Interns or associate level counselors, substance abuse counselors, school counselors, registered nurses, career
+                counselors, Christian counselors and business/life coaches must contact our office directly before submitting an
+                application.
+            </div>
+        </div>
+    </div>
+</div>

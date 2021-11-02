@@ -58,6 +58,10 @@ nav i {
   color: gray !important;
 }
 
+.navbar-light .navbar-brand {
+  top: 0;
+}
+
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
   color: rgba(0,0,0,.5);
 }
@@ -147,7 +151,7 @@ nav i {
 <nav class="navbar navbar-expand-lg navbar-light w-100">
     <div class='container'>
 
-      <div class='navbar-brand hide-on-desktop display-on-mobile ml-center'><img src='./images/logo.png'></div>
+      <div class='navbar-brand hide-on-desktop display-on-mobile ml-center'><img src='./images/logo.png' alt='Wilmington Mental Health logo'></div>
 
   <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -255,11 +259,15 @@ nav i {
           <!-- <div class="dropdown-divider"></div> -->
           <a class="dropdown-item nav-title" href="#">Providers</a>
               <a class="dropdown-item sub-item" href="/rengifo">Joseph Rengifo</a>
-              <!-- <a class="dropdown-item sub-item" href="#">Havah Henzler</a> -->
+              <a class="dropdown-item sub-item" href="/henzler">Havah Henzler</a>
               <a class="dropdown-item sub-item" href="/mooring">Sarah Mooring</a>
               <a class="dropdown-item sub-item" href="/kemlage">Melissa Kemlage</a>
-              <a class="dropdown-item sub-item" href="/blackmon">Lisa Blackmon</a>
-              <!-- <a class="dropdown-item sub-item" href="#">Sara Scott Ford</a> -->
+              <a class="dropdown-item sub-item" href="/scott">Sara Scott Ford</a>
+              <a class="dropdown-item sub-item" href="/stanfield">Juliana Stanfield</a>
+              <a class="dropdown-item sub-item" href="/seigel">Robert Seigel</a>
+          <a class="dropdown-item nav-title" href="#">Support Staff</a>
+              <a class="dropdown-item sub-item" href="/hollowell">Bree Hollowell</a>
+
             </div>
       </li>
 
@@ -270,12 +278,15 @@ nav i {
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class='caret'></div>
 
-            <a class="dropdown-item nav-title" href="#">Forms</a>
-            <a class="dropdown-item sub-item" href="https://app.formdr.com/practice/MTA5MzA=/form/J5jwPZQiLHwV9_zB8eRtv2370KQc4It_" target="_blank">Intake Packet</a>
-            <a class="dropdown-item sub-item" href="/handouts">Important Documents</a>
-          <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item nav-title" href="#">Forms</a> -->
+            <!-- <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/intake-packet" target="_blank">Intake Packet</a> -->
+            <a class="dropdown-item nav-title" href="/patient-intake">Patient Intake</a>
+          <!-- <div class="dropdown-divider"></div> -->
             <a class="dropdown-item nav-title" href="/community">Our Community</a>
-            <a class="dropdown-item nav-title" href="/blog">Blog & News</a>
+            <a class="dropdown-item sub-item" href="/events">Events</a>
+            <a class="dropdown-item sub-item" href="/news">News</a>
+            <a class="dropdown-item nav-title" href="/careers">Careers</a>
+            <a class="dropdown-item nav-title" href="/blog">Blog</a>
             <!-- <a class="dropdown-item" href="#">Para Latinos</a> -->
         </div>
       </li>
@@ -288,11 +299,8 @@ nav i {
                     <div class='caret'></div>
           <a class="dropdown-item nav-title" href="/contact">Contact Us</a>
           <a class="dropdown-item nav-title" href="#">Appointments</a>
-            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in">Existing Patients</a>
-            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>New Patients</a>
-            <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
-
-
+            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in" target='_blank'>Existing Patients</a>
+            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/request/clinician" target='_blank'>New Patients</a>
         </div>
       </li>
 
@@ -383,8 +391,11 @@ $('#super').on('click', function(){
 })
 
 var myForm = document.getElementById('search');
-myForm.onsubmit = function() {
-    var w = window.open('about:blank','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=700,height=600,left = 312,top = 234');
+if(myForm){
+  myForm.onsubmit = function () {
+    var w = window.open('about:blank', 'Popup_Window', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=700,height=600,left = 312,top = 234');
     this.target = 'Popup_Window';
-};
+  };
+}
+
 </script>

@@ -9,6 +9,10 @@
     outline: none !important;
 } 
 
+a {
+	text-decoration: none!important;
+}
+
 .background-alt {
 	background-color: #f6f8f9 !important;
 	/*padding: 50px 0px 50px 0px !important;*/
@@ -21,6 +25,14 @@ body {
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	position: relative; 
+	min-height: 100%; 
+	padding: 0px;
+	min-width: 100%;
 }
 
 button {
@@ -41,6 +53,10 @@ button:hover {
 }
 .bold {
 	font-weight: bolder;
+}
+
+.card button:hover {
+	background: transparent !important;
 }
 
 .center {

@@ -1,5 +1,10 @@
-<style>
 
+<style>
+	.addthis_inline_share_toolbox {
+		font-size: 20px !important;
+		height: 20px !important;
+	}
+	
     .comment_title {
         margin-top: 50px;
     }
@@ -11,11 +16,15 @@
         visibility: hidden;
         display: none;
     }
-
-    .blog-preview {
-        margin-top: 20px
-    }
+	
+	#output img {
+		width: 100% !important;
+	}
     
+	#output {
+		margin-top: 25px;
+	}
+	
     .blog-title {
         font-size: 32px;
         margin: 20px 0px 10px 0px;
@@ -24,6 +33,7 @@
     
     .preview-image img {
         width: 100%;
+		margin-top: 50px;
     }
     
     .tag {
@@ -45,7 +55,8 @@
         font-size: 14px !important;
     }
     </style>
-    
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60236d8454ea1209"></script>
     <%- include('./partials/global/header.ejs') -%>
     <div class='hide-on-mobile'>
         <%- include('./partials/global/topbar.ejs') -%>
@@ -55,67 +66,25 @@
     
     <div id='show'>
         <div class='container'>
+			<a href ='/blog'>Back</a>
             <% post.forEach(function(post){ %>
                 <% if (post.draft === 'No'){ %>
-            <div class='preview-image'><img src='<%= post.post_preview_image %>'></div>
+			<div class='preview-image'><img src='../images/uploads/<%= post.post_preview_image %>' alt='Post preview'></div>
+			
             <div class='blog-title'><%= post.post_title %></div><hr>
-            <% if(post.post_depression != "Depression") { %>
-                <% } else { %>
-                    <span class='tag'><%= post.post_depression %></span>
-                <% } %>
+ 
+                    <span class='tag'><%= post.post_category %></span>
+               
         
-                <% if(post.post_anxiety != "Anxiety") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_anxiety %></span>
-                <% } %>
-        
-                <% if(post.post_covid != "COVID-19") { %>
-                <% } else { %>
-                    <span class='tag'><%= post.post_covid %></span>
-                <% } %>
-        
-                <% if(post.post_mental != "Mental Health") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_mental %></span>
-                <% } %>
-        
-                <% if(post.post_eap != "EAP") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_eap %></span>
-                <% } %>
-        
-                <% if(post.post_emdr != "EMDR") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_emdr %></span>
-                <% } %>
-        
-                <% if(post.post_anger != "Anger Management") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_anger %></span>
-                <% } %>
-        
-                <% if(post.post_biofeedback != "Biofeedback") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_biofeedback %></span>
-                <% } %>
-        
-                <% if(post.post_substance != "Substance Abuse") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_substance %></span>
-                <% } %>
-        
-                <% if(post.post_treatments != "Treatments") { %>
-                <% } else { %>
-                <span class='tag'><%= post.post_treatments %></span>
-                <% } %>
-        
+                
+			<br><br>
+
+        	
              
-            <div class='blog-preview section-text'>
                 <div id='blog-content'><%= post.post_content %></div>
                 <div id='output'></div>
-
-
-                <div id='comments'>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox" style='float: right'></div>
+			<div id='comments'>
                     <div class='comment_title section-title'>Comments</div>
                     
                     <div><button style='float: right' data-toggle="collapse" data-target="#demo">Add Comment</button></div>
@@ -138,8 +107,10 @@
                         <br>    
                     </div>
                     <div class='comments'>
+                      <div class='comments'>
                         <br>
-                        <% comment.forEach(function(comment){ %>
+                      
+  <% comment.forEach(function(comment){ %>
                             <% if(post.post_id = comment.post_id) { %>
                             <div class='bold'><%= comment.author %></div>
                             <%  var date = comment.timestamp.toLocaleString() %>
@@ -151,11 +122,9 @@
                             <% } %>
                             <hr>
                             <% } %>
-                            <% }) %>
-
-                    </div>
-                    <% } %>
+                            <% }) %>  <% } %>
             <% }) %>
+                    </div>
         </div>
 
 
@@ -164,6 +133,7 @@
     </div>
     </div>
     
+
     <script> 
 
         var a = $("#blog-content").text();
@@ -173,8 +143,5 @@
     </script>
 
     <%- include('./partials/global/footer.ejs') -%>
-    
-    
-    
     
     

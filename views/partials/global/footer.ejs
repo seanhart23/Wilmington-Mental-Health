@@ -1,5 +1,11 @@
 <style>
 	
+	.copyright {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+
 	#footer {
 		/*height: 350px;*/
 		background: #f6f8f9;
@@ -7,8 +13,8 @@
 		padding: 55px;
 		color: #5c656d;
 		/*z-index: -1;*/
-		position: relative;
 		border-top: 1px solid lightgray;
+		position: relative;
 	}
 
 	#footer a {
@@ -58,7 +64,7 @@
 		<div class='row'>
 			<!-- <div class='col-lg-2'></div> -->
 			<div class='col-lg-3'>
-				<div class='footer-image'><img src='/images/graylogo.svg'></div>
+				<div class='footer-image'><img src='/images/graylogo.svg' alt='Wilmington Mental Health gray logo'></div>
 				<div class='footer-image-text'>Psychotherapy and Substance Abuse Treatment</div>
 				<div class='footer-text'>Our goal is to offer accessible and universal mental health to all in our community.</div>
 				<div class='social'>
@@ -106,46 +112,67 @@
 
 			<div class='col-lg-2'>
 				<div class='footer-header bold'>Links</div>
-				<p><div class='footer-text'><a href='/home'>Home</a></div>
+				<p><div class='footer-text'><a href='/'>Home</a></div>
 				<p><div class='footer-text'><a href='/services'>Services</a></div>
-				<p><div class='footer-text'><a href='/who'>Who We Are</a></div>
-				<p><div class='footer-text'><a href='/who'>Resources</a></div>
-				<p><div class='footer-text'><a href='/who'>Contact Us</a></div>
+				<p><div class='footer-text'><a href='/whoweare'>Who We Are</a></div>
+				<p><div class='footer-text'><a href='/community'>Resources</a></div>
+				<p><div class='footer-text'><a href='/contact'>Contact Us</a></div>
 				<!-- <p><div class='footer-text'><a href='/careers'>Careers</a></div> -->
 			</div>
 		</div>
 	</div>
 </div>
+<div class='copyright'>&#169;	2021 Wilmington Mental Health | Developed by <a href='https://www.absideoninteractive.com' target='_blank'>Absideon Interactive</a></div>
+
 </div>
 
 
 
-  <script src="./js/index.js"></script>
-  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+	<script src="./js/index.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script>UPLOADCARE_PUBLIC_KEY = "3156a371955e14720ce4";</script>
+	<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
 
+	<!-- Global site tag (gtag.js) - Google Ads: 759163038 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-759163038"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  <script>
-$(function(){
-  var hash = window.location.hash;
-  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+		gtag('config', 'AW-759163038');
 
-  $('.nav-pills a').click(function (e) {
-    $(this).tab('show');
-    var scrollmem = $('body').scrollTop();
-    window.location.hash = this.hash;
-    $('html,body').scrollTop(scrollmem);
-  });
-});
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof (url) != 'undefined') {
+					window.location = url;
+				}
+			};
+			gtag('event', 'conversion', {
+				'send_to': 'AW-759163038/pdCmCLml6PkBEJ7R_-kC',
+				'event_callback': callback
+			});
+			return false;
+		}
 
+		$(function(){
+		var hash = window.location.hash;
+		hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
-function searchblog(string){
-	var searchText = $("#SearchText").val();
-		window.find(searchText);
-}
+		$('.nav-pills a').click(function (e) {
+			$(this).tab('show');
+			var scrollmem = $('body').scrollTop();
+			window.location.hash = this.hash;
+			$('html,body').scrollTop(scrollmem);
+		});
+		});
 
+		function searchblog(string){
+			var searchText = $("#SearchText").val();
+				window.find(searchText);
+		}
 </script>
+	<!-- <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script> -->
 
 </body>
 </html>

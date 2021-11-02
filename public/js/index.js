@@ -1,3 +1,4 @@
+$(document).ready(function() {
 
 function search() {
   // Declare variables
@@ -43,23 +44,11 @@ $(window).scroll(function(event) {
   
   $(".main-box").each(function(i, el) {
     var el = $(el);
-    if (el.visible(true)) {
+    if (el) {
       el.addClass("come-in"); 
-    } 
-  });
-  
+    }
+  })
 });
-
-// $(window).scroll(function(event) {
-  
-//   $(".slide").each(function(i, el) {
-//     var el = $(el);
-//     if (el.visible(true)) {
-//       el.addClass("slide-in"); 
-//     } 
-//   });
-  
-// });
 
 /*** Navbar Transition on Scroll ***/
 
@@ -71,9 +60,6 @@ $(window).scroll(function(){
   $('.scroll-up').toggleClass('scrolled', $(this).scrollTop() > 100);
   $('.side-list').toggleClass('display', $(this).scrollTop() > 100);
   $('.list').toggleClass('display', $(this).scrollTop() > 100);
-
-
-  // $('.sec-nav').toggleClass('hold', $(this).scrollTop() > 200);
 });
 
 /*** Carousel ***/
@@ -120,12 +106,14 @@ $(document).ready(function () {
     
     function change() {
                 var change = document.getElementById("toggle");
-                if (change.innerHTML == "+ EXPAND FOR MORE DETAILS")
-                {
-                    change.innerHTML = "- EXPAND FOR MORE DETAILS";
-                }
-                else {
-                    change.innerHTML = "+ EXPAND FOR MORE DETAILS";
+                if(change){
+                  if (change.innerHTML == "+ EXPAND FOR MORE DETAILS")
+                  {
+                      change.innerHTML = "- EXPAND FOR MORE DETAILS";
+                  }
+                  else {
+                      change.innerHTML = "+ EXPAND FOR MORE DETAILS";
+                  }
                 }
             }
 
@@ -141,16 +129,16 @@ $(document).ready(function () {
             }
 
     function tech(p) {
-                var change = document.getElementById(p);
-                if (change.innerHTML == '<div class="plus">+</div>')
-                {
-                    change.innerHTML = '<div class="plus">-</div>';
-                }
-                else {
-                    change.innerHTML = '<div class="plus">+</div>';
-                }
-                console.log('working')
-            }
+        var change = document.getElementById(p);
+        if(change){
+          if (change.innerHTML == '<div class="plus">+</div>')
+          {
+              change.innerHTML = '<div class="plus">-</div>';
+          } else {
+              change.innerHTML = '<div class="plus">+</div>';
+          }
+        }
+    }
 
 tech();
 change();
@@ -163,6 +151,4 @@ function searchblog() {
   $(".searchText:contains('" + searchText + "')").css("background","#FF0");
 }
 
-
-
-    
+});
