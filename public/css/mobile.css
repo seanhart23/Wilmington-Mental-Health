@@ -233,6 +233,7 @@ div.section-text .center .bigger  {
 	background: white!important;
 	position: relative;
 }
+
 .navbar-brand img{
 	height: 40px;
 	margin: auto;
@@ -240,6 +241,11 @@ div.section-text .center .bigger  {
 
 .navbar-light .navbar-toggler {
 	margin-left: 5px !important;
+}
+
+.navbar-nav {
+	overflow-y: scroll;
+    max-height: 500px;
 }
 
 .navbar-brand {
