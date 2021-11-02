@@ -1,0 +1,167 @@
+<style>
+	
+	/*.alert {
+		margin-top: 50px !important;
+		margin-bottom: 25px;
+	}*/
+
+.alert {
+	position: absolute;
+	padding: 5px 20px 5px 0px;
+	background: rgba(250, 0, 0, .6);
+	color: white;
+	top: 0px;
+	left: 0px;
+	text-align: left;
+	width: 100%;
+	z-index: 1;
+}
+
+#process {
+	position: relative;
+	padding: 75px 0px;
+}
+
+#process .header {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+	.process-flow {
+		width: 100%;
+		position: relative;
+	}
+
+	.process-image {
+		width: 100%;
+		height: 50px;
+	}
+
+	.process-image i {
+		/*color: red !important;*/
+		font-size: 40px;
+		position: absolute;
+		left: 50%;
+		margin-left: -15px;
+		z-index: 1;
+	}
+
+	.process-image img {
+		color: red !important;
+		font-size: 40px;
+		position: absolute;
+		left: 50%;
+		margin-left: -15px;
+		z-index: 1;
+	}
+	.process-step {
+		border: 1px solid lightgray;
+		height: 265px;
+		/*width: 15%;*/
+		display: inline-block;
+		width: 100%;
+		box-shadow: 0px 0px 10px 10px lightgray;
+		text-align: center;
+		margin-top: -30px;
+		border-radius: 10px;
+		padding: 5px 5px 5px 5px;
+	}
+
+	.process-text {
+		font-size: 14px;
+		text-align: left;
+	}
+
+	.process-title {
+		margin-top: 15px;
+		margin-bottom: 25px;
+		font-size: 18px;
+		width: 100%;
+		text-align: center;
+
+	}
+
+ul{
+	list-style-position: outside;
+	padding-left: 20px;
+}
+</style>
+
+
+<div id='process'>
+
+<div class='alert'>
+	<div class='container'>
+		Important Notice: If you are experiencing a crisis or have an urgent need, please call 911 or visit your nearest emergency department.
+	</div>
+</div> 
+
+<h1><div class='header'>The Counseling <span class='bold'>Process</span></div></h1>
+
+<!-- <div class='container'> -->
+	<div class='process-flow'>
+	<div class='row shorten-row'>
+		<div class='col-lg-1'></div>
+		<div class='col-lg-2'>
+			<div class='process-image'><i class="fas fa-clipboard-list" style='color: #9C3C69 !important'></i></div>
+			<div class='process-step'>
+				<div class='process-title bold'>Intake</div>
+				<div class='process-text'><ul>
+					<li>Development of the therapeutic relationship.</li><br>
+					<li>Patient and therapist learn about each other.</li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class='col-lg-2'>
+			<div class='process-image'><i class="fas fa-binoculars" style='color: #344A53 !important; margin-left: -20px !important'></i></div>
+			<div class='process-step'>
+				<div class='process-title bold'>Exploration</div>
+				<div class='process-text'><ul>
+					<p><li>Why treatment now?</li></p>
+					<p><li>Understanding past and current challenges.</li></p>
+					<p><li>Establishing goals and setting expectations</li></p>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class='col-lg-2'>
+			<div class='process-image'><i class="fas fa-couch" style='color: #907159 !important; margin-left: -20px !important'></i></div>
+			<div class='process-step'>
+				<div class='process-title bold'>Interventon</div>
+				<div class='process-text'><ul>
+					<p><li>Choosing the appropriate counseling techniques</li></p>
+					<p><li>Applying skills that encourage growth.</li></p>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class='col-lg-2'>
+			<div class='process-image'><i class="fas fa-brain" style='color: #4EAAC8 !important; margin-left: -20px !important'></i></div>
+			<div class='process-step'>
+				<div class='process-title bold'>Empowering</div>
+				<div class='process-text'><ul>
+					<p><li>Finding your own solutions</li></p>
+					<p><li>Achieving self-efficacy and developing confidence.</li></p>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class='col-lg-2'>
+			<div class='process-image'><img src='./images/rock.png' style='color: blue !important; margin-left: -20px !important' alt='Rock'><!-- <i class="fas fa-tools" style='color: blue !important; margin-left: -20px !important'></i> --></div>
+			<div class='process-step'>
+				<div class='process-title bold'>Maintenance</div>
+				<div class='process-text'>
+					<ul>
+					<p><li>Developing and testing durability.</li></p>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class='col-lg-1'></div>
+	</div>
+<!-- 	<div class='container'>
+		<div class="alert alert-danger main-box" role="alert">
+		If you are experiencing a crisis or have an urgent need, please call 911 or visit your nearest emergency department.		
+	</div> -->
+	</div>
+</div>

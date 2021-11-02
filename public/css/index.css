@@ -1,0 +1,178 @@
+/** {
+	outline: 1px solid red;
+}
+*/
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+} 
+
+a {
+	text-decoration: none!important;
+}
+
+.background-alt {
+	background-color: #f6f8f9 !important;
+	/*padding: 50px 0px 50px 0px !important;*/
+	height: 100%;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	position: relative; 
+	min-height: 100%; 
+	padding: 0px;
+	min-width: 100%;
+}
+
+button {
+	margin-bottom: 0; 
+	border: medium none #4eaac8; 
+	border-radius: 5px; 
+	background-color: #4EAAC8; 
+	color: #ffffff;
+	font-size: 13px;
+	padding: 18px 30px;
+	text-transform: uppercase;
+	font-weight: 300;
+	z-index: 3;
+}
+
+button:hover {
+	background-color:#5c656d;
+}
+.bold {
+	font-weight: bolder;
+}
+
+.card button:hover {
+	background: transparent !important;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+	justify-content: center;
+}
+
+.transparent {
+	background-color: rgba(246, 248, 249, .8) !important;
+}
+
+.fixed-top {
+	position: fixed!important;
+	margin-bottom: 5px;
+}
+
+.float {
+	float: right;
+}
+
+.header{
+	font-size: 42px;
+    line-height: 53px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px 40px;
+}
+
+.header-alt {
+	font-size: 42px;
+    line-height: 53px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+}
+
+.hide-on-desktop {
+	display: none;
+}
+
+.large {
+	color: #4eaac8;
+	font-size: 40px;
+}
+
+.right {
+	text-align: right !important;
+	float: right;
+}
+
+.shorten-row {
+	width: 90%; 
+	margin: 0px auto;
+}
+
+.section-text {
+	color: #5c656d;
+	font-size: 18px;
+	/*line-height: 167%;*/
+	font-weight: 300;
+}
+
+.section-title {
+	font-size: 36px;
+	/*line-height: 128%;*/
+	font-weight: 300;
+}
+
+.short {
+	width: 10%;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.spacer-medium {
+	height: 100px;
+}
+
+.sub-title {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.thin {
+	font-weight: 300 !important;
+}
+
+/*** Animations ***/
+
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+/*.slide-in {
+  transform: translateX(250px);
+  animation: slide-in 1.8s ease forwards;
+}
+.slide-in:nth-child(odd) {
+  animation-duration: 1.6s; /* So they look staggered */
+/* }*/ 
+
+/*@keyframes slide-in {
+  to { transform: translateX(0); }
+}
+
+*/

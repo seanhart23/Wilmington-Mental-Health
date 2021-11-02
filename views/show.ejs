@@ -1,0 +1,147 @@
+
+<style>
+	.addthis_inline_share_toolbox {
+		font-size: 20px !important;
+		height: 20px !important;
+	}
+	
+    .comment_title {
+        margin-top: 50px;
+    }
+    #show {
+        padding: 55px 0px;
+    }
+    
+    #blog-content {
+        visibility: hidden;
+        display: none;
+    }
+	
+	#output img {
+		width: 100% !important;
+	}
+    
+	#output {
+		margin-top: 25px;
+	}
+	
+    .blog-title {
+        font-size: 32px;
+        margin: 20px 0px 10px 0px;
+        font-weight: 300;
+    }
+    
+    .preview-image img {
+        width: 100%;
+		margin-top: 50px;
+    }
+    
+    .tag {
+        padding: 5px 10px;
+        /* border: 1px solid gray; */
+        margin-right: 5px;
+        background: #4eaac8;
+        color: white;
+        font-size: 14px;
+        border-radius: 3px;
+        margin-bottom: 20px !important;
+    }
+
+    #submit-button {
+        float: right !important;
+    }
+
+    #timestamp {
+        font-size: 14px !important;
+    }
+    </style>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60236d8454ea1209"></script>
+    <%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+        <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+    
+    <div id='show'>
+        <div class='container'>
+			<a href ='/blog'>Back</a>
+            <% post.forEach(function(post){ %>
+                <% if (post.draft === 'No'){ %>
+			<div class='preview-image'><img src='../images/uploads/<%= post.post_preview_image %>' alt='Post preview'></div>
+			
+            <div class='blog-title'><%= post.post_title %></div><hr>
+ 
+                    <span class='tag'><%= post.post_category %></span>
+               
+        
+                
+			<br><br>
+
+        	
+             
+                <div id='blog-content'><%= post.post_content %></div>
+                <div id='output'></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox" style='float: right'></div>
+			<div id='comments'>
+                    <div class='comment_title section-title'>Comments</div>
+                    
+                    <div><button style='float: right' data-toggle="collapse" data-target="#demo">Add Comment</button></div>
+                   
+                    <div id="demo" class="collapse" style='width: 80%'>
+                        
+                        
+                        <form action='/comment' method='POST'>
+                            <div class="field">
+                                <input type='text' class='form-control' id='post_id' name='post_id' value='<%= post.post_id %>' hidden>
+                            </div><br>
+                            <div class="field">
+                                <input type='text' class='form-control' id='name' name='author' maxlength='3' placeholder='Initials'>
+                            </div><br>
+                            <div class="field">
+                                <textarea type='text' rows='5' class='form-control' id='comment-field' name='comment' placeholder='Comment'></textarea>
+                            </div><br>
+                            <button type='submit'>Submit</button>
+                        </form>
+                        <br>    
+                    </div>
+                    <div class='comments'>
+                      <div class='comments'>
+                        <br>
+                      
+  <% comment.forEach(function(comment){ %>
+                            <% if(post.post_id = comment.post_id) { %>
+                            <div class='bold'><%= comment.author %></div>
+                            <%  var date = comment.timestamp.toLocaleString() %>
+                            <div id='timestamp'><%= date %></div>
+                            <div class='section-text' style='padding: 20px'><%= comment.comment %></div>
+                            <% if( role === 'admin'){ %>
+                                <div style='text-align: right'><form method="POST" action="comment/<%= comment.id %>?_method=DELETE" id="delete"><button class='btn-sm btn-danger'>Delete</button></form></div>
+                            <% } else { %>
+                            <% } %>
+                            <hr>
+                            <% } %>
+                            <% }) %>  <% } %>
+            <% }) %>
+                    </div>
+        </div>
+
+
+
+        </div>
+    </div>
+    </div>
+    
+
+    <script> 
+
+        var a = $("#blog-content").text();
+        
+        document.getElementById('output').innerHTML = a;
+        
+    </script>
+
+    <%- include('./partials/global/footer.ejs') -%>
+    
+    

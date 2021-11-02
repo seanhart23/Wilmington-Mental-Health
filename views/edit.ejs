@@ -1,0 +1,97 @@
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+<%- include('./partials/global/user-dashboard.ejs') -%>
+
+    <style>
+        #new-post {
+            padding: 55px 0px;
+        }
+
+        input, textarea {
+            margin: 25px 0px;
+        }
+
+        .ck-editor__editable {
+            min-height: 500px;
+        }
+    </style>
+
+<script src="../ckeditor/ckeditor.js"></script>
+
+
+    <div id='new-post'>
+        <div class='container'>
+		<div class='section-title'>Edit Blog Post</div>
+            <form class="form" action='/edit/(:id)' enctype="multipart/form-data"  method='POST'>
+				<% post.forEach(function(post){ %>
+
+                <div class='form-group'>
+                    <div class="field">
+                        <input type='text' class='form-control' id='id' name='id' value='<%= post.post_id %>' hidden>
+                    </div>
+                    <div class="field">
+                        <input type='text' class='form-control' id='title' name='title' value='<%= post.post_title %>'>
+                    </div>
+                    <div class="field">
+                    <input type='text' class='form-control' id='author' name='author' value='<%= post.post_author %>'>
+                    </div>
+                    <div class="field">
+                        <input type='date' class='form-control' id='date' name='date' value='<%= post.post_date %>'>
+                    </div>
+					<div class="field">
+						
+                    <div class="field">
+                            Update Main Image<br>
+                            <input type="file" name="preview_image" accept="image/*" />
+                        </div>
+                    </div>
+					
+                    <div class="field"><br>
+						<label>Post Content</label>
+						<div id='blog-content'></div>
+                        <textarea type='text' rows='20' class='form-control' id='editor1' name='content' placeholder=''><%= post.post_content %></textarea>
+                    </div>
+					<br><br>
+								<label>Category</label><br>
+			<select class='form-control' name='category' style='width: 30%'>
+				<option value='<%=post.post_category %>' selected><%=post.post_category %></option>
+				<% category.forEach(function(category){ %>
+				<option value='<%= category.category_name %>'><%= category.category_name %></option>
+				<% }) %>
+			</select>
+					
+                </div>
+                <% if (role === 'admin'){ %>
+                    <div class="field">
+                        <label>Draft</label>
+                        <select type='text' class='form-control' id='draft' name='draft'>
+                            <option value='Yes'>Yes</option>
+                            <option value='No'>No</option>
+                        </select>
+                    </div>
+                    <% } else { %>
+                        <div class="field">
+                            <label>Draft</label>
+                            <select type='text' class='form-control' id='draft' name='draft'>
+                                <option value='Yes'>Yes</option>
+                            </select>
+                        </div>
+                        <% } %><br>
+                <button type="submit">Submit Post</button>
+            </form>
+        </div>
+    </div>
+<% }) %>
+
+    <script>
+        var editor = CKEDITOR.replace('editor1');
+		var editor3 = CKEDITOR.replace('editor3');
+
+        
+
+        </script>
+<%- include('./partials/global/footer.ejs') -%>

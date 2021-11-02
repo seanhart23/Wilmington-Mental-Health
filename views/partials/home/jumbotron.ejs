@@ -1,0 +1,108 @@
+<style>
+
+
+.alert {
+	position: absolute;
+	padding: 5px 20px 5px 0px;
+	background: rgba(78, 170, 200, .6);
+	color: white;
+	top: 0px;
+	left: 0px;
+	text-align: left;
+	width: 100%;
+	z-index: 1;
+}
+
+.book {
+	background-color: #F69333 !important;
+	margin-left: 5px;
+}
+
+.book:hover {
+	background-color: #4EAAC8; 
+	transition: background-color .5s ease;
+}
+
+.filter {
+	position: absolute;
+	background: rgba(0,0,0,.1);
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+.jumbotron {
+	background-image: url('./images/banner.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 60% 0%;
+	width: 100%;
+	margin-bottom: 0px;
+	position: relative;
+	text-align: center;
+	border-radius: 0px;
+	z-index: 0;
+	padding: 150px 0px 75px 0px;
+	min-height: 60vh;
+
+}
+
+.jumbotron button {
+	height: 50px;
+	margin-right: 25px;
+	background-color: #4eaac8;
+	z-index: 2;
+	line-height: 10px;
+}
+
+.jumbotron button:hover {
+	background: #00314A !important; 
+	transition: background .5s ease;
+	z-index: 2;
+	position: relative;
+}
+
+.main-text {
+	font-size: 50px;
+	color: white;
+	font-weight: 500;
+	text-align: left;
+	width: auto;
+	z-index: 1;
+	position: relative;
+	text-shadow: 1px 1px 2px gray;
+}
+
+.sub-text {
+	font-size: 18px;
+	z-index: 1;
+	position: relative;
+	text-transform: uppercase;
+	/*font-style: italic;*/
+}
+</style>
+
+
+<div class='jumbotron'>
+	<div class='filter'></div>
+
+	<div class='alert'>
+		<div class='container'>
+		COVID-19 Update: During the pandemic, we are shifting to telehealth sessions to reduce the spread of COVID-19 and to protect the safety of our patients.</div></div>
+
+	<div class='container'>
+		<div class='main-text'>
+			<div class='sub-text'>Build a brighter future by starting with today</div>
+			<h1>Psychotherapy and <br>
+			Substance Abuse Treatment<br></h1>
+			<a href='/whoweare'><button class='about'>About Us</button></a> 
+			<a href="https://wmh1.clientsecure.me/sign-in" target='_blank' class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind style='background: none'>
+			<button class='book'>Book Now</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+

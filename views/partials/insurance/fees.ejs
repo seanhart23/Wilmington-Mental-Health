@@ -1,0 +1,239 @@
+<style>
+
+
+
+.button-container {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.note {
+	margin-bottom: 50px;
+}
+
+.price {
+	font-size: 18px;
+}
+
+.price i {
+	font-size: 22px;
+	text-align: center;
+	padding-left: 10px;
+}
+
+.price-title {
+	font-weight: bold;
+}
+
+#pricing {
+	width: 100%;
+	margin-top: 50px;
+	border: 1px solid lightgray;
+}
+
+#pricing th {
+	background: #4eaac8;
+	width: 100%;
+	padding: 10px;
+	color: white;
+}
+
+#pricing td, tr {
+	border: 1px solid lightgray;
+	padding: 10px;
+}
+
+#pricing-section {
+	padding: 55px 0px;
+}
+.price-button {
+	margin-bottom: 50px;
+}
+
+#standard {
+	/*background-color: whitesmoke;*/
+}
+</style>
+
+
+<div id='pricing-section'>
+<div class='container'>
+	<div class='section-title center'>Standard Fees and Length of Sessions</div>
+	<div class='button-container main-box'>
+		<button class='price-button' id='toggle' data-toggle="collapse" data-target="#prices" onclick="change()"><span class='big'>+</span> EXPAND FOR MORE DETAILS</button>
+	</div>
+
+
+	<div id="prices" class="collapse in">
+		<div id='standard'>
+
+		<table id='pricing'>
+
+			<tr>
+				<th colspan='2'>Intake</th>
+			</tr>
+			<tr>
+				<td class='price'>Free</td>
+				<td class='service'>
+					<div class='price-title'>Brief Telephone Consultation</div>
+					<div class='price-detail'>15-minute consultation over the phone</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$200</td>
+				<td class='service'>
+					<div class='price-title'>Comprehensive Clinical Assessments (CCA)</div>
+					<div class='price-detail'>120-min long screening and full intake evaluation, which often is completed during session one.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$200</td>
+				<td class='service'>
+					<div class='price-title'>Substance Abuse Evaluation (CCA + Report)</div>
+					<div class='price-detail'>120-min long assessment diagnostic interview to determine your level of care and needs.</div>
+				</td>
+			</tr>
+
+
+			<tr>
+				<th colspan='2'>Individual</th>
+			</tr>
+			<tr>
+				<td class='price'>$110</td>
+				<td class='service'>
+					<div class='price-title'>Individual Therapy Session</div>
+					<div class='price-detail'>53-minute-long standard therapy session conducted face to face.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$110</td>
+				<td class='service'>
+					<div class='price-title'>Teletherapy</div>
+					<div class='price-detail'>53-minute standard therapy session conducted online (via computer, tablet, or phone).</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$110</td>
+				<td class='service'>
+					<div class='price-title'>EMDR Therapy Session</div>
+					<div class='price-detail'>Brief individual therapy sessions typically delivered one or two times per week - on consecutive days if necessary. </div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$110</td>
+				<td class='service'>
+					<div class='price-title'>Biofeedback Therapy</div>
+					<div class='price-detail'>30-60 minute sessions designed to develop awareness of your body functions using electronic instruments.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$200</td>
+				<td class='service'>
+					<div class='price-title'>Crisis Intervention</div>
+					<div class='price-detail'>Immediate and short-term emergency response for acute crises, such as suicidality or domestic abuse.</div>
+				</td>
+			</tr>
+
+			<tr>
+				<th colspan='2'>Couples and Family</th>
+			</tr>
+			<tr>
+				<td class='price'>$150</td>
+				<td class='service'>
+					<div class='price-title'>Couples Therapy Session</div>
+					<div class='price-detail'>60-minute session for individuals, partners, spouses, or engaged couples.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$200</td>
+				<td class='service'>
+					<div class='price-title'>Family Therapy Session</div>
+					<div class='price-detail'>60-minute therapy sessions for families of three or more who are part of the same household.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$100</td>
+				<td class='service'>
+					<div class='price-title'>Premarital Counseling</div>
+					<div class='price-detail'>60-minute sessions designed for those in a committed relationship.</div>
+				</td>
+			</tr>
+
+			<tr>
+				<th colspan='2'>Groups and Classes</th>
+			</tr>
+			<tr>
+				<td class='price'>$40</td>
+				<td class='service'>
+					<div class='price-title'>Groups Therapy Session</div>
+					<div class='price-detail'>60-minute-long sessions for groups of 12 people or less.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$15</td>
+				<td class='service'>
+					<div class='price-title'>Psychoeducational Classes</div>
+					<div class='price-detail'>60 minute-long educational sessions that promote sharing and personal growth.</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<th colspan='2'>Employee Assistance Program</th>
+			</tr>
+			<tr>
+				<td class='price'>TBD</td>
+				<td class='service'>
+					<div class='price-title'>Employee Assistance Program</div>
+					<div class='price-detail'>53-minute short-term, voluntary sessions for employees experiencing personal and/or work-related problems.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$75</td>
+				<td class='service'>
+					<div class='price-title'>Compassion Fatigue Treatment</div>
+					<div class='price-detail'>30-minute short-term sessions for those experiencing physical and emotional exhaustion.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'>$2500</td>
+				<td class='service'>
+					<div class='price-title'>Sex Offender Risk Assessment</div>
+					<div class='price-detail'>An empirical method of measuring the risk of re-offending and includes a comprehensive report.</div>
+				</td>
+			</tr>
+
+			<tr>
+				<th colspan='2'>Policy and Attendance</th>
+			</tr>
+			<tr>
+				<td class='price'>$50</td>
+				<td class='service'>
+					<div class='price-title'>No Show - No Call / Late Cancellation</div>
+					<div class='price-detail'>A fee is applied after a missed appointment, or after the cancellation deadline.</div>
+				</td>
+			</tr>
+			<tr>
+				<td class='price'><i class="fas fa-money-bill-wave"></i></td>
+				<td class='service'>
+					<div class='price-title'>We accept Cash, Checks, Visa, Mastercard, American Express, and Discover.</div>
+					<div class='price-detail'>All payments are expected at the time of service. Should payments not be made on the day of service, we reserve the right to cancel your appointment.</div>
+				</td>
+			</tr>
+			<tr>
+				<th colspan='2'>Sliding Scale Fee</th>
+			</tr>
+			<tr>
+				<td class='price'>$75+</td>
+				<td class='service'>
+					<div class='price-title'>Reduced Rate</div>
+					<div class='price-detail'>We may be able to lower the cost of your treatment if your income is low, or you have less money to spare after your personal expenses. Before we can assess your eligibility, we may ask you to provide evidence of income/no income. </div>
+				</td>
+			</tr>
+		</table>
+
+		<div class='note'>Rates are subject to change</div>
+	</div>
+</div>
+</div>
+</div>
+

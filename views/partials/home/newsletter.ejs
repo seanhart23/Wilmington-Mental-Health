@@ -1,0 +1,56 @@
+<style>
+
+.blog-content {
+    font-weight: 300;
+}
+
+.event_image {
+    width: 90%;
+}
+
+#newsletter {
+    padding: 55px 10px;
+    background: #00314A;
+    color: white;
+}
+
+</style>
+
+<div id ='newsletter'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-8'>
+                <div class='section-title'>News</div>
+                <hr style='width: 30%; margin-left: 0px; background: white;'>
+                <% Alert.reverse().slice(0, 1).forEach(function(Alert){ %>
+                        <div id='anouncement'>
+                            <div class='row'>
+                                <div class='col-lg-7'>
+                                    <div class='blog-content'>
+                                        <%= Alert.Message %>
+                                    </div>
+                                </div>
+                                <div class='col-lg-5'><img src='./images/uploads/<%= Alert.preview_image %>' alt='Alert preview' class='event_image'>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+            </div>
+            <div class='col-lg-4' style='border-left: 1px solid white;'>
+                <div class='section-title center' style='color: white'>Subscribe Now</div>
+                <hr class='short' style='margin-bottom: 10px; background-color: white'>
+                <div class='section-text center' style='color: white'>Sign up with your email address to receive news and updates.
+</div>
+           
+                <br>
+                <form action='/' method='POST' style='width: 100%; margin-top: 0px; border: none;'>
+                <div class='form-group center' style='margin: auto; width: 90%'>
+                    <input name='name' class='form-control' placeholder='Name'><br>
+                    <input name='email' class='form-control' placeholder='Email Address'><br>
+                    <button type='submit' style='float: right'>Subscribe</button>
+                </div>
+                </form>
+        </div>
+    </div>
+    </div>
+</div>

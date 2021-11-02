@@ -1,0 +1,401 @@
+<style>
+
+.caret {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    transform: rotate(45deg);
+    background: inherit;
+}
+
+.dropdown-item {
+    color: black !important;
+    font-size: 14px;
+}
+
+.dropdown-item:active {
+  background: transparent;
+}
+
+.dropdown-item:hover {
+  color: #4eaac8 !important;
+  padding-left: 30px;
+  -webkit-transition: all 200ms;
+}
+
+.hover-space {
+  background: transparent;
+  height: 130%;
+  width: 100px;
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  /*border: 1px dotted red;*/
+}
+.wide .dropdown-menu {
+  width: 550px;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 15px;
+
+}
+
+.dropdown-menu {
+  min-width: 250px;
+  position: relative;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 15px;
+}
+
+nav i {
+  font-size: 20px;
+  color: gray !important;
+}
+
+.navbar-light .navbar-brand {
+  top: 0;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: rgba(0,0,0,.5);
+}
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid lightgray;
+  padding-left: 0px;
+}
+
+.nav-link {
+  margin: auto 10px;
+  font-weight: 400;
+  padding: 1px 16px;
+  text-align: left;
+}
+
+.nav-title {
+  font-weight: bold;
+}
+
+.sub-item {
+  padding-left: 30px;
+}
+
+.sub-item:hover {
+  color: #4eaac8 !important;
+  padding-left: 40px;
+  -webkit-transition: all 200ms;
+}
+
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu{ display: none; }
+  .navbar .nav-item:hover .nav-link{ color: #000;  }
+  .navbar .nav-item:hover .dropdown-menu{ display: block; }
+  .navbar .nav-item .dropdown-menu{ margin-top: 22px; }
+}
+
+#search-form #search-btn {
+  height: 100%;
+  width: auto;
+  padding: 4px 10px;
+  vertical-align: top;
+  background: transparent;
+  border: none;
+  margin-bottom: 0px;
+}
+
+#search-box {
+  height: 90%;
+  margin-top: 3px;
+  border: 1px solid lightgray;
+  margin-bottom: 0px;
+}
+
+#search-form {
+  margin-bottom: 0px;
+}
+</style>
+
+<!-- <style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-menu > ul > li {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
+    transform: rotate(45deg);
+    background: inherit;
+}
+</style> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light w-100">
+    <div class='container'>
+
+      <div class='navbar-brand hide-on-desktop display-on-mobile ml-center'><img src='./images/logo.png' alt='Wilmington Mental Health logo'></div>
+
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item active dropdown">
+        <a class='nav-link dropdown-toggle home' href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='margin-left: 0px; padding-left: 0px'>
+        Home
+        </a>
+        <div class='hover-space hide-on-mobile'></div>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class='caret'></div>
+          <a class="dropdown-item nav-title" href="/intake">Intake Process</a>
+            <a class="dropdown-item sub-item" href="/insurance">Fees & Insurance</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item nav-title" href="/faq">FAQs</a>
+        </div>      
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class='nav-link dropdown-toggle' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        What We Treat
+        </a>
+        <div class='hover-space hide-on-mobile' style='width: 200px'></div>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class='caret'></div>
+            <a class="dropdown-item nav-title" href="/whatwetreat">Treatment Approach</a>
+            <a class="dropdown-item sub-item" href="/services">Methods We Use</a>
+        </div>      
+      </li>
+
+
+
+
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class='hover-space hide-on-mobile'></div>
+
+    <div class='wide'>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <div class='caret'></div>
+
+        <div class='row'>
+          <div class='col-lg-6'>
+            <!-- <li><a class="dropdown-item nav-title" href="/whatwetreat"></a></li> -->
+           
+            <!-- <div class="dropdown-divider"></div> -->
+            <li><a class="dropdown-item nav-title" href="/teletherapy">Teletherapy</a></li>
+            <!-- <li><a class="dropdown-item nav-title" href="/teletherapia">Teletherapia</a></li> -->
+            <div class='dropdown-divider'></div>
+            <li><a class="dropdown-item nav-title" href="#">Psychotherapy</a></li>
+            <li><a class="dropdown-item sub-item" href="/individual">Individual</a></li>
+            <li><a class="dropdown-item sub-item" href="/couples">Couples</a></li>
+            <li><a class="dropdown-item sub-item" href="/family">Family</a></li>
+            <li><a class="dropdown-item sub-item" href="/group">Group</a></li>
+            <div class='dropdown-divider'></div>
+            <a class="dropdown-item nav-title" href="#">Substance Abuse</a>
+            <a class="dropdown-item sub-item" id='psycho' href="/substance#psychoeducation">Psychoeducation</a>
+            <a class="dropdown-item sub-item" id='out' data-id='outpatient' href="/substance#outpatient">Outpatient Care</a>
+            <a class="dropdown-item sub-item" id='super' href="/substance#supervision">Clinical Supervision</a>
+          </div>
+
+         
+          <div class='col-lg-6'>
+
+            <a class="dropdown-item nav-title" href="#">Specialties</a>
+            <a class="dropdown-item sub-item" href="/anger">Anger Management</a>
+            <a class="dropdown-item sub-item" href="/corporate">Corporate Wellness</a> 
+            <a class="dropdown-item sub-item" href="/emdr">EMDR</a>
+            <a class="dropdown-item sub-item" href="/biofeedback">Biofeedback</a> 
+            <!-- <a class="dropdown-item sub-item" href="/specialties">Trauma-Focused CBT</a>  -->
+            <div class='dropdown-divider'></div>
+            <a class="dropdown-item nav-title" href="#">Assessments</a>
+            <a class="dropdown-item sub-item" href="/assessments#cca">Clinical Assessments (CCA)</a>
+            <a class="dropdown-item sub-item" href="/assessments#anger">Anger Management Evaluation</a>
+            <a class="dropdown-item sub-item" href="/assessments#immigration">Immigration Evaluations</a>
+            <a class="dropdown-item sub-item" href="/assessments#sexoffenderassessment">Sex Offender Risk Assessment</a> 
+            <a class="dropdown-item sub-item" href="/assessments#domestic">Domestic Violence Risk Assessment</a> 
+            <a class="dropdown-item sub-item" href="/assessments#drugandalcohol">Drug and Alcohol Evaluation</a> 
+  <!--           <a class="dropdown-item nav-title" href="#">Other Services</a>
+            <a class="dropdown-item sub-item" href="/specialties">Urinalysis</a>
+            <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a> -->
+          </div>
+        </div>
+        </ul>   
+     </div>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Who We Are</a>
+                <div class='hover-space hide-on-mobile'></div>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
+
+          <a class="dropdown-item nav-title" href="/whoweare">About Us</a>
+          <a class="dropdown-item sub-item" href="/meetourteam">Meet Our Team</a>
+          <!-- <a class="dropdown-item" href="#">Our Mission & Philosophy</a> -->
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item nav-title" href="#">Providers</a>
+              <a class="dropdown-item sub-item" href="/rengifo">Joseph Rengifo</a>
+              <a class="dropdown-item sub-item" href="/henzler">Havah Henzler</a>
+              <a class="dropdown-item sub-item" href="/mooring">Sarah Mooring</a>
+              <a class="dropdown-item sub-item" href="/kemlage">Melissa Kemlage</a>
+              <a class="dropdown-item sub-item" href="/scott">Sara Scott Ford</a>
+              <a class="dropdown-item sub-item" href="/stanfield">Juliana Stanfield</a>
+              <a class="dropdown-item sub-item" href="/seigel">Robert Seigel</a>
+          <a class="dropdown-item nav-title" href="#">Support Staff</a>
+              <a class="dropdown-item sub-item" href="/hollowell">Bree Hollowell</a>
+
+            </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                <div class='hover-space hide-on-mobile'></div>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
+
+            <!-- <a class="dropdown-item nav-title" href="#">Forms</a> -->
+            <!-- <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/intake-packet" target="_blank">Intake Packet</a> -->
+            <a class="dropdown-item nav-title" href="/patient-intake">Patient Intake</a>
+          <!-- <div class="dropdown-divider"></div> -->
+            <a class="dropdown-item nav-title" href="/community">Our Community</a>
+            <a class="dropdown-item sub-item" href="/events">Events</a>
+            <a class="dropdown-item sub-item" href="/news">News</a>
+            <a class="dropdown-item nav-title" href="/careers">Careers</a>
+            <a class="dropdown-item nav-title" href="/blog">Blog</a>
+            <!-- <a class="dropdown-item" href="#">Para Latinos</a> -->
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                <div class='hover-space hide-on-mobile'></div>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class='caret'></div>
+          <a class="dropdown-item nav-title" href="/contact">Contact Us</a>
+          <a class="dropdown-item nav-title" href="#">Appointments</a>
+            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/sign-in" target='_blank'>Existing Patients</a>
+            <a class="dropdown-item sub-item" href="https://wmh1.clientsecure.me/request/clinician" target='_blank'>New Patients</a>
+        </div>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/paymentportal" id="navbarDropdown" role="button">Pay Online</a>
+      </li>
+
+    </ul>
+
+
+<!-- Begin siteLevel HTML Searchbox Code -->
+<form id='search-form' method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8">
+  <div class="sl_search_box">
+    <input type="hidden" name="crid" value="drdh3od9"/>
+    <input type="text" id='search-box' name="query"/>
+    <button type="submit" formtarget="search.ejs" id='search-btn'><i class="fas fa-search"></i> </button>
+  </div>
+</form>
+<!-- End siteLevel HTML Searchbox Code -->
+
+      <a href='/'><i class="fas fa-home"></i> </a>
+
+
+</div>
+</nav>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').hover(function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+$(document).ready(function(){
+  $('.hover-space').hover(function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+$(document).ready(function(){
+  $('.sub').hover(function(e){
+    $(this).toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+$('#out').on('click', function(){
+  $('#outpatient').addClass('active');
+  $('#outpatient').removeClass('fade');
+
+  $('#psychoeducation').removeClass('active');
+  $('#psychoeducation').addClass('fade');
+
+  $('#supervision').removeClass('active');
+  $('#supervision').addClass('fade');
+
+})
+
+$('#psycho').on('click', function(){
+  $('#outpatient').addClass('fade');
+  $('#outpatient').removeClass('active');
+
+  $('#psychoeducation').removeClass('fade');
+  $('#psychoeducation').addClass('active');
+
+  $('#supervision').removeClass('active');
+  $('#supervision').addClass('fade');
+
+})
+
+$('#super').on('click', function(){
+  $('#outpatient').addClass('fade');
+  $('#outpatient').removeClass('active');
+
+  $('#psychoeducation').removeClass('active');
+  $('#psychoeducation').addClass('fade');
+
+  $('#supervision').removeClass('fade');
+  $('#supervision').addClass('active');
+
+})
+
+var myForm = document.getElementById('search');
+if(myForm){
+  myForm.onsubmit = function () {
+    var w = window.open('about:blank', 'Popup_Window', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=700,height=600,left = 312,top = 234');
+    this.target = 'Popup_Window';
+  };
+}
+
+</script>

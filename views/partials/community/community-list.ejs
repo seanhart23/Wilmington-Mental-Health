@@ -1,0 +1,83 @@
+<style>
+.side-list button {
+    padding: 20px 20px;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 50px gray;
+    background: white;
+    border-radius: 10px;
+    scroll-behavior: auto;
+    z-index: 5;
+    width: 300px;
+    background: #4eaac8!important;
+}
+
+.side-list button:hover {
+    background: #4eaac8;
+}
+.side-list {
+    padding: 20px 10px;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 50px gray;
+    background: white;
+    border-radius: 10px;
+    scroll-behavior: auto;
+    z-index: 5;
+    width: 300px;
+    visibility: hidden;
+}
+
+.display {
+    visibility:visible;
+}
+#list {
+    height: 400px!important;
+    width: 270px;
+    margin-top: 75px;
+}
+
+</style>
+<div class='side-list hide-on-mobile'>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#list" aria-expanded="false" aria-controls="collapseExample">
+        Select a Category <span style='margin-left: 10px'>&#9660</span>
+      </button>
+      <div class="collapse" id="list">
+
+        <a class='dropdown-item' href='#health'>Health and Medical Services</a><hr>
+        <a class='dropdown-item' href='#housing'>Housing and Shelter</a><hr>
+        <a class='dropdown-item' href='#food'>Food Pantry & Meals</a><hr>
+        <a class='dropdown-item' href='#faith'>Faith & Religion</a><hr>
+        <a class='dropdown-item' href='#transportation'>Transportation</a><hr>
+        <a class='dropdown-item' href='#meditation'>Meditation & Relaxation</a><hr>
+        <a class='dropdown-item' href='#self-help'>Self-Help & Mutual Support Groups</a><hr>
+        <a class='dropdown-item' href='#lgbtqia'>LGBTQIA Community</a><hr>
+        <a class='dropdown-item' href='#harm'>Harm Reduction Coalition</a><hr>
+        <a class='dropdown-item' href='#medication'>Medication Dropboxes</a><hr>
+        <a class='dropdown-item' href='#community'>Community Non-Profit</a><hr>
+        <a class='dropdown-item' href='#support'>Support & Advocacy</a><hr>
+        <a class='dropdown-item' href='#government'>Government Buildings & Township Offices</a><hr>
+        <a class='dropdown-item' href='#educational'>Educational Institutes</a><hr>
+        <a class='dropdown-item' href='#language'>Language Assistance</a><hr>
+        <a class='dropdown-item' href='#volunteer'>Volunteer Opportunities</a><hr>
+        <a class='dropdown-item' href='#social'>Social Services</a><hr>
+        <a class='dropdown-item' href='#employment'>Employment Agencies</a><hr>
+        <a class='dropdown-item' href='#financial'>Financial Assistance</a><hr>
+        <a class='dropdown-item' href='#recreational'>Recreational Activities</a><hr>
+        <a class='dropdown-item' href='#children'>Children Zones</a><hr>
+        <a class='dropdown-item' href='#teens'>Teens Support</a><hr>
+        <a class='dropdown-item' href='#24'>24-Hour Support: Hotline Numbers</a><hr>
+        <a class='dropdown-item' href='#smoke'>Smoke Cessation</a><hr>
+        <a class='dropdown-item' href='#dietitians'>Dietitians & Nutritionist</a><hr>
+        <a class='dropdown-item' href='#vision'>Vision Care</a><hr>
+        <a class='dropdown-item' href='#breastfeed'>Breastfeeding</a><hr>
+        <a class='dropdown-item' href='#senior'>Senior Care</a><hr>
+        <a class='dropdown-item' href='#restaurant'>Restaurants</a><hr>
+        <a class='dropdown-item' href='#additional'>Additional Resources</a><hr>
+</div>
+</div>

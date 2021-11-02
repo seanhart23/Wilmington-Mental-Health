@@ -1,0 +1,38 @@
+<style>
+#error {
+    padding: 55px 0px;
+    text-align: center;
+}
+
+#error button {
+    background: #4eaac8;
+    color: white;
+    margin: 25px auto;
+    padding: 10px 15px;
+}
+
+#error h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 75px;
+}
+
+</style>
+
+
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+    <%- include('./partials/global/topbar.ejs') -%>
+    <%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+
+<div id='error'>
+    <h1 class='error-code'>Oh No!</h1>
+    <div class='section-title center'>The page you are looking for was either moved or does not exist.</div>
+    <div class='center'>
+        <button class='btn' onclick="window.history.go(-1); return false;">Go Back</button>
+    </div>
+</div>
+        
+<%- include('./partials/global/footer.ejs') -%>

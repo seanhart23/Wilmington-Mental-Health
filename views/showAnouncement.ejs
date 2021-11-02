@@ -1,0 +1,97 @@
+<style>
+    .addthis_inline_share_toolbox {
+        font-size: 20px !important;
+        height: 20px !important;
+    }
+
+    .comment_title {
+        margin-top: 50px;
+    }
+
+    #show {
+        padding: 55px 0px;
+    }
+
+    #blog-content {
+        visibility: hidden;
+        display: none;
+    }
+
+    #output img {
+        width: 100% !important;
+    }
+
+    #output {
+        margin-top: 25px;
+    }
+
+    .blog-title {
+        font-size: 32px;
+        margin: 20px 0px 10px 0px;
+        font-weight: 300;
+    }
+
+    .preview-image img {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        /* border: 1px solid gray; */
+        margin-right: 5px;
+        background: #4eaac8;
+        color: white;
+        font-size: 14px;
+        border-radius: 3px;
+        margin-bottom: 20px !important;
+    }
+
+    #submit-button {
+        float: right !important;
+    }
+
+    #timestamp {
+        font-size: 14px !important;
+    }
+</style>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60236d8454ea1209"></script>
+<%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+            <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+
+        <div id='show'>
+            <div class='container'>
+                <a href='/events'>Back</a>
+                <% Alert.forEach(function(Alert){ %>
+                        <div class='preview-image'><img src='../images/uploads/<%= Alert.preview_image %>' alt='Alert preview'></div>
+                        <div class='blog-content'>
+                            <%= Alert.Message %>
+                        </div>
+                        <hr>
+                        <% }) %>
+
+
+                                    <div id='output'></div>
+                             
+                                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                        <div class="addthis_inline_share_toolbox" style='float: right'></div>
+
+            </div>
+        </div>
+        </div>
+
+
+        <script>
+
+            var a = $("#blog-content").text();
+
+            document.getElementById('output').innerHTML = a;
+
+        </script>
+
+        <%- include('./partials/global/footer.ejs') -%>

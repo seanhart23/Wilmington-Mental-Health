@@ -1,0 +1,185 @@
+<style>
+    .quote {
+        margin-top: 55px;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .photo img {
+        height: 220px;
+    }
+
+
+    .price {
+        font-size: 30px;
+        color: #4EAAC8;
+        margin: 55px 0px;
+    }
+
+    #office {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .message {
+        border: 1px solid navy;
+        padding: 20px;
+    }
+
+    #blackmon {
+        padding: 55px 0px;
+    }
+
+    .section {
+        font-size: 26px;
+        font-weight: 300;
+        color: #4EAAC8;
+        margin-top: 55px;
+    }
+</style>
+
+<%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+            <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+
+
+        <div id='blackmon'>
+            <div class='container'>
+                <!-- <div class='disclosure section-text' style='right: 150; position: absolute'>Professional Disclosure
+                    Statement <a href='./images/havahpds.pdf' target='_blank'> <i class="fas fa-file-download"
+                            style='margin-left: 10px; color: gray'></i></a></div> -->
+
+                <div class='center'><img src='./images/dust.png' alt='Dust background'>
+                    <div class='section-title'>Bree Hollowell</div>
+                    <div class='section-text'>MA, Psychological Scientist</div>
+                    <div class='section-text'>Content Editor at Wilmington Mental Health</div>
+                </div>
+                <div class='top'>
+                    <div class='row' style='margin-top: 55px'>
+                        <div class='col-lg-3'>
+                            <span class='photo'><img src='./images/hollowell.png' style='border: 1px solid lightgray; width: 100%; height: auto;' alt='Bree profile'></span>
+                        </div>
+                        <div class='col-lg-9'>
+                            <span class='section-text'>
+                                <p>I am Wilmington Mental Health’s Grant Writer and Content Editor, my daily tasks include a range of research and writing
+                                that help to support our clinicians and patients. I am always prepared for anything that comes across my desk.
+                                Challenges are what keep life interesting and help us grow.</p>
+                            </span>
+                            <span><img src='./images/graywave.png' class='wave' alt='Gray wave seperator'></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='section'>About Me</div>
+                <div class='section-text'>
+                    <p>I recently graduated from the University of North Carolina at Wilmington with a Master of Arts in Psychological Science.
+                    My primary research focuses throughout my academic career have been intimate partner violence and substance abuse. I
+                    believe that scientifically examining behavior and cognition will allow clinicians to understand and treat patients more
+                    effectively.</p>
+                </div>
+                <div class='section-text'>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+                            <div class='section'>Education and Credentials</div>
+
+                            <table class='section-text' style='width: 100%'>
+                                <tr>
+                                    <td>Master’s Degree in Psychological Science<br>University of North Carolina - August 2021<br> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class='section-text'>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+                            <div class='section'>What I love to do during my free time…</div>
+                            <div class='section-text'>When I’m not at WMH you can find me teaching at Cape Fear Community College or outside getting
+                                sunshine. I enjoy painting and baking gluten-free goodies. 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+                <!-- <div class='row section-text'>
+                    <div class='col-lg-3'>
+                        <div class='center' style='margin-top: 45px'>If you feel we may be a good fit, schedule a free
+                            phone consultation today.</div>
+                        <div class='buttons' style='text-align: center; margin-top: 25px'>
+
+                            <a href="https://wmh1.clientsecure.me"
+                                data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4"
+                                data-spwidget-scope-uri="wmh1"
+                                data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
+                                data-spwidget-scope-global data-spwidget-autobind><button class='new'
+                                    style='width: 80%'>New Patient</button>
+                            </a>
+                            <br><br>
+                            <a href='https://wmh1.clientsecure.me/sign-in'><button class='existing'
+                                    style='width: 80%; background: #00314A !important'>Existing Patient</button></a>
+                            <br><br><br>
+                            Phone: 910.777.5575 ext. 102
+                        </div>
+                    </div>
+                    <div class='col-lg-6'>
+                        <div class='message center' style='margin-bottom: 50px'>
+                            <div class='center' style='font-size: 40px'><i class="far fa-envelope"></i></div>
+
+
+                            <div class='section-title center' style='padding-bottom: 25px'>Message Me</div>
+                            <form action='/contact' method='POST'>
+                                <div class="form-group">
+                                    <input type="text" id="to" name="to" class="form-control" value="hhenzler@wmhwc.com"
+                                        hidden>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="Name" name="Name" class="form-control"
+                                        placeholder="Full Name*" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="Number" name="Number" class="form-control"
+                                        placeholder="Contact Number*" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" id="Email" name="Email" class="form-control"
+                                        placeholder="Email*" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea type="message" id="Message" name="Message" class="form-control"
+                                        placeholder="Message" rows='4'></textarea>
+                                </div>
+
+                                <button type="submit" id="" class=""
+                                    style='height: 50px; width: 200px; margin-bottom: 0px'>Send</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class='col-lg-3'>
+                        <p style='padding-top: 45px'>My availability<br>
+                            M – F 9:00am - 7:30pm <br>
+                        </p>
+                        <br>
+                        <p>My patients are<br>
+                            14 years old and older</p>
+                        <br>
+
+                        <br>
+                        <p>My specialties<br>
+                            Mental and behavioral health<br>
+                            Substance Abuse
+                        </p>
+
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <%- include('./partials/global/footer.ejs') -%>

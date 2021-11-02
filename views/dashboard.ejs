@@ -1,0 +1,171 @@
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/scroll.ejs') -%>
+<%- include('./partials/global/navbar.ejs') -%>
+<!-- <%- include('./partials/global/user-dashboard.ejs') -%> -->
+
+<style>
+
+#dashboard #delete button, #dashboard #delete1 button, #dashboard #delete2 button {
+	background: transparent;
+	padding: 0px;
+	color: red;
+	font-weight: 400;
+	text-transform: capitalize;
+	font-size: 14px;
+}
+#dashboard {
+	padding: 55px 0px;
+}
+
+#new {
+	float: right;
+}
+
+table {
+	width: 100%;
+	font-size: 14px;
+}
+
+thead {
+	text-decoration: underline;
+}
+</style>
+
+<div id='dashboard'>
+	<div class='container'>
+		<div class='section-title'>Blog Posts<a href='./new'><button id='new'>New Post</button></a></div>
+			<hr>
+			<table>
+				<thead>
+					<th>Blog Title</th>
+					<th>Category</th>
+					<th>Author</th>
+					<th>Date</th>
+					<th>Draft</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</thead>
+				<% post.forEach(function(post){ %>
+					<% if(post){ %>
+				<tr>
+						<td><%= post.post_title %></td>
+						<td><%= post.post_category %></td>
+						<td><%= post.post_author %></td>
+						<td><%= post.post_date %></td>
+						<td><%= post.draft %></td>
+						<td><a href='/edit/<%= post.post_id %>'>Edit</a></td>
+						<td><form method="POST" action="/show/<%= post.post_id %>?_method=DELETE" id="delete"><button type='submit'>Delete</button></form></td>
+						<td></td>
+				</tr>
+				<% } %>
+				<% }) %>
+			</table>
+	</div>
+
+
+		<br><br>
+		
+		<div class='container'>
+			<label>Categories</label><br>
+			<select class='form-control' style='width: 30%'>
+				<% category.forEach(function(category){ %>
+				<option value='<%= category.category_name %>'><%= category.category_name %></option>
+				<% }) %>
+			</select>
+			<br><br>
+			
+            <form class="form" action='/dashboard' method='POST' style='width: 30%'>
+				<label>Add a Category</label>
+                    <div class="field">
+                        <input type='text' class='form-control' id='category_name' name='category_name' placeholder='Category Name'>
+                    </div><br>
+				<button type='submit'>Submit</button>
+			</form><br><br>
+		</div>
+
+
+		<br><br><br>
+		<div class='container'>
+			<div class='section-title'>Events<a href='./newevent'><button id='new'>New Event</button></a></div>
+			<hr>
+			<table>
+				<thead>
+					<th>Event Title</th>
+					<th>Author</th>
+					<th>Date</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Draft</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</thead>
+				<% event.forEach(function(events){ %>
+					<% if(event){ %>
+						<tr>
+							<td>
+								<%= events.name %>
+							</td>
+							<td>
+								<%= events.author %>
+							</td>
+							<td>
+								<%= events.date %>
+							</td>
+							<td>
+								<%= events.start_time %>
+							</td>
+							<td>
+								<%= events.end_time %>
+							</td>
+							<td>
+								<%= events.draft %>
+							</td>
+							<td><a href='/editevent/<%= events.id %>'>Edit</a></td>
+							<td>
+								<form method="POST" action="/showevent/<%= events.id %>?_method=DELETE" id="delete1"><button
+										type='submit' >Delete</button></form>
+							</td>
+							<td></td>
+						</tr>
+						<% } %>
+							<% }) %>
+			</table>
+		</div>
+
+		<br><br>
+		<div id='new-post'>
+			<div class='container'>
+				<div class='section-title'>Announcements/News<a href='./newAnouncement'><button id='new'>New Announcement</button></a></div>
+				<hr>
+							<table>
+								<thead>
+									<th>Headline</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</thead>
+<% Alert.forEach(function(Alert){ %>
+	<% if(Alert){ %>
+		<tr>
+			<td>
+				<%= Alert.headline %>
+			</td>
+			<td><a href='/editAnouncement/<%= Alert.id %>'>Edit</a></td>
+			<td>
+				<form method="POST" action="/showAnouncement/<%= Alert.id %>?_method=DELETE" id="delete2">
+					<button type='submit'>Delete</button>
+				</form>
+			</td>
+			<td></td>
+		</tr>
+		<% } %>
+			<% }) %>
+				</table>
+				<br>
+			</div>
+		</div>
+	</div>
+<%- include('./partials/global/footer.ejs') -%>

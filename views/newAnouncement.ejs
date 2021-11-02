@@ -1,0 +1,65 @@
+<%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+            <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+        <%- include('./partials/scroll.ejs') -%>
+            <%- include('./partials/global/user-dashboard.ejs') -%>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"
+                    integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg=="
+                    crossorigin="anonymous"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js"
+                    integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg=="
+                    crossorigin="anonymous"></script>
+
+                <style>
+                    .left {
+                        margin-left: 8px !important;
+                    }
+
+                    #new-post {
+                        padding: 55px 0px;
+                    }
+
+                    input,
+                    textarea {
+                        margin: 25px 0px;
+                    }
+                </style>
+                <script src="../ckeditor/ckeditor.js"></script>
+                <div id='new-post'>
+                    <div class='container'>
+                        <div class='section-title'>New Anouncement</div>
+                        <form class="form" action='/newAnouncement' enctype="multipart/form-data" method='POST'>
+                                
+                                <div class="field">
+                                    <input type='text' class='form-control' name='headline' placeholder='Headline'>
+                                </div>
+                                <div class="field">
+                                    <textarea type='text' rows='5' class='form-control' name='Message'
+                                        placeholder='Message'></textarea>
+                                </div>
+                                <div class="field">
+                                    <p>Upload Announcement Image</p>
+                                    <input type="file" name="preview_image" accept="image/*" />
+                                </div>
+                                <br>
+                                <button type="submit">Post Announcement</button>
+                        </form>
+               
+
+                                
+                    </div>
+                </div>
+
+
+                <script>
+                    var editor = CKEDITOR.replace('editor');
+                    var editor2 = CKEDITOR.replace('editor2');
+
+
+                </script>
+                <%- include('./partials/global/footer.ejs') -%>

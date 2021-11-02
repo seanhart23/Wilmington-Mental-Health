@@ -1,0 +1,394 @@
+<style>
+.big {
+    font-size: 22px !important;
+    font-weight: 400 !important;
+}
+
+#blog-content-preview img {
+	width: 100%;
+}
+	
+#blog-preview {
+    padding: 55px 0px;
+    position: relative;
+    width: 100%;
+    /* min-height: 200vh; */
+}
+
+.blog-title {
+    font-size: 32px;
+    margin: 0px 0px 0px 0px;
+    font-weight: 300;
+}
+
+.byline {
+    padding-bottom: 40px !important;
+    font-weight: 400;
+}
+.category a:hover {
+    text-decoration: none;
+    color: #4eaac8;
+}
+
+.category a {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.contact-form-box {
+    padding: 10px;
+    color: black!important;
+    margin-top: 50px;
+    background: whitesmoke;
+	margin-bottom: 100px;
+}
+
+.contact-form-box .section-title {
+    color: black !important;
+}
+
+.dot {
+    color: #4eaac8;
+    font-size: 26px;
+	line-height: 5px;
+}
+	
+
+hr {
+    margin: 0px;
+}
+
+.main-image img {
+	width: 100%;
+}
+	
+#outputBlog img {
+	width: 100% !important;
+	margin-top: 25px!important;
+}
+
+
+#posts {
+    margin-bottom: 100px;
+}
+
+.read-more a:hover {
+    text-decoration: none;
+    color: #4eaac8;
+}
+
+.read-more a {
+    color: #4eaac8;
+}
+
+.read-more {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.tags {
+    list-style: none;
+}
+</style>
+
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+<div id='blog-preview'>
+    <div class='container'>
+        <div class='sub-title center'>Providers</div>
+        <div class='section-title center'>Blog</div>
+        <div class='center'><hr class='short'></div>
+        </div>
+        <div class='container'>
+        <div class='row'>
+            <div class='col-lg-3'>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control"  placeholder='Search' aria-label="Recipient's username" aria-describedby="basic-addon2" id='SearchText'>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" style='background: #4eaac8' id='search-button' onclick="searchblog()"><i class="fas fa-search" style='color: white'></i></button>
+                    </div>
+                  </div>
+                  <div class='section-text big'>Categories</div><br>
+				<select class='form-control' name='category' id='category' style='width: 100%'>
+					<option value='all' selected>All Posts</option>
+				<% category.forEach(function(category){ %>
+				<option value='<%= category.category_name %>'><%= category.category_name %></option>
+				<% }) %>
+			</select>
+                  
+                  
+
+
+                    <div class='contact-form-box'>
+                        <form action='/contact' method='POST'>
+                            <div class='section-title center'>Contact <span class='bold'>Us</span></div>
+                        <div class="form-group">
+                            <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+                        </div>							
+                
+                        <div class="form-group">
+                            <input type="number" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+                        </div>
+                
+                
+                        <label class='section-text'>Preferences:</label>
+                        <div class='form-group'>
+                            <select class="form-control form-select-lg mb-3" name='Time'>
+                                <option>Choose a Time</option>
+                                <option name='earlymorning' id='earlymorning'>Early Morning Appointment</option>
+                                <option name='latemorning' id='latemorning'>Late Morning Appointment</option>
+                                <option name='earlyafternoon' id='earlyafternoon'>Early Afternoon Appointment</option>
+                                <option name='lateafternoon' id='lateafternoon'>Late Afternoon Appointment</option>
+                                <option name='earlyevening' id='earlyevening'>Early Evening Appointment</option>
+                            </select>
+                        </div>
+                        <div class='form-group'>
+                            <select class="form-control form-select-lg mb-3" name='Provider'>
+                                <option>Choose a Provider</option>
+                                <option name='henzler' id='henzler'>Havah Henzler</option>
+                                <option name='mooring' id='mooring'>Sarah Mooring</option>
+                                <option name='rengifo' id='rengifo'>Joseph Rengifo</option>
+                                <option name='blackmon' id='blackmon'>Lisa Blackmon</option>
+                                <option name='ford' id='ford'>Sara Scott Ford</option>
+                            </select>
+                        </div>
+                
+                        <div class="form-group">
+                            <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message" rows='4'></textarea>
+                        </div>		
+                
+                        <div class="form-group">
+                            <textarea type="message" id="Hear" name="Hear" class="form-control" placeholder="How did you hear about us?" rows='2'></textarea>
+                        </div>
+                
+                        <button type="submit" id="" class="">Send</button>
+                    </form>
+                    </div>
+
+                </div>
+
+            <div class='col-lg-9'>
+                <div class="tab-content">
+
+                <div class="tab-pane active show" id="all">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+						<div class='main-image'><img src='./images/uploads/<%- post.post_preview_image %>' alt='Post preview'></div>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+					
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 800) %> ... </div>
+					  
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+						
+                        <% } %>
+						
+                    <% }) %>
+                    </div>
+
+
+                <div class="tab-pane fade" id="depression">
+					<div id='posts'>
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_depression === 'Depression') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+					    <div id='outputBlog'></div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+					</div>
+                    </div>
+                
+
+                <div class="tab-pane fade" id="anxiety">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_anxiety === 'Anxiety') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+             
+
+                <div class="tab-pane fade" id="covid">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_covid === 'COVID-19') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+                
+
+                <div class="tab-pane fade" id="mental">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_mental === 'Mental Health') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="eap">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_eap === 'EAP') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="emdr">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_emdr === 'EMDR') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="anger">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_anger === 'Anger Management') { %>
+                       <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="biofeedback">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_biofeedback === 'Biofeedback') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="substance">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_substance === 'Substance Abuse') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                <div class="tab-pane fade" id="treatments">
+                    <% post.forEach(function(post){ %>
+                        <% if(post.draft === 'No'){ %>
+                        <% if(post.post_treatments === 'Treatments') { %>
+                        <div class='blog-title'><%= post.post_title %></div>
+                        <span class='byline'>By <%= post.post_author %></span>
+						<span class='dot'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span><%= post.post_date %></span>
+						<br><br>
+                        <div id='blog-content-preview'><%- post.post_content.substring(0, 1000) %> ... </div>
+
+
+                        <div class='read-more'><a href='/show/<%= post.post_id %>'>Read More</a></div>
+						<hr>
+                    <% } %>
+                    <% } %>
+                    <% }) %>
+                    </div>
+
+                </div> <!-- End Tab Content -->
+            </div>
+        </div>
+</div>
+</div>
+
+   					  
+    <%- include('./partials/global/footer.ejs') -%>
+
+</div>
+
+

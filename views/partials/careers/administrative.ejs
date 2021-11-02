@@ -1,0 +1,94 @@
+<style>
+    .apply-admin {
+        border: 1px solid lightgray;
+        padding: 50px;
+        margin-bottom: 50px;
+        background-color: #00314A;
+        color: white;
+    }
+
+    .half {
+        width: 50%;
+    }
+
+    #administrative {
+        padding-top: 50px;
+    }
+</style>
+
+<div class='container'>
+    <div id='administrative'>
+        <div class='section-title center'>Administrative Personnel</div><br>
+        <div class='apply-admin'>
+            <div class='section-text' style='color: white;''>We appreciate your interest in joining Wilmington Mental Health and encourage you to complete this form to be be added
+            to our contact list should we have a vacancy in the near future. We will contact you to request additional information
+            and schedule an interview when the need arises.</div>
+
+            <form action='/applyadmin' enctype="multipart/form-data" method='POST'>
+                <div class="form-group">
+                    <!-- <input type="text" id="to" name="to" class="form-control" value="jrengifo@wmhwc.com" hidden> -->
+                    <input type="text" id="to" name="Title" class="form-control"
+                        value="You have recieved a new Administrative Personnel application!" hidden>
+                </div>
+            
+                <div class="form-group">
+                    <input type="text" id="to" name="to" class="form-control" value="jrengifo@wmhwc.com" hidden>
+                    <!-- <input type="text" id="to" name="to" class="form-control" value="seanhart23@gmail.com" hidden> -->
+                </div>
+            
+                <div class="form-group">
+                    <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+                </div>
+            
+                <div class="form-group">
+                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+                </div>
+            
+                <div class="form-group">
+                    <input type="text" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+                </div>
+            
+                <div class='form-group'>
+                    <select id='license' name='Type' class='form-control' required>
+                        <option selected disabled>Type of Position</option>
+                        <option value='Administrative Assistant'>Administrative Assistant</option>
+                        <option value='Medical Biller/Coder'>Medical Biller/Coder</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <input type="text" id="Name" name="Specialties" class="form-control" placeholder="Specialties">
+                </div>
+            
+                <div class="form-group">
+                    <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message"
+                        rows='4'></textarea>
+                </div>
+            
+                <div class="form-group" style='text-align: left'>
+                    <label>Do you have any previous administrative experience in the mental health field?</label>
+                    <select name='Experience' class='form-control half'>
+                        <option selected disabled>Select</option>
+                        <option value='Yes'>Yes</option>
+                        <option value='No'>No</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>What specific administrative skills do you consider to be your strong points?</label>
+                    <input type="text" id="Name" name="Strengths" class="form-control" placeholder="">
+                </div>
+
+                <div class="form-group" style='text-align: left'>
+                    Please Attach Your Resume<br><br>
+                    <input type="file" name="cv">
+                </div>
+            
+                <div class='center'>
+                    <button type="submit" id="" class="center"
+                        style='height: 50px; width: 200px; margin-bottom: 0px; margin-left: auto; margin-right: auto;'>Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

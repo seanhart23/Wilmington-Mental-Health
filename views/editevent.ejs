@@ -1,0 +1,108 @@
+<%- include('./partials/global/header.ejs') -%>
+    <div class='hide-on-mobile'>
+        <%- include('./partials/global/topbar.ejs') -%>
+            <%- include('./partials/global/navtop.ejs') -%>
+    </div>
+    <%- include('./partials/global/navbar.ejs') -%>
+        <%- include('./partials/scroll.ejs') -%>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"
+                    integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg=="
+                    crossorigin="anonymous"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js"
+                    integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg=="
+                    crossorigin="anonymous"></script>
+
+                <style>
+                    .left {
+                        margin-left: 8px !important;
+                    }
+
+                    #new-post {
+                        padding: 55px 0px;
+                    }
+
+                    input,
+                    textarea {
+                        margin: 25px 0px;
+                    }
+                </style>
+                <script src="../ckeditor/ckeditor.js"></script>
+                <div id='new-post'>
+                    <div class='container'>
+
+                        <div class='section-title'>New Event</div>
+                        <form class="form" action='/editevent/(:id)' enctype="multipart/form-data" method='POST'>
+                            <% event.forEach(function(event){ %>
+
+                            <div class='form-group'>
+                                <div class="field">
+                                <div class='label'>Event Name</div>
+                                    <input type='text' class='form-control' id='title' name='title'
+                                        value ='<%= event.name %>'>
+                                </div>
+                                <div class="field">
+                                    <input type='hidden' class='form-control' id='title' name='id' value='<%= event.id %>'>
+                                </div>
+                                <div class="field">
+                                <div class='label'>Author</div>
+                                    <input type='text' class='form-control' id='author' name='author'
+                                        value ='<%= event.author %>'>
+                                </div>
+                                <div class="field">
+                                    <div class='label'>Date</div>
+                                    <input type='text' class='form-control' id='date' name='date' value='<%= event.date %>'>
+                                </div>
+                                <div class="field">
+                                    <div class='label'>Start Time</div>
+                                    <input type='text' class='form-control' id='start' name='start' value ='<%= event.start_time %>'>
+                                </div>
+                                <div class="field">
+                                    <div class='label'>End Time</div>
+                                    <input type='text' class='form-control' id='end' name='end' value='<%= event.end_time %>'>
+                                </div>
+                                <div class="field">
+                                    <p>Upload Event Image</p>
+                                    <input type="file" name="preview_image" accept="image/*" />
+                                </div>
+
+                                <br>
+
+                                <div class="field">
+                                    <label>Event Text</label>
+                                    <textarea type='text' rows='20' class='form-control' id='editor' name='content'
+                                        ><%= event.description %></textarea>
+                                </div>
+                                <br>
+                                <% if (role==='admin' ){ %>
+                                    <div class="field">
+                                        <label>Draft</label>
+                                        <select type='text' class='form-control' id='draft' name='draft'>
+                                            <option value='Yes'>Yes</option>
+                                            <option value='No'>No</option>
+                                        </select>
+                                    </div>
+                                    <% } else { %>
+                                        <div class="field">
+                                            <label>Draft</label>
+                                            <select type='text' class='form-control' id='draft' name='draft'>
+                                                <option value='Yes'>Yes</option>
+                                            </select>
+                                        </div>
+                                        <% } %>
+                            </div>
+                            <% }) %>
+                            <button type="submit">Submit Event</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <script>
+                    var editor = CKEDITOR.replace('editor');
+                    var editor2 = CKEDITOR.replace('editor2');
+
+
+                </script>
+                <%- include('./partials/global/footer.ejs') -%>

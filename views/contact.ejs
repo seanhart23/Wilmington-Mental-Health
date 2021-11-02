@@ -1,0 +1,386 @@
+<style>
+
+button {
+  text-decoration: none!important;
+}
+
+#contact {
+	padding: 55px 0px;
+}
+
+#contact a {
+	color: black;
+	text-decoration: none;
+}
+.contact-box {
+	border: 1px solid lightgray;
+	height: 350px;
+	width: 100%;
+}
+
+.contact-type {
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#contact .icon-box i {
+	color: white;
+	font-size: 100px;
+}
+
+.contact-address {
+	font-weight: 400;
+	font-size: 22px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.contact-email {
+	font-weight: 400;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.contact-phone {
+	font-weight: 400;
+	font-size: 22px;
+}
+
+.icon-box {
+	width: 100%;
+	height: 200px;
+	background: blue;
+	padding: 40px;
+	text-align: center;
+}
+
+#contact form {
+	width: 50%;
+	border: 1px solid white;
+	padding: 20px;
+}
+
+iframe {
+	margin-top: 25px;
+}
+
+/*select {
+	width: 100%;
+	height: 40px;
+}*/
+textarea {
+	height: 200px;
+	width: 75%;
+}
+
+.contact-form-box {
+	background-image: url('./images/rocks.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	padding: 30px;
+	width: 100%;
+	height: auto;
+}
+
+.big {
+	font-size: 20px;
+	padding-right: 15px;
+}
+.fa-sort-down {
+	position: absolute;
+	right: 20px;
+	margin-top: -5px;
+}
+
+.faq-questions .card {
+	border: none !important;
+	margin-bottom: 10px;
+}
+
+.faq-questions .card-body {
+	/*background: #f6f8f9;*/
+	border: none;
+	color: #5c656d;
+	font-weight: 300;
+	line-height: 24px;
+	padding: 25px 9px;
+	padding-left: 32px;
+}
+
+.faq-questions .card-header {
+	background: white;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border: none !important;
+	text-align: left !important;
+}
+
+.faq-questions .btn-link {
+	text-decoration: none;
+	color: #4eaac8;
+}
+
+.faq-questions {
+	padding: 55px 0px;
+	/*background: #f6f8f9;*/
+}
+
+.card-header {
+	text-decoration: none;
+}
+.faq-questions hr {
+	width: 10%;
+	margin-left: 0px;
+	margin-bottom: 50px;
+}
+
+.faq-questions .header {
+	text-align: left;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+</style>
+<%- include('./partials/global/header.ejs') -%>
+<div class='hide-on-mobile'>
+	<%- include('./partials/global/topbar.ejs') -%>
+	<%- include('./partials/global/navtop.ejs') -%>
+</div>
+<%- include('./partials/global/navbar.ejs') -%>
+
+
+
+<div id='contact'>
+	<!-- <div class='container'> -->
+	<div class='sub-title center'>Time for Action</div>
+	<div class='section-title center'>Contact <span class='bold'>Us</span></div>
+	<hr class='short center'>
+		<div class='row' style='width: 99%'>
+			<div class='col-lg-1'></div>
+			<div class='col-lg-2' style='padding: 0px'>
+				<div class='contact-box'>
+					<div class='icon-box' style='background: #00314A'><i class="fas fa-phone-alt"></i></div>
+					<div class='contact-type'>Phone</div><br>
+					<div class='section-text center'><a href='tel:9107775575'>910.777.5575</a></div>
+				</div>
+			</div>
+			<div class='col-lg-2' style='padding: 0px'>
+				<div class='contact-box'>
+					<div class='icon-box' style='background: #323E4F !important'><i class="fas fa-comment-dots"></i></div>
+					<div class='contact-type'>Text</div><br>
+					<div class='section-text center'><a href='sms:9107775575'>910.777.5575</a></div>
+				</div>
+			</div>
+			<div class='col-lg-2' style='padding: 0px'>
+				<div class='contact-box'>
+					<div class='icon-box' style='background: #344A53 !important'><i class="fas fa-envelope-open-text"></i></div>
+					<div class='contact-type'>Email</div><br>
+					<div class='section-text center'><a href='mailto:INFO@WMHWC.COM'>INFO@WMHWC.COM</a></div>
+				</div>
+			</div>
+			<div class='col-lg-2' style='padding: 0px'>
+				<div class='contact-box'>
+					<div class='icon-box' style='background: #97AFB9 !important'><i class="fas fa-fax"></i></div>
+					<div class='contact-type'>Fax</div><br>
+					<div class='section-text center'><a href='#'>910.777.5273</a></div>
+				</div>
+			</div>
+			<div class='col-lg-2' style='padding: 0px'>
+				<div class='contact-box'>
+					<div class='icon-box' style='background: lightgray'><i class="fas fa-map-marked-alt"></i></div>
+					<div class='contact-type'>Address</div><br>
+					<div class='section-text center'><a href='https://goo.gl/maps/8Ye14fP5CwhEPXbp7' target='_blank'>3825 MARKET ST. STE 4<br>WILMINGTON, NC 28403</a>
+			</div>
+				</div>
+			</div>
+			<div class='col-lg-1'></div>
+		<!-- </div> -->
+	</div>
+	<!-- <div class='sub-title center'>Time for Action</div> -->
+	<div class='section-title center' style='padding-top: 55px'>Hours of <span class='bold'>Operation</span></div>
+	<hr class='short center'>
+	<div class='section-text center' style='font-size: 24px'>Monday – Friday from 9:00am to 7:30pm</div>
+
+	<div class='sub-title center' style='padding-top: 110px'>PHONE CONSULTATION</div>
+	<div class='section-title center'>Free and Completely <span class='bold'>Confidential</span></div>
+	<hr class='short center'>
+	<div class='section-text center' style='font-size: 24px'>
+		Do you have 15 minutes for a phone call to see how we can help?<br>
+		Contact us today and let’s get you started.
+	</div>
+	<div class='center' style='padding-top: 25px'>
+		<style>.spwidget-button-wrapper{text-align: center}.spwidget-button{display: inline-block;padding: 12px 24px;color: #fff !important;background: #4eaac8;border: 0;border-radius: 4px;font-size: 16px;font-weight: 400;text-decoration: none !important}.spwidget-button:hover{background: #00314A; transition: background .5s ease;}.spwidget-button:active{color: rgba(255, 255, 255, .75) !important;box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset}</style>
+			<div class="spwidget-button-wrapper"><a href="https://wmh1.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="d18270b1-1ca3-4e69-9d82-9ac2300a0eb4" data-spwidget-scope-uri="wmh1" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>Book Online</a></div>
+			<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+</div>
+
+<div style='padding-top: 55px; margin: 0px 0px'>
+	<div class='container'>
+	<div class='contact-form-box'>
+		<form action='/contact' method='POST'>
+			<div class='couch center'><i class="fas fa-couch" style='font-size: 40px; color: white'></i></div>
+			<div class='section-title center' style='color: white'>Contact <span class='bold'>Us</span></div>
+			<hr class='short center' style='background: white'>
+		<div class="form-group">
+	        <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name*" required>
+		</div>							
+
+		<div class="form-group">
+	        <input type="number" id="Number" name="Number" class="form-control" placeholder="Contact Number*" required>
+		</div>
+
+		<div class="form-group">
+	        <input type="email" id="Email" name="Email" class="form-control" placeholder="Email*" required>
+		</div>
+
+
+		<label class='section-text' style='color: white'>Preferences:</label>
+		<div class='form-group'>
+			<select class="form-control form-select-lg mb-3" name='Time'>
+				<option>Choose a Time</option>
+				<option name='earlymorning' id='earlymorning'>Early Morning Appointment</option>
+				<option name='latemorning' id='latemorning'>Late Morning Appointment</option>
+				<option name='earlyafternoon' id='earlyafternoon'>Early Afternoon Appointment</option>
+				<option name='lateafternoon' id='lateafternoon'>Late Afternoon Appointment</option>
+				<option name='earlyevening' id='earlyevening'>Early Evening Appointment</option>
+			</select>
+		</div>
+		<div class='form-group'>
+			<select class="form-control form-select-lg mb-3" name='Provider'>
+				<option>Choose a Provider</option>
+				<option name='henzler' id='henzler'>Havah Henzler</option>
+				<option name='mooring' id='mooring'>Sarah Mooring</option>
+				<option name='rengifo' id='rengifo'>Joseph Rengifo</option>
+				<option name='blackmon' id='blackmon'>Lisa Blackmon</option>
+				<option name='ford' id='ford'>Sara Scott Ford</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+	        <textarea type="message" id="Message" name="Message" class="form-control" placeholder="Message" rows='4'></textarea>
+		</div>		
+
+		<div class="form-group">
+	        <textarea type="message" id="Hear" name="Hear" class="form-control" placeholder="How did you hear about us?" rows='2'></textarea>
+		</div>
+
+		<button type="submit" id="" class="">Send</button>
+	</form>
+	</div>
+	<br>
+	<div class='section-text'>If relevant, please include the days of the week and times during the day that you are typically available. We will work with your schedule and match you with the right provider.</div>
+</div>
+</div>
+
+<%- include('./partials/home/newsletter.ejs') -%>
+
+<div class='container' style='padding: 110px 10px 55px 10px'>
+	<div class='row'>
+		<div class='col-lg-4 hide-on-mobile'>
+			<img src='./images/pins.png' alt='Assorted push pins'>
+		</div>
+		<div class='col-lg-8'>
+			<div class='sub-title'>Driving Instructions</div>
+			<div class='section-title'>Get on the road to <span class='bold'>Recovery</span></div>
+			<hr class='short' style='margin-left: 0px; margin-bottom: 10px'>
+			<div class='section-text'>Our building is located between Howard Johnson by Wyndham and Goody Goody Omelet House. </div>
+			<div class='faq-questions'>
+			<div class="accordion" id="accordionExample">
+				  <div class="card">
+				    <div class="card-header" id="headingOne">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<span id='change1' class='big'>+</span> <span onclick="question('change1')">Directions from Castle Hayne (18 min /10 miles)</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				      <div class="card-body">
+				        <li>Get on I-40 E toward Wilmington</li>
+						<li>Continue onto US-117 S/N College Rd</li>
+						<li>Turn right onto US-74 W/Martin Luther King Jr Pkway</li>
+						<li>Turn Left onto N Kerr Ave and then right on Market St</li>
+						<li>Turn right at 3825 Market St (0.5 mi) and left once you enter the complex (46 ft).</li>
+
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingTwo">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				          <span id='change2' class='big'>+</span> <span onclick="question('change2')">Directions from Leland (18 min / 10 miles)</span>
+				          <!-- <i class="fas fa-sort-down"></i> -->
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+				      <div class="card-body">
+				        <li>Follow signs for US-17 N/US-74 E/US-76 E</li>
+						<li>Merge onto US-17 N/US-74 E/US-76 E</li>
+						<li>Turn left onto S 17th St</li>
+						<li>Turn right onto Market St (0.8 mi)</li>
+						<li>Turn left at 3825 Market St (1.7 mi) and left once you enter the complex (46 ft).</li>
+
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingThree">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<span id='change3' class='big'>+</span> <span onclick="question('change3')">Directions from Carolina Beach (25 min / 15.2 miles)</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+				      <div class="card-body">
+						<li>Head north on US-421 N/N Lake Park Blvd (7.5 mi)</li>
+						<li>Continue straight onto NC-132 N/S College Rd (5.4 mi)</li>
+						<li>Turn left onto Cedar Ave (499 ft)</li>
+						<li>Turn right onto N Kerr Ave (1.4 mi)</li>
+						<li>Continue straight to stay on S Kerr Ave (0.2 mi)</li>
+						<li>Use the left 2 lanes to turn left toward Cinema Dr (230 ft)</li>
+						<li>Continue onto Cinema Dr (0.4 mi)</li>
+						<li>Use the middle lane to turn left not Market St (0.3 mi)</li>
+						<li>Turn right at 3825 Market St (0.5 mi) and left once you enter the complex (46 ft).</li>
+						</div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingFour">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						<span id='change4' class='big'>+</span> <span onclick="question('change4')">Directions from Hampstead (10 miles)</span>
+						<!-- <i class="fas fa-sort-down"></i> -->
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body">
+						<li>Head southwest on US-17 S (5.6 mi on I-40 E toward Wilmington</li>
+						<li>Continue onto US-17 BUS S/Market St (8.0 mi)</li>
+						<li>Turn right at 3825 Market St (0.5 mi) and left once you enter the complex (46 ft).</li>
+    </div>
+				    </div>
+				  </div>
+				</div>
+		</div></div>
+	</div>
+</div>
+
+
+</div>
+
+
+
+			
+
+
+<%- include('./partials/global/footer.ejs') -%>
