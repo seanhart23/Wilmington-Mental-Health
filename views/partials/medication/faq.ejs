@@ -1,0 +1,414 @@
+<style>
+    #techniques {
+        background: #00314A;
+        /*color: white;*/
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    #techniques .card {
+        /*background: none;*/
+        margin-bottom: 5px;
+    }
+
+    #techniques .card-body {
+        color: #5c656d;
+        font-size: 18px;
+        /*line-height: 167%;*/
+        font-weight: 300;
+    }
+
+    #myUL button {
+        padding-left: 0px !important;
+    }
+
+    #techniques .section-text {
+        color: black;
+    }
+
+    #techniques .section-title {
+        color: white;
+        padding-top: 50px;
+    }
+
+    #technique-header {}
+
+    #techniques hr {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    #techniques i {
+        float: right;
+        color: #4eaac8 !important;
+    }
+
+    /*#techniques li {
+	background: #f6f8f9;
+	padding: 10px 10px;
+	margin: 5px 0px 0px 0px;
+}
+
+#techniques li a {
+	color: black;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-decoration: none;
+}*/
+
+    .technique-name {
+        font-size: 20px;
+    }
+
+    .technique-description {
+        font-size: 16px !important;
+        text-align: left;
+        margin-top: 15px;
+        z-index: 2;
+        padding: 0px 10px 20px 10px;
+    }
+
+    .technique-header {
+        font-size: 30px;
+        color: white;
+        margin-top: 30px;
+    }
+
+    .technique-title {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 5px 5px;
+        z-index: 2;
+        background: #4eaac8;
+        color: white;
+        height: 60px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .technique-title-first {
+        font-size: 20px;
+        margin-top: 0px;
+    }
+
+
+    #search {
+        /* background-image: url('/css/searchicon.png'); */
+        background-position: 10px 12px;
+        /* Position the search icon */
+        background-repeat: no-repeat;
+        /* Do not repeat the icon image */
+        width: 80%;
+        /* Full-width */
+        font-size: 16px;
+        /* Increase font-size */
+        padding: 12px 20px 12px 40px;
+        /* Add some padding */
+        border: 1px solid #ddd;
+        /* Add a grey border */
+        margin-bottom: 12px;
+        /* Add some space below the input */
+    }
+
+    .search-title {
+        text-align: left;
+        font-size: 16px;
+        /*text-decoration: underline;*/
+        font-weight: 400;
+    }
+
+    .sub-description {
+        text-transform: none !important;
+        color: #5c656d;
+        font-size: 18px;
+        /*line-height: 167%;*/
+        font-weight: 300;
+    }
+
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li button {
+        /*background-color: #eee;*/
+        text-decoration: none;
+        /* Add a hover effect to all links, except for headers */
+        width: 100%;
+        text-align: left;
+        position: relative;
+        z-index: 1;
+    }
+
+    #techniques i {
+        float: right;
+        font-size: 40px;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        z-index: 0;
+        color: #1F4E79 !important;
+    }
+
+    #techniques .card-header {
+        height: 93px;
+    }
+
+    #techniques hr {
+        background: white;
+    }
+
+    .plus {
+        position: absolute;
+        font-size: 50px;
+        right: 20px;
+        top: 15px;
+        font-weight: 300;
+    }
+</style>
+
+<div id='techniques'>
+
+    <div class='container'>
+
+        <div class='section-title'>Common Medication Management Questions</div>
+        <hr>
+
+        <div id="accordion">
+
+            <ul id="myUL">
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1"
+                                    onclick="tech('change1')">
+                                    <div class='section-text search-title'>Who provides medication management services?</div>
+                                </button>
+                                <div id='change1'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse1" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Medication Management works best with a team approach. Every member of our healthcare team, including you, our nurse
+                                practitioners, and any specialist you routinely see should help make decisions about your treatment. This can help you
+                                manage your medication use, stay healthier, be hospitalized less often, and spend less money on healthcare over time.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2"
+                                    onclick="tech('change2')">
+                                    <div class='section-text search-title'>How do I get a prescription refill?
+                                    </div>
+                                </button>
+                                <div id='change2'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse2" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>Please inform your provider during your scheduled appointment if you need a prescription refill. We recommend that you
+                                    check your bottle for any refills remaining between appointments. Please ask your pharmacist to fax or electronically
+                                    transmit any refill request to your provider and allow 48 hours for an authorization. Our fax number is 910-777-5273.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3"
+                                    onclick="tech('change3')">
+                                    <div class='section-text search-title'>Who insurances do you take?</div>
+
+                                </button>
+                                <div id='change3'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse3" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>We are currently enrolled with Blue Cross Blue Shield (except Blue Value) United Behavioral Health, Aetna, Medcost,
+                                    Medicare and Cigna. Please be advised that we only file primary insurance. Remember, it is ultimately your
+                                    responsibility to verify your mental health benefits through your insurance company and obtain any prior authorization
+                                    before being seen. Our Medicare providers are participating with Medicare. We will file your claims and Medicare will
+                                    reimburse us on your behalf.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse4"
+                                    onclick="tech('change4')">
+                                    <div class='section-text search-title'>When is payment due?</div>
+                                </button>
+                                <div id='change4'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse4" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>All payments are expected at time of service, unless a payment schedule has been set up with the administrative team.
+                                    Any accounts with an outstanding balance must be paid in full within 30 days. Should payments not be made on the day of
+                                    service, we reserve the right to cancel your appointment. We accept Cash, Checks, Visa, Mastercard, American Express,
+                                    and Discover.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse5"
+                                    onclick="tech('change5')">
+                                    <div class='section-text search-title'>What happens if I need to cancel my appointment? </div>
+                                </button>
+                                <div id='change5'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse5" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>If you need to cancel or reschedule your appointment, please call 24-hour before your scheduled appointment date to
+                                    avoid being charged a missed appointment fee.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse6"
+                                    onclick="tech('change6')">
+                                    <div class='section-text search-title'>What happens if I am late for my schedule appointment?</div>
+                                </button>
+                                <div id='change6'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse6" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>If you are 15 minutes late for your scheduled appointment you may be asked to reschedule.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse7"
+                                    onclick="tech('change7')">
+                                    <div class='section-text search-title'>Can I receive a statement or invoice for the payments I have made?</div>
+                                </button>
+                                <div id='change7'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse7" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>We will send out a statement to the address we have on file if a payment has not been received from your insurance
+                                    carrier. If payment is not received within 30 days, you will receive a second notification of past due amount owed
+                                    before we can charge the standing balance using your credit card on file.</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li class='searchli'>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse9"
+                                    onclick="tech('change9')">
+                                    <div class='section-text search-title'>Who can have access to my records?</div>
+                                </button>
+                                <div id='change9'>
+                                    <div class='plus'>+</div>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <div id="collapse9" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class='section-text'>
+                                <div class='technique-description'>
+                                    <p>The use or disclose of your persona health information (PHI) to others requires your consent or authorization,
+                                    especially when the purpose of such exchange is to provide or arrange health care, to receive reimbursement for the
+                                    services we provide to you, and for other related administrative activities we conduct. WMH may be required or permitted
+                                    by certain laws to use and disclose your medical information for other purposes without your consent or authorization.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li class='searchli'>
+
+
+
+        
+        </div>
+    </div>
+</div>
+</div>
