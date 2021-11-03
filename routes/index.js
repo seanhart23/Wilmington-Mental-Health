@@ -20,7 +20,7 @@ dotenv.config({ path: '.env'})
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', //Switch to Sean when go live //
+    user: 'Sean', //Switch to Sean when go live //
     password: 'Maem250123!',
     database: 'blog',
     multipleStatements: true

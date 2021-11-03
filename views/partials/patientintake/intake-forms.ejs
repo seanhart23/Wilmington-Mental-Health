@@ -1,16 +1,5 @@
 <style>
 
-.clipboard {
-    height: 800px;
-    width: 50%;
-    margin: auto;
-    position: relative;
-    background-image: url('./images/clipboard_scaled.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
 #form-list {
     width: 100%;
     text-align: center;
@@ -21,6 +10,9 @@
     width: 100%;  
     margin: auto; 
     text-align: left;
+}
+#intake-forms {
+    padding: 55px 0px;
 }
 
 #intake-forms a {
@@ -38,34 +30,175 @@
     margin-bottom: 15px;
 }
 
-.start-over {
-    margin-top: 25px;
-    font-size: 20px;
+.button-container {
+    text-align: center;
+    margin-top: 50px;
 }
+
+.note {
+    margin-bottom: 50px;
+}
+
+.price {
+    font-size: 18px;
+}
+
+.price i {
+    font-size: 22px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.price-title {
+    /* font-weight: bold; */
+}
+
+#forms {
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid lightgray;
+}
+
+#forms th {
+    background: #4eaac8;
+    width: 100%;
+    padding: 10px;
+    color: white;
+}
+
+#forms td,
+tr {
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+#pricing-section {
+    padding: 55px 0px;
+}
+
+.price-button {
+    margin-bottom: 50px;
+}
+
 </style>
 
 <div class='intake-section' id='intake-forms'>
-        <div id='form-list'>
-            <!-- <div class='clipboard'> -->
-                <div id='forms'>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class='center'>
-                                Please complete and return the forms below prior to your first appointment.
-                            </h5>
-                        </div>
-                        <div class="card-body">
-                            <br>
-                            <ul>
-                                <span id='service-forms'></span>
-                                <span id='provider-forms'></span>
-                            </ul>
-                            <div class='start-over center'><a href="javascript:window.location.href=window.location.href">Start Over</a></div>
-                        </div>
-                    </div>
-
-                </div>
-            <!-- </div> -->
+    <div id='form-list'>
+        <div class='container'>
+            <div class='section-title'>Select a <span class='bold'>Form</span></div>
+                <table id='forms'>
+                <tr><th>Registration</th></tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/roi' target='_blank'>Intake Packet</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/roi' target='_blank'>Authorization Form</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/registracion' target='_blank'>Ingreso del Paciente</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/registracion' target='_blank'>Planilla de Autorización</a></div>
+                    </td>
+                </tr>
+                <tr><th>Medical Services</th></tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">New Patient Health History Form (Coming Soon)</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">New Patient Health History Form (Coming Soon)
+                        Consent Forms (Coming Soon)</a></div>
+                    </td>
+                </tr>
+                <tr><th>Clinical Evaluations</th></tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Attention-Deficit/Hyperactivity</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Bariatric Surgery</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Drug and Alcohol Abuse</a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Immigration (Mental Health)</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Adult Sex Offender</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Domestic Violence</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href="" target="_blank">Anger Management</a></div>
+                    </td>
+                </tr>
+                <tr><th>Professional Disclosure Statements</th></tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/pdsjr' target='_blank'>Joseph Rengifo - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/pdshh' target='_blank'>Havah Hanzler - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/pdslr' target='_blank'>Lisa Blackmon - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/pdssf' target='_blank'>Sarah Scott Ford - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='https://hipaa.jotform.com/wmhnc/pdssm' target='_blank'>Sarah Mooring - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='#' target='_blank'>Joanne Lee - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class='service'>
+                        <div class='price-title'><a href='#' target='_blank'>Juliana Stanfield - Professional Disclosure Statement</a></div>
+                    </td>
+                </tr>
+                </tr>
+            </table>
         </div>
-        <br>
-</div>
+    </div>
+</div>          

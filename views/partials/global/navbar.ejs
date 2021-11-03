@@ -122,38 +122,11 @@ nav i {
 }
 </style>
 
-<!-- <style>
-.dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-}
-
-.dropdown-menu > ul > li {
-    content: '';
-    position: absolute;
-    top: -9px;
-    left: 20px;
-    width: 15px;
-    height: 15px;
-    border-left: 1px solid #eeeeee;
-    border-top: 1px solid #eeeeee;
-    transform: rotate(45deg);
-    background: inherit;
-}
-</style> -->
-
-
 <nav class="navbar navbar-expand-lg navbar-light w-100">
     <div class='container'>
 
       <div class='navbar-brand hide-on-desktop display-on-mobile ml-center'><img src='./images/logo.png' alt='Wilmington Mental Health logo'></div>
 
-  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -170,7 +143,6 @@ nav i {
           <div class='caret'></div>
           <a class="dropdown-item nav-title" href="/intake">Intake Process</a>
             <a class="dropdown-item sub-item" href="/insurance">Fees & Insurance</a>
-          <!-- <div class="dropdown-divider"></div> -->
           <a class="dropdown-item nav-title" href="/faq">FAQs</a>
         </div>      
       </li>
@@ -217,11 +189,14 @@ nav i {
             <div class='dropdown-divider'></div>
             <a class="dropdown-item nav-title" href="#">Medical Services</a>
              <a class="dropdown-item sub-item" href="/medication">Medication Management</a>
+             <a class="dropdown-item sub-item" href="#">Primary Care (Coming Soon)</a>
+             <a class="dropdown-item sub-item" href="#">Family Medicine (Coming Soon)</a>
             <div class='dropdown-divider'></div>
             <a class="dropdown-item nav-title" href="#">Substance Abuse</a>
             <a class="dropdown-item sub-item" id='psycho' href="/substance#psychoeducation">Psychoeducation</a>
             <a class="dropdown-item sub-item" id='out' data-id='outpatient' href="/substance#outpatient">Outpatient Care</a>
             <a class="dropdown-item sub-item" id='super' href="/substance#supervision">Clinical Supervision</a>
+            <a class="dropdown-item sub-item" id='super' href="#">Medication-Assisted Treatment</a>
           </div>
 
          
@@ -232,6 +207,7 @@ nav i {
             <a class="dropdown-item sub-item" href="/corporate">Corporate Wellness</a> 
             <a class="dropdown-item sub-item" href="/emdr">EMDR</a>
             <a class="dropdown-item sub-item" href="/biofeedback">Biofeedback</a>
+            <a class="dropdown-item sub-item" href="#">Psychiatric Treatment</a>
  
             <!-- <a class="dropdown-item sub-item" href="/specialties">Trauma-Focused CBT</a>  -->
             <div class='dropdown-divider'></div>
@@ -242,6 +218,7 @@ nav i {
             <a class="dropdown-item sub-item" href="/assessments#sexoffenderassessment">Sex Offender Risk Assessment</a> 
             <a class="dropdown-item sub-item" href="/assessments#domestic">Domestic Violence Risk Assessment</a> 
             <a class="dropdown-item sub-item" href="/assessments#drugandalcohol">Drug and Alcohol Evaluation</a> 
+            <a class="dropdown-item sub-item" href="#">Bariatric Surgery Evaluation</a> 
   <!--           <a class="dropdown-item nav-title" href="#">Other Services</a>
             <a class="dropdown-item sub-item" href="/specialties">Urinalysis</a>
             <a class="dropdown-item sub-item" href="/specialties">Clinical Supervision</a> -->
@@ -282,16 +259,19 @@ nav i {
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class='caret'></div>
 
-            <!-- <a class="dropdown-item nav-title" href="#">Forms</a> -->
-            <!-- <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/intake-packet" target="_blank">Intake Packet</a> -->
-            <a class="dropdown-item nav-title" href="/patient-intake">Patient Intake</a>
-          <!-- <div class="dropdown-divider"></div> -->
+
+            <a class="dropdown-item nav-title" href="#">Patient Intake</a>
+              <a class="dropdown-item sub-item" href="/patient-intake">Registration</a>
+              <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/registracion" target="_blank">Ingreso del Paciente</a>
+              <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/roi" target="_blank">Release of Information</a>
+            <a class="dropdown-item nav-title" href="#">Referrals</a>
+              <a class="dropdown-item sub-item" href="https://hipaa.jotform.com/wmhnc/rrf" target="_blank">Request Form</a>
+
             <a class="dropdown-item nav-title" href="/community">Our Community</a>
             <a class="dropdown-item sub-item" href="/events">Events</a>
             <a class="dropdown-item sub-item" href="/news">News</a>
             <a class="dropdown-item nav-title" href="/careers">Careers</a>
             <a class="dropdown-item nav-title" href="/blog">Blog</a>
-            <!-- <a class="dropdown-item" href="#">Para Latinos</a> -->
         </div>
       </li>
 
