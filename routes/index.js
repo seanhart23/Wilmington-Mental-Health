@@ -198,10 +198,6 @@ router.get('/henzler', function(req, res){
     res.render('henzler');
 });
 
-router.get('/hollowell', function(req, res){
-    res.render('hollowell');
-});
-
 router.get('/patient-intake', function(req, res){
     res.render('handouts');
 });
