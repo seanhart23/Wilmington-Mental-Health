@@ -20,7 +20,7 @@ dotenv.config({ path: '.env'})
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'Sean', //Switch to Sean when go live //
+    user: 'Sean', //Switch to Sean when go live, root when not live //
     password: 'Maem250123!',
     database: 'blog',
     multipleStatements: true
@@ -172,6 +172,14 @@ router.get('/emdr', function(req, res){
 
 router.get('/rengifo', function(req, res){
     res.render('rengifo');
+});
+
+router.get('/lee', function(req, res){
+    res.render('lee');
+});
+
+router.get('/roa', function(req, res){
+    res.render('roa');
 });
 
 router.get('/stanfield', function(req, res){
